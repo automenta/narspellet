@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.6.0_18-ea" class="java.beans.XMLDecoder"> 
+ <object class="eulergui.project.Project"> 
+  <void property="n3Query"> 
+   <object class="eulergui.project.N3Source"> 
+    <void property="URI"> 
+     <string>./dl-safe.owlQ.n3</string> 
+    </void> 
+   </object> 
+  </void> 
+  <void property="sources"> 
+   <void method="put"> 
+    <string>./dl-safe.owl_data.n3</string> 
+    <object class="eulergui.project.N3Source"> 
+     <void property="URI"> 
+      <string>./dl-safe.owl_data.n3</string> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="put"> 
+    <string>./dl-safe_small.owl</string> 
+    <object class="eulergui.project.N3SourceFromRDF"> 
+     <void property="URI"> 
+      <string>file:/tmp/translation-2238414451409602341.n3</string> 
+     </void> 
+     <void property="rdfFile"> 
+      <string>./dl-safe_small.owl</string> 
+     </void> 
+    </object> 
+   </void> 
+  </void> 
+ </object> 
+</java> 

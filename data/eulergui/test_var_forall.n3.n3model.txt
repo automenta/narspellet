@@ -1,0 +1,45 @@
+begin of model http://sourceforge.net/projects/eulergui/
+	begin of variable
+		universal http://example.com#x
+		universal http://example.com#y
+	end of variable
+	begin of statement
+		begin of statement subject
+			begin of formula
+				begin of variable
+				end of variable
+				begin of statement
+					begin of statement subject
+						uri http://example.com#x
+					end of statement subject
+					begin of statement predicate
+						uri http://example.com#parent
+					end of statement predicate
+					begin of statement object
+						uri http://example.com#y
+					end of statement object
+				end of statement
+			end of formula
+		end of statement subject
+		begin of statement predicate
+			uri http://www.w3.org/2000/10/swap/log#implies
+		end of statement predicate
+		begin of statement object
+			begin of formula
+				begin of variable
+				end of variable
+				begin of statement
+					begin of statement subject
+						uri http://example.com#y
+					end of statement subject
+					begin of statement predicate
+						uri http://example.com#child
+					end of statement predicate
+					begin of statement object
+						uri http://example.com#x
+					end of statement object
+				end of statement
+			end of formula
+		end of statement object
+	end of statement
+end of model http://sourceforge.net/projects/eulergui/

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.6.0_06" class="java.beans.XMLDecoder"> 
+ <object class="eulergui.project.Project"> 
+  <void property="n3Query"> 
+   <object class="eulergui.project.N3Source"> 
+    <void property="URI"> 
+     <string>./koala-query.n3</string> 
+    </void> 
+   </object> 
+  </void> 
+  <void property="sources"> 
+   <void method="put"> 
+    <string>./koala.owl</string> 
+    <object class="eulergui.project.N3SourceFromRDF"> 
+     <void property="URI"> 
+      <string>file:/tmp/jena-46986.n3</string> 
+     </void> 
+     <void property="rdfFile"> 
+      <string>./koala.owl</string> 
+     </void> 
+    </object> 
+   </void> 
+  </void> 
+ </object> 
+</java> 

@@ -1,0 +1,18 @@
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://example.com#> .
+
+# One can use e:optional to match a criterium and succeed anyway
+# works with Euler; does not work with Drools
+
+:p1 foaf:name "X"
+  ; rdfs:label "XL" .
+:p2 foaf:name "Y" .
+
+{
+  ?P foaf:name ?N .
+  _:d e:optional { ?P rdfs:label ?L } .
+} => {
+  :result :is ( ?P "rdfs:label" ?L " ; foaf:name" ?N ) .
+}.

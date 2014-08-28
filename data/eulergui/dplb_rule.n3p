@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.6.0_20" class="java.beans.XMLDecoder"> 
+ <object class="eulergui.project.Project"> 
+  <void property="n3Query"> 
+   <object class="eulergui.project.N3Source"> 
+    <void property="URI"> 
+     <string>./dplb_ruleQ.n3</string> 
+    </void> 
+   </object> 
+  </void> 
+  <void property="sources"> 
+   <void method="put"> 
+    <string>./dplb_rule.n3</string> 
+    <object class="eulergui.project.N3Source"> 
+     <void property="URI"> 
+      <string>./dplb_rule.n3</string> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="put"> 
+    <string>./dplb_foaf_name.sparql</string> 
+    <object class="eulergui.inputs.N3SourceFromSPARQLSource"> 
+     <void property="fileName"> 
+      <string>/tmp/translation-1369600435714597002.n3</string> 
+     </void> 
+     <void property="otherFile"> 
+      <string>./dplb_foaf_name.sparql</string> 
+     </void> 
+     <void property="service"> 
+      <string>http://www4.wiwiss.fu-berlin.de/dblp/sparql</string> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="put"> 
+    <string>./dplb_creators.sparql</string> 
+    <object class="eulergui.inputs.N3SourceFromSPARQLSource"> 
+     <void property="fileName"> 
+      <string>/tmp/translation-3368047202273631919.n3</string> 
+     </void> 
+     <void property="otherFile"> 
+      <string>./dplb_creators.sparql</string> 
+     </void> 
+     <void property="service"> 
+      <string>http://www4.wiwiss.fu-berlin.de/dblp/sparql</string> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="put"> 
+    <string>./dplb_nothing_created.sparql</string> 
+    <object class="eulergui.inputs.N3SourceFromSPARQLSource"> 
+     <void property="activated"> 
+      <boolean>false</boolean> 
+     </void> 
+     <void property="fileName"> 
+      <string>/tmp/translation-5393631453165698632.n3</string> 
+     </void> 
+     <void property="otherFile"> 
+      <string>./dplb_nothing_created.sparql</string> 
+     </void> 
+     <void property="service"> 
+      <string>http://www4.wiwiss.fu-berlin.de/dblp/sparql</string> 
+     </void> 
+    </object> 
+   </void> 
+  </void> 
+ </object> 
+</java> 

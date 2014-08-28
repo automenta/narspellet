@@ -1,0 +1,47 @@
+#Processed by Id: cwm.py,v 1.197 2007/12/13 15:38:39 syosi Exp 
+        #    using base file:///home/jmv/src/jena/Gloze/trunk/samples/po/po.rdf
+        
+#  Notation3 generation by
+#       notation3.py,v 1.200 2007/12/11 21:18:08 syosi Exp
+
+#   Base was: file:///home/jmv/src/jena/Gloze/trunk/samples/po/po.rdf
+     @prefix : <http://tempuri.org/po.xsd#> .
+    @prefix ns2: <http://example.org#> .
+    @prefix xs_: <http://www.w3.org/2001/XMLSchema#> .
+    
+    <>     :purchaseOrder  [
+             a :PurchaseOrderType;
+             ns2:orderDate "1999-10-20"^^xs_:date;
+             :billTo  [
+                 a :USAddress;
+                 ns2:country "US"^^xs_:NMTOKEN;
+                 :city "Old Town"^^xs_:string;
+                 :name "Robert Smith"^^xs_:string;
+                 :state "PA"^^xs_:string;
+                 :street "8 Oak Avenue"^^xs_:string;
+                 :zip 95819.0 ];
+             :comment "Hurry, my lawn is going wild!"^^xs_:string;
+             :items  [
+                 a :Items;
+                 :item  [
+                     ns2:partNum "926-AA"^^xs_:string;
+                     :USPrice 39.98;
+                     :productName "Baby Monitor"^^xs_:string;
+                     :quantity "1"^^xs_:positiveInteger;
+                     :shipDate "1999-05-21"^^xs_:date ],
+                         [
+                     ns2:partNum "872-AA"^^xs_:string;
+                     :USPrice 148.95;
+                     :comment "Confirm this is electric"^^xs_:string;
+                     :productName "Lawnmower"^^xs_:string;
+                     :quantity "1"^^xs_:positiveInteger ] ];
+             :shipTo  [
+                 a :USAddress;
+                 ns2:country "US"^^xs_:NMTOKEN;
+                 :city "Mill Valley"^^xs_:string;
+                 :name "Alice Smith"^^xs_:string;
+                 :state "CA"^^xs_:string;
+                 :street "123 Maple Street"^^xs_:string;
+                 :zip 90952.0 ] ] .
+    
+#ENDS

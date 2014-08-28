@@ -1,0 +1,13 @@
+@prefix dbpedia-owl:  <http://dbpedia.org/ontology/>.
+@prefix dbpedia:  <http://dbpedia.org/resource/>.
+@prefix dbpprop:  <http://dbpedia.org/property/>.
+
+{ ?X dbpprop:father ?P .
+} => {
+  ?X dbpedia-owl:parent ?P .
+}.
+
+{ ?X dbpprop:mother ?P .
+} => {
+  ?X dbpedia-owl:parent ?P .
+}.

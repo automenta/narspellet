@@ -1,0 +1,22 @@
+@prefix list: <http://www.w3.org/2000/10/swap/list#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#> .
+
+# append	Iff the subject is a list of lists and the concatenation of all those lists is the object, then this is true. eg ( (1 2) (3 4) ) list:append (1 2 3 4). The object can be calculated as a function of the subject. 
+
+:x :p "v1" .
+:x :p "v2" .
+:mylist a rdf:List .
+
+{
+  :x :p ?V .
+_:d e:trace ( "rule1" ?V ).
+  ?V list:in :mylist .
+_:d e:trace ( "rule2" ?V ).
+} =>
+# { 
+true
+# }
+ .
+

@@ -1,0 +1,39 @@
+begin of model http://sourceforge.net/projects/eulergui/
+	begin of variable
+		existential _0
+		existential _1
+	end of variable
+	begin of statement
+		begin of statement subject
+			blank node _0
+		end of statement subject
+		begin of statement predicate
+			uri http://example.comfirstname
+		end of statement predicate
+		begin of statement object
+			literal value=Ora, data type=http://www.w3.org/2001/XMLSchema#string, language=
+		end of statement object
+	end of statement
+	begin of statement
+		begin of statement subject
+			blank node _1
+		end of statement subject
+		begin of statement predicate
+			uri http://example.com/dctitle
+		end of statement predicate
+		begin of statement object
+			literal value=Moby Dick, data type=http://www.w3.org/2001/XMLSchema#string, language=
+		end of statement object
+	end of statement
+	begin of statement
+		begin of statement subject
+			blank node _0
+		end of statement subject
+		begin of statement predicate
+			uri http://example.com/dcwrote
+		end of statement predicate
+		begin of statement object
+			blank node _1
+		end of statement object
+	end of statement
+end of model http://sourceforge.net/projects/eulergui/

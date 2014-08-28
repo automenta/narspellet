@@ -1,0 +1,296 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY swrl "http://www.w3.org/2003/11/swrl#" >
+    <!ENTITY swrlb "http://www.w3.org/2003/11/swrlb#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY acetext "http://attempto.ifi.uzh.ch/acetext#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY ace_lexicon "http://attempto.ifi.uzh.ch/ace_lexicon#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY car_ace "http://deductions.sourceforge.net/ontologies/2010/3/car_ace.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://deductions.sourceforge.net/ontologies/2010/3/car_ace.owl#"
+     xml:base="http://deductions.sourceforge.net/ontologies/2010/3/car_ace.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:acetext="http://attempto.ifi.uzh.ch/acetext#"
+     xmlns:car_ace="http://deductions.sourceforge.net/ontologies/2010/3/car_ace.owl#"
+     xmlns:ace_lexicon="http://attempto.ifi.uzh.ch/ace_lexicon#">
+    <owl:Ontology rdf:about=""/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="&ace_lexicon;vbg"/>
+    <owl:AnnotationProperty rdf:about="&ace_lexicon;pl"/>
+    <owl:AnnotationProperty rdf:about="&acetext;acetext"/>
+    <owl:AnnotationProperty rdf:about="&ace_lexicon;sg"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://deductions.sourceforge.net/ontologies/2010/3/car_ace.owl#like -->
+
+    <owl:ObjectProperty rdf:about="#like">
+        <ace_lexicon:vbg>liked</ace_lexicon:vbg>
+        <ace_lexicon:pl>like</ace_lexicon:pl>
+        <ace_lexicon:sg>likes</ace_lexicon:sg>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://deductions.sourceforge.net/ontologies/2010/3/car_ace.owl#own -->
+
+    <owl:ObjectProperty rdf:about="#own">
+        <ace_lexicon:pl>own</ace_lexicon:pl>
+        <ace_lexicon:sg>owns</ace_lexicon:sg>
+        <ace_lexicon:vbg>owned</ace_lexicon:vbg>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://deductions.sourceforge.net/ontologies/2010/3/car_ace.owl#bike -->
+
+    <owl:Class rdf:about="#bike">
+        <ace_lexicon:pl>bikes</ace_lexicon:pl>
+        <ace_lexicon:sg>bike</ace_lexicon:sg>
+    </owl:Class>
+    
+
+
+    <!-- http://deductions.sourceforge.net/ontologies/2010/3/car_ace.owl#car -->
+
+    <owl:Class rdf:about="#car">
+        <ace_lexicon:pl>cars</ace_lexicon:pl>
+        <ace_lexicon:sg>car</ace_lexicon:sg>
+    </owl:Class>
+    
+
+
+    <!-- http://deductions.sourceforge.net/ontologies/2010/3/car_ace.owl#employee -->
+
+    <owl:Class rdf:about="#employee">
+        <ace_lexicon:sg>employee</ace_lexicon:sg>
+        <ace_lexicon:pl>employees</ace_lexicon:pl>
+    </owl:Class>
+    
+
+
+    <!-- http://deductions.sourceforge.net/ontologies/2010/3/car_ace.owl#man -->
+
+    <owl:Class rdf:about="#man">
+        <ace_lexicon:sg>man</ace_lexicon:sg>
+        <ace_lexicon:pl>men</ace_lexicon:pl>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="&owl;Thing"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://deductions.sourceforge.net/ontologies/2010/3/car_ace.owl#John -->
+
+    <owl:Thing rdf:about="#John">
+        <ace_lexicon:sg>John</ace_lexicon:sg>
+    </owl:Thing>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;Axiom"/>
+        <acetext:acetext
+            >John is something.</acetext:acetext>
+        <owl:subject rdf:resource="#John"/>
+        <owl:predicate rdf:resource="&rdf;type"/>
+        <owl:object rdf:resource="&owl;Thing"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;Axiom"/>
+        <acetext:acetext
+            >Every employee that does not own a car owns a bike.</acetext:acetext>
+        <owl:predicate rdf:resource="&rdfs;subClassOf"/>
+        <owl:subject>
+            <owl:Class>
+                <rdfs:subClassOf>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#own"/>
+                        <owl:someValuesFrom rdf:resource="#bike"/>
+                    </owl:Restriction>
+                </rdfs:subClassOf>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#employee"/>
+                    <owl:Class>
+                        <owl:complementOf>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="#own"/>
+                                <owl:someValuesFrom rdf:resource="#car"/>
+                            </owl:Restriction>
+                        </owl:complementOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:subject>
+        <owl:object>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#own"/>
+                <owl:someValuesFrom rdf:resource="#bike"/>
+            </owl:Restriction>
+        </owl:object>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;Axiom"/>
+        <acetext:acetext
+            >Every car that is owned by John is something.</acetext:acetext>
+        <owl:predicate rdf:resource="&rdfs;subClassOf"/>
+        <owl:object rdf:resource="&owl;Thing"/>
+        <owl:subject>
+            <owl:Class>
+                <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#car"/>
+                    <owl:Restriction>
+                        <owl:onProperty>
+                            <owl:ObjectProperty>
+                                <owl:inverseOf rdf:resource="#own"/>
+                            </owl:ObjectProperty>
+                        </owl:onProperty>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:oneOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="#John"/>
+                                </owl:oneOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:subject>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <swrl:Variable rdf:about="#x2"/>
+    <swrl:Variable rdf:about="#x1"/>
+    <swrl:Imp>
+        <acetext:acetext
+            >/* MOS: car(?x2) , man(?x1) , own(?x1, ?x2) -&gt; like(?x1, ?x2) */</acetext:acetext>
+        <swrl:body>
+            <swrl:AtomList>
+                <rdf:rest>
+                    <swrl:AtomList>
+                        <rdf:rest>
+                            <swrl:AtomList>
+                                <rdf:rest rdf:resource="&rdf;nil"/>
+                                <rdf:first>
+                                    <swrl:IndividualPropertyAtom>
+                                        <swrl:propertyPredicate rdf:resource="#own"/>
+                                        <swrl:argument1 rdf:resource="#x1"/>
+                                        <swrl:argument2 rdf:resource="#x2"/>
+                                    </swrl:IndividualPropertyAtom>
+                                </rdf:first>
+                            </swrl:AtomList>
+                        </rdf:rest>
+                        <rdf:first>
+                            <swrl:ClassAtom>
+                                <swrl:classPredicate rdf:resource="#man"/>
+                                <swrl:argument1 rdf:resource="#x1"/>
+                            </swrl:ClassAtom>
+                        </rdf:first>
+                    </swrl:AtomList>
+                </rdf:rest>
+                <rdf:first>
+                    <swrl:ClassAtom>
+                        <swrl:classPredicate rdf:resource="#car"/>
+                        <swrl:argument1 rdf:resource="#x2"/>
+                    </swrl:ClassAtom>
+                </rdf:first>
+            </swrl:AtomList>
+        </swrl:body>
+        <swrl:head>
+            <swrl:AtomList>
+                <rdf:rest rdf:resource="&rdf;nil"/>
+                <rdf:first>
+                    <swrl:IndividualPropertyAtom>
+                        <swrl:propertyPredicate rdf:resource="#like"/>
+                        <swrl:argument1 rdf:resource="#x1"/>
+                        <swrl:argument2 rdf:resource="#x2"/>
+                    </swrl:IndividualPropertyAtom>
+                </rdf:first>
+            </swrl:AtomList>
+        </swrl:head>
+    </swrl:Imp>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 2.2.1.1138) http://owlapi.sourceforge.net -->
+

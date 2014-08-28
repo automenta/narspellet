@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.6.0_06" class="java.beans.XMLDecoder"> 
+ <object class="eulergui.project.Project"> 
+  <void property="sources"> 
+   <void method="put"> 
+    <string>./gui_generic.n3</string> 
+    <object class="eulergui.project.N3Source"> 
+     <void property="URI"> 
+      <string>./gui_generic.n3</string> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="put"> 
+    <string>http://nlp.shef.ac.uk/abraxas/ontologies/animals.owl</string> 
+    <object class="eulergui.project.N3SourceFromRDF"> 
+     <void property="URI"> 
+      <string>file:/tmp/jena-22231.n3</string> 
+     </void> 
+     <void property="rdfFile"> 
+      <string>http://nlp.shef.ac.uk/abraxas/ontologies/animals.owl</string> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="put"> 
+    <string>./koala.owl</string> 
+    <object class="eulergui.project.N3SourceFromRDF"> 
+     <void property="URI"> 
+      <string>file:/tmp/jena-22232.n3</string> 
+     </void> 
+     <void property="rdfFile"> 
+      <string>./koala.owl</string> 
+     </void> 
+    </object> 
+   </void> 
+  </void> 
+ </object> 
+</java> 

@@ -1,0 +1,71 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+
+@keywords a, is, of.
+@prefix : <http://eulergui.sf.net/ontology.n3#>.
+@prefix doap:    <http://usefulinc.com/ns/doap#> .
+
+
+<> rdfs:comment """aucune réponse en soi n'est "bonne" ou "mauvaise", c'est l'ensemble des
+    réponses, en rapport avec le type de projet, le contexte, les acteurs qui
+    permet d'avoir une image d'ensemble;.
+  nous utilisons ce Questionnaire pour des audits de projets (plus
+    d'informations: <a href="mail:jeanmarc.vanel@gmail.com">jeanmarc.vanel@gmail.com</a>)</li>
+  ce Questionnaire traite les grandes lignes, il y a d'autres
+    considérations plus détaillées: la gestions des compétences, <a
+    href="http://deductions.svn.sourceforge.net/viewvc/deductions/html/runtime-behavior.html#General">l'ergonomie</a>,
+    l'architecture, la conception, ...
+""".
+
+q1 a owl:DatatypeProperty ;  rdfs:domain doap:Project; rdfs:range xsd:boolean ; rdfs:label """
+utilisation d'un outil de versionnement (Subversion, CVS, autre)""".
+ q2 a owl:DatatypeProperty ;  rdfs:domain doap:Project; rdfs:range xsd:boolean ; rdfs:label """utilisation d'un outil de construction (build) tel que make, Ant, Maven""".
+ q3 a owl:DatatypeProperty ;  rdfs:domain doap:Project; rdfs:range xsd:boolean ; rdfs:label """existence de tests unitaires automatiques (JUnit, etc)""".
+ q4 a owl:DatatypeProperty ;  rdfs:domain doap:Project; rdfs:range xsd:boolean ; rdfs:label """la logique métier est-elle testée indépendemment de la couche
+        présentation ?""".
+ q5 a owl:DatatypeProperty ;  rdfs:domain doap:Project; rdfs:range xsd:boolean ; rdfs:label """la logique métier est-elle testée indépendemment de la couche
+        persistence ?""".
+ q6 a owl:DatatypeProperty ;  rdfs:domain doap:Project; rdfs:range xsd:boolean ; rdfs:label """existence de tests applicatifs automatiques (JMeter, Selenium; Jemmy,
+        Abbott, etc; cf <a
+        href="http://en.wikipedia.org/wiki/Web_testing#Open_Source_web_testing_tools">wikipedia.org
+        Web_testing</a>  )""".
+ q7 a owl:DatatypeProperty ;  rdfs:domain doap:Project; rdfs:range xsd:boolean ; rdfs:label """les tests sont-ils écrits avant les développements ou après?""".
+ q8 a owl:DatatypeProperty ;  rdfs:domain doap:Project; rdfs:range xsd:boolean ; rdfs:label """les tests sont-ils écrits avant les corrections de bugs ou après?""".
+ q9 a owl:DatatypeProperty ;  rdfs:domain doap:Project; rdfs:range xsd:boolean ; rdfs:label """application d'une norme d'Assurance Qualité (ISO, CMM, ...)""".
+ q10 a owl:DatatypeProperty ;  rdfs:domain doap:Project; rdfs:range xsd:boolean ; rdfs:label """existence d'un processus projet explicite (Unified Process, eXtreme
+        Programming, autre)""".
+ q11 a owl:DatatypeProperty ;  rdfs:domain doap:Project; rdfs:range xsd:boolean ; rdfs:label """pratique-t-on régulièrement la programmation par paire ?""".
+ q12 a owl:DatatypeProperty ;  rdfs:domain doap:Project; rdfs:range xsd:boolean ; rdfs:label """des relectures de code ont-elles lieu régulièrement ?""".
+ q13 a owl:DatatypeProperty ;  rdfs:domain doap:Project; rdfs:range xsd:integer ; rdfs:label """nombre de langages utilisés par projet""".
+ q15 a owl:DatatypeProperty ;  rdfs:domain doap:Project; rdfs:range xsd:boolean ; rdfs:label """connaissance et utilisation des Design Pattern""".
+ q16 a owl:DatatypeProperty ;  rdfs:domain doap:Project; rdfs:range xsd:boolean ; rdfs:label """existe-t-il un site Web pour les développeurs du projet ?""".
+ q17 a owl:DatatypeProperty ;  rdfs:domain doap:Project; rdfs:range xsd:boolean ; rdfs:label """existe-t-il un wiki pour le projet ?""".
+ q18 a owl:DatatypeProperty ;  rdfs:domain doap:Project; rdfs:range xsd:boolean ; rdfs:label """existe-t-il une documentation technique ?""".
+ q19 a owl:DatatypeProperty ;  rdfs:domain doap:Project; rdfs:range xsd:boolean ; rdfs:label """existe-t-il un manuel utilisateur ?""".
+ q20 a owl:DatatypeProperty ;  rdfs:domain doap:Project; rdfs:range xsd:boolean ; rdfs:label """existe-t-il un "getting started" (comment démarrer) , un tutoriel ,
+        des "howto", des exemples, ?""".
+q21 a owl:DatatypeProperty ;  rdfs:domain doap:Project; rdfs:range xsd:boolean ; rdfs:label """existe-t-il des vidéos ?""".
+q22 a owl:DatatypeProperty ;  rdfs:domain doap:Project; rdfs:range xsd:boolean ; rdfs:label """existe-t-il un site web de démonstration où l'application est
+        déployée ?""".
+q23 a owl:DatatypeProperty ;  rdfs:domain doap:Project; rdfs:range xsd:boolean ; rdfs:label """existe-t-il un outil gestionnaire de bugs ?""".
+q24 a owl:DatatypeProperty ;  rdfs:domain doap:Project; rdfs:range xsd:boolean ; rdfs:label """existe-t-il un outil gestionnaire de taches ?""".
+q25 a owl:DatatypeProperty ;  rdfs:domain doap:Project; rdfs:range xsd:integer ; rdfs:label """nombre de dépendances par rapport à des logiciels Open Source ? """.
+q27 a owl:DatatypeProperty ;  rdfs:domain doap:Project; rdfs:range xsd:integer ; rdfs:label """nombre de dépendances par rapport à des logiciels propriétaires ?""".
+q29 a owl:DatatypeProperty ;  rdfs:domain doap:Project; rdfs:range xsd:integer ; rdfs:label """nombre de lignes de code""".
+q21 a owl:DatatypeProperty ;  rdfs:domain doap:Project; rdfs:range xsd:boolean ; rdfs:label """écrit-on les spécifications avant les développements ?""".
+q21 a owl:DatatypeProperty ;  rdfs:domain doap:Project; rdfs:range xsd:boolean ; rdfs:label """écrit-on la conception avant les développements ?""".
+q21 a owl:DatatypeProperty ;  rdfs:domain doap:Project; rdfs:range xsd:boolean ; rdfs:label """utilise-t-on UML pour expliquer l'infrastructure?""".
+q21 a owl:DatatypeProperty ;  rdfs:domain doap:Project; rdfs:range xsd:boolean ; rdfs:label """utilise-t-on UML pour expliquer la modélisation métier?""".
+q21 a owl:DatatypeProperty ;  rdfs:domain doap:Project; rdfs:range xsd:boolean ; rdfs:label """utilise-t-on un générateur de code?""".
+q21 a owl:DatatypeProperty ;  rdfs:domain doap:Project; rdfs:range xsd:boolean ; rdfs:label """utilise-t-on des métriques pour la qualité du code ?""".
+q21 a owl:DatatypeProperty ;  rdfs:domain doap:Project; rdfs:range xsd:boolean ; rdfs:label """utilise-t-on des outils pour traquer les copier-collés suspects ?""".
+q21 a owl:DatatypeProperty ;  rdfs:domain doap:Project; rdfs:range xsd:boolean ; rdfs:label """si l'application comporte des temps de calcul non négligeables,
+        prend-elle en compte les processeurs multi-coeurs?""".
+q21 a owl:DatatypeProperty ;  rdfs:domain doap:Project; rdfs:range xsd:boolean ; rdfs:label """Y a-t-il une traçabilité de la spécification vers l'implémentation
+      ?""".
+q21 a owl:DatatypeProperty ;  rdfs:domain doap:Project; rdfs:range xsd:boolean ; rdfs:label """Y a-t-il une traçabilité de l'implémentation vers la spécification
+      ?""".
+q21 a owl:DatatypeProperty ;  rdfs:domain doap:Project; rdfs:range xsd:boolean ; rdfs:label """existe-t-il un plan de développement , au moins à court terme ?""".
+q21 a owl:DatatypeProperty ;  rdfs:domain doap:Project; rdfs:range xsd:boolean ; rdfs:label """existe-t-il une feuille de fonctionalités, indiquant ce qui est
+        mature et ce n'est pas""".

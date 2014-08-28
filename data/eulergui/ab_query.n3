@@ -1,0 +1,7 @@
+
+@prefix : <http://example.com#> .
+{
+:b ?X ?Y .
+} => {
+:b ?X ?Y .
+}.

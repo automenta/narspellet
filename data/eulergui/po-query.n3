@@ -1,0 +1,21 @@
+    @prefix : <http://tempuri.org/po.xsd#> .
+    @prefix ns2: <http://example.org#> .
+    @prefix xs_: <http://www.w3.org/2001/XMLSchema#> .
+
+# this query brings 2 answers: one from billTo, one from shipTo
+# { ?X ns2:country ?COUNTRY .  } => { ?X ns2:country ?COUNTRY .  } .
+
+# this query returns the PO root and the shipTo country
+{ 
+?X ns2:country ?COUNTRY .
+?PO :shipTo ?X .
+} => {
+:answer ?PO ?COUNTRY .
+} .
+
+# just to confirm that the PO root is really called _:shipTo5
+{ 
+?ROOT :purchaseOrder ?PO .
+} => {
+?ROOT :purchaseOrder ?PO .
+} .

@@ -1,0 +1,10 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <http://eulersharp.sourceforge.net/2003/03swap/owl-rules#>.
+
+# from owl-rules.n3
+{?S rdf:first ?A. ?X a ?A} => {?X :inSomeOf ?S}.
+{?S rdf:rest ?B. ?X :inSomeOf ?B} => {?X :inSomeOf ?S}.
+
+# _:S rdf:first _:A . _:X a _:A.
+_:S rdf:rest _:B. _:X :inSomeOf _:B .
+

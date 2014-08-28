@@ -1,0 +1,5 @@
+@prefix : <http://owldl.com/ontologies/dl-safe.owl#> .
+
+{?t0 a :BadChild}
+=>
+{?t0 a :BadChild} .

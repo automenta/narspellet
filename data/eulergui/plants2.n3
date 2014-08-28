@@ -1,0 +1,65 @@
+# J'utilise Wikipedia comme préfixe N3, et le nom scientique
+# comme ID. L'avantage c'est que c'est très souvent déréférençable.
+
+# Exemple:
+
+@prefix wpedia: <http://en.wikipedia.org/wiki/>.
+@prefix bio:	<http://jmvanel.free.fr/bio#>. # A FAIRE : trouver une ontologie de reférence
+@prefix coll:	<http://jmvanel.free.fr/collection#>. # A FAIRE : trouver une ontologie de reférence
+@prefix rdfs:	<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:	<http://www.w3.org/2002/07/owl#> .
+@prefix xsd:	<http://www.w3.org/2001/XMLSchema#> .
+
+# data
+
+<http://www.cactus-landes.fr> a coll:Provider .
+<http://www.hulsdonk.nl> a coll:Provider .
+<http://www.florama.fr> a coll:Provider .
+
+:ad1 bio:species wpedia:Aloe_dichotoma ;
+         coll:provider <http://www.cactus-landes.fr> ; # Cactus_des_Landes
+         coll:buyDate "2009-10" ;
+         coll:USDA_zone "9a" .
+
+# ontology 
+
+bio:species a owl:ObjectProperty  ;
+	rdfs:domain coll:Item ;
+	rdfs:range  bio:Species  ;
+	rdfs:comment "Species" .
+
+coll:provider a owl:ObjectProperty  ;
+        rdfs:domain coll:Item ;
+        rdfs:range  coll:Provider  ;
+	rdfs:comment "Provider (nursery, etc)".
+
+coll:buyDate a owl:DatatypeProperty ;
+        rdfs:domain coll:Item ;
+        rdfs:range  xsd:date .
+
+coll:USDA_zone a owl:DatatypeProperty  ;
+        rdfs:domain coll:Item ;
+        rdfs:range  xsd:string ;
+	rdfs:label "USDA zone" ;
+	rdfs:comment """<html>hardiness zone (0-12), <br/> see <a href='http://en.wikipedia.org/wiki/Hardiness_zone'>Hardiness zone in Wikipedia</a></html>""" .
+
+coll:items  a owl:ObjectProperty  ;
+        rdfs:domain coll:Collection ;
+        rdfs:range  coll:Item ;
+        rdfs:comment """Click to enter a new item in the collection.""".
+
+coll:Item     a owl:Class .
+coll:Provider a owl:Class ;
+	rdfs:label "Provider" .
+bio:Species   a owl:Class .
+coll:Collection a owl:Class .
+
+@prefix app: <http://jmvanel.free.fr/ontology/software_applications.owl#> .
+
+# create an application from the ontology
+
+:GUI a app:SoftwareApplication .
+:GUI app:editedClass coll:Collection .
+	# coll:Item .
+:GUI app:platform app:Java .
+:GUI app:name "Biological collection" .

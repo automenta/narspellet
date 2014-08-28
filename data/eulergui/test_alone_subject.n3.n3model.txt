@@ -1,0 +1,57 @@
+begin of model http://sourceforge.net/projects/eulergui/
+	begin of variable
+		existential _0
+		existential _1
+		existential _2
+		existential _3
+	end of variable
+	begin of statement
+		begin of statement subject
+			uri http://sourceforge.net/projects/eulergui/a
+		end of statement subject
+		begin of statement predicate
+			uri http://sourceforge.net/projects/eulergui/b
+		end of statement predicate
+		begin of statement object
+			blank node _0
+		end of statement object
+	end of statement
+	begin of statement
+		begin of statement subject
+			blank node _0
+		end of statement subject
+		begin of statement predicate
+			uri http://sourceforge.net/projects/eulergui/c
+		end of statement predicate
+		begin of statement object
+			blank node _1
+		end of statement object
+	end of statement
+	begin of statement
+		begin of statement subject
+			blank node _2
+		end of statement subject
+		begin of statement predicate
+			uri http://sourceforge.net/projects/eulergui/b
+		end of statement predicate
+		begin of statement object
+			uri http://sourceforge.net/projects/eulergui/a
+		end of statement object
+	end of statement
+	begin of statement
+		begin of statement subject
+			blank node _3
+		end of statement subject
+		begin of statement predicate
+			uri http://sourceforge.net/projects/eulergui/c
+		end of statement predicate
+		begin of statement object
+			blank node _2
+		end of statement object
+	end of statement
+	begin of statement
+		begin of statement subject
+			uri http://example.com
+		end of statement subject
+	end of statement
+end of model http://sourceforge.net/projects/eulergui/

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.7.0" class="java.beans.XMLDecoder">
+ <object class="eulergui.project.ProjectData">
+  <void property="n3Query">
+   <object class="eulergui.project.N3Source">
+    <void property="URI">
+     <string>swrl_owlQ.n3</string>
+    </void>
+   </object>
+  </void>
+  <void id="HashMap0" property="sources">
+   <void method="put">
+    <string>swrl_rule_owl.owl</string>
+    <object class="eulergui.project.N3SourceFromRDF">
+     <void property="URI">
+      <string>swrl_rule_owl.owl</string>
+     </void>
+    </object>
+   </void>
+  </void>
+  <void property="sources">
+   <object idref="HashMap0"/>
+  </void>
+ </object>
+</java>

@@ -1,0 +1,18 @@
+ @prefix : <#> . 
+    # cwm bug?, must be $) instead of )
+        # :a :b ($ :c :d :c ) .
+    # that is accepted but must be ($ :c .... $) 
+# <rszeno> missing $
+
+# <rszeno> seems that both are set notations
+# <rszeno> {$ + $} and items comma separated
+# <rszeno> ($ + $) without comma between items
+    
+    :e :f {$ :g, :h, :g $} .    
+    # Euler fail for both
+    
+# <rszeno> there are few other things obscure in cwm, for example [= and :=
+# <rszeno> := is for applying patches after a delta diff
+# <rszeno> first is something with blank nodes and = combined
+# <rszeno> i didn't test if they even work in cwm, :)
+

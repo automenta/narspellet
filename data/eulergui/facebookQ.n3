@@ -1,0 +1,3 @@
+@prefix ege: <http://eulergui.sf.net/examples/> .
+
+{?PERSON ege:friend_proposition ?PROP } => {?PERSON ege:friend_proposition ?PROP } .

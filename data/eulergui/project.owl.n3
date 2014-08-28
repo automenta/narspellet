@@ -1,0 +1,108 @@
+@prefix : <http://eulergui.sf.net/ontology/project.owl.n3#>.
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+# The EulerGUI Project ontology $Id$
+
+:URLSource a owl:Class
+    ; rdfs:comment """just an auxiliary class for a data source that has
+                      either a dereferenciable URL or a relative URL."""
+ .
+
+:RDFImport rdfs:subClassOf :URLSource
+     ; a owl:Class
+     ; rdfs:label "RDF Import"
+     ; rdfs:comment """RDF import means that a non RDF source like plain XML, XMI, etc
+                       is converted in a well defined way into an RDF/N3 document."""
+ .
+
+:hasRDFImport a owl:ObjectProperty
+     ; rdfs:domain owl:Ontology
+     ; rdfs:range :RDFImport
+     ; rdfs:label "has RDF Import"
+     ; rdfs:comment """In addition to its regular content, an owl:Ontology
+                       has RDF Imports that aware applications add to the regular
+                       content."""
+.
+
+:hasN3Source a owl:ObjectProperty
+     ; rdfs:domain owl:Ontology
+     ; rdfs:range :RDFImport
+     ; rdfs:label "has RDF Import"
+     ; rdfs:comment """In addition to its regular content, an owl:Ontology
+                       has RDF Imports that aware applications add to the regular
+                       content.""".
+
+:hasURL a owl:DatatypeProperty
+     ; rdfs:domain :URLSource
+     ; rdfs:range xsd:anyURI
+     ; rdfs:label "has an (absolute) URI"
+     ; rdfs:comment "a dereferenciable URI for the RDF import"
+ .
+:hasRelativeURL a owl:DatatypeProperty
+     ; rdfs:domain :URLSource
+     ; rdfs:range xsd:string
+     ; rdfs:label "has a relative URI"
+     ; rdfs:comment """a relative URI for the RDF import, relative to the base URI of
+                       the importing Ontology.
+                       An RDFImport has either a relative URI, or an (absolute) URI,
+                       but not both."""
+ .
+
+:isActivated a owl:DatatypeProperty
+     ; rdfs:domain :RDFImport
+     ; rdfs:range xsd:boolean
+     ; rdfs:label "is this RDF source activated during inferencing?"
+     ; rdfs:comment """It is convenient to have data sources belonging to
+                       the project just as reference or trial."""
+ .
+
+:hasN3Query a owl:ObjectProperty
+     ; rdfs:domain owl:Ontology
+     ; rdfs:range :URLSource
+     ; rdfs:label "has an (absolute) URI"
+     ; rdfs:comment "a dereferenciable URI for the RDF import"
+.
+
+:hasFormat a owl:ObjectProperty
+    ; rdfs:domain :URLSource
+    ; rdfs:range  [
+        owl:oneOf (
+            <http://www.w3.org/1999/02/22-rdf-syntax-ns#> # RDF/XML (possibly OWL)
+            <http://www.w3.org/TeamSubmission/turtle/> # Turtle (no formulas and rules)
+            <http://www.w3.org/TeamSubmission/n3/> # N3 (possibly formulas and rules)
+            <http://www.w3.org/TR/owl2-xml-serialization/> # OWL/XML
+            # plain XML, non RDF/XML nor OWL/XML nor XMI
+            <http://www.w3.org/XML/1998/namespace>
+            <http://schema.omg.org/spec/XMI> # XMI (UML, eCore, MOF, etc)
+        ) ]
+    ; rdfs:comment """In most cases, by looking at the HTTP Content-type,
+                      and/or the extension, or even the beginning of document,
+                      the application is able to guess the file format,
+                      so this property is facultative."""
+ .
+
+:isMainQuery
+      a owl:DatatypeProperty ;
+      rdfs:comment "???" ;
+      rdfs:domain <http://my.com/_domain_> ;
+      rdfs:label "isMainQuery" ;
+      rdfs:range <http://my.com/_range_> .
+
+:postProcessing
+      a       rdf:Property ;
+      rdfs:comment "???" ;
+      rdfs:domain owl:Ontology ;
+      rdfs:label "postProcessing" ;
+      rdfs:range <http://my.com/_range_> .
+
+:subproject
+      a       rdf:Property ;
+      rdfs:comment "???" ;
+      rdfs:domain owl:Ontology ;
+      rdfs:label "subproject" ;
+      rdfs:range <http://my.com/_range_> .
+
+

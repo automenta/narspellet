@@ -1,0 +1,71 @@
+begin of model http://sourceforge.net/projects/eulergui/
+	begin of variable
+		universal http://sourceforge.net/projects/eulergui/A
+		universal http://sourceforge.net/projects/eulergui/Y
+	end of variable
+	begin of statement
+		begin of statement subject
+			begin of formula
+				begin of variable
+					existential list1
+					existential list2
+				end of variable
+				begin of statement
+					begin of statement subject
+						blank node list2
+					end of statement subject
+					begin of statement predicate
+						uri http://www.w3.org/1999/02/22-rdf-syntax-ns#first
+					end of statement predicate
+					begin of statement object
+						uri http://sourceforge.net/projects/eulergui/A
+					end of statement object
+				end of statement
+				begin of statement
+					begin of statement subject
+						blank node list1
+					end of statement subject
+					begin of statement predicate
+						uri http://www.w3.org/1999/02/22-rdf-syntax-ns#first
+					end of statement predicate
+					begin of statement object
+						literal value=17, data type=http://www.w3.org/2001/XMLSchema#integer, language=null
+					end of statement object
+				end of statement
+				begin of statement
+					begin of statement subject
+						blank node list1
+					end of statement subject
+					begin of statement predicate
+						uri http://www.w3.org/1999/02/22-rdf-syntax-ns#rest
+					end of statement predicate
+					begin of statement object
+						uri http://www.w3.org/1999/02/22-rdf-syntax-ns#nil
+					end of statement object
+				end of statement
+				begin of statement
+					begin of statement subject
+						blank node list2
+					end of statement subject
+					begin of statement predicate
+						uri http://www.w3.org/1999/02/22-rdf-syntax-ns#rest
+					end of statement predicate
+					begin of statement object
+						blank node list1
+					end of statement object
+				end of statement
+				begin of statement
+					begin of statement subject
+						blank node list2
+					end of statement subject
+					begin of statement predicate
+						uri http://www.w3.org/2000/10/swap/math#difference
+					end of statement predicate
+					begin of statement object
+						uri http://sourceforge.net/projects/eulergui/Y
+					end of statement object
+				end of statement
+			end of formula
+		end of statement subject
+	end of statement
+end of model http://sourceforge.net/projects/eulergui/

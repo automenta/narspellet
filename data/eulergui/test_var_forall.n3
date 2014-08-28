@@ -1,0 +1,2 @@
+@prefix : <http://example.com#> .
+{ ?x :parent ?y . } => { ?y :child ?x . } .

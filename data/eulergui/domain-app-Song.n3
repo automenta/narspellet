@@ -1,0 +1,24 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl:  <http://www.w3.org/2002/07/owl#>.
+@prefix foaf:  <http://xmlns.com/foaf/0.1/>.
+@prefix dbprop:  <http://dbpedia.org/property/>.
+@prefix dbpedia-owl:	<http://dbpedia.org/ontology/>.
+@prefix dbo:		<http://dbpedia.org/ontology/>.
+@prefix dbpedia:  <http://dbpedia.org/resource/>.
+
+@prefix e:  <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix eg:  <http://eulergui.sourceforge.net/engine.owl#>.
+@prefix java:  <http://java.sun.com/class#>.
+@prefix javam:  <http://java.sun.com/method#>.
+@prefix javap:  <http://java.sun.com/predicate#>.
+
+# Here is an example definition of a button to create a new user defined dbo:MusicalWork, with an ordered list of properties to appear in the form:
+
+_:SongButton a eg:creationFeature
+     ; eg:hasProperties foaf:name
+     ; eg:hasClass dbo:MusicalWork
+     ; foaf:thumbnail "http://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Treble_a.svg/200px-Treble_a.svg.png"
+.
+# NOTE for the non-SW aware people: these RDF properties are perfectly defined (label, type, etc) by the above URI's
+

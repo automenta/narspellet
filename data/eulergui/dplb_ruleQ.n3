@@ -1,0 +1,7 @@
+@prefix : <http://deductions.sf.net#> .
+
+{
+  ?PERSON :has_name_but_no_creation ?N.
+} => {
+  ?PERSON :has_name_but_no_creation ?N.
+}.

@@ -1,0 +1,18 @@
+@prefix java: <http://java.sun.com/class#>.
+@prefix : <http://test#>.
+# <http://eulergui.sf.net/example#>.
+@prefix eg: <http://eulergui.sourceforge.net/engine.owl#> .
+@prefix javam: <http://java.sun.com/method#> .
+@prefix java: <http://java.sun.com/class#>.
+
+:JFRAME a java:javax-swing-JFrame .
+:JLIST a java:javax-swing-JList .
+:JLIST javam:setModel ( :listModel ) . 
+
+:JFRAME javam:add :JLIST .
+:JFRAME javam:setSize ( 200 200 ) .
+:JFRAME java:visible true .
+
+{ :x :p ?V .
+} => {
+  :listModel javam:addElement ( ?V ). } .

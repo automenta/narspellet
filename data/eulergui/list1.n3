@@ -1,0 +1,44 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+# Facts
+_:ll rdf:first "1" .
+_:ll rdf:rest _:lr .
+_:lr rdf:first "2" .
+_:lr rdf:rest rdf:nil .
+:x :p ( "1" "2" ).
+
+# Rules 
+
+# member(X,[X|R]).
+# X == FIRST , R == LIST
+@forAll FIRST, LIST .
+{
+  ?LIST rdf:first ?FIRST .
+} => {
+  ?FIRST :member1 ?LIST .
+} .
+
+# member(X,[Y|R]) :- member(X,R).
+@forAll X, R, Y, R1 .
+{
+  ?X :member1 ?R .
+} => {
+  ?R1 a rdf:List .
+  ?R1 rdf:first ?Y .
+  ?R1 rdf:rest  ?R .
+  ?X :member1 ?R1 .
+} .
+
+# Test
+{
+  _:ll :member1 "2" .
+} => {
+  :test :result (_:ll :member1 "2" ) .
+} .
+
+{
+  :x :p ?L . # ( "1" "2" ).
+  ?L :member1 "2" .
+} => {
+  :test :result ( "test2" ?L :member1 "2" ) .
+} .
+

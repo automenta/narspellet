@@ -1,0 +1,21 @@
+@prefix     : <http://xmlns.com/foaf/0.1/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ege: <http://eulergui.sf.net/examples/> .
+
+ege:jmv ege:current_user true .
+
+ege:jmv ege:knows ege:f1 .
+ege:jmv ege:knows ege:f2 .
+
+# leverages on symmetry of property :knows
+ege:f1 ege:knows ege:foaf .
+ege:f2 ege:knows ege:foaf .
+
+# works also of course
+# ege:foaf ege:knows ege:f1 .
+# ege:foaf ege:knows ege:f2 .
+
+ege:jmv  foaf:name "J.M. Vanel".
+ege:f1   foaf:name "Jos De Roo" .
+ege:f2   foaf:name "Eric Van der Vlist" .
+ege:foaf foaf:name "Tim Berners-Lee" .

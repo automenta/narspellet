@@ -1,0 +1,33 @@
+@prefix eg:  <http://eulergui.sourceforge.net/engine.owl#>.
+@prefix nmo: <http://www.semanticdesktop.org/ontologies/2007/03/22/nmo#>.
+@prefix nco: <http://www.semanticdesktop.org/ontologies/2007/03/22/nco#>.
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl:  <http://www.w3.org/2002/07/owl#>.
+@prefix foaf:  <http://xmlns.com/foaf/0.1/>.
+@prefix dbprop:  <http://dbpedia.org/property/>.
+@prefix dbpedia-owl:	<http://dbpedia.org/ontology/>.
+@prefix dbo:		<http://dbpedia.org/ontology/>.
+@prefix dbpedia:  <http://dbpedia.org/resource/>.
+
+# Here is an example definition of a button to create a new user defined instance, with an ordered list of properties to appear in the form:
+# automatically loads	nmo: nco: foaf: dc:
+
+_:em_button a eg:creationFeature
+     ; eg:hasProperties rdfs:comment
+     ; eg:hasClass nmo:Email
+     ; foaf:thumbnail "http://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/(at).svg/200px-(at).svg.png"
+.
+_:PersonButton a eg:creationFeature
+     ; eg:hasProperties rdfs:comment
+     ; eg:hasProperties dc:subject
+     ; eg:hasClass foaf:Person
+     ; eg:hasClass nco:Contact
+     ; foaf:thumbnail "http://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Persons.svg/200px-Persons.svg.png"
+.
+
+# _:ContactButton a eg:creationFeature ; eg:hasProperties rdfs:comment ; eg:hasClass nco:Contact ; foaf:thumbnail "http://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Persons.svg/200px-Persons.svg.png" .
+
+foaf:Person rdfs:subClassOf nco:Contact.

@@ -1,0 +1,9 @@
+@prefix : <http://example.com#> .
+
+# @forAll ?S, ?P, ?O .
+# CWM Can't use ?xxx syntax for variable in outermost level
+{
+?S ?P ?O .
+} => {
+?S ?P ?O .
+} .

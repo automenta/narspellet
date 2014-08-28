@@ -1,0 +1,17 @@
+begin of model http://sourceforge.net/projects/eulergui/
+	begin of variable
+		existential http://sourceforge.net/projects/eulergui/someName20
+		existential http://sourceforge.net/projects/eulergui/someStruct20
+	end of variable
+	begin of statement
+		begin of statement subject
+			uri http://sourceforge.net/projects/eulergui/someStruct20
+		end of statement subject
+		begin of statement predicate
+			uri http://sourceforge.net/projects/eulergui/name
+		end of statement predicate
+		begin of statement object
+			uri http://sourceforge.net/projects/eulergui/someName20
+		end of statement object
+	end of statement
+end of model http://sourceforge.net/projects/eulergui/

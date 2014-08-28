@@ -1,0 +1,15 @@
+begin of model http://sourceforge.net/projects/eulergui/
+	begin of variable
+	end of variable
+	begin of statement
+		begin of statement subject
+			uri http://example.com#jmv
+		end of statement subject
+		begin of statement predicate
+			uri http://example.com#hasDiner
+		end of statement predicate
+		begin of statement object
+			literal value=blanquette de veau, data type=http://www.w3.org/2001/XMLSchema#string, language=
+		end of statement object
+	end of statement
+end of model http://sourceforge.net/projects/eulergui/

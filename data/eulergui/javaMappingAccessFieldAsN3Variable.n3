@@ -1,0 +1,18 @@
+@prefix eg: <http://eulergui.sourceforge.net/engine.owl#> .
+@prefix javam: <http://java.sun.com/method#> .
+@prefix java: <http://java.sun.com/class#>.
+@prefix javap: <http://java.sun.com/predicate#> .
+
+:f a java:javax-swing-JFrame .
+
+{ ?P a java:javax-swing-JFrame .
+  # ?P javap:contentPane ?PANE .
+} => {
+  _:d eg:trace ( "ZZZZZZZZZZZZZZ" ?P ) .
+  ?P javap:contentPane ?PANE .
+  _:LAB a java:javax-swing-JLabel ; javam:setText "Papilio" .
+  ?PANE javam:add ( _:LAB ) .
+  ?P javam:setSize ( 300 100 ) 
+    ; javam:setVisible ( true ).
+}.
+

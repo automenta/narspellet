@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.6.0_20" class="java.beans.XMLDecoder"> 
+ <object class="eulergui.project.ProjectWithSubProjects"> 
+  <void property="sources"> 
+   <void method="put"> 
+    <string>./bc.n3</string> 
+    <object class="eulergui.project.N3Source"> 
+     <void property="URI"> 
+      <string>./bc.n3</string> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="put"> 
+    <string>./ab.n3</string> 
+    <object class="eulergui.project.N3Source"> 
+     <void property="URI"> 
+      <string>./ab.n3</string> 
+     </void> 
+    </object> 
+   </void> 
+  </void> 
+  <void id="HashSet0" property="subProjects"> 
+   <void method="add"> 
+    <string>./imported.n3p</string> 
+   </void> 
+  </void> 
+  <void property="subProjects"> 
+   <object idref="HashSet0"/> 
+  </void> 
+ </object> 
+</java> 

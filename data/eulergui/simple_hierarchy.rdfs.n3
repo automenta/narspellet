@@ -1,0 +1,82 @@
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix daml:    <http://www.daml.org/2001/03/daml+oil#> .
+@prefix tap:     <http://tap.xmlns.com/data/> .
+
+tap:Sauce
+      a       rdfs:Class ;
+      rdfs:label "sauce"@en ;
+      rdfs:subClassOf tap:PreparedFood .
+
+tap:SaladDish
+      a       rdfs:Class ;
+      rdfs:label "salad"@en ;
+      rdfs:subClassOf tap:PreparedFood .
+
+tap:MeatDish
+      a       rdfs:Class ;
+      rdfs:label "meat dish"@en ;
+      rdfs:subClassOf tap:PreparedFood .
+
+tap:FruitDish
+      a       rdfs:Class ;
+      rdfs:label "fruit dish"@en ;
+      rdfs:subClassOf tap:PreparedFood .
+
+
+tap:FlourProduct
+      a       rdfs:Class ;
+      rdfs:subClassOf tap:PreparedFood , tap:GrainFood .
+
+tap:DessertDish
+      a       rdfs:Class ;
+      rdfs:label "dessert"@en ;
+      rdfs:subClassOf tap:PreparedFood .
+
+tap:Sandwich
+      a       rdfs:Class ;
+      rdfs:label "sandwich"@en ;
+      rdfs:subClassOf tap:PreparedFood .
+
+tap:DairyProduct
+      a       rdfs:Class ;
+      rdfs:label "dairy"@en , "Dairy Product"@en ;
+      rdfs:subClassOf tap:Food , tap:PreparedFood .
+
+tap:RiceDish
+      a       tap:ProductType ;
+      rdfs:label "Rice Dish"@en ;
+      rdfs:subClassOf tap:PreparedFood .
+
+tap:VegetableDish
+      a       rdfs:Class ;
+      rdfs:label "vegetable"@en , "veggie"@en , "vegetable dish"@en ;
+      rdfs:subClassOf tap:PreparedFood .
+
+tap:Casserole
+      a       rdfs:Class ;
+      rdfs:label "casserole"@en ;
+      rdfs:subClassOf tap:PreparedFood .
+
+tap:Soup
+      a       tap:ProductType ;
+      rdfs:label "Soup"@en ;
+      rdfs:subClassOf tap:PreparedFood .
+
+tap:StewFood
+      a       rdfs:Class ;
+      rdfs:label "stew"@en ;
+      rdfs:subClassOf tap:PreparedFood .
+
+tap:EggDish
+      a       rdfs:Class ;
+      rdfs:label "egg"@en ;
+      rdfs:subClassOf tap:PreparedFood .
+
+tap:PreparedFood
+      a       rdfs:Class ;
+      # rdfs:label "Prepared Food"@en ;
+      rdfs:label "Prepared Food" ;
+      # rdfs:subClassOf tap:Food ;
+      tap:plural "Prepared Foods" .

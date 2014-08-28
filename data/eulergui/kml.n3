@@ -1,0 +1,24 @@
+@prefix atom:    <http://www.w3.org/2005/Atom> .
+@prefix ns1:     <http://example.org#> .
+@prefix xs_:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix kml_:    <http://www.opengis.net/kml/2.2#> .
+@prefix kml:     <http://www.opengis.net/kml/2.2> .
+@prefix xs:      <http://www.w3.org/2001/XMLSchema> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xal:     <urn:oasis:names:tc:ciq:xsdschema:xAL:2.0> .
+@prefix atom_:   <http://www.w3.org/2005/Atom#> .
+@prefix xal_:    <urn:oasis:names:tc:ciq:xsdschema:xAL:2.0#> .
+
+<file:/tmp/translation-5764596566461002629.n3>
+      kml_:kml
+              [ a       kml_:KmlType ;
+                kml_:Placemark
+                        [ a       kml_:PlacemarkType ;
+                          kml_:Point
+                                  [ a       kml_:PointType ;
+                                    kml_:coordinates ("-74.006393,40.714172,0"^^xs_:string)
+                                  ] ;
+                          kml_:description "New York City"^^xs_:string ;
+                          kml_:name "New York City"^^xs_:string
+                        ]
+              ] .

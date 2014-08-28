@@ -1,0 +1,18 @@
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix : <http://jos.org#>.
+@keywords.
+
+# this example shows the use of @keywords to avoid writing : before every term.
+
+Bob lives  Boston.
+Bob wrote  { Boston weather sunny }.
+Alice lives Adelaide.
+Alice wrote { Boston weather cold }. 
+
+@forAll x, y, z, w.
+{ x wrote y.
+  y log:includes {z weather w}.
+  x lives z
+} log:implies {
+  z weather w
+} .

@@ -1,0 +1,22 @@
+@prefix : <http//example.com/> .
+
+# does not work with Drools engine, as it does not process lists
+# (it creates new Id's for each list entry)
+
+:myMenu :entree :huitres .
+:myMenu :principal :homard .
+:myMenu :dessert :profiterolles .
+
+{
+	?MENU :entree ?ENTREE .
+	?MENU :principal ?PRINCIPAL .
+	?MENU :dessert ?DESSERT .
+} => {
+	?MENU :menuList (?ENTREE ?PRINCIPAL ?DESSERT).
+} .
+
+{
+	?MENU :menuList (?ENTREE ?PRINCIPAL ?DESSERT).
+} => {
+	:i :ate (?MENU "with" ?ENTREE ?PRINCIPAL ?DESSERT).
+} .

@@ -1,0 +1,36 @@
+@prefix gui: <http://eg.sf/> .
+@prefix fn:  <http://www.w3.org/2005/xpath-functions#> .
+
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl:  <http://www.w3.org/2002/07/owl#>.
+@prefix foaf:  <http://xmlns.com/foaf/0.1/>.
+@prefix dc:  <http://purl.org/dc/elements/1.1/>.
+@prefix dbpedia-owl:  <http://dbpedia.org/ontology/>.
+@prefix dbpedia:  <http://dbpedia.org/resource/>.
+@prefix void:  <http://rdfs.org/ns/void#>.
+@prefix log:  <http://www.w3.org/2000/10/swap/log#>.
+@prefix string:  <http://www.w3.org/2000/10/swap/string#>.
+@prefix list:  <http://www.w3.org/2000/10/swap/list#>.
+@prefix e:  <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix eg:  <http://eulergui.sourceforge.net/engine.owl#>.
+@prefix java:  <http://java.sun.com/class#>.
+@prefix javam:  <http://java.sun.com/method#>.
+@prefix javap:  <http://java.sun.com/predicate#>.
+
+@prefix javap:  <http://example.com#>.
+
+:p a owl:DatatypeProperty .
+ 
+# transfer "label" attribute of the Property to the field
+{ ?P a owl:DatatypeProperty . } => { ?P gui:needs rdfs:label .}.
+{ ?P a owl:ObjectProperty . } => { ?P gui:needs rdfs:label .}.
+{ ?X gui:needs rdfs:label .
+  _:d e:findall ( ?L { ?X rdfs:label ?L } () ).
+  ?X log:uri ?URI .
+  # _:t e:trace ( 3 ?X ?URI ).
+  ( ?URI "#" ) fn:substring-after ?PROP_LABEL .
+} => {
+  ?X rdfs:label ?PROP_LABEL .
+  _:d eg:trace ( ?X rdfs:label ?PROP_LABEL ) .
+}.

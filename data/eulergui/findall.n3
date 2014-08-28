@@ -1,0 +1,17 @@
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix : <http://example.com#> .
+
+:luc :marriedTo :nathalie .
+:jmv :marriedTo :dorota .
+:jmv :hasChild :sarah .
+
+{ # find all married couples without children
+	?X :marriedTo ?Y .
+	(?SCOPE ?SPAN) e:findall (
+ 		?CHILD { ?X :hasChild ?CHILD }
+		() # CHILDREN
+)
+} => {
+	?X :without_children true .
+	?Y :without_children true .
+} .

@@ -1,0 +1,11 @@
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+
+:ctx1 :said { :me :know :luc . :luc :know :me }.
+
+:extra :rule {{ ?x :know ?y . ?y :know ?x } => { ?x :know-each-other ?y }}.
+
+{ :ctx1 :said ?FORMULA .
+  :extra :rule ?R
+} => {
+  ?FORMULA log:includes ?R .
+} .

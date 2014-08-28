@@ -1,0 +1,22 @@
+@prefix : <http://plivo.org/vocab.n3#> .
+@keywords a .
+
+<> asXML """
+<Response>
+        <Play>myMusic.mp3</Play>
+        <GetDigits numDigits="2"
+                playBeep="true"
+                timeout=25
+                action="http:/myapp.org/digits/" />
+</Response>
+""" .
+
+<> a Response ;
+   actions ( 
+        [ a Play ; uri <myMusic.mp3> ]
+        [ a GetDigits ;
+          numDigits 2 ;
+          playBeep true ;
+          timeout 25 ;
+        action <http:/myapp.org/digits/> ] )
+.

@@ -1,0 +1,10 @@
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#> .
+@prefix  : <http://ex.org#> .
+{
+	( "decimal ~d string ~a new line ~n resource ~a quoted graph ~k ~p ~q "
+	123 "bla" :resource
+	{:s :p :o } {:s :p :o } {:s :p :o } )
+		e:format ?FOR .
+} => {
+	:result :is ?FOR .
+} .

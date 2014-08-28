@@ -1,0 +1,23 @@
+@prefix : <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#> .
+@prefix wine: <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl2xml: <http://www.w3.org/2006/12/owl2-xml#> .
+@prefix food: <http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#> .
+@prefix CR-owl-guide-20030818: <http://www.w3.org/TR/2003/CR-owl-guide-20030818/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@base <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine> .
+
+<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine> rdf:type owl:Ontology ;
+                                                       
+                                                       rdfs:label "Wine Ontology" ;
+                                                       
+                                                       rdfs:comment """Derived from the DAML Wine ontology at 
+      http://ontolingua.stanford.edu/doc/chimaera/ontologies/wines.daml
+      Substantially changed, in particular the Region based relations.""" ,
+                                                                    "An example OWL ontology" ;
+                                                       
+                                                       owl:priorVersion CR-owl-guide-20030818:wine ;
+                                                       
+                                                       owl:imports <http://www.w3.org/TR/2003/PR-owl-guide-20031209/food> .

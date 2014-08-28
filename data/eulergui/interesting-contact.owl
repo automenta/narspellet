@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Ontology
+    xml:base="http://www.w3.org/2002/07/owl#"
+    xmlns="http://www.w3.org/2002/07/owl#"
+    ontologyIRI="http://eulergui.sf.net/contact.owl">
+  <SubClassOf>
+    <ObjectIntersectionOf>
+      <ObjectIntersectionOf>
+	<Class IRI="http://xmlns.com/foaf/0.1/#Person"/>
+	<ObjectSomeValuesFrom>
+	  <ObjectProperty IRI="http://xmlns.com/foaf/0.1/#homepage"/>
+	  <Class IRI="http://www.w3.org/2002/07/owl#Thing"/>
+	</ObjectSomeValuesFrom>
+      </ObjectIntersectionOf>
+      <ObjectSomeValuesFrom>
+	<ObjectProperty IRI="http://xmlns.com/foaf/0.1/#currentProject"/>
+	<Class IRI="http://www.w3.org/2002/07/owl#Thing"/>
+      </ObjectSomeValuesFrom>
+    </ObjectIntersectionOf>
+    <Class
+	IRI="http://eulergui.sf.net/contact.owl#interesting-contact"/>
+  </SubClassOf>
+</Ontology>

@@ -1,0 +1,2 @@
+@prefix ns1: <http://maven.apache.org/POM/4.0.0#>.
+<s> ns1:properties  ns1:project.build.sourceEncoding .

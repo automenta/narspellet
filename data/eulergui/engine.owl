@@ -1,0 +1,11 @@
+@prefix eg: <http://eulergui.sourceforge.net/engine.owl#> .
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+# TODO rename as engine.owl.n3, or change the site to return mime type text/turtle
+
+eg:trace a rdf:Property, e:Builtin;
+	rdfs:comment "builtin that outputs the object during inference; should be placed in consequent of a rule, contrary to e:trace.";
+	rdfs:domain rdfs:Resource;
+	rdfs:range rdfs:Resource .

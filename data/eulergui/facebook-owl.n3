@@ -1,0 +1,15 @@
+@prefix :     <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix ege: <http://eulergui.sf.net/examples/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+ege: a owl:Ontology .
+
+ege:friend_proposition a owl:ObjectProperty .
+ege:current_user a owl:DatatypeProperty
+	; rdfs:range xsd:boolean .
+
+ege:knows a owl:SymmetricProperty .
+# FOAF friend
+ege:knows rdfs:subClassof :knows .

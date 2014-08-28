@@ -1,0 +1,20 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+
+# test the builtin definition of list:in :WORKS FINE :))
+
+{
+  "1" list:in ( "1" "2" ).
+} => {
+  :test :result ("1" :in "1" "2" )
+} .
+{
+  "2" list:in ( "1" "2" ).
+} => {
+  :test :result ("2" :in "1" "2" )
+} .
+{
+  :a1 list:in ( :a1 :a2 ).
+} => {
+  :test :result ( :a1 :in :a1 :a2 )
+} .

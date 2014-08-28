@@ -1,0 +1,14 @@
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix :  <http://example.com#> .
+
+{?P a owl:TransitiveProperty.
+ ?S ?P ?X.
+ ?X ?P ?O } => {?S ?P ?O}.
+
+:connected a owl:TransitiveProperty .
+
+:Parker :connected :Davis .
+:Parker :connected :Gillespie .
+:Davis :connected :Hancock .
+
+#expected:    :Parker :connected :Hancock .

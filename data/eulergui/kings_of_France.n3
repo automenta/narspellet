@@ -1,0 +1,140 @@
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dbpedia-owl:  <http://dbpedia.org/ontology/> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dbpprop:  <http://dbpedia.org/property/> .
+
+<http://dbpedia.org/resource/Louis_Joseph,_Dauphin_of_France>
+      dbpprop:father <http://dbpedia.org/resource/Louis_XVI_of_France> .
+
+<http://dbpedia.org/resource/Henrietta_Maria_of_France>
+      dbpprop:father <http://dbpedia.org/resource/Henry_IV_of_France> .
+
+<http://dbpedia.org/resource/Louis_C%C3%A9sar,_Count_of_Vexin>
+      dbpprop:father <http://dbpedia.org/resource/Louis_XIV_of_France> .
+
+<http://dbpedia.org/resource/Princess_Marie_Anne_of_France>
+      dbpprop:father <http://dbpedia.org/resource/Louis_XIV_of_France> .
+
+<http://dbpedia.org/resource/Louis_XIV_of_France>
+      dbpedia-owl:parent <http://dbpedia.org/resource/Louis_XIII_of_France> , <http://dbpedia.org/resource/Anne_of_Austria> ;
+      dbpedia-owl:spouse <http://dbpedia.org/resource/Fran%C3%A7oise_d'Aubign%C3%A9,_Marquise_de_Maintenon> , <http://dbpedia.org/resource/Maria_Theresa_of_Spain> ;
+      dbpprop:father <http://dbpedia.org/resource/Louis_XIII_of_France> .
+
+<http://dbpedia.org/resource/Charles_de_La_Baume_Le_Blanc>
+      dbpprop:father <http://dbpedia.org/resource/Louis_XIV_of_France> .
+
+<http://dbpedia.org/resource/Louis,_Count_of_Vermandois>
+      dbpprop:father <http://dbpedia.org/resource/Louis_XIV_of_France> .
+
+<http://dbpedia.org/resource/Louis_Auguste,_Duke_of_Maine>
+      dbpprop:father <http://dbpedia.org/resource/Louis_XIV_of_France> .
+
+<http://dbpedia.org/resource/Henry_IV_of_France>
+      dbpedia-owl:parent <http://dbpedia.org/resource/Jeanne_d'Albret> , <http://dbpedia.org/resource/Antoine_of_Navarre> ;
+      dbpedia-owl:spouse <http://dbpedia.org/resource/Margaret_of_Valois> , <http://dbpedia.org/resource/Marie_de'_Medici> ;
+      dbpprop:father <http://dbpedia.org/resource/Antoine_of_Navarre> .
+
+<http://dbpedia.org/resource/Louise_Marie_Anne_de_Bourbon>
+      dbpprop:father <http://dbpedia.org/resource/Louis_XIV_of_France> .
+
+<http://dbpedia.org/resource/Marie_Anne_de_Bourbon>
+      dbpprop:father <http://dbpedia.org/resource/Louis_XIV_of_France> .
+
+<http://dbpedia.org/resource/Fran%C3%A7oise_Marie_de_Bourbon>
+      dbpprop:father <http://dbpedia.org/resource/Louis_XIV_of_France> .
+
+<http://dbpedia.org/resource/Gaston,_Duke_of_Orl%C3%A9ans>
+      dbpprop:father <http://dbpedia.org/resource/Henry_IV_of_France> .
+
+<http://dbpedia.org/resource/Princess_Sophie_H%C3%A9l%C3%A8ne_B%C3%A9atrice_of_France>
+      dbpprop:father <http://dbpedia.org/resource/Louis_XVI_of_France> .
+
+<http://dbpedia.org/resource/Princess_Anne_%C3%89lisabeth_of_France>
+      dbpprop:father <http://dbpedia.org/resource/Louis_XIV_of_France> .
+
+<http://dbpedia.org/resource/Princess_Sophie_of_France>
+      dbpprop:father <http://dbpedia.org/resource/Louis_XV_of_France> .
+
+<http://dbpedia.org/resource/Louis_XVI_of_France>
+      dbpedia-owl:parent <http://dbpedia.org/resource/Louis,_Dauphin_of_France_(1729%E2%80%931765)> , <http://dbpedia.org/resource/Princess_Maria_Josepha_of_Saxony_(1731%E2%80%931767)> ;
+      dbpedia-owl:spouse <http://dbpedia.org/resource/Marie_Antoinette> ;
+      dbpprop:father <http://dbpedia.org/resource/Louis,_Dauphin_of_France_(1729%E2%80%931765)> .
+
+<http://dbpedia.org/resource/Princess_Th%C3%A9r%C3%A8se_of_France>
+      dbpprop:father <http://dbpedia.org/resource/Louis_XV_of_France> .
+
+<http://dbpedia.org/resource/Nicolas_Henri,_Duke_of_Orl%C3%A9ans>
+      dbpprop:father <http://dbpedia.org/resource/Henry_IV_of_France> .
+
+<http://dbpedia.org/resource/Louise_%C3%89lisabeth_of_France>
+      dbpprop:father <http://dbpedia.org/resource/Louis_XV_of_France> .
+
+<http://dbpedia.org/resource/Elisabeth_of_France_(1602%E2%80%931644)>
+      dbpprop:father <http://dbpedia.org/resource/Henry_IV_of_France> .
+
+<http://dbpedia.org/resource/Princess_Marie_Ad%C3%A9la%C3%AFde_of_France>
+      dbpprop:father <http://dbpedia.org/resource/Louis_XV_of_France> .
+
+<http://dbpedia.org/resource/Louis_XVII_of_France>
+      dbpprop:father <http://dbpedia.org/resource/Louis_XVI_of_France> .
+
+<http://dbpedia.org/resource/Louis_Alexandre,_Count_of_Toulouse>
+      dbpprop:father <http://dbpedia.org/resource/Louis_XIV_of_France> .
+
+<http://dbpedia.org/resource/Princess_Marie_Th%C3%A9r%C3%A8se_of_France_(1667%E2%80%931672)>
+      dbpprop:father <http://dbpedia.org/resource/Louis_XIV_of_France> .
+
+<http://dbpedia.org/resource/Princess_Louise_of_France>
+      dbpprop:father <http://dbpedia.org/resource/Louis_XV_of_France> .
+
+<http://dbpedia.org/resource/Louis_XIII_of_France>
+      dbpedia-owl:parent <http://dbpedia.org/resource/Marie_de'_Medici> , <http://dbpedia.org/resource/Henry_IV_of_France> ;
+      dbpedia-owl:spouse <http://dbpedia.org/resource/Anne_of_Austria> ;
+      dbpprop:father <http://dbpedia.org/resource/Henry_IV_of_France> .
+
+<http://dbpedia.org/resource/Princess_Louise_Marie_of_France>
+      dbpprop:father <http://dbpedia.org/resource/Louis_XV_of_France> .
+
+<http://dbpedia.org/resource/Catherine_Henriette_de_Bourbon>
+      dbpprop:father <http://dbpedia.org/resource/Henry_IV_of_France> .
+
+<http://dbpedia.org/resource/Philippe_I,_Duke_of_Orl%C3%A9ans>
+      dbpprop:father <http://dbpedia.org/resource/Louis_XIII_of_France> .
+
+<http://dbpedia.org/resource/Louise_Fran%C3%A7oise_de_Bourbon,_Duchess_of_Bourbon>
+      dbpprop:father <http://dbpedia.org/resource/Louis_XIV_of_France> .
+
+<http://dbpedia.org/resource/Louis,_Dauphin_of_France_(1729%E2%80%931765)>
+      dbpprop:father <http://dbpedia.org/resource/Louis_XV_of_France> .
+
+<http://dbpedia.org/resource/Louis_XV_of_France>
+      dbpedia-owl:parent <http://dbpedia.org/resource/Princess_Marie_Ad%C3%A9la%C3%AFde_of_Savoy> , <http://dbpedia.org/resource/Louis,_Dauphin_of_France,_Duke_of_Burgundy> ;
+      dbpedia-owl:spouse <http://dbpedia.org/resource/Marie_Leszczy%C5%84ska> ;
+      dbpprop:father <http://dbpedia.org/resource/Louis,_Dauphin_of_France,_Duke_of_Burgundy> .
+
+<http://dbpedia.org/resource/Louis_Fran%C3%A7ois,_Duke_of_Anjou>
+      dbpprop:father <http://dbpedia.org/resource/Louis_XIV_of_France> .
+
+<http://dbpedia.org/resource/Princess_Victoire_of_France>
+      dbpprop:father <http://dbpedia.org/resource/Louis_XV_of_France> .
+
+<http://dbpedia.org/resource/Princess_Henriette_of_France>
+      dbpprop:father <http://dbpedia.org/resource/Louis_XV_of_France> .
+
+<http://dbpedia.org/resource/Louis,_Grand_Dauphin>
+      dbpprop:father <http://dbpedia.org/resource/Louis_XIV_of_France> .
+
+<http://dbpedia.org/resource/Philippe,_Duke_of_Anjou>
+      dbpprop:father <http://dbpedia.org/resource/Louis_XV_of_France> .
+
+<http://dbpedia.org/resource/Christine_of_France>
+      dbpprop:father <http://dbpedia.org/resource/Henry_IV_of_France> .
+
+<http://dbpedia.org/resource/Louise_de_Maisonblanche>
+      dbpprop:father <http://dbpedia.org/resource/Louis_XIV_of_France> .
+
+<http://dbpedia.org/resource/Marie_Th%C3%A9r%C3%A8se_of_France>
+      dbpprop:father <http://dbpedia.org/resource/Louis_XVI_of_France> .
+
+<http://dbpedia.org/resource/C%C3%A9sar,_Duke_of_Vend%C3%B4me>
+      dbpprop:father <http://dbpedia.org/resource/Henry_IV_of_France> .

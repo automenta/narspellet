@@ -1,0 +1,33 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl:  <http://www.w3.org/2002/07/owl#>.
+
+@prefix : <http://ex.com#> .
+@keywords a.
+
+boolean a owl:DatatypeProperty ;
+	rdfs:label "a Boolean" ;
+	rdfs:range xsd:boolean .
+
+integer a owl:DatatypeProperty ;
+	rdfs:label "my integer" ;
+	rdfs:range xsd:integer.
+ 
+date a owl:DatatypeProperty ;
+	rdfs:label "my date" ;
+	rdfs:range xsd:date.
+	 
+float a owl:DatatypeProperty ;
+	rdfs:label "a double" ;
+	rdfs:range xsd:double.
+
+name a owl:DatatypeProperty ;
+	rdfs:label "a float" ;
+	rdfs:range xsd:string .
+	
+number a owl:DatatypeProperty ;
+	rdfs:label "a number (but no range specified, so no special validation in table)" .
+
+uri a owl:ObjectProperty ;
+	rdfs:label "an URI" .

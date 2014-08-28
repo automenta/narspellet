@@ -1,0 +1,520 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY ace_lexicon "http://attempto.ifi.uzh.ch/ace_lexicon#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#"
+     xml:base="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:ace_lexicon="http://attempto.ifi.uzh.ch/ace_lexicon#">
+    <owl:Ontology rdf:about="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="&ace_lexicon;TV_pl"/>
+    <owl:AnnotationProperty rdf:about="&ace_lexicon;TV_sg"/>
+    <owl:AnnotationProperty rdf:about="&ace_lexicon;PN_sg"/>
+    <owl:AnnotationProperty rdf:about="&ace_lexicon;CN_sg"/>
+    <owl:AnnotationProperty rdf:about="&ace_lexicon;CN_pl"/>
+    <owl:AnnotationProperty rdf:about="&ace_lexicon;TV_vbg"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#hasChildren -->
+
+    <owl:ObjectProperty rdf:about="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#hasChildren">
+        <ace_lexicon:TV_vbg>hasChildrened</ace_lexicon:TV_vbg>
+        <ace_lexicon:TV_sg>hasChildrens</ace_lexicon:TV_sg>
+        <ace_lexicon:TV_pl>hasChildren</ace_lexicon:TV_pl>
+        <rdfs:domain rdf:resource="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Animal"/>
+        <rdfs:range rdf:resource="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Animal"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#hasDegree -->
+
+    <owl:ObjectProperty rdf:about="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#hasDegree">
+        <ace_lexicon:TV_pl>hasDegree</ace_lexicon:TV_pl>
+        <ace_lexicon:TV_vbg>hasDegreed</ace_lexicon:TV_vbg>
+        <ace_lexicon:TV_sg>hasDegrees</ace_lexicon:TV_sg>
+        <rdfs:range rdf:resource="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Degree"/>
+        <rdfs:domain rdf:resource="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#hasGender -->
+
+    <owl:ObjectProperty rdf:about="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#hasGender">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <ace_lexicon:TV_vbg>hasGendered</ace_lexicon:TV_vbg>
+        <ace_lexicon:TV_sg>hasGenders</ace_lexicon:TV_sg>
+        <ace_lexicon:TV_pl>hasGender</ace_lexicon:TV_pl>
+        <rdfs:domain rdf:resource="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Animal"/>
+        <rdfs:range rdf:resource="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Gender"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#hasHabitat -->
+
+    <owl:ObjectProperty rdf:about="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#hasHabitat">
+        <ace_lexicon:TV_pl>hasHabitat</ace_lexicon:TV_pl>
+        <ace_lexicon:TV_vbg>hasHabitated</ace_lexicon:TV_vbg>
+        <ace_lexicon:TV_sg>hasHabitats</ace_lexicon:TV_sg>
+        <rdfs:domain rdf:resource="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Animal"/>
+        <rdfs:range rdf:resource="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Habitat"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#isHardWorking -->
+
+    <owl:DatatypeProperty rdf:about="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#isHardWorking">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <ace_lexicon:TV_sg>isHardWorkings</ace_lexicon:TV_sg>
+        <ace_lexicon:TV_pl>isHardWorking</ace_lexicon:TV_pl>
+        <ace_lexicon:TV_vbg>isHardWorkinged</ace_lexicon:TV_vbg>
+        <rdfs:domain rdf:resource="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Person"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Animal -->
+
+    <owl:Class rdf:about="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Animal">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#hasHabitat"/>
+                <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#hasGender"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:seeAlso>Male</rdfs:seeAlso>
+        <ace_lexicon:CN_sg>Animal</ace_lexicon:CN_sg>
+        <ace_lexicon:CN_pl>Animals</ace_lexicon:CN_pl>
+        <owl:versionInfo>1.1</owl:versionInfo>
+    </owl:Class>
+    
+
+
+    <!-- http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Degree -->
+
+    <owl:Class rdf:about="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Degree">
+        <ace_lexicon:CN_sg>Degree</ace_lexicon:CN_sg>
+        <ace_lexicon:CN_pl>Degrees</ace_lexicon:CN_pl>
+    </owl:Class>
+    
+
+
+    <!-- http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#DryEucalyptForest -->
+
+    <owl:Class rdf:about="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#DryEucalyptForest">
+        <rdfs:subClassOf rdf:resource="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Forest"/>
+        <ace_lexicon:CN_pl>DryEucalyptForests</ace_lexicon:CN_pl>
+        <ace_lexicon:CN_sg>DryEucalyptForest</ace_lexicon:CN_sg>
+    </owl:Class>
+    
+
+
+    <!-- http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Female -->
+
+    <owl:Class rdf:about="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Female">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#hasGender"/>
+                <owl:hasValue rdf:resource="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#female"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <ace_lexicon:CN_pl>Females</ace_lexicon:CN_pl>
+        <ace_lexicon:CN_sg>Female</ace_lexicon:CN_sg>
+    </owl:Class>
+    
+
+
+    <!-- http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Forest -->
+
+    <owl:Class rdf:about="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Forest">
+        <rdfs:subClassOf rdf:resource="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Habitat"/>
+        <ace_lexicon:CN_sg>Forest</ace_lexicon:CN_sg>
+        <ace_lexicon:CN_pl>Forests</ace_lexicon:CN_pl>
+    </owl:Class>
+    
+
+
+    <!-- http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Gender -->
+
+    <owl:Class rdf:about="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Gender">
+        <ace_lexicon:CN_sg>Gender</ace_lexicon:CN_sg>
+        <ace_lexicon:CN_pl>Genders</ace_lexicon:CN_pl>
+    </owl:Class>
+    
+
+
+    <!-- http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#GraduateStudent -->
+
+    <owl:Class rdf:about="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#GraduateStudent">
+        <rdfs:subClassOf rdf:resource="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Student"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#hasDegree"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:oneOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#BA"/>
+                            <rdf:Description rdf:about="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#BS"/>
+                        </owl:oneOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <ace_lexicon:CN_sg>GraduateStudent</ace_lexicon:CN_sg>
+        <ace_lexicon:CN_pl>GraduateStudents</ace_lexicon:CN_pl>
+    </owl:Class>
+    
+
+
+    <!-- http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Habitat -->
+
+    <owl:Class rdf:about="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Habitat">
+        <ace_lexicon:CN_pl>Habitats</ace_lexicon:CN_pl>
+        <ace_lexicon:CN_sg>Habitat</ace_lexicon:CN_sg>
+    </owl:Class>
+    
+
+
+    <!-- http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Koala -->
+
+    <owl:Class rdf:about="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Koala">
+        <rdfs:subClassOf rdf:resource="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Marsupials"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#isHardWorking"/>
+                <owl:hasValue rdf:datatype="&xsd;boolean">false</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#hasHabitat"/>
+                <owl:someValuesFrom rdf:resource="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#DryEucalyptForest"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <ace_lexicon:CN_pl>Koalas</ace_lexicon:CN_pl>
+        <ace_lexicon:CN_sg>Koala</ace_lexicon:CN_sg>
+    </owl:Class>
+    
+
+
+    <!-- http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#KoalaWithPhD -->
+
+    <owl:Class rdf:about="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#KoalaWithPhD">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Koala"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#hasDegree"/>
+                        <owl:hasValue rdf:resource="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#PhD"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <ace_lexicon:CN_pl>KoalaWithPhDs</ace_lexicon:CN_pl>
+        <owl:versionInfo>1.2</owl:versionInfo>
+        <ace_lexicon:CN_sg>KoalaWithPhD</ace_lexicon:CN_sg>
+    </owl:Class>
+    
+
+
+    <!-- http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Male -->
+
+    <owl:Class rdf:about="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Male">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#hasGender"/>
+                <owl:hasValue rdf:resource="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#male"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <ace_lexicon:CN_sg>Male</ace_lexicon:CN_sg>
+        <ace_lexicon:CN_pl>Males</ace_lexicon:CN_pl>
+    </owl:Class>
+    
+
+
+    <!-- http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#MaleStudentWith3Daughters -->
+
+    <owl:Class rdf:about="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#MaleStudentWith3Daughters">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Student"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#hasChildren"/>
+                        <owl:allValuesFrom rdf:resource="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Female"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#hasGender"/>
+                        <owl:hasValue rdf:resource="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#male"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#hasChildren"/>
+                        <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">3</owl:cardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <ace_lexicon:CN_pl>MaleStudentWith3Daughterses</ace_lexicon:CN_pl>
+        <ace_lexicon:CN_sg>MaleStudentWith3Daughters</ace_lexicon:CN_sg>
+    </owl:Class>
+    
+
+
+    <!-- http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Marsupials -->
+
+    <owl:Class rdf:about="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Marsupials">
+        <rdfs:subClassOf rdf:resource="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Animal"/>
+        <owl:disjointWith rdf:resource="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Person"/>
+        <ace_lexicon:CN_sg>Marsupials</ace_lexicon:CN_sg>
+        <ace_lexicon:CN_pl>Marsupialses</ace_lexicon:CN_pl>
+    </owl:Class>
+    
+
+
+    <!-- http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Parent -->
+
+    <owl:Class rdf:about="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Parent">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Animal"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#hasChildren"/>
+                        <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Animal"/>
+        <ace_lexicon:CN_sg>Parent</ace_lexicon:CN_sg>
+        <ace_lexicon:CN_pl>Parents</ace_lexicon:CN_pl>
+    </owl:Class>
+    
+
+
+    <!-- http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Person -->
+
+    <owl:Class rdf:about="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Person">
+        <rdfs:subClassOf rdf:resource="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Animal"/>
+        <ace_lexicon:CN_pl>Persons</ace_lexicon:CN_pl>
+        <ace_lexicon:CN_sg>Person</ace_lexicon:CN_sg>
+    </owl:Class>
+    
+
+
+    <!-- http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Quokka -->
+
+    <owl:Class rdf:about="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Quokka">
+        <rdfs:subClassOf rdf:resource="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Marsupials"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#isHardWorking"/>
+                <owl:hasValue rdf:datatype="&xsd;boolean">true</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <ace_lexicon:CN_sg>Quokka</ace_lexicon:CN_sg>
+        <ace_lexicon:CN_pl>Quokkas</ace_lexicon:CN_pl>
+    </owl:Class>
+    
+
+
+    <!-- http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Rainforest -->
+
+    <owl:Class rdf:about="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Rainforest">
+        <rdfs:subClassOf rdf:resource="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Forest"/>
+        <ace_lexicon:CN_pl>Rainforests</ace_lexicon:CN_pl>
+        <ace_lexicon:CN_sg>Rainforest</ace_lexicon:CN_sg>
+    </owl:Class>
+    
+
+
+    <!-- http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Student -->
+
+    <owl:Class rdf:about="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Student">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#hasHabitat"/>
+                        <owl:someValuesFrom rdf:resource="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#University"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#isHardWorking"/>
+                        <owl:hasValue rdf:datatype="&xsd;boolean">true</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <ace_lexicon:CN_pl>Students</ace_lexicon:CN_pl>
+        <ace_lexicon:CN_sg>Student</ace_lexicon:CN_sg>
+    </owl:Class>
+    
+
+
+    <!-- http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#TasmanianDevil -->
+
+    <owl:Class rdf:about="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#TasmanianDevil">
+        <rdfs:subClassOf rdf:resource="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Marsupials"/>
+        <ace_lexicon:CN_pl>TasmanianDevils</ace_lexicon:CN_pl>
+        <ace_lexicon:CN_sg>TasmanianDevil</ace_lexicon:CN_sg>
+    </owl:Class>
+    
+
+
+    <!-- http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#University -->
+
+    <owl:Class rdf:about="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#University">
+        <rdfs:subClassOf rdf:resource="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Habitat"/>
+        <ace_lexicon:CN_pl>Universities</ace_lexicon:CN_pl>
+        <ace_lexicon:CN_sg>University</ace_lexicon:CN_sg>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#BA -->
+
+    <owl:NamedIndividual rdf:about="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#BA">
+        <rdf:type rdf:resource="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Degree"/>
+        <ace_lexicon:PN_sg>BA</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#BS -->
+
+    <owl:NamedIndividual rdf:about="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#BS">
+        <rdf:type rdf:resource="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Degree"/>
+        <ace_lexicon:PN_sg>BS</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#MA -->
+
+    <owl:NamedIndividual rdf:about="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#MA">
+        <rdf:type rdf:resource="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Degree"/>
+        <ace_lexicon:PN_sg>MA</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#PhD -->
+
+    <owl:NamedIndividual rdf:about="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#PhD">
+        <rdf:type rdf:resource="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Degree"/>
+        <ace_lexicon:PN_sg>PhD</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#female -->
+
+    <owl:NamedIndividual rdf:about="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#female">
+        <rdf:type rdf:resource="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Gender"/>
+        <ace_lexicon:PN_sg>female</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#male -->
+
+    <owl:NamedIndividual rdf:about="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#male">
+        <rdf:type rdf:resource="http://protege.stanford.edu/plugins/owl/owl-library/koala.owl#Gender"/>
+        <ace_lexicon:PN_sg>male</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.3.1957) http://owlapi.sourceforge.net -->
+

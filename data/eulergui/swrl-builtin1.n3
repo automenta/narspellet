@@ -1,0 +1,25 @@
+@prefix : <http://owldl.com/ontologies/dl-safe.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix swrl: <http://www.w3.org/2003/11/swrl#> .
+@prefix swrlb: <http://www.w3.org/2003/11/swrlb#> .
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix string: <http://www.w3.org/2000/10/swap/string#>.
+@prefix fn: <http://www.w3.org/2005/xpath-functions#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix Ontology1247016916140: <http://www.semanticweb.org/ontologies/2009/6/SWRLTest#> .
+@prefix var: <http://localhost/var#>.
+
+
+[]    a       swrl:Imp ;
+      swrl:body ([ a       swrl:BuiltinAtom ;
+                  swrl:arguments ("abc"^^xsd:string ""^^xsd:string "abc"^^xsd:string) ;
+                  swrl:builtin swrlb:stringConcat
+                ]) ;
+      swrl:head ([ a       swrl:ClassAtom ;
+                  swrl:argument1 <http://www.semanticweb.org/ontologies/2009/6/test2b> ;
+                  swrl:classPredicate Ontology1247016916140:Result2
+                ]) .

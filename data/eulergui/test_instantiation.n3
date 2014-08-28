@@ -1,0 +1,9 @@
+@prefix : <http://example.com#> .
+# @forAll :problem1 .
+
+:problem1 :seriousness :grave .
+:problem2 :seriousness :grave .
+
+
+{ :problem1 :seriousness :grave } => { :situation :seriousness :grave } .
+{ :problem2 :seriousness :grave } => { :situation :seriousness :grave } .

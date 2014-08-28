@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.7.0_17" class="java.beans.XMLDecoder">
+ <object class="eulergui.project.ProjectData">
+  <void property="postProcessingActive">
+   <boolean>true</boolean>
+  </void>
+  <void property="postProcessingURL">
+   <string>import_postproc3.n3p</string>
+  </void>
+  <void id="HashMap0" property="sources">
+   <void method="put">
+    <string>bc.n3</string>
+    <object class="eulergui.project.N3Source">
+     <void property="URI">
+      <string>bc.n3</string>
+     </void>
+    </object>
+   </void>
+  </void>
+  <void property="sources">
+   <object idref="HashMap0"/>
+  </void>
+ </object>
+</java>

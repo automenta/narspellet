@@ -1,0 +1,37 @@
+#Processed by Id: cwm.py,v 1.197 2007/12/13 15:38:39 syosi Exp 
+        #    using base file:///home/jmv/ontologies/dl-safe.owl
+        
+#  Notation3 generation by
+#       notation3.py,v 1.200 2007/12/11 21:18:08 syosi Exp
+
+#   Base was: file:///home/jmv/ontologies/dl-safe.owl
+     @prefix : <http://owldl.com/ontologies/dl-safe.owl#> .
+    @prefix owl: <http://www.w3.org/2002/07/owl#> .
+    @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+    @prefix swrl: <http://www.w3.org/2003/11/swrl#> .
+    
+    <http://owldl.com/ontologies/dl-safe.owl>     a owl:Ontology .
+    
+    :BadChildRule     a swrl:Imp;
+         swrl:body  (
+         [
+                 a swrl:ClassAtom;
+                 swrl:argument1 :x;
+                 swrl:classPredicate :Grandchild ]
+         [
+                 a swrl:IndividualPropertyAtom;
+                 swrl:argument1 :x;
+                 swrl:argument2 :y;
+                 swrl:propertyPredicate :sibling ]
+         [
+                 a swrl:IndividualPropertyAtom;
+                 swrl:argument1 :x;
+                 swrl:argument2 :y;
+                 swrl:propertyPredicate :hates ] );
+         swrl:head  (
+         [
+                 a swrl:ClassAtom;
+                 swrl:argument1 :x;
+                 swrl:classPredicate :BadChild ] ) .
+    
+#ENDS

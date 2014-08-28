@@ -1,0 +1,12 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+
+{
+?R @has owl:onProperty ?P; owl:cardinality ?M. 
+?P rdfs:range xsd:byte, xsd:unsignedInt. 
+?M math:notLessThan 128. 
+?N math:lessThan ?M. 
+?S a ?R
+} => {?S ?P ?N}.

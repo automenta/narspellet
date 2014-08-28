@@ -1,0 +1,11 @@
+# From prefix.cc
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#> .
+@prefix : <http://eulergui.sf.net/ex#>.
+
+:x a :Person.
+
+{ ?X a :Person.
+} =>
+  ({?X a :male} {?X a :female })!e:disjunction .
+

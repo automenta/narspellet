@@ -1,0 +1,179 @@
+@prefix :        <http://www.simple-ontology.owl#> .
+@prefix protege:  <http://protege.stanford.edu/plugins/owl/protege#> .
+@prefix xsp:     <http://www.owl-ontologies.com/2005/08/07/xsp.owl#> .
+@prefix sqwrl:   <http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix swrl:    <http://www.w3.org/2003/11/swrl#> .
+@prefix swrlb:   <http://www.w3.org/2003/11/swrlb#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix assert:  <http://www.owl-ontologies.com/assert.owl#> .
+@prefix swrla:   <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#> .
+
+:hasControl
+      a       owl:ObjectProperty ;
+      rdfs:domain :Light ;
+      rdfs:range
+              [ a       owl:Class ;
+                owl:unionOf (:Switch :Movement_Sensor)
+              ] ;
+      owl:inverseOf :isControl .
+
+:statecontrol
+      a       swrl:Variable .
+
+:control
+      a       swrl:Variable .
+
+:lamp
+      a       swrl:Variable .
+
+:bedroom
+      a       :Room ;
+      :contains :light1 , :switch1 .
+
+:Switch
+      a       owl:Class ;
+      rdfs:subClassOf :Device ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty :isControl
+              ] .
+
+:isControl
+      a       owl:ObjectProperty ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:Switch :Movement_Sensor)
+              ] ;
+      rdfs:range :Light ;
+      owl:inverseOf :hasControl .
+
+:contains
+      a       owl:ObjectProperty ;
+      rdfs:domain :Room ;
+      rdfs:range :Device ;
+      owl:inverseOf :isIn .
+
+:Light
+      a       owl:Class ;
+      rdfs:subClassOf :Device ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:cardinality "1"^^xsd:int ;
+                owl:onProperty :hasControl
+              ] .
+
+:hasState
+      a       owl:DatatypeProperty ;
+      rdfs:range xsd:string .
+
+:isIn
+      a       owl:ObjectProperty ;
+      rdfs:domain :Device ;
+      rdfs:range :Room ;
+      owl:inverseOf :contains .
+
+:bathroom
+      a       :Room .
+
+:Window_curtains
+      a       owl:Class ;
+      rdfs:subClassOf :Device .
+
+:switch1
+      a       :Switch ;
+# jmv      :hasState "On"^^xsd:string ;
+      :isControl :light1 ;
+      :isIn   :bedroom .
+
+<http://www.simple-ontology.owl>
+      a       owl:Ontology ;
+      owl:imports <http://swrl.stanford.edu/ontologies/3.3/swrla.owl> , <http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl> .
+
+:Light_Sensor
+      a       owl:Class ;
+      rdfs:subClassOf :Device .
+
+:light1
+      a       :Light ;
+      :hasControl :switch1 ;
+# jmv       :hasState "On"^^xsd:string ;
+      :isIn   :bedroom .
+
+<http://www.simple-ontology.owl/Control_light>
+      a       swrl:Imp ;
+      swrl:body
+              [ a       swrl:AtomList ;
+                rdf:first
+                        [ a       swrl:ClassAtom ;
+                          swrl:argument1 :lamp ;
+                          swrl:classPredicate :Light
+                        ] ;
+                rdf:rest
+                        [ a       swrl:AtomList ;
+                          rdf:first
+                                  [ a       swrl:IndividualPropertyAtom ;
+                                    swrl:argument1 :lamp ;
+                                    swrl:argument2 :control ;
+                                    swrl:propertyPredicate
+                                            :hasControl
+                                  ] ;
+                          rdf:rest
+                                  [ a       swrl:AtomList ;
+                                    rdf:first
+                                            [ a       swrl:DatavaluedPropertyAtom ;
+                                              swrl:argument1 :control ;
+                                              swrl:argument2 :statecontrol ;
+                                              swrl:propertyPredicate
+                                                      :hasState
+                                            ] ;
+                                    rdf:rest ()
+                                  ]
+                        ]
+              ] ;
+      swrl:head
+              [ a       swrl:AtomList ;
+                rdf:first
+                        [ a       swrl:DatavaluedPropertyAtom ;
+                          swrl:argument1 :lamp ;
+                          swrl:argument2 :statecontrol ;
+                          swrl:propertyPredicate
+                                  :hasState
+                        ] ;
+                rdf:rest ()
+              ] .
+
+:Movement_Sensor
+      a       owl:Class ;
+      rdfs:subClassOf :Device ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty :isControl
+              ] .
+
+:Device
+      a       owl:Class ;
+      rdfs:subClassOf owl:Thing ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:cardinality "1"^^xsd:int ;
+                owl:onProperty :isIn
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:cardinality "1"^^xsd:int ;
+                owl:onProperty :hasState
+              ] .
+
+:Room
+      a       owl:Class ;
+      rdfs:subClassOf owl:Thing ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "0"^^xsd:int ;
+                owl:onProperty :contains
+              ] .

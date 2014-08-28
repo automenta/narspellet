@@ -1,0 +1,13 @@
+@prefix java: <http://java.sun.com/class#>.
+@prefix : <http://test#>.
+# <http://eulergui.sf.net/example#>.
+@prefix eg: <http://eulergui.sourceforge.net/engine.owl#> .
+
+{
+  :x :p ?V .
+  ?listModel a java:javax-swing-DefaultListModel.
+} => {
+  # ?listModel <http://java.sun.com/method#add> ( 0 ?V ). # TODO implement in Drools engine
+  ?listModel <http://java.sun.com/method#addElement> ( ?V ).
+  _:d eg:trace ( ":x :p" ?listModel ?V ).
+} .

@@ -1,0 +1,9 @@
+@prefix : <http://example.com#> .
+
+{ :a :p ?LIST }
+=>
+{ :a :p ?LIST } .
+
+# expected:
+# :a :p :v.
+# :a :p (10 20).

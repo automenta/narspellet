@@ -1,0 +1,9 @@
+begin of model http://sourceforge.net/projects/eulergui/
+	begin of variable
+	end of variable
+	begin of statement
+		begin of statement subject
+			uri http://tap.xmlns.com/data/7UpBrand
+		end of statement subject
+	end of statement
+end of model http://sourceforge.net/projects/eulergui/

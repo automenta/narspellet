@@ -1,0 +1,12 @@
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix :        <http://eulersharp.sourceforge.net/2004/04test/sample#> .
+
+:reified_triple
+      a       rdf:Statement ;
+      rdf:object :ACMTopic-Information_Systems-Database_Management-Languages-Query_Languages ;
+      rdf:predicate :isAbout ;
+      rdf:subject :Paper ;
+      dc:creator <http://www.aifb.uni-karlsruhe.de/WBS/pha> .
+

@@ -1,0 +1,15 @@
+<> <#rcsid> "$Id: rpo-rules.n3 2422 2008-10-03 21:29:11Z josd $".
+
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix list: <http://www.w3.org/2000/10/swap/list#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix : <http://eulersharp.sourceforge.net/2003/03swap/rpo-rules#>.
+
+### RDF plus OWL rules
+
+# {?R owl:onProperty ?P; owl:maxCardinality ?M. ?M math:equalTo 0. ?X ?P ?Y; a ?R} => false.
+  {?R owl:onProperty ?P; owl:maxCardinality ?M. ?M math:equalTo 1. ?X ?P ?Y1, ?Y2; a ?R. ?Y2 owl:differentFrom ?Y1} => false.

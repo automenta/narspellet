@@ -1,0 +1,2 @@
+@prefix : <toto#> .
+{ _:x :est :grand . } => { _:x :n_est_pas :petit . } .

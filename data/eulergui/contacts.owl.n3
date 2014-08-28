@@ -1,0 +1,51 @@
+# From prefix.cc
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+
+@prefix ec:    <http://eulergui.sourceforge.net/contacts.owl.n3#> .
+
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+@prefix :      <http://e-compendium.eu/resources/> .
+@prefix app:   <http://jmvanel.free.fr/ontology/software_applications.owl#> .
+@prefix e:     <http://eulersharp.sourceforge.net/2003/03swap/log-rules#> .
+@prefix list:  <http://www.w3.org/2000/10/swap/list#> .
+@prefix log:   <http://www.w3.org/2000/10/swap/log#> .
+@prefix grddl: <http://www.w3.org/2003/g/data-view#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ns1:   <http://e-compendium.eu/resources/> .
+@prefix eg:    <http://eulergui.sourceforge.net/engine.owl#> .
+@prefix dbpedia: <http://dbpedia.org/resource/> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix fn:    <http://www.w3.org/2005/xpath-functions#> .
+
+# vocabulary for contact management; reuses FOAF, Dublin Core, XSD
+
+ec:businessDomain  a  owl:ObjectProperty ;
+        rdfs:comment  "For range, recommended use are DBPedia URI's" ;
+        rdfs:domain   foaf:Agent;
+        rdfs:label    "business Domain" ;
+        # rdfs:range    <http://my.com/_range_>
+.
+
+ec:applicationDomain  a  owl:ObjectProperty ;
+        rdfs:domain   foaf:Agent;
+        rdfs:label    "application Domain"
+.
+
+ec:fromContact  a     owl:ObjectProperty ;
+        rdfs:domain   foaf:Agent ;
+        rdfs:label    "from Contact" ;
+        rdfs:comment  "Person who originally gave this contact." ;
+        rdfs:range    foaf:Person .
+
+ec:hasBudget  a       owl:DatatypeProperty ;
+        rdfs:domain   foaf:Agent ;
+        rdfs:label    "hasBudget" ;
+        rdfs:range    xsd:boolean .
+
+ec:requirement  a     rdf:Property ;
+	rdfs:comment  "For range, recommended use are DBPedia URI's" ;
+        rdfs:domain   foaf:Agent ;
+        rdfs:label    "requirement"
+.

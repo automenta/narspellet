@@ -1,0 +1,18 @@
+# this gives no result with EYE and Fuxi
+# run forever with CWM
+# @forAll :CLASS .
+# { ?CLASS :subClassOrSameClass ?CLASS . }.
+# # ?CLASS :subClassOrSameClass ?CLASS .
+
+# this gives no result either with EYE and Fuxi
+@forAll :CLASS .
+{ true }
+=>
+{ :CLASS :subClassOrSameClass :CLASS . }.
+
+
+{
+  :c :subClassOrSameClass :c .
+} => {
+  :test :result :ok .
+} .

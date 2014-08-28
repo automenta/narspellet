@@ -1,0 +1,18 @@
+@prefix : <http://eulergui.sf.net/examples/> .
+
+# Suppose we want to a have the Knowledge Base entail :
+# Every Human has a grandparent.
+
+# Then we must first "define" grandparent by a rule using parent in the antecedent.
+{ ?X :parent ?P.
+  ?P :parent ?GP.
+} => {
+?X :grandparent ?GP }.
+
+# Then we must have an existential rule for the primitive notion of parent.
+{
+  ?X a :Human .
+} => {
+  ?X :parent ?P.
+  ?P a :Human .
+}.

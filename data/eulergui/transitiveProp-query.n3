@@ -1,0 +1,11 @@
+@prefix :  <http://example.com#> .
+
+# expected:
+# :Davis :connected :Hancock.
+# :Parker :connected :Hancock.
+{
+?MUSICIAN :connected :Hancock .
+# ?MUSICIAN :connected ?X .
+} => {
+?MUSICIAN :connected :Hancock .
+} .

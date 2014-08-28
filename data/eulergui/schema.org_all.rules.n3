@@ -1,0 +1,41 @@
+# From prefix.cc
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix schema: <http://schema.org/>.
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#> .
+@prefix :  <http://eulergui.sf.net/ex#>.
+
+
+schema:Event :is :interesting .
+
+
+{	?CLASS :is :interesting .
+	# quoi d'autre est intéressant ?
+	?CLASS1 rdfs:subClassOf ?CLASS .
+} => {
+	?CLASS1 :is :interesting .
+}.
+# et l'inverse
+{	?CLASS :is :interesting .
+	?CLASS rdfs:subClassOf ?CLASS1 .
+	?CLASS1 log:notEqualTo schema:Thing .
+} => {
+	?CLASS1 :is :interesting .
+}.
+# domain et range
+{	?CLASS :is :interesting .	
+	?P rdfs:domain ?CLASS .
+} => {
+	?P :is :interesting .
+}.
+
+{	?CLASS :is :interesting .	
+	?P rdfs:range ?CLASS .
+} => {
+	?P :is :interesting .
+}.
+
+# TODO les labels internationnalisés sont dans le projet github 
+

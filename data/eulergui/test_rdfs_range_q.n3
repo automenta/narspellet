@@ -1,0 +1,17 @@
+@prefix app: <http://jmvanel.free.fr/ontology/software_applications.owl#> .
+@prefix gui: <http://jmvanel.free.fr/ontology/gui_generic.owl#> .
+@prefix eulergui: <http://jmvanel.free.fr/ontology/euler_gui.owl#> .
+@prefix os: <http://jmvanel.free.fr/ontology/os.owl#> .
+@prefix test: <http://jmvanel.free.fr/test#> .
+@prefix     : <http://jmvanel.free.fr/test#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# OK:
+{
+  ?SWAPP app:hasInstance ?APPINST .
+  ?APPINST a app:ApplicationInstance .
+} => { 
+  ?SWAPP app:hasInstance ?APPINST .
+  ?APPINST a app:ApplicationInstance .
+} .
+

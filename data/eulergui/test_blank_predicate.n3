@@ -1,0 +1,2 @@
+@prefix : <toto#> .
+:x _:g0 :v .

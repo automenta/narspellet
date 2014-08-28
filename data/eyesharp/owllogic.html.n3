@@ -1,0 +1,307 @@
+bg image()
+
+OWL Logic release 1.0
+
+
+Author: Guido Naudts. E-mail: naudts_vannoten@yahoo.com
+
+This is a very early release. This release has two main parts:
+
+1) OWL.py: this module permits to check the consistency and correctness of OWL
+files in N3 syntax for all three OWL systems: Lite, DL and Full. I do not claim
+detection of all errors at this stage. The module, when started presents a menu
+that I think will be sufficiently clear. Full querying is not yet implemented
+but some basic queries can already be done via the menu command 9).
+
+Start the program with:
+python owl.py
+
+2) OWLAPI.py: this module is the definition of an API for OWL. The API is
+documented at the start of the module and in this document. For using the API
+just do an import of OWLAPI.py. OWLAPItest.py gives a test of all functions and
+examples. The API is intended for OWL but can also be used with non-OWL N3
+files. The API defines 73 functions of which 6 are not yet implemented.
+
+Note: I usually use Psyco so if you do not want to use it, you must delete the
+statements:
+"import psyco" and "psyco.full()".
+
+Modules:
+
+N3ParserX.py:   The notation 3 parser
+OWL.py: The owl module; this modules makes two passes over the OWL triples;
+in a first pass the OWL datastructures are build and some consistency checks are done;
+ in the second pass more consistency checks are done.
+ The module automatically includes predefined triples (RDF(S) and OWL definitions).
+Axioms.py: This module includes the predefined triples.
+OWLAPI.py: The definition of the OWL API
+OWLAPItest.py: Examples and test of the functions of the OWL API
+owlKeys.py: The OWL language definitions
+xmlx.py, xml.py: The xml modules
+Utils.py: Utility functions for parsing
+Prelude: Some utilities in functional style
+PVa, InfData, ITripleX: Some other modules (see explanation of RDFEngine)
+
+
+
+The OWL API
+
+
+
+ Note: * in order to avoid confusion a programming object will be called a p-object
+ in contrast to an RDF object.
+          * see OWLAPItest.py for examples.
+
+ setName(dbName): sets the name for a owl memory database; more than one can be
+                  created; this also creates an owl p-object
+
+ readAxiomFile(dbName, fileName): reads an OWL file
+               and returns a tripleset
+
+ readQueryFile(dbName, fileName): reads an OWL file and returns a tripleset;
+               the set is a query file
+               Note: a query is parsed differently from an axiom file
+                     This has only bearing on variables
+               Querying is not yet implemented (in this API)!!!
+
+ makeOWLStructure(dbName): create an owl structure that can be
+      queried.
+
+ Note: subject, property and object are descending from the p-object resource
+
+ getSubject(triple): gets the subject (as an p-object) from a triple
+
+ getProperty(triple): gets the property (as an p-object) from a triple
+
+ getObject(triple): gets the object (as an p-object) from a triple
+
+ getResourceShortname(resource): get the short name of a resource (eg: dc:title)
+
+ getResourceFullname(resource): get the full name of a resource
+
+ getResourceNamespace(resource): get the namespace of a resource
+
+ subjectToN3(subject): return a subject as a N3 string
+
+ propertyToN3(property): return a property as a N3 string
+
+ objectToN3(object): return an object as a N3 string
+
+ resourceToN3(resource): return a resource as a N3 string
+
+ tripleToN3(triple): return a triple as a N3 string
+
+ triplesetToN3(tripleset): return a tripleset as a N3 string
+
+ getResourceList(dbName): get a list of all resources in this db
+
+ getRules(tripleset): returns the rules in the tripleset
+
+ getRuleAntecedents(rule): get the antecedents(body) of a rule
+
+ getRuleConsequent(rule): get the consequent of a rule
+
+ testEquality(resource1, resource2): returns 0 or 1
+
+ addTriple(triple): adds a triple to the database; does no check
+                    Not yet implemented!!!
+
+ addAndCheck(triple): adds a triple and does an OWL consistency check
+                    Not yet implemented
+
+ testComplex(resource): test whether this resource is in fact a tripleset (return 1)
+   else returns 0
+
+ testList(resource): tests whether this resource is a list (return 1); returns 0 otherwise
+
+ testVar(resource): tests whether this resource is a variable;
+      returns the kind of variable as a string
+          gul = global universal variable
+          gu  = local universal variable
+          gel = global existential variable
+          ge  = local existential variable
+
+ testRule(triple): tests whether this triple is a rule
+
+ checkTriple(triple): checks the consistency of an OWL triple
+                      Not yet implemented
+
+ getPropertyExtension(property, trans): get the extension of a property i.e.
+      all triples having the given property
+      If trans then a transitive closure is calculated
+
+ property checks and properties
+
+ testProperty(resource): test whether this resource is a property
+
+ testTransitive(dbName, property): test whether this is a transitive property
+
+ testAnnotation(dbName, property): test whether this is an annotation property
+
+ testDatatype(dbName, property): test whether this is a datatype property
+
+ testFunctional(dbName, property): test whether this is a functionalproperty
+
+ testInverseFunctional(dbName, property): test whether this is an inverse
+            functional property
+
+ testObject(dbName, property): test whether this property is an objectproperty
+
+ testSymmetric(dbName, property): test whether this property is a symmetric property
+
+ testOntology(dbName, property): test whether this property is an ontology property
+
+ getEquivalent(dbName, property): returns a list of equivalent properties
+
+ getSubproperties(dbName, property): returns a list of subproperties
+
+ getSuperproperties(dbName, property): returs a list of superproperties
+
+ getInverse(dbName, property): returns a list of inverse properties
+
+ getDomain(dbName, property): returns the domain of a property ie a list of classes
+
+ getRange(dbName, property): returns the rnage of a property ie a list of classes
+
+ class (related) properties
+
+ testClass(resource): test whether this resource is a class
+
+ getTypes(dbName, resource): get a list of class memberships of a resource
+
+ getIntersection(dbName, class): get a list of classes of which class is an intersection
+
+ getDisjointWith(dbName, class): get a list of classes that are disjoint with this class
+
+ getComplement(dbName, class): get the complement of this class
+
+ getUnionOf(dbName, class): get a list of classes of which this class is the union
+
+ getSubclasses(dbName, class): returns a list of subclasses of this class
+
+ getSuperclasses(dbName, class): returns a list of superclasses of this class
+
+ getEquivalentClasses(dbName, class): returns a list of equivalent classes
+
+ getRestrictions(dbName, class): returns a list of restrictions of this class
+
+ analyzeRestriction(dbName, restriction): analyzes a restriction;
+         Returns:
+ Generally:     (property, type, extra)
+ Specifically:  (property, "allValuesFrom", class)
+                       (property, "someValuesFrom", class)
+                       (property, "hasValue", value)
+                       (property, "cardinality", integer)
+                       (property, "minCardinality", integer)
+                       (property, "maxCardinality", integer)
+
+ restrictionToString(restriction): transforms an analyzed restriction to a
+     printable string
+
+ getOneofElements(class): if this is a oneOf class, return the list of elements
+
+
+ getClassMembers(dbName, class): get all members of a class
+
+ getClasses(dbName, resource): get the class of this resource
+  (might be a null object if no class has been defined)
+
+ getClassTree(dbName): returns a hierarchical list of the classes in the db
+      with name dbName as a xml tree; the tree can be printed with:
+      print displayClassTree(tree); it can be manipulated with the methods in
+      xmlX.py and xml.py; see further: description of xml API
+
+ displayClassTree(tree): returns the contents of this xml xlass tree as a string
+
+ getClassProperties(dbName): returns a list of classes with all their properties eg
+   equivalent classes, subclasses, superclasses etc...
+
+ getPropertyProperties(dbName): get a list of all properties with their
+       properties eg symmetric, functional etc...
+
+ testSubsumption(dbName, class1, class2): test whether class2 is a
+       subclass of class1
+
+ listClassesAndMembers(dbName): make a list of all classes and their members
+
+ getPropertyTree(dbName): returns a hierarchical list of the properties
+      in the db with name dbName as a xml tree; the tree can be printed with:
+      print displayPropertyTree(tree); it can be manipulated with the methods in
+      xmlX.py and xml.py; see further: description of xml API
+
+ setCheckpoint(): sets a checkpoint (for backtracking in backwards reasoning)
+                           returns a p-object 'checkpoint'
+                  Not yet implemented!!!
+
+ backtrack(checkpoint): backtracks to a checkpoint
+                  Not yet implemented!!!
+
+ checkInArray(resource, array): checks whether the resource is present in the array
+
+ checkInTripleset(triple, tripleset): checks whether the triple is present in the tripleset
+
+ getResourceByName(dbName, resource): get a resource by its fullname
+
+ getErrorlist(dbName): get the errorlist for this DB
+
+
+
+The XML API
+
+
+
+There are two xml modules. Module 'xml' and module 'xmlx'.
+These modules build and handle an xml tree. Attributes are not defined.
+The difference between the two modules is: 'xml' uses a list for storing the children of
+a node, while 'xmlx' uses a dictionary for storing the children of a node.
+'xmlx' is not standard xml because the sequence of the children is lost;
+however the tree that is build on output is standard xml.
+A 'xmlx tree' can have only one child with a specific name.
+
+creation of a tree:
+import xml as x, xmlx as x1
+tree1 = x.XmlTree("tree1")
+tree2 = x1.XmlTreeX("tree2")
+'tree1' and 'tree2' are the names of the first node of the tree.
+
+x.XmlTree("Empty") and x1.XmlTreeX("Empty") create an empty (nul) tree.
+testType(): will return the type = 'xml' or 'xmlx' eg tree2.testType() returns 'xmlx'
+addContent(content): adds content to the tree
+addTree(tree): add a tree to the children of a tree eg. tree1.addTree(tree2)
+addTreeP(tree): add a tree and mark the parent in the child
+addTreeNoCopy(tree): only module 'xml': adds a tree to the children of a tree only when no
+                     identical child exist.
+addTreeList(treeList): add a list of trees to the children of this tree
+addTreeListP(treeList): add a list of trees to the children of this tree and mark the parent in the children
+setParent(tree): sets the parent of this tree
+getChildren(tree): get the list of children of this tree
+toString(): transforms a tree to a string eg print tree1.toString()
+getChildrenByName(s): only module 'xml': get all children with name s
+getChildByName(s): get the (first) child with a specific name.  """
+deleteChildByName(s): deletes the (first) child with a name
+deleteAllChildren(s):  delete all children with a specific name
+compareTrees(tree1, tree2): module 'xmlx': compare two trees; this compares only name and content.  Returns 0 or 1.
+         Call as follows:  x1.compareTrees(tree1, tree2) will return 0.
+compareTreesFull(tree1, tree2): module 'xmlx': compare two trees;this compares name, content and children. Returns 0 or 1.
+         Call as follows:  x1.compareTreesFull(tree1, tree2) will return 0.
+copy(): copies this tree eg. tree3 = tree2.copy()
+replaceChild(tree, name):  replace the first child with the given name by the given tree.
+toFile(filename): save this tree in a file
+toStringTreeList(treeList): returns the contents of this xml treeList in a string; call as follows:
+   x.toStringTreeList(treeList) or x1.toStringTreeList(treeList)
+elimDoubles(list): eliminates the doubles in this list of trees; call as follows:
+      x1.elimDoubles(list)
+
+
+
+References:
+SemanticWeb Initiative
+RDF - Resource Description Framework
+RDF Tutorial RDF Schema
+OWL - Ontology Web Language
+Notation 3
+Euler: inferencing with Java and C#
+CWM: inferencing with Python
+RDFEngine:inferencing with Python
+SWRL:Semantic web rule language
+SWISH: inferencing with Haskell

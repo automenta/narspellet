@@ -1,0 +1,21 @@
+@prefix : <http://test.com#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix var: <http://localhost/var#>. 
+
+{
+  :crit :classes ?CC .  
+  # ?V e:tuple (?CC ). 
+  
+  _:d e:findall ( {var:V a ?C} {
+    ?C list:in ?CC.
+  } ?CRITS0 ).
+  ?CRITS0 log:conjunction ?CRITS.
+ 
+} => {
+  ?CRITS => { var:V a :C1C2C3 . }. 
+}.
+
+# output:
+# {?V a :C1. ?V a :C2. ?V a :C3} => {?V a :C1C2C3}.

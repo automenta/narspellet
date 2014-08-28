@@ -1,0 +1,8 @@
+@prefix :      <http://simile.mit.edu/2004/09/ontologies/java#> .
+
+{
+  ?C :uses <urn:java:org.drools.workflow.core.Node>
+} => {
+    ?C :uses <urn:java:org.drools.workflow.core.Node>
+} .
+  

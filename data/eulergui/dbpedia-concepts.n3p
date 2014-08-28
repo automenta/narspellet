@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.7.0" class="java.beans.XMLDecoder">
+ <object class="eulergui.project.ProjectData">
+  <void property="n3Query">
+   <object class="eulergui.project.N3Source">
+    <void property="URI">
+     <string>book-query.n3</string>
+    </void>
+    <void property="activated">
+     <boolean>false</boolean>
+    </void>
+   </object>
+  </void>
+  <void id="HashMap0" property="sources">
+   <void method="put">
+    <string>http://dbpedia.org/data/Imagine_%28song%29.xml</string>
+    <object class="eulergui.project.N3SourceFromRDF">
+     <void property="URI">
+      <string>http://dbpedia.org/data/Imagine_%28song%29.xml</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>dbpedia-concepts3.rq</string>
+    <object class="eulergui.inputs.N3SourceFromSPARQLSource">
+     <void property="URI">
+      <string>dbpedia-concepts3.rq</string>
+     </void>
+     <void property="service">
+      <string>http://live.dbpedia.org/sparql</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>http://dbpedia.org/data/John_Lenon.xml</string>
+    <object class="eulergui.project.N3SourceFromRDF">
+     <void property="URI">
+      <string>http://dbpedia.org/data/John_Lenon.xml</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>dbpedia-concepts2.rq</string>
+    <object class="eulergui.inputs.N3SourceFromSPARQLSource">
+     <void property="URI">
+      <string>dbpedia-concepts2.rq</string>
+     </void>
+     <void property="service">
+      <string>http://dbpedia.org/sparql</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>dbpedia-concepts.rq</string>
+    <object class="eulergui.inputs.N3SourceFromSPARQLSource">
+     <void property="URI">
+      <string>dbpedia-concepts.rq</string>
+     </void>
+     <void property="service">
+      <string>http://dbpedia.org/sparql</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>http://dbpedia.org/data/Swingout.xml</string>
+    <object class="eulergui.project.N3SourceFromRDF">
+     <void property="URI">
+      <string>http://dbpedia.org/data/Swingout.xml</string>
+     </void>
+    </object>
+   </void>
+  </void>
+  <void property="sources">
+   <object idref="HashMap0"/>
+  </void>
+ </object>
+</java>

@@ -1,0 +1,16 @@
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix :  <http://eulersharp.sourceforge.net/ex#> .
+
+# TODO understand why Euler infers	:Cresus :possess :happiness.
+# :Cresus :possess :gold .
+:Cresus a :Man .
+
+@forAll :X.
+{
+	:X a :Man .	# indispensable to bind ?X before applying e:disjunction
+	(
+		{:X :possess :gold}
+		{:X :possess :diamond}
+	) ! e:disjunction
+} => {
+	:X :possess :happiness } .

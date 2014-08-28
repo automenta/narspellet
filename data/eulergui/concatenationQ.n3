@@ -1,0 +1,44 @@
+@prefix string: <http://www.w3.org/2000/10/swap/string#>.
+@prefix fn: <http://www.w3.org/2006/xpath-functions#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+{
+( "123#4" "#" ) fn:substring-after ?RESULT1 .
+} => {
+ :result :substring-after_should_be_4 ?RESULT1 .
+} .
+
+{
+( """1""" """2""" "3" ) 
+string:concatenation ?RESULT2 .
+} => {
+ :result :should_be_123 ?RESULT2 .
+} .
+
+{
+"input" 
+string:concatenation ?RESULT3 .
+} => {
+ :result :should_not_work ?RESULT3 .
+} .
+
+{
+() 
+string:concatenation ?RESULT4 .
+} => {
+ :result :should_be_empty ?RESULT4 .
+} .
+
+{
+( """1""" ) 
+string:concatenation ?RESULT5 .
+} => {
+ :result :should_be_1 ?RESULT5 .
+} .
+
+{
+( """1""" """2""" ) 
+string:concatenation ?RESULT6 .
+} => {
+ :result :should_be_12 ?RESULT6 .
+} .

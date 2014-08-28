@@ -1,0 +1,13 @@
+@prefix     : <http://examples#> .
+
+# test the logic features of N3
+# see http://www.w3.org/2000/10/swap/doc/Rules ,
+# http://www.w3.org/2000/10/swap/log
+# http://eulersharp.sourceforge.net/2003/03swap/log-rules.n3
+#
+# (this is *not* an example of good design for a KB)
+:poppy     isRed true .
+:dandelion isRed false .
+
+:dandelion isYellow true .
+:vinca isBlue true.

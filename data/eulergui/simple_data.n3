@@ -1,0 +1,19 @@
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://ex.com#> .
+@keywords a.
+
+
+x1
+	number 33;
+	boolean true ;
+#	date "2012.08.11"^^xsd:date;
+	date "2012-08-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
+	float 1.23;
+	name "Jimi Hendrix" ;
+	integer 4567 ;
+	uri <http://eulergui.sf.net>
+	.
+	
+<http://eulergui.sf.net> name "eulergui" ;
+	a doap:Project .

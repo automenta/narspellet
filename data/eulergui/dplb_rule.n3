@@ -1,0 +1,18 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://deductions.sf.net#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+
+# find all guys that are the dc:creator of nothing
+
+# this N3 rule is the equivalent of the SPARQL query dpbl.n3
+#it could equally well be used as the main N3 query of the project
+
+{
+  ?PERSON foaf:name ?N.
+  ?WORK dc:creator ?P.
+  ?PERSON log:notEqualTo ?P .
+} => {
+  ?PERSON :has_name_but_no_creation ?N.
+}.

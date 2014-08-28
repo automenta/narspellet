@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.6.0_18" class="java.beans.XMLDecoder"> 
+ <object class="eulergui.project.Project"> 
+  <void property="n3Query"> 
+   <object class="eulergui.project.N3Source"> 
+    <void property="URI"> 
+     <string>./facebookQ.n3</string> 
+    </void> 
+   </object> 
+  </void> 
+  <void property="sources"> 
+   <void method="put"> 
+    <string>./facebook-rules.n3</string> 
+    <object class="eulergui.project.N3Source"> 
+     <void property="URI"> 
+      <string>./facebook-rules.n3</string> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="put"> 
+    <string>./facebook-data.n3</string> 
+    <object class="eulergui.project.N3Source"> 
+     <void property="URI"> 
+      <string>./facebook-data.n3</string> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="put"> 
+    <string>http://eulersharp.svn.sourceforge.net/svnroot/eulersharp/trunk/2003/03swap/owl-SymmetricProperty.n3</string> 
+    <object class="eulergui.project.N3Source"> 
+     <void property="URI"> 
+      <string>http://eulersharp.svn.sourceforge.net/svnroot/eulersharp/trunk/2003/03swap/owl-SymmetricProperty.n3</string> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="put"> 
+    <string>./facebook-owl.n3</string> 
+    <object class="eulergui.project.N3Source"> 
+     <void property="URI"> 
+      <string>./facebook-owl.n3</string> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="put"> 
+    <string>http://xmlns.com/foaf/spec/20100101.rdf</string> 
+    <object class="eulergui.project.N3SourceFromRDF"> 
+     <void property="URI"> 
+      <string>file:/C:/Users/Papa/AppData/Local/Temp/translation-8834468375493815302.n3</string> 
+     </void> 
+     <void property="activated"> 
+      <boolean>false</boolean> 
+     </void> 
+     <void property="rdfFile"> 
+      <string>http://xmlns.com/foaf/spec/20100101.rdf</string> 
+     </void> 
+    </object> 
+   </void> 
+  </void> 
+ </object> 
+</java> 

@@ -1,0 +1,3 @@
+     @prefix : <http://tempuri.org/po.xsd#> .
+    <>     :purchaseOrder  [
+             ns2:orderDate "1999-10-20" ] .

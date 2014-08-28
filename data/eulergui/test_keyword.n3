@@ -1,0 +1,6 @@
+@keywords a, is, of, this.
+@prefix : <toto#>.
+me a Person.
+Jo a Person; is sister of me.
+Jo father Alan; mother Flo.
+Alan father Zak; brother Ed, Julian.

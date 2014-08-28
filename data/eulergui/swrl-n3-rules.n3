@@ -1,0 +1,194 @@
+@prefix : <http://owldl.com/ontologies/dl-safe.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix swrl: <http://www.w3.org/2003/11/swrl#> .
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix string: <http://www.w3.org/2000/10/swap/string#>.
+@prefix fn: <http://www.w3.org/2005/xpath-functions#>.
+@prefix var: <http://localhost/var#>.
+
+# Translation of SWRL to N3 logic - $Revision: 1451 $
+# PENDING : pave the way for processing criteria in the same rules
+# for antecedent and consequent , :hasCriterium
+# today the rule base is twice too big because of that
+
+######### antecedent #########
+{
+  ?RULE a swrl:Imp ;
+     swrl:body ?LIST .
+  ?CRIT list:in ?LIST .
+} => {
+  ?CRIT :swrl_body_in ?RULE .
+} .
+
+{ ?CRIT :swrl_body_in ?RULE ;
+    a swrl:ClassAtom ;
+      swrl:argument1 ?A1 ;
+      swrl:classPredicate ?CLASS .
+} => {
+  ?RULE :n3_antecedent_has  { ?A1 rdf:type ?CLASS } .
+  # ?RULE :hasCriterium ( :antecedentCriterium { ?A1 rdf:type ?CLASS } ).
+}.
+
+{ ?CRIT :swrl_body_in ?RULE ;
+    a swrl:IndividualPropertyAtom;
+                 swrl:argument1 ?A1 ;
+                 swrl:argument2 ?A2 ;
+                 swrl:propertyPredicate ?P .
+} => {
+  ?RULE :n3_antecedent_has { ?A1 ?P ?A2 } .
+  # ?RULE :hasCriterium ( :antecedentCriterium { ?A1 ?P ?A2 } ).
+}.
+
+{ ?CRIT :swrl_body_in ?RULE ;
+    a swrl:SameIndividualAtom;
+                 swrl:argument1 ?A1 ;
+                 swrl:argument2 ?A2 ;
+} => {
+  ?RULE :n3_antecedent_has { ?A1 log:equalTo ?A2 } .
+  # ?RULE :hasCriterium ( :antecedentCriterium { ?A1 log:equalTo ?A2 } ).
+}.
+
+{ ?CRIT :swrl_body_in ?RULE ;
+	a swrl:DifferentIndividualsAtom;
+            swrl:argument1 ?A1;
+            swrl:argument2 ?A2 .
+} => {
+  ?RULE :n3_antecedent_has { ?A1 owl:differentFrom ?A2 } .
+  # cf http://www.w3.org/TR/owl-ref/#differentFrom-def
+  # add N3 rules for owl:differentFrom
+  :support :rules 
+  <http://eulersharp.svn.sourceforge.net/viewvc/eulersharp/trunk/2003/03swap/owl-differentFrom.n3>.
+  # ?RULE :hasCriterium ( :antecedentCriterium { ?A1 owl:differentFrom ?A2 } ).
+}.
+	
+######### consequent #########
+{
+  ?RULE a swrl:Imp ;
+     swrl:head ?LIST .
+  ?CRIT list:in ?LIST .
+} => {
+  ?CRIT :swrl_head_in ?RULE .
+} .
+
+{
+  ?CRIT :swrl_head_in ?RULE ;
+    a swrl:ClassAtom ;
+    swrl:argument1 ?A1 ;
+    swrl:classPredicate ?CLASS .
+} => {
+  ?RULE :n3_consequent_has { ?A1 rdf:type ?CLASS } .
+  # ?RULE :hasCriterium ( :consequentCriterium { ?A1 rdf:type ?CLASS } ).
+}.
+
+{
+  ?CRIT :swrl_head_in ?RULE ;
+    a swrl:IndividualPropertyAtom;
+                 swrl:argument1 ?A1 ;
+                 swrl:argument2 ?A2 ;
+                 swrl:propertyPredicate ?P .
+} => {
+  ?RULE :n3_consequent_has { ?A1 ?P ?A2 } .
+  # ?RULE :hasCriterium ( :consequentCriterium { ?A1 ?P ?A2 } ).
+}.
+
+######### gather variables #########
+
+{
+  ?CRIT :swrl_body_in ?RULE ;
+        swrl:argument1 ?A
+} => {
+  ?A :swrl_body_variable_in ?RULE .
+}.
+{
+  ?CRIT :swrl_body_in ?RULE ;
+        swrl:argument2 ?A
+} => {
+  ?A :swrl_body_variable_in ?RULE .
+}.
+
+{
+  ?CRIT :swrl_head_in ?RULE ;
+        swrl:argument1 ?A
+} => {
+  ?A :swrl_head_variable_in ?RULE .
+}.
+{
+  ?CRIT :swrl_head_in ?RULE ;
+        swrl:argument2 ?A
+} => {
+  ?A :swrl_head_variable_in ?RULE .
+}.
+
+{
+  ?A :swrl_body_variable_in ?RULE .
+} => {
+  ?RULE :hasVariable ?A .
+}.
+{
+  ?A :swrl_head_variable_in ?RULE .
+} => {
+  ?RULE :hasVariable ?A .
+}.
+
+{
+  ?RULE a swrl:Imp .
+  _:d e:findall ( ?A
+    { ?RULE :hasVariable ?A . }
+    ?LA ).
+ ?LA e:distinct ?LAD .
+} => {
+  ?RULE :distinctVariables ?LAD .
+}.
+
+################# substitute variables ###################
+
+{
+  ?RULE :distinctVariables ?LDV .
+  _:d e:findall ( (?VAR_ORIG ?VARNEW) {
+      ?VAR_ORIG list:in ?LDV.
+      ?VARNEW e:tuple ?VAR_ORIG.
+    }
+    ?LIST_SUBST ).
+} => {
+  ?RULE :swrlToN3VariableSubtitution ?LIST_SUBST.
+}.
+
+{
+  ?RULE a swrl:Imp .
+  _:d e:findall ( ?A { ?RULE :n3_antecedent_has ?A } ?LA ).
+  ?LA log:conjunction ?FA .
+  ?RULE :swrlToN3VariableSubtitution ?LIST_SUBST.
+} => {
+  ?RULE :ruleAntecedent_tmp ?FA . # keep track
+  ?FA :substituteVariablesInFormula ?LIST_SUBST .
+}.
+{
+  ?RULE :ruleAntecedent_tmp ?FA .
+  (?FA ?L) :substitutedFormula ?FSUBST.
+} => {
+  ?RULE :ruleAntecedent ?FSUBST .
+}.
+
+{
+  ?RULE a swrl:Imp .
+  _:d e:findall ( ?A { ?RULE :n3_consequent_has ?A } ?LA ).
+  ?LA log:conjunction ?FA .
+  ?RULE :swrlToN3VariableSubtitution ?LIST_SUBST.
+} => {
+  ?RULE :ruleConsequent_tmp ?FA . # keep track
+  ?FA :substituteVariablesInFormula ?LIST_SUBST .
+}.
+{
+  ?RULE :ruleConsequent_tmp ?FA .
+  (?FA ?L) :substitutedFormula ?FSUBST.
+} => {
+  ?RULE :ruleConsequent ?FSUBST .
+}.
+
+
+## test print
+# { ?LC :ruleAntecedent ?L . } => { _:dd :print (?LC :ruleAntecedent ?L) . }.

@@ -1,0 +1,112 @@
+begin of model http://sourceforge.net/projects/eulergui/
+	begin of variable
+		universal http://eulersharp.sourceforge.net/2003/03swap/rpo-rules#M
+		universal http://eulersharp.sourceforge.net/2003/03swap/rpo-rules#P
+		universal http://eulersharp.sourceforge.net/2003/03swap/rpo-rules#R
+		universal http://eulersharp.sourceforge.net/2003/03swap/rpo-rules#X
+		universal http://eulersharp.sourceforge.net/2003/03swap/rpo-rules#Y1
+		universal http://eulersharp.sourceforge.net/2003/03swap/rpo-rules#Y2
+	end of variable
+	begin of statement
+		begin of statement subject
+			uri 
+		end of statement subject
+		begin of statement predicate
+			uri #rcsid
+		end of statement predicate
+		begin of statement object
+			literal value=$Id: rpo-rules.n3 2422 2008-10-03 21:29:11Z josd $, data type=http://www.w3.org/2001/XMLSchema#string, language=
+		end of statement object
+	end of statement
+	begin of statement
+		begin of statement subject
+			begin of formula
+				begin of variable
+				end of variable
+				begin of statement
+					begin of statement subject
+						uri http://eulersharp.sourceforge.net/2003/03swap/rpo-rules#R
+					end of statement subject
+					begin of statement predicate
+						uri http://www.w3.org/2002/07/owl#onProperty
+					end of statement predicate
+					begin of statement object
+						uri http://eulersharp.sourceforge.net/2003/03swap/rpo-rules#P
+					end of statement object
+				end of statement
+				begin of statement
+					begin of statement subject
+						uri http://eulersharp.sourceforge.net/2003/03swap/rpo-rules#R
+					end of statement subject
+					begin of statement predicate
+						uri http://www.w3.org/2002/07/owl#maxCardinality
+					end of statement predicate
+					begin of statement object
+						uri http://eulersharp.sourceforge.net/2003/03swap/rpo-rules#M
+					end of statement object
+				end of statement
+				begin of statement
+					begin of statement subject
+						uri http://eulersharp.sourceforge.net/2003/03swap/rpo-rules#M
+					end of statement subject
+					begin of statement predicate
+						uri http://www.w3.org/2000/10/swap/math#equalTo
+					end of statement predicate
+					begin of statement object
+						literal value=1, data type=http://www.w3.org/2001/XMLSchema#integer, language=null
+					end of statement object
+				end of statement
+				begin of statement
+					begin of statement subject
+						uri http://eulersharp.sourceforge.net/2003/03swap/rpo-rules#X
+					end of statement subject
+					begin of statement predicate
+						uri http://eulersharp.sourceforge.net/2003/03swap/rpo-rules#P
+					end of statement predicate
+					begin of statement object
+						uri http://eulersharp.sourceforge.net/2003/03swap/rpo-rules#Y1
+					end of statement object
+				end of statement
+				begin of statement
+					begin of statement subject
+						uri http://eulersharp.sourceforge.net/2003/03swap/rpo-rules#X
+					end of statement subject
+					begin of statement predicate
+						uri http://eulersharp.sourceforge.net/2003/03swap/rpo-rules#P
+					end of statement predicate
+					begin of statement object
+						uri http://eulersharp.sourceforge.net/2003/03swap/rpo-rules#Y2
+					end of statement object
+				end of statement
+				begin of statement
+					begin of statement subject
+						uri http://eulersharp.sourceforge.net/2003/03swap/rpo-rules#X
+					end of statement subject
+					begin of statement predicate
+						uri http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+					end of statement predicate
+					begin of statement object
+						uri http://eulersharp.sourceforge.net/2003/03swap/rpo-rules#R
+					end of statement object
+				end of statement
+				begin of statement
+					begin of statement subject
+						uri http://eulersharp.sourceforge.net/2003/03swap/rpo-rules#Y2
+					end of statement subject
+					begin of statement predicate
+						uri http://www.w3.org/2002/07/owl#differentFrom
+					end of statement predicate
+					begin of statement object
+						uri http://eulersharp.sourceforge.net/2003/03swap/rpo-rules#Y1
+					end of statement object
+				end of statement
+			end of formula
+		end of statement subject
+		begin of statement predicate
+			uri http://www.w3.org/2000/10/swap/log#implies
+		end of statement predicate
+		begin of statement object
+			literal value=false, data type=http://www.w3.org/2001/XMLSchema#boolean, language=null
+		end of statement object
+	end of statement
+end of model http://sourceforge.net/projects/eulergui/

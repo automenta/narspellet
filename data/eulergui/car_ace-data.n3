@@ -1,0 +1,16 @@
+@prefix ns1: <http://deductions.sourceforge.net/ontologies/2010/3/car_ace.owl#>.
+@prefix    : <http://deductions.sourceforge.net/ontologies/2010/3/car_ace.owl#>.
+
+# the minimal data to trigger this SWRL rule:
+# car(?x2) , man(?x1) , own(?x1, ?x2) -> like(?x1, ?x2) 
+# translated in N3 :
+# {?t0 a ns1:car. ?t1 a ns1:man. ?t1 ns1:own ?t0} => {?t1 ns1:like ?t0}.
+
+:my_rolls a :car.
+:jmv a :man.
+:jmv :own :my_rolls.
+# => :jmv :like :my_rolls.
+
+
+
+

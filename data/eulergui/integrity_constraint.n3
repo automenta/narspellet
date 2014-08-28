@@ -1,0 +1,9 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+
+# integrity constraint
+{?Y owl:disjointWith ?Z. ?X a ?Y. ?X a ?Z} => false.
+
+# test data
+:eau owl:disjointWith :feu .
+:eau_de_feu a :eau .
+:eau_de_feu a :feu .

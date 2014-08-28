@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.6.0_22" class="java.beans.XMLDecoder">
+ <object class="eulergui.project.ProjectData">
+  <void property="eulerArguments">
+   <string>--pass</string>
+  </void>
+  <void id="HashMap0" property="sources">
+   <void method="put">
+    <string>owl-rules-debug.n3</string>
+    <object class="eulergui.project.N3Source">
+     <void property="URI">
+      <string>owl-rules-debug.n3</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>generations.owl</string>
+    <object class="eulergui.project.N3SourceFromRDF">
+     <void property="URI">
+      <string>generations.owl</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>generations-mini.xml</string>
+    <object class="eulergui.project.N3SourceFromRDF">
+     <void property="URI">
+      <string>generations-mini.xml</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>http://eulersharp.sourceforge.net/2003/03swap/owl-rules.n3</string>
+    <object class="eulergui.project.N3Source">
+     <void property="URI">
+      <string>http://eulersharp.sourceforge.net/2003/03swap/owl-rules.n3</string>
+     </void>
+     <void property="activated">
+      <boolean>false</boolean>
+     </void>
+    </object>
+   </void>
+  </void>
+  <void property="sources">
+   <object idref="HashMap0"/>
+  </void>
+ </object>
+</java>

@@ -1,0 +1,11 @@
+# bad uri : missing starting <
+@prefix person: http://jmvanel.free.fr/ontology/examples/person#> .
+@prefix gui: <http://jmvanel.free.fr/ontology/gui_generic.owl#> .
+
+:id1 person:name "Lennon" .
+
+_:d gui:createFormFromResource :id1 .
+
+
+
+

@@ -1,0 +1,30 @@
+# http://jmvanel.free.fr/ontology/java_projection.n3
+# Copyright J.M. Vanel 2009 - under LGPL licence http://www.gnu.org/copyleft/lesser.html
+@prefix       : <http://jmvanel.free.fr/ontology/java_projection.owl#> .
+@prefix javapr: <http://jmvanel.free.fr/ontology/java_projection.owl#> .
+@prefix java: <http://java.sun.com/class#> .
+@prefix javam: <http://java.sun.com/method#> .
+@prefix javap: <http://java.sun.com/predicate#> .
+@prefix gui: <http://jmvanel.free.fr/ontology/gui_generic.owl#> .
+
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix eg: <http://eulergui.sourceforge.net/engine.owl#> .
+
+{
+  ?JTEXT_FIELD a java:javax_swing_JTextField .
+  ?JEVENT a java:java_awt_Event ;
+    javap:ID 1005 ; # 1005 means FOCUS_LOST in Swing class FocusEvent
+    javap:source ?JTEXT_FIELD ;
+    javap:temporary false .
+  ?JTEXT_FIELD javapr:generic_field ?FIELD .
+  ?JTEXT_FIELD javap:text ?TEXT .
+} => {
+  ?JEVENT a gui:FocusLostEvent ;
+    gui:eventSource ?FIELD
+    ; gui:newValue ?TEXT .
+  _:d eg:trace ( "FocusLostEvent" ?JTEXT_FIELD ?FIELD "gui:newValue" ?TEXT ) .
+} .

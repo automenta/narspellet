@@ -1,0 +1,16 @@
+begin of model http://sourceforge.net/projects/eulergui/
+	begin of variable
+		existential g0
+	end of variable
+	begin of statement
+		begin of statement subject
+			uri http://sourceforge.net/projects/eulergui/toto#x
+		end of statement subject
+		begin of statement predicate
+			blank node g0
+		end of statement predicate
+		begin of statement object
+			uri http://sourceforge.net/projects/eulergui/toto#v
+		end of statement object
+	end of statement
+end of model http://sourceforge.net/projects/eulergui/

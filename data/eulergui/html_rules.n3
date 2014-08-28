@@ -1,0 +1,25 @@
+@prefix html: <http://www.w3.org/1999/xhtml#> .
+
+# 1. Test that the order is kept. Euler does; Drools does NOT .
+# 2. Add a TOC by logical rules (to see it, run cwm result.n3 --rdf > test.html )
+
+# test data
+html:html html:h1 "title 1" .
+html:html html:h2 "title 1.2" .
+html:html html:p "bla 1.2" .
+html:html html:h1 "title 2" .
+html:html html:p "bli bli 2" .
+html:html html:ul _:ul .
+_:ul html:li "point 1" .
+_:ul html:li "point 2" .
+
+html:html  html:p "TOC" .
+# rules
+{ html:html html:h1 ?TITLE . }
+=>
+{ html:html html:p ?TITLE . }
+.
+{ html:html html:h2 ?TITLE . }
+=>
+{ html:html html:p ?TITLE . }
+.

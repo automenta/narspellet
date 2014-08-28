@@ -1,0 +1,7 @@
+@prefix owl:  <http://www.w3.org/2002/07/owl#>.
+@prefix eg:  <http://eulergui.sourceforge.net/engine.owl#>.
+@prefix proj:  <http://eulergui.sf.net/ontology/project.owl.n3#>.
+
+<> a owl:Ontology .
+<> proj:hasN3Source <ace/simple.ace> .
+

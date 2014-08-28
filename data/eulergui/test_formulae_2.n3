@@ -1,0 +1,4 @@
+@prefix u: <http://www.example.org/utilities#> .
+@prefix : <toto#> .
+
+:conclusion = { :fred u:knows :mary . } .

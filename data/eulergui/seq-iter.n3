@@ -1,0 +1,49 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix math: <http://www.w3.org/2000/10/swap/math#> .
+@prefix string: <http://www.w3.org/2000/10/swap/string#> .
+@prefix s: <seq-iter.n3#> .
+
+# contributed by Ruset Zeno
+# Notes:
+# - idea and implementation is based and borrows things from:
+#
+#   http://dev.w3.org/cvsweb/2000/10/swap/test/seqiter.n3
+#
+# - both s:previous and s:next are very slow and s:next can be
+# implemented using s:previous, also s:previous can be implemented
+# using s:next
+#
+# - usage:
+#
+#   cwm test.n3 --think=seq-iter.n3
+#   eulergui --pass *.n3
+#
+# - specific implementation ( not quite sure):
+#   - make use of string:scrape to extract the numeric part of rdf:_n
+#   - make use of log:uri to convert a uri to a string
+#   - make use of math:greaterThan to compare integers
+#   - make use of string:concatenation to build the uri from ns and
+#   item number( s:next and s:previous)
+
+@forAll :seq, :curr, :succ .
+{
+	:seq a rdf:Seq;
+		:curr [];
+		:succ [] .
+		[ @is string:scrape @of ([ @is log:uri @of :succ ] "http://www.w3.org/1999/02/22-rdf-syntax-ns#_([0-9]+)") ] math:greaterThan [ @is string:scrape @of ([ @is log:uri @of :curr ] "http://www.w3.org/1999/02/22-rdf-syntax-ns#_([0-9]+)") ] .
+} => {
+	(:seq :curr) s:successor :succ .
+} .
+
+@forAll :seq2, :curr2, :pred .
+{
+	:seq2 a rdf:Seq;
+		:curr2 [];
+		:pred [] .
+	[ @is string:scrape @of ([ @is log:uri @of :curr2 ] "http://www.w3.org/1999/02/22-rdf-syntax-ns#_([0-9]+)") ] math:greaterThan [ @is string:scrape @of ([ @is log:uri @of :pred ] "http://www.w3.org/1999/02/22-rdf-syntax-ns#_([0-9]+)") ] .
+} => {
+	(:seq2 :curr2) s:predecessor :pred .
+} .
+
+

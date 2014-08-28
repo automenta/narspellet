@@ -1,0 +1,5 @@
+@prefix : <http://eulergui.sf.net/examples/> .
+
+{ ?P1 :knows ?P2 }
+=>
+{ ?P1 :knows ?P2 }.

@@ -1,0 +1,45 @@
+begin of model http://sourceforge.net/projects/eulergui/
+	begin of variable
+	end of variable
+	begin of statement
+		begin of statement subject
+			begin of formula
+				begin of variable
+					existential x
+				end of variable
+				begin of statement
+					begin of statement subject
+						blank node x
+					end of statement subject
+					begin of statement predicate
+						uri http://sourceforge.net/projects/eulergui/toto#est
+					end of statement predicate
+					begin of statement object
+						uri http://sourceforge.net/projects/eulergui/toto#grand
+					end of statement object
+				end of statement
+			end of formula
+		end of statement subject
+		begin of statement predicate
+			uri http://www.w3.org/2000/10/swap/log#implies
+		end of statement predicate
+		begin of statement object
+			begin of formula
+				begin of variable
+					existential x
+				end of variable
+				begin of statement
+					begin of statement subject
+						blank node x
+					end of statement subject
+					begin of statement predicate
+						uri http://sourceforge.net/projects/eulergui/toto#n_est_pas
+					end of statement predicate
+					begin of statement object
+						uri http://sourceforge.net/projects/eulergui/toto#petit
+					end of statement object
+				end of statement
+			end of formula
+		end of statement object
+	end of statement
+end of model http://sourceforge.net/projects/eulergui/

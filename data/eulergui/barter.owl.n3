@@ -1,0 +1,42 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix eg:   <http://eulergui.sourceforge.net/engine.owl#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#>.
+@prefix owl:  <http://www.w3.org/2002/07/owl#>.
+@prefix unspsc: <http://ontoview.org/schema/unspsc/1#>.
+
+# a small vocabulary for barter of product or service
+
+eg:ItemSpecification a owl:Class ;
+	rdfs:comment """ A Specification for a product or service,
+		for offering or asking """@en ;
+	rdfs:comment """ Une spécification pour un produit ou un service, 
+		pour offrir ou demander"""@fr.
+
+eg:forProductOrServiceClass a owl:ObjectProperty ;
+  rdfs:domain eg:ItemSpecification ;
+  rdfs:range rdfs:Class .
+eg:creator a owl:ObjectProperty ;
+  rdfs:domain eg:ItemSpecification ;
+  rdfs:range foaf:Person .
+eg:quantity a owl:DatatypeProperty  ;
+  rdfs:domain eg:ItemSpecification ;
+  rdfs:range xsd:integer . # default == 1
+
+eg:AskingSpecification a owl:Class ;
+	rdfs:subClassOf eg:ItemSpecification.
+  
+eg:OfferSpecification a owl:Class ;
+	rdfs:subClassOf eg:ItemSpecification.
+
+eg:brand a owl:DatatypeProperty  ;
+  rdfs:domain eg:ItemSpecification ;
+  rdfs:range xsd:string .
+eg:model a owl:DatatypeProperty  ;
+  rdfs:domain eg:ItemSpecification ;
+  rdfs:range xsd:string .
+
+# connection à Good Relations
+
+
+

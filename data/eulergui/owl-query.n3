@@ -1,0 +1,11 @@
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix umlowl: <http://deductions.sf.net/owl/uml#> .
+@prefix       : <http://deductions.sf.net/owl/uml#> .
+
+{
+  ?OWL_THING :translatedFromUML ?UML_THING .
+  ?OWL_THING ?P ?V .
+} => {
+  ?OWL_THING :translatedFromUML ?UML_THING .
+  ?OWL_THING ?P ?V .
+} .

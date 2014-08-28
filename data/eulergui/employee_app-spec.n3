@@ -1,0 +1,13 @@
+@prefix app: <http://jmvanel.free.fr/ontology/software_applications.owl#> .
+@prefix : <file:/home/jmv/workspace_test/test_with_uml/default.uml#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# This demonstrates how easily one can create an application from a given ontology
+:GUI a app:SoftwareApplication .
+
+{ ?C rdfs:label "Employee" .
+} => {
+  :GUI app:editedClass ?C .
+} .
+:GUI app:platform app:Java .
+:GUI app:name "Employee GUI" .

@@ -1,0 +1,3 @@
+@prefix : <http://example.com#> .
+
+:jmv :hasDiner "blanquette de veau" .

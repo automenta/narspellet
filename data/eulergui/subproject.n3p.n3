@@ -1,0 +1,13 @@
+@prefix : <http://eulergui.sf.net/ontology/project.owl.n3#>.
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<> a owl:Ontology ;
+	rdfs:comment "example: Proposal for a new N3 format for RDF + OWL + rules projects; this is an imported project."
+	# ; rdfs:seeAlso <http://eulergui.svn.sourceforge.net/viewvc/eulergui/trunk/eulergui/eulergui/html/project_ontology.html>
+.
+
+# plain OWL Import of a RDF document; being an N3 document
+# it can also contain rules and formulas
+<> owl:imports <acceleration.n3> .
+

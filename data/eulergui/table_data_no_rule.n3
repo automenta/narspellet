@@ -1,0 +1,11 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix eg:    <http://eulergui.sourceforge.net/engine.owl#> .
+@prefix java: <http://java.sun.com/class#>.
+@prefix javam: <http://java.sun.com/method#> .
+
+eg:N3TableModel a java:deductions-runtime-swing-N3TableModel .
+eg:N3TableModel javam:setTripleStore ( eg:STORAGE ) .
+java:deductions-runtime-swing-N3SourceTableView javam:displayTableFrame ( eg:N3TableModel ) .
+
+# bizz data
+<jmv> foaf:name "JM Vanel" ; a foaf:Person .

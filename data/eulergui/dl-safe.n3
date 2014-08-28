@@ -1,0 +1,174 @@
+#Processed by Id: cwm.py,v 1.197 2007/12/13 15:38:39 syosi Exp 
+        #    using base file:///home/jmv/src/eulergui/examples/dl-safe.owl
+        
+#  Notation3 generation by
+#       notation3.py,v 1.200 2007/12/11 21:18:08 syosi Exp
+
+#   Base was: file:///home/jmv/src/eulergui/examples/dl-safe.owl
+     @prefix : <http://owldl.com/ontologies/dl-safe.owl#> .
+    @prefix owl: <http://www.w3.org/2002/07/owl#> .
+    @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+    @prefix swrl: <http://www.w3.org/2003/11/swrl#> .
+    
+    <http://owldl.com/ontologies/dl-safe.owl>     a owl:Ontology;
+         rdfs:comment """
+			A slightly modified version of the example from Table 3 in
+			the paper:
+
+			B. Motik, U. Sattler, R. Studer. Query Answering for OWL-DL
+			with Rules. Proc. of the 3rd International Semantic Web
+			Conference (ISWC 2004), Hiroshima, Japan, November, 2004,
+			pp. 549-563
+		""";
+         rdfs:label "DL-Safe rules example" .
+    
+    :Abel     a :Person,
+                owl:Thing .
+    
+    :Adam     a :Person,
+                owl:Thing;
+         :child :Abel .
+    
+    :BadChild     a owl:Class .
+    
+    :BadChildRule     a swrl:Imp;
+         swrl:body  (
+         [
+                 a swrl:ClassAtom;
+                 swrl:argument1 :x;
+                 swrl:classPredicate :Grandchild ]
+         [
+                 a swrl:IndividualPropertyAtom;
+                 swrl:argument1 :x;
+                 swrl:argument2 :y;
+                 swrl:propertyPredicate :sibling ]
+         [
+                 a swrl:IndividualPropertyAtom;
+                 swrl:argument1 :x;
+                 swrl:argument2 :y;
+                 swrl:propertyPredicate :hates ] );
+         swrl:head  (
+         [
+                 a swrl:ClassAtom;
+                 swrl:argument1 :x;
+                 swrl:classPredicate :BadChild ] ) .
+    
+    :Cain     a :Person,
+                owl:Thing;
+         :hates :Abel;
+         :parent :Adam .
+    
+    :Child     a owl:Class .
+    
+    :ChildRule1     a swrl:Imp;
+         swrl:body  (
+         [
+                 a swrl:ClassAtom;
+                 swrl:argument1 :x;
+                 swrl:classPredicate :GoodChild ] );
+         swrl:head  (
+         [
+                 a swrl:ClassAtom;
+                 swrl:argument1 :x;
+                 swrl:classPredicate :Child ] ) .
+    
+    :ChildRule2     a swrl:Imp;
+         swrl:body  (
+         [
+                 a swrl:ClassAtom;
+                 swrl:argument1 :x;
+                 swrl:classPredicate :BadChild ] );
+         swrl:head  (
+         [
+                 a swrl:ClassAtom;
+                 swrl:argument1 :x;
+                 swrl:classPredicate :Child ] ) .
+    
+    :GoodChild     a owl:Class .
+    
+    :Grandchild     a owl:Class .
+    
+    :Oedipus     a owl:Thing,
+                 [
+             a owl:Class;
+             owl:unionOf  (
+            :BadChild
+            :GoodChild ) ] .
+    
+    :Person     a owl:Class;
+         rdfs:subClassOf  [
+             a owl:Restriction;
+             owl:onProperty :father;
+             owl:someValuesFrom :Person ] .
+    
+    :Remus     a owl:Thing .
+    
+    :Romulus     a :Person,
+                owl:Thing,
+                 [
+             a owl:Restriction;
+             owl:onProperty :father;
+             owl:someValuesFrom  [
+                 a owl:Restriction;
+                 owl:hasValue :Remus;
+                 owl:onProperty :child ] ];
+         :hates :Remus .
+    
+    :SiblingRule     a swrl:Imp;
+         swrl:body  (
+         [
+                 a swrl:IndividualPropertyAtom;
+                 swrl:argument1 :x;
+                 swrl:argument2 :y;
+                 swrl:propertyPredicate :parent ]
+         [
+                 a swrl:IndividualPropertyAtom;
+                 swrl:argument1 :z;
+                 swrl:argument2 :y;
+                 swrl:propertyPredicate :parent ]
+         [
+                 a swrl:DifferentIndividualsAtom;
+                 swrl:argument1 :x;
+                 swrl:argument2 :z ] );
+         swrl:head  (
+         [
+                 a swrl:IndividualPropertyAtom;
+                 swrl:argument1 :x;
+                 swrl:argument2 :z;
+                 swrl:propertyPredicate :sibling ] ) .
+    
+    :child     a owl:ObjectProperty .
+    
+    :father     a owl:ObjectProperty;
+         rdfs:subPropertyOf :parent .
+    
+    :hates     a owl:ObjectProperty .
+    
+    :parent     a owl:ObjectProperty;
+         owl:inverseOf :child .
+    
+    :sibling     a owl:ObjectProperty .
+    
+    :x     a swrl:Variable .
+    
+    :y     a swrl:Variable .
+    
+    :z     a swrl:Variable .
+      [      a owl:Restriction;
+             rdfs:subClassOf :Grandchild;
+             owl:onProperty :father;
+             owl:someValuesFrom  [
+                 a owl:Restriction;
+                 owl:onProperty :father;
+                 owl:someValuesFrom :Person ] ].
+    
+      [      a owl:AllDifferent;
+             owl:distinctMembers  (
+            :Abel
+            :Adam
+            :Cain
+            :Oedipus
+            :Remus
+            :Romulus ) ].
+    
+#ENDS

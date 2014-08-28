@@ -1,0 +1,18 @@
+@prefix : <http://jmv.fr#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+# clone a list by a forward recursion - design pattern
+
+# initial condition
+:l0c  :clone_of (:v0 :v1 :v2) .
+# not needed anymore since Euler Revision 3350:		(:v0 :v1 :v2) a rdf:List .
+
+{
+  ?L rdf:first ?F .
+  ?L rdf:rest  ?R .
+  ?LC :clone_of ?L .
+} => {
+  ?LC :first ?F .
+  ?LC :rest ?RC .
+  ?RC :clone_of ?R .
+} .

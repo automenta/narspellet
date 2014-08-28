@@ -1,0 +1,17 @@
+begin of model http://sourceforge.net/projects/eulergui/
+	begin of variable
+		existential #g
+		universal #h
+	end of variable
+	begin of statement
+		begin of statement subject
+			uri #g
+		end of statement subject
+		begin of statement predicate
+			uri #loves
+		end of statement predicate
+		begin of statement object
+			uri #h
+		end of statement object
+	end of statement
+end of model http://sourceforge.net/projects/eulergui/

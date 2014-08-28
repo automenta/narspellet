@@ -1,0 +1,4 @@
+@prefix : <http://example.com#> .
+@prefix loc: <http://example.com/loc#> .
+@prefix fam: <http://example.com/fam#> .
+:me :sendmail :joe!fam:mother!loc:office!loc:zip .

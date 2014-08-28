@@ -1,0 +1,10 @@
+
+@prefix : <http://example.com#> .
+
+:a :aa :aaa .
+
+{
+:a :aa :aaa .
+} => {
+:b :bb :bbb .
+}.

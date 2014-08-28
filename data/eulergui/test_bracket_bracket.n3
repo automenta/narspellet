@@ -1,0 +1,10 @@
+@prefix ns2:     <http://example.org#> .
+@prefix ns1:     <http://maven.apache.org/POM/4.0.0#> .
+@prefix xs_:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xs:      <http://www.w3.org/2001/XMLSchema> .
+
+[
+    ns1:configuration [] ;     # NOTE: this works:     ns1:configuration ns1:bla ;
+    ns1:groupId "org.apache.maven.plugins"^^xs_:string
+] .

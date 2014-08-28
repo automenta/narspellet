@@ -1,0 +1,8 @@
+@prefix : <http://example.com#> .
+
+:a :p :v .
+
+# BTW don't know why this doesn't work:
+# { 1 = 1 } => { :a :p (10 20) } .
+
+{ :a :p :v } => { :a :p (10 20) } .

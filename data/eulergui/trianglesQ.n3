@@ -1,0 +1,3 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+{ ?P1 owl:sameAs ?P2 } => { ?P1 owl:sameAs ?P2 } .
+

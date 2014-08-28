@@ -1,0 +1,83 @@
+@prefix : <http://food.com/> .
+@prefix kb: <http://deductions.sf.net/ontology/knowledge_base.owl#> .
+@prefix log:  <http://www.w3.org/2000/10/swap/log#> .
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+
+:Food :available :saucisson .
+:Food :available :patates   .
+:Food :available "gateau"   .
+
+{
+  ?X :eats ?F 
+} => {
+  _:d kb:retract ( :Food :available ?F ) .
+} .
+
+:theCat :eats :saucisson .
+:theDog :eats "gateau" .
+:theDog :name "gateau" .
+
+{ # check that the saucisson has been eaten
+  (?A ?B ) e:findall ( ?X { :Food :available :saucisson } () ).
+} => {
+  :test :retract  "OK"
+} .
+##################################
+{
+  :theCat log:notEqualTo :theDog
+} => {
+  :test :notEqualTo "OK"
+} .
+
+{
+  :theCat log:equalTo <http://food.com/theCat>
+} => {
+  :test :equalTo "OK"
+} .
+
+{ ?S ?P ?X .
+  ?X log:equalTo "gateau" .
+} => {
+  :test :equalTo2 "OK"
+} .
+
+{ ?S ?P ?X .
+  "gateau" log:equalTo ?X . 
+} => {
+  :test :equalTo3 "OK"
+} .
+
+{ ?S :eats ?X .
+  ?S :name ?N .	
+  ?N log:equalTo ?X . 
+} => {
+  :test :equalTo4 "OK"
+} .
+
+{
+  # should not match
+  :Food :available ?FOOD .
+  ?FOOD log:notEqualTo :patates .
+} => {
+  ?FOOD :taste "good" .
+} .
+##################################
+{
+  1763 math:lessThan 2009
+} => {
+  :test :lessThan "OK"
+} .
+
+{
+  "1763" math:lessThan "2009"
+} => {
+  :test :lessThan_2 "OK"
+} .
+
+{
+  "1763.0" math:lessThan "2009.0"
+} => {
+  :test :lessThan_3 "OK"
+} .
+

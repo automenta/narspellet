@@ -1,0 +1,72 @@
+#Processed by Id: cwm.py,v 1.197 2007/12/13 15:38:39 syosi Exp 
+        #    using base file:///tmp/ecore_raw.n3
+        
+#  Notation3 generation by
+#       notation3.py,v 1.200 2007/12/11 21:18:08 syosi Exp
+
+#   Base was: file:///tmp/ecore_raw.n3
+     @prefix : <file:/home/jmv/workspace_test/test_with_uml/default.uml#> .
+    @prefix uml: <http://www.eclipse.org/uml2/2.1.0/UML#> .
+    
+    :id1132909700     a uml:Class;
+         uml:general :id1139676330;
+         :generalization :id1903483225;
+         uml:name "Boss";
+         uml:ownedElement :id1903483225;
+         :qualifiedName "corporate::Boss";
+         uml:superClass :id1139676330 .
+    
+    :id1139676299     a uml:Class;
+         uml:name "Employee";
+         uml:ownedAttribute :id111 ;
+         :qualifiedName "corporate::Employee" .
+
+    :id111 
+         uml:name "name" ;
+         uml:type "String".
+
+    :id1238943016     a uml:ElementImport;
+         :relatedElement :id449966953;
+         :source :id2063246703;
+         :target :id913828631 .
+    
+    :id1576330609     a uml:ElementImport;
+         :relatedElement :id1566414424;
+         :source :id2063246703;
+         :target :id2030276102 .
+    
+    :id1579889214     a uml:PrimitiveType .
+    
+    :id1687849576     a uml:PrimitiveType .
+    
+    :id1903483194     a uml:Generalization;
+         :relatedElement :id1900139592;
+         :source :id1132909731;
+         :target :id1139676330 .
+    
+    :id2030276071     a uml:PrimitiveType .
+    
+    :id2061720503     a uml:ElementImport;
+         :relatedElement :id1223987929;
+         :source :id2063246703;
+         :target :id1687849607 .
+    
+    :id2063246672     a uml:Package;
+         :elementImport :id530878251;
+         :importedMember :id-1531104774;
+         :member :id-409735981;
+         uml:name "corporate";
+         :ownedElement :id1176027588;
+         :ownedMember :id2103137562;
+         :ownedType :id2103137562;
+         :packagedElement :id2103137562;
+         :qualifiedName "corporate" .
+    
+    :id234515736     a uml:ElementImport;
+         :relatedElement :id1116027567;
+         :source :id2063246703;
+         :target :id1579889245 .
+    
+    :id913828600     a uml:PrimitiveType .
+    
+#ENDS

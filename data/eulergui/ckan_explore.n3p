@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.6.0_25" class="java.beans.XMLDecoder"> 
+ <object class="eulergui.project.ProjectData"> 
+  <void id="HashMap0" property="sources"> 
+   <void method="put"> 
+    <string>ckan_explore2.rq</string> 
+    <object class="eulergui.inputs.N3SourceFromSPARQLSource"> 
+     <void property="URI"> 
+      <string>ckan_explore2.rq</string> 
+     </void> 
+     <void property="service"> 
+      <string>http://semantic.ckan.net/sparql/</string> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="put"> 
+    <string>ckan_explore.rq</string> 
+    <object class="eulergui.inputs.N3SourceFromSPARQLSource"> 
+     <void property="URI"> 
+      <string>ckan_explore.rq</string> 
+     </void> 
+     <void property="service"> 
+      <string>http://semantic.ckan.net/sparql/</string> 
+     </void> 
+    </object> 
+   </void> 
+  </void> 
+  <void property="sources"> 
+   <object idref="HashMap0"/> 
+  </void> 
+ </object> 
+</java> 

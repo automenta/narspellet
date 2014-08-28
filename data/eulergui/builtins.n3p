@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.7.0" class="java.beans.XMLDecoder">
+ <object class="eulergui.project.ProjectData">
+  <void property="n3Query">
+   <object class="eulergui.project.N3Source">
+    <void property="URI">
+     <string>builtinsquery.n3</string>
+    </void>
+   </object>
+  </void>
+  <void id="HashMap0" property="sources">
+   <void method="put">
+    <string>concatenationQ.n3</string>
+    <object class="eulergui.project.N3Source">
+     <void property="URI">
+      <string>concatenationQ.n3</string>
+     </void>
+     <void property="activated">
+      <boolean>false</boolean>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>builtins.n3</string>
+    <object class="eulergui.project.N3Source">
+     <void property="URI">
+      <string>builtins.n3</string>
+     </void>
+    </object>
+   </void>
+  </void>
+  <void property="sources">
+   <object idref="HashMap0"/>
+  </void>
+ </object>
+</java>

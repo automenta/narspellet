@@ -1,0 +1,38 @@
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix   : <http://eulergui.sf.net/rules#> .
+
+{(?X ?Y) log:dtlit "abcd"^^:xyz} => {(?X ?Y) a :Result}. 
+
+{ # transtype from a constant:
+	(?X ?Y) log:dtlit "abcd"^^:xyz .
+	(?X :newType) log:dtlit ?LITERAL_NEW_TYPE .
+} => { ?LITERAL_NEW_TYPE a :Result}.
+
+{(?X ?Y) log:dtlit 33 } => {(?X ?Y) a :ResultInteger }.
+{(?X ?Y) log:dtlit true } => {(?X ?Y) a :ResultBoolean }.
+{(?X ?Y) log:dtlit 1.23 } => {(?X ?Y) a :ResultDouble }.
+{(?X ?Y) log:dtlit "2013-02-25" } => {(?X ?Y) a :ResultDate }.
+{(?X ?Y) log:dtlit <bla> } => {(?X ?Y) a :Failure }.
+{(?X ?Y) log:dtlit _:bla } => {(?X ?Y) a :FailureBN }.
+{(?X ?Y) log:dtlit _:sk0_1 } => {(?X ?Y) a :FailureVAR }.
+
+:a :b _:sk0_1 .
+{ :a :b ?v .
+  (?X ?Y) log:dtlit ?v .
+} => {
+  :dtlit :result_is (?X ?Y).	# also expected to fail
+}.
+
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+# Euler revision 6028 made this possible:
+# ("33" xsd:integer) a :ResultInteger. 
+# ("true" xsd:boolean) a :ResultBoolean. 
+# ("1.23" xsd:double) a :ResultDouble. 
+
+# TODO : does not compile with Drools <<<<<<
+# :v :p "transtype from a variable"^^:old_type .
+# { # transtype from a variable :
+# 	:v :p ?LITERAL_WITH_DT .
+# 	(?X ?Y) log:dtlit ?LITERAL_WITH_DT .
+# 	(?X :newType) log:dtlit ?LITERAL_NEW_TYPE .
+# } => { ?LITERAL_NEW_TYPE a :Result}. 

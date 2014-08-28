@@ -1,0 +1,7 @@
+@prefix : <http://example.com#> .
+
+{
+  :this ?P ?V
+}=>{
+  :this ?P ?V
+}.

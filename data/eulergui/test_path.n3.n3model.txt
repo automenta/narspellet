@@ -1,0 +1,51 @@
+begin of model http://sourceforge.net/projects/eulergui/
+	begin of variable
+		existential mother0
+		existential office1
+		existential zip2
+	end of variable
+	begin of statement
+		begin of statement subject
+			uri http://example.com#joe
+		end of statement subject
+		begin of statement predicate
+			uri http://example.com/fam#mother
+		end of statement predicate
+		begin of statement object
+			blank node mother0
+		end of statement object
+	end of statement
+	begin of statement
+		begin of statement subject
+			blank node mother0
+		end of statement subject
+		begin of statement predicate
+			uri http://example.com/loc#office
+		end of statement predicate
+		begin of statement object
+			blank node office1
+		end of statement object
+	end of statement
+	begin of statement
+		begin of statement subject
+			blank node office1
+		end of statement subject
+		begin of statement predicate
+			uri http://example.com/loc#zip
+		end of statement predicate
+		begin of statement object
+			blank node zip2
+		end of statement object
+	end of statement
+	begin of statement
+		begin of statement subject
+			uri http://example.com#me
+		end of statement subject
+		begin of statement predicate
+			uri http://example.com#sendmail
+		end of statement predicate
+		begin of statement object
+			blank node zip2
+		end of statement object
+	end of statement
+end of model http://sourceforge.net/projects/eulergui/

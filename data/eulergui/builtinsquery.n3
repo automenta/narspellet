@@ -1,0 +1,18 @@
+@prefix : <http://food.com/> .
+{
+  ?X :available ?F
+} => {
+  ?X :available ?F
+} .
+
+{
+  :test ?P ?V
+} => {
+  :test ?P ?V
+} .
+
+{
+ ?F :taste ?T .
+} => {
+ ?F :taste ?T .
+} .

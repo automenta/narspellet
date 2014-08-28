@@ -1,0 +1,8 @@
+@prefix eg: <http://eulergui.sourceforge.net/engine.owl#> .
+@prefix javam: <http://java.sun.com/method#> .
+
+# dynamically load an URI in the KB 
+{ ?X eg:addKnowledge ?URI
+} => {
+  eg:applicationStarter javam:addKnowledge ( ?URI ) .
+} .

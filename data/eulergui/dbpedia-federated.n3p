@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.7.0_03" class="java.beans.XMLDecoder">
+ <object class="eulergui.project.ProjectData">
+  <void property="eulerArguments">
+   <string>--pass</string>
+  </void>
+  <void id="HashMap0" property="sources">
+   <void method="put">
+    <string>sample.n3</string>
+    <object class="eulergui.project.N3Source">
+     <void property="URI">
+      <string>sample.n3</string>
+     </void>
+     <void property="activated">
+      <boolean>false</boolean>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>from-n3.rq</string>
+    <object class="eulergui.inputs.N3SourceFromSPARQLSource">
+     <void property="URI">
+      <string>from-n3.rq</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>from-rdf.rq</string>
+    <object class="eulergui.inputs.N3SourceFromSPARQLSource">
+     <void property="URI">
+      <string>from-rdf.rq</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>dbpedia-federated.rq</string>
+    <object class="eulergui.inputs.N3SourceFromSPARQLSource">
+     <void property="URI">
+      <string>dbpedia-federated.rq</string>
+     </void>
+    </object>
+   </void>
+  </void>
+  <void property="sources">
+   <object idref="HashMap0"/>
+  </void>
+ </object>
+</java>

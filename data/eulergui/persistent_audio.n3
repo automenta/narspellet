@@ -1,0 +1,207 @@
+@prefix pref:    <http://www.taxochronos.com/ontologies/2012/01/simplePlayList.owl#> .
+
+<file:/home/jmv/Musique/John%20Coltrane-Very%20Best%20of-2000/Very%20Best%20of%20John%20Coltrane%20-%2002%20-%20Cousin%20Mary.mp3>
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#album>
+              "Giant Steps" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#artist>
+              "John Coltrane" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#disc_no>
+              "0" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#genre>
+              "Jazz" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#title>
+              "Cousin Mary" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#track>
+              "2" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#track_length>
+              "350" .
+
+<file:/home/jmv/Musique/John%20Coltrane-Very%20Best%20of-2000/Very%20Best%20of%20John%20Coltrane%20-%2001%20-%20Giant%20Steps.mp3>
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#album>
+              "Giant Steps" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#artist>
+              "John Coltrane" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#disc_no>
+              "0" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#genre>
+              "Jazz" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#title>
+              "Giant Steps" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#track>
+              "1" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#track_length>
+              "287" .
+
+<http://java.sun.com/class#eulergui.gui.main.ProjectGUI>
+      <http://deductions.sf.net/ontology/software_applications.owl.n3#hasFeature>
+              "<http://java.sun.com/class#eulergui-gui-actions-ResultEditorAction>" .
+
+<file:/home/jmv/Musique/John%20Coltrane-Very%20Best%20of-2000/Very%20Best%20of%20John%20Coltrane%20-%2011%20-%20Body%20and%20Soul.mp3>
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#artist>
+              "John Coltrane" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#genre>
+              "" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#title>
+              "Body And Soul" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#track>
+              "11" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#track_length>
+              "340" .
+
+<file:/home/jmv/Musique/John%20Coltrane-Very%20Best%20of-2000/Very%20Best%20of%20John%20Coltrane%20-%2009%20-%20Mr.%20Syms.mp3>
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#album>
+              "Plays the Blues" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#artist>
+              "John Coltrane" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#disc_no>
+              "0" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#genre>
+              "Jazz" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#title>
+              "Mr. Syms" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#track>
+              "9" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#track_length>
+              "323" .
+
+<file:/home/jmv/Musique/John%20Coltrane-Very%20Best%20of-2000/Very%20Best%20of%20John%20Coltrane%20-%2013%20-%20Spiral.mp3>
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#album>
+              "Giant Steps" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#artist>
+              "John Coltrane" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#disc_no>
+              "0" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#genre>
+              "Jazz" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#title>
+              "Spiral" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#track>
+              "13" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#track_length>
+              "363" .
+
+<file:/home/jmv/Musique/John%20Coltrane-Very%20Best%20of-2000/Very%20Best%20of%20John%20Coltrane%20-%2005%20-%20My%20Shining%20Hour.mp3>
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#artist>
+              "John Coltrane" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#genre>
+              "" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#title>
+              "My Shining" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#track>
+              "5" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#track_length>
+              "293" .
+
+<file:/home/jmv/Musique/John%20Coltrane-Very%20Best%20of-2000/Very%20Best%20of%20John%20Coltrane%20-%2014%20-%20Syeeda's%20Song%20Flute.mp3>
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#album>
+              "Giant Steps" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#artist>
+              "John Coltrane" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#disc_no>
+              "0" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#genre>
+              "Jazz" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#media>
+              "ANA" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#musicmatch_preference>
+              "None" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#title>
+              "Syeeda's Song Flute" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#track>
+              "14" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#track_length>
+              "425" .
+
+<file:/home/jmv/Musique/John%20Coltrane-Very%20Best%20of-2000/Very%20Best%20of%20John%20Coltrane%20-%2012%20-%20Countdown.mp3>
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#album>
+              "Giant Steps" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#artist>
+              "John Coltrane" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#disc_no>
+              "0" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#genre>
+              "Jazz" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#title>
+              "Countdown" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#track>
+              "12" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#track_length>
+              "145" .
+
+<file:/home/jmv/Musique/John%20Coltrane-Very%20Best%20of-2000/Very%20Best%20of%20John%20Coltrane%20-%2008%20-%20Summertime.mp3>
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#artist>
+              "John Coltrane" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#genre>
+              "" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#title>
+              "Summertime" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#track>
+              "8" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#track_length>
+              "695" .
+
+<file:/home/jmv/Musique/John%20Coltrane-Very%20Best%20of-2000/Very%20Best%20of%20John%20Coltrane%20-%2007%20-%20Central%20Park%20West.mp3>
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#artist>
+              "John Coltrane" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#genre>
+              "" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#title>
+              "Central Park West" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#track>
+              "7" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#track_length>
+              "250" .
+
+<file:/home/jmv/Musique/John%20Coltrane-Very%20Best%20of-2000/Very%20Best%20of%20John%20Coltrane%20-%2010%20-%20Equinox.mp3>
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#artist>
+              "John Coltrane" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#genre>
+              "" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#title>
+              "Equinox" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#track>
+              "10" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#track_length>
+              "519" .
+
+<file:/home/jmv/Musique/John%20Coltrane-Very%20Best%20of-2000/Very%20Best%20of%20John%20Coltrane%20-%2003%20-%20Naima.mp3>
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#album>
+              "Giant Steps" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#artist>
+              "John Coltrane" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#disc_no>
+              "0" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#genre>
+              "Jazz" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#title>
+              "Naima" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#track>
+              "3" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#track_length>
+              "264" .
+
+<file:/home/jmv/Musique/John%20Coltrane-Very%20Best%20of-2000/Very%20Best%20of%20John%20Coltrane%20-%2004%20-%20Like%20Sonny.mp3>
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#artist>
+              "John Coltrane" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#genre>
+              "" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#title>
+              "Like Sonny" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#track>
+              "4" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#track_length>
+              "355" .
+
+<file:/home/jmv/Musique/John%20Coltrane-Very%20Best%20of-2000/Very%20Best%20of%20John%20Coltrane%20-%2006%20-%20My%20Favorite%20Things.mp3>
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#artist>
+              "John Coltrane" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#genre>
+              "" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#media>
+              "DIG" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#title>
+              "My Favorite Things" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#track>
+              "6" ;
+      <http://www.taxochronos.com/ontologies/2012/03/mp3TagsOntology.owl#track_length>
+              "826" .

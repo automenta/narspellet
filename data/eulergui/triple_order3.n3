@@ -1,0 +1,4 @@
+?A <http://a> <http://a> .
+?B <http://b1> <http://b10> , <http://b11> , <http://b12> ;
+   <http://b2> <http://b2> .
+?D <http://c> <http://c> .

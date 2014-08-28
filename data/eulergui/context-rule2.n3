@@ -1,0 +1,14 @@
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix : <http://ex.com#>.
+:ctx1 :said {
+  :me :know :luc . :luc :know :me .
+  @forAll  :x , :y .
+  { :x :know :y . :y :know :x . } => { :x :know-each-other :y } .
+}.
+
+{
+  :ctx1 :said ?F.
+  ?F log:conclusion ?C.
+} => {
+  :conclusion :is ?C.
+} .

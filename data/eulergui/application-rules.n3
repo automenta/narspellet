@@ -1,0 +1,80 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix java: <http://java.sun.com/class#> .
+@prefix javam: <http://java.sun.com/method#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix app: <http://jmvanel.free.fr/ontology/software_applications.owl#> .
+@prefix javap: <http://java.sun.com/predicate#> .
+@prefix kb: <http://deductions.sf.net/ontology/knowledge_base.owl#> .
+@prefix log:  <http://www.w3.org/2000/10/swap/log#> .
+@prefix eg: <http://eulergui.sourceforge.net/engine.owl#> .
+@prefix soft: <http://deductions.sf.net/ontology/software_applications.owl.n3#> .
+
+########	User preferences	########
+####	User Language	#####
+{
+  app:currentApplication app:userLanguage ?LANG .
+  ?GUI a java:eulergui-gui-main-ProjectGUI .
+
+} => {
+  ?GUI javap:language ?LANG .
+   app:currentApplication app:currentUserLanguage ?LANG .
+  _:d eg:trace ( "userLanguage: called javap:language " ?GUI ?LANG  ).
+}.
+
+
+{ # when a new language is asserted, apply it and delete the old one
+  # TODO should be a generic mechanism for such a cardinality one thing
+  # maybe keep the javap: properties asserted in the KB
+  app:currentApplication app:currentUserLanguage ?CLANG .
+  app:currentApplication app:userLanguage ?LANG .
+  ?LANG log:notEqual ?CLANG .
+} => {
+  _:d kb:retract ( app:currentApplication app:userLanguage ?LANG ) .
+  _:d eg:trace ( "retracted app:currentApplication app:userLanguage" ?LANG  ).
+}.
+####	Path for executables	#####
+# e.g.	:cwm a eg:Inference_engine;   rdfs:label "CWM";  eg:absolute_path "/urs/bin/cwm" .
+# { ?E a eg:Inference_engine;
+#   rdfs:label ?LABEL;
+#   eg:absolute_path ?PATH .
+# } => {
+  # ??????????
+# }.
+
+########	Result Actions	########
+
+# java:eulergui-gui-actions-ResultEditorAction a soft:Feature.
+java:eulergui-gui-main-ProjectGUI soft:hasResultFeature java:eulergui-gui-actions-ResultEditorAction .
+java:eulergui-gui-main-ProjectGUI soft:hasResultFeature java:eulergui-gui-actions-ResultEditorN3Action .
+java:eulergui-gui-main-ProjectGUI soft:hasResultFeature java:eulergui-gui-actions-ResultGraphvizAction .
+java:eulergui-gui-main-ProjectGUI soft:hasResultFeature java:eulergui-gui-actions-ResultTableAction .
+
+# indirect instantiation through type variable (?FEATURE)
+{ ?GUI a java:eulergui-gui-main-ProjectGUI .
+  java:eulergui-gui-main-ProjectGUI soft:hasResultFeature ?FEATURE .
+} => {
+  ?Action a ?FEATURE ; javam:setProjectGUI( ?GUI ) .
+  ?GUI javap:resultManagement ?R .
+  ?R javam:addAction ( ?Action ) .
+}.
+
+########	N3 Source Types (WIP)	########
+
+@keywords a.
+squall a N3SourceType;
+  rdfs:label "Squall";
+  rdfs:comment"From Controlled english to SPARQL 1.1. - runs squall2sparql and launches SPARQL query";
+  rdfs:seeAlso <http://www.irisa.fr/LIS/softwares/squall>;
+  extension ".squall";
+  javaN3Factory java:eulergui-project-N3SourceFromSquall;
+  javaN3Widgets java:eulergui-gui-view-ButtonsForN3SourceFromSquall.
+
+########	n3SourceChanged Actions	########
+
+# { eg:n3SourceChanged eg:uri ?URI .
+#   ?PROJ owl:imports ?URI .
+#  ?N3Source a java:eulergui-project-N3Source; javap:Uri ?URI .
+# } => {
+#   # java:eulergui-gui-features-N3SourceCheck javam:check (?URI ?PROJ) . # ?URI). # 
+#   java:eulergui-gui-features-N3SourceCheck javam:check (?N3Source).
+# }.

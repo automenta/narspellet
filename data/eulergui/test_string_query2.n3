@@ -1,0 +1,6 @@
+@prefix : <http://example.com#> .
+
+# { ?WHO ?HAS "blanquette de veau" . }
+{ ?WHO ?HAS ?WHAT . }
+=>
+{ ?WHO ?HAS ?WHAT . }

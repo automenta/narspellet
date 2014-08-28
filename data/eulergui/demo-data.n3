@@ -1,0 +1,26 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl:  <http://www.w3.org/2002/07/owl#>.
+@prefix foaf:  <http://xmlns.com/foaf/0.1/>.
+@prefix dc:  <http://purl.org/dc/elements/1.1/>.
+@prefix dbpedia-owl:  <http://dbpedia.org/ontology/>.
+@prefix dbpedia:  <http://dbpedia.org/resource/>.
+@prefix void:  <http://rdfs.org/ns/void#>.
+@prefix log:  <http://www.w3.org/2000/10/swap/log#>.
+@prefix string:  <http://www.w3.org/2000/10/swap/string#>.
+@prefix list:  <http://www.w3.org/2000/10/swap/list#>.
+@prefix e:  <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix eg:  <http://eulergui.sourceforge.net/engine.owl#>.
+@prefix   :  <http://eulergui.sourceforge.net/engine.owl#>.
+@prefix java:  <http://java.sun.com/class#>.
+@prefix javam:  <http://java.sun.com/method#>.
+@prefix javap:  <http://java.sun.com/predicate#>.
+@keywords is, a .
+
+demo1 a EulerGUI_demo ; rdfs:label "simple bizz rule + Java liaison" ; project <examples/BloodPressure.n3p> .
+demo2 a EulerGUI_demo ; rdfs:label "Swing form generation" ; project <../deductions/n3_nojs/person-app.n3p>.
+demo3 a EulerGUI_demo ; rdfs:label "Truth Maintenance" ; project <test/n3JavaMapping-GUI.n3p>.
+demo4 a EulerGUI_demo ; rdfs:label "" ; project <> .
+
+democ1 a shell_command_demo; rdfs:label "ATTEMPTO parser (APE)"
+; command ( "ape.exe" "-text" "?" "-solo" "drspp" ) .

@@ -1,0 +1,15 @@
+@prefix java: <http://java.sun.com/class#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+
+# the superClasses of an abstract Class are also abstract:
+{ ?CLASS java:isAbstract true .
+  ?CLASS rdfs:subClassOf ?SUPERCLASS . }
+=> { ?SUPERCLASS java:isAbstract true . } .
+
+# if ?CLASS has a subclass (different from itself)
+# then it is a SuperClass
+{ ?SUBCLASS rdfs:subClassOf ?CLASS .
+  ?SUBCLASS log:notEqualTo ?CLASS . }
+=> {
+ ?CLASS java:isSuperClass true . } .

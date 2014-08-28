@@ -1,0 +1,14 @@
+@prefix dbo: <http://dbpedia.org/ontology/>.
+@prefix owl:  <http://www.w3.org/2002/07/owl#>.
+@prefix eg:  <http://eulergui.sourceforge.net/engine.owl#>.
+@prefix proj:  <http://eulergui.sf.net/ontology/project.owl.n3#>.
+@prefix foaf:  <http://xmlns.com/foaf/0.1/>.
+
+<> a owl:Ontology ;
+	owl:imports
+		<domain-app-Song.n3> ,
+		foaf:	,
+		<domain-app-Person.n3> ,
+		dbo:MusicalWork ,
+		<music-app-rules.n3>
+.

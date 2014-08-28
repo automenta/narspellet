@@ -1,0 +1,41 @@
+#
+# !!! This file was generated automatically from data source at: file:///home/jmv/ontologies/simple-ontology.owl. !!!
+# !!! Do not edit that file. It is transient.
+#
+#Processed by $Id: euler.yap 3552 2010-07-20 16:37:02Z josd $
+#eye --wget-path /tmp/eye/linux/bin/ --nope http://deductions.svn.sourceforge.net/viewvc/deductions/n3_new/swrl-n3-rules.n3 http://deductions.svn.sourceforge.net/viewvc/deductions/n3_new/variableSubstitution.n3 /tmp/translation-8775621906532388617.n3 --query http://deductions.svn.sourceforge.net/viewvc/deductions/n3_new/swrl-n3-rulesQ.n3 
+
+@prefix : <http://owldl.com/ontologies/dl-safe.owl#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix swrl: <http://www.w3.org/2003/11/swrl#>.
+@prefix swrlb: <http://www.w3.org/2003/11/swrlb#>.
+@prefix list: <http://www.w3.org/2000/10/swap/list#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix str: <http://www.w3.org/2000/10/swap/string#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix fn: <http://www.w3.org/2005/xpath-functions#>.
+@prefix func: <http://www.w3.org/2007/rif-builtin-function#>.
+@prefix euler_owl: <http://eulersharp.svn.sourceforge.net/viewvc/eulersharp/trunk/2003/03swap/>.
+@prefix var: <http://localhost/var#>.
+@prefix ns1: <http://www.simple-ontology.owl#>.
+@prefix protege: <http://protege.stanford.edu/plugins/owl/protege#>.
+@prefix xsp: <http://www.owl-ontologies.com/2005/08/07/xsp.owl#>.
+@prefix sqwrl: <http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix assert: <http://www.owl-ontologies.com/assert.owl#>.
+@prefix swrla: <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#>.
+@prefix r: <http://www.w3.org/2000/10/swap/reason#>.
+@prefix n3: <http://www.w3.org/2004/06/rei#>.
+
+{?L a ns1:Light.
+ ?L ns1:hasControl ?SWITCH.
+ ?SWITCH ns1:hasState ?S} => {?L ns1:hasState ?S}.
+
+
+#ENDS 10 msec
+#Trunk : 75/1085 = 6.91244239631336 %
+#Branch: 1/78 = 1.28205128205128 %
+

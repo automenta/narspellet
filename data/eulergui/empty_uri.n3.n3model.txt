@@ -1,0 +1,15 @@
+begin of model http://sourceforge.net/projects/eulergui/
+	begin of variable
+	end of variable
+	begin of statement
+		begin of statement subject
+			uri 
+		end of statement subject
+		begin of statement predicate
+			uri p
+		end of statement predicate
+		begin of statement object
+			uri ob
+		end of statement object
+	end of statement
+end of model http://sourceforge.net/projects/eulergui/

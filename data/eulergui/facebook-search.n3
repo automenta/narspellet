@@ -1,0 +1,8 @@
+@prefix ege: <http://eulergui.sf.net/examples/> .
+
+
+{
+  ?C ege:friend_proposition ?Z .
+} => {
+  ?C ege:friend_proposition ?Z .
+}.

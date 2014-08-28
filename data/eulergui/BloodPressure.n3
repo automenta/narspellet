@@ -1,0 +1,10 @@
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix : <http://eulergui.sourceforge.net/examples#> .
+
+{ :BloodPressure :val ?x. ?x math:greaterThan 70 }
+	=> { :Service112 :alert "true" } .
+
+:BloodPressure :val 72 .
+
+# I need Jena to be able to infer that
+# :Service112 :alert "true"

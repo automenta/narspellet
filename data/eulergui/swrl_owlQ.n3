@@ -1,0 +1,29 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix list: <http://www.w3.org/2000/10/swap/list#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix : <http://eulergui.sf.net/owl-rule#>.
+@prefix var: <http://localhost/var#>.
+@prefix ns1: <http://owldl.com/ontologies/dl-safe.owl#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix swrl: <http://www.w3.org/2003/11/swrl#>.
+@prefix swrlb: <http://www.w3.org/2003/11/swrlb#>.
+@prefix str: <http://www.w3.org/2000/10/swap/string#>.
+@prefix fn: <http://www.w3.org/2005/xpath-functions#>.
+@prefix func: <http://www.w3.org/2007/rif-builtin-function#>.
+@prefix euler_owl: <http://eulersharp.svn.sourceforge.net/viewvc/eulersharp/trunk/2003/03swap/>.
+@prefix ns2: <http://www.semanticweb.org/ontologies/2011/10/Ontology1320937725852.owl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix r: <http://www.w3.org/2000/10/swap/reason#>.
+@prefix n3: <http://www.w3.org/2004/06/rei#>.
+
+{
+?t0 ns2:dp1 ?t2.
+?VAR a ns2:c1.
+} => {
+?t0 ns2:dp1 ?t2.
+?VAR a ns2:c1.
+}.
+

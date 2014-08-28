@@ -1,0 +1,40 @@
+begin of model http://sourceforge.net/projects/eulergui/
+	begin of variable
+	end of variable
+	begin of statement
+		begin of statement subject
+			uri http://sourceforge.net/projects/eulergui/assumption
+		end of statement subject
+		begin of statement predicate
+			uri http://www.w3.org/2002/07/owl#sameAs
+		end of statement predicate
+		begin of statement object
+			begin of formula
+				begin of variable
+				end of variable
+				begin of statement
+					begin of statement subject
+						uri http://sourceforge.net/projects/eulergui/fred
+					end of statement subject
+					begin of statement predicate
+						uri http://www.example.org/utilities#knows
+					end of statement predicate
+					begin of statement object
+						uri http://sourceforge.net/projects/eulergui/john
+					end of statement object
+				end of statement
+				begin of statement
+					begin of statement subject
+						uri http://sourceforge.net/projects/eulergui/john
+					end of statement subject
+					begin of statement predicate
+						uri http://www.example.org/utilities#knows
+					end of statement predicate
+					begin of statement object
+						uri http://sourceforge.net/projects/eulergui/mary
+					end of statement object
+				end of statement
+			end of formula
+		end of statement object
+	end of statement
+end of model http://sourceforge.net/projects/eulergui/

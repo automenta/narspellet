@@ -1,0 +1,89 @@
+
+@prefix umlowl: <http://deductions.sf.net/owl/uml#> .
+@prefix       : <http://deductions.sf.net/owl/uml#> .
+
+@prefix uml: <http://www.eclipse.org/uml2/2.1.0/UML#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#> .
+
+# Simple UML to OWL translation: Class, general, name, ownedAttribute
+
+{
+  ?UML_CLASS a uml:Class .
+  # _:d e:trace ( "rule_1" ?UML_CLASS uml:Class ).
+} => {
+  ?OWL_CLASS a owl:Class .
+  ?OWL_CLASS :translatedFromUML ?UML_CLASS .
+  #?OWL_CLASS <urn:DEBUG> ( "rule_1"
+  #?OWL_CLASS :translatedFromUML ?UML_CLASS ) .
+} .
+
+{
+  ?OWL_CLASS :translatedFromUML ?UML_CLASS .
+  ?UML_CLASS uml:general ?UML_GENERAL .
+} => {
+  ?OWL_GENERAL a owl:Class .
+  ?OWL_CLASS rdfs:subClassOf ?OWL_GENERAL .
+  ?OWL_GENERAL :translatedFromUML ?UML_GENERAL .
+} .
+
+{
+  ?OWL_CLASS :translatedFromUML ?UML_CLASS .
+  ?UML_CLASS uml:name ?NAME .
+} => {
+  ?OWL_CLASS rdfs:label ?NAME .
+} .
+
+{
+  ?OWL_CLASS :translatedFromUML ?UML_CLASS .
+  # _:d e:trace ( "step1" ?OWL_CLASS :translatedFromUML ?UML_CLASS ) .
+
+  ?UML_CLASS uml:ownedAttribute ?ATTRIBUTE .
+  # _:d e:trace ( "step2" "ATTRIBUTE" ?ATTRIBUTE ) .
+
+  # uml:name can be absent, but then there is not much we can do,
+  # consider the model to be uncomplete
+  ?ATTRIBUTE uml:name ?NAME .
+  # _:d e:trace ( "step3" "NAME" ?NAME ) .
+
+  # _:dummy
+  # (?SCOPE 1) e:findall ( ?TYPE { ?ATTRIBUTE uml:type ?TYPE } () ).
+
+  # if is there is no UML type, it must be string
+  (?SCOPE ?SPAN) e:findall
+  ( ?TYPE { ?ATTRIBUTE uml:type ?TYPE } () ).
+
+} => {
+  ?PROPERTY a owl:DatatypeProperty . 
+  ?PROPERTY rdfs:domain ?OWL_CLASS .
+  ?PROPERTY rdfs:range xsd:string .
+  ?PROPERTY rdfs:label ?NAME .
+  ?PROPERTY :translatedFromUML ?ATTRIBUTE .
+#  ?PROPERTY <urn:DEBUG> (
+#	:UML_CLASS_last_rule ?UML_CLASS
+#	:ATTRIBUTE_last_rule ?ATTRIBUTE
+#	:TYPES_last_rule ?TYPES
+#  ).
+} .
+
+# TODO : too much similitude with preceding rule
+{
+  ?OWL_CLASS :translatedFromUML ?UML_CLASS .
+  ?UML_CLASS uml:ownedAttribute ?ATTRIBUTE .
+
+  # uml:name can be absent, but then there is not much we can do,
+  # consider the model to be uncomplete
+  ?ATTRIBUTE uml:name ?NAME .
+
+  ?ATTRIBUTE uml:type ?UML_ATTRIBUTE_TYPE .
+  ?TYPE :translatedFromUML ?UML_ATTRIBUTE_TYPE .
+
+} => {
+  ?PROPERTY a owl:ObjectProperty . 
+  ?PROPERTY rdfs:domain ?OWL_CLASS .
+  ?PROPERTY rdfs:range  ?TYPE .
+  ?PROPERTY rdfs:label ?NAME .
+  ?PROPERTY :translatedFromUML ?ATTRIBUTE .
+} .

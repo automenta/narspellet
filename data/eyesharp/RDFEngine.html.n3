@@ -1,0 +1,495 @@
+bg image()
+RDFEngine V2
+
+Contents
+1) RDFEngine - History and purpose
+2) Structure of the program
+3) Quick start
+4) Overview of modules
+5) Overview of testcases
+6) Overview of builtins
+7) Format of parser XML output
+8) SIF: Short Inferencing Format
+
+Author: G.Naudts - e-mail: naudts_vannoten@yahoo.com
+
+RDFEngine - History and purpose
+
+The program RDFEngine was developed as a part of the master thesis of Guido
+Naudts. It was build on the example of Euler, the program of Jos De Roo. The
+original version was made with Haskell. It was then rewritten in Python.
+Purpose of the program was to implement a logic program for the Semantic Web
+initiative. Concerning compatibility the program is meant to be compatible with
+CWM in the sense that sources that work with CWM will also work with RDFEngine
+but not vice versa.(I like to do some experiments of my own (-: ). For input
+and output Notation 3 is used. See also the Notation 3 tutorial.
+
+See here for a short introduction to inferencing.
+
+Structure of the program
+
+An input file in Notation 3 is parsed with the parser N3ParserX.py and
+transformed into XML format. For use in inferencing the XML-tree is transformed
+into a list of triples in SIF format (Short Inferencing Format). SIF is a
+format that uses an mixture of tuples and lists. The content of the tuples and
+lists are integers. Though it was possible to make the inference engine using
+the XML format, for efficiency reasons SIF was developed (the program became
+about 10 times faster). The efficiency is further enhanced by the use of Psyco.
+Users who want to use this feature must uncomment the Psyco instructions in
+N3ParserX.py and in Proof.py. The instructions are 'import psyco' and
+'psyco.full()' at the top of the program.
+
+
+Quick start
+
+Note: for executing the Tk graphical library is needed. 
+
+1) The parser N3ParserX.py
+
+A new parser has been made with the output in XML. (The old parser gave output as a list of Python objects.
+The old parser is still available in the distribution under the name N3Parser.py; it will no longer be updated).
+Though the new one is slower than the old one, XML output is preferred for standardization reasons
+ and for clarity and readability of the output. The XML output is very verbose. 
+
+The parser can be called from the command line:
+
+python N3ParserX.py [fileName]
+
+e.g. python N3Parser.py authen.axiom.n3
+
+If a filename is given this file is parsed; if not, then the interactive mode is launched.
+
+A listing, eventually with error indications will appear in a Tk-window.
+As output in the main window appears:
+1) a listing of the parsed triples
+2) the listing of the XML tree
+3) the triples by predicate as they were entered in a dictionary.
+ This dictionary is a data structure that is used for inferencing.
+4) The dictionary with the prefixes is shown.
+
+The parser prepares also all necessary structures for inferencing.
+This includes transforming local variables to global variables by renaming.
+The inferencing structures are obtained using the function:
+getRDFDB(self, fileName, infData)
+The InfData object contains all necessary data for inferencing. 
+
+In interactive mode a choice can be made between a list of testcases
+from the directory testcases.
+
+The parser handles the 'path' and 'list' syntaxes. See e.g.
+test.n3 and test.n3.sav1
+
+2) The inference system: Proof.py
+
+The inference system can be called from the command line:
+
+python Proof.py filename1 filename2 ... filenamen
+
+The last filename is the query file.
+e.g python Proof.py authen.axiom.n3 authen.lemma.n3
+
+If no filenames are given the interactive interface is started.
+A choice from testcases can be done.
+The output repeats first the parser output; if there are errors a
+ Tk window will appear, otherwise not.
+Then inferencing can be started (type e.g. ?). The selection of parameters
+ can be e.g.:
+
+Continue? (y, n, s, g, o, a or ?)
+
+If you answer 's, g' then no trace information will be given and the inferencing
+process will continue uninterrupted.
+For stepping through the process one step at a time anwser: 'y'.
+
+The trace information contains:
+* an overview of the goallist before performing a step
+* the substitution that is the result of unifying the goal with one
+  alternative
+* a history of the process i.e. the sequence of deductions
+* the current goal
+
+Also the state of the finite state machine is indicated:
+e.g. mes ====== main
+When a solution is found extra info concerning the solution is given.
+When the process is finished all found solutions are repeated together
+ with their proofs.
+
+3) Parameter files:
+A system with parameter files permits to choose a query from
+a list of existing queries, to add, modify or delete a query.
+Use:
+python ParamFile.py
+A parameter file can then be selected e.g. authen.par.
+This system is still experimental. 
+
+
+Overview of modules
+
+
+The old parser
+
+N3Parser.py: the old parser that gives output as a list of 'triple objects'.
+(The old parser uses also: Triple.py for defining triple objects and
+Resource.py
+for defining Resource objects)
+
+The new parser
+
+N3ParserX.py: the new parser that gives output in XML format
+xml.py: creates an XML object; the children of this object are in a list
+xmlx.py: creates an xml object; the children of this object are in a dictionary
+('indexed' xml object)
+Utils.py: contains utilities for parsing
+
+The inferencing modules
+
+Proof.py: performs the inferencing process given a list of lemma files and a
+query file
+RDFFMS.py: the module that implements the finite state machine
+RDFUnify.py: handles substitutions and unifications
+RDFEngine.py: the module that performs the inferencing
+InfData.py: an object that contains all data necessary for inferencing
+EngineManager.py: an object for managing the inferencing process; not yet
+implemented
+ITripleX.py: this module transforms the XML format that is output by the parser
+into SIF.
+ParamFile.py: this module handles parameter files so that a list of queries can
+be manipulated
+N3AppGui.py: creates a GUI for ParamFile.py
+
+Builtins
+
+RDFWinsound.py: module that implements the sound builtins
+RDFString.py: implements the string builtins
+RDFRdfe.py: implements some of my own extensions to SWAP; builtins
+RDFMath.py: implements the math builtins
+RDFList.py: implements the list builtins
+
+Varia
+
+PVa.py: implements a permanent variable i.e. a variable that is stored on disk
+Prelude.py: implements utilities in a functional style
+N3Http.py: module for accessing files over the internet
+textDisp.py: a utility that displays a text in a window
+RDFToHtml.py: should transform N3 to html; not yet implemented
+solfege.py: a kind of musical 'game'- 'exercise'; has nothing to do with the
+Semantic web. Just for fun.
+
+Overview of test cases
+
+
+I give some comments on certain test cases (but not all):
+
+animal.n3 animal-simple.n3
+
+project.a1.n3 project.qa.n3: an financial application (fake data): I put my personal financial data in this format. I'm am working on this as an example application. 
+
+authen.axiom.n3 authen.lemma.n3: a very basic and useful example from De Roo.
+
+danb.n3 danb-query.n3
+
+gedcom-facts.n3 gedcom-relations.n3 gedcom-query.n3: the gedcom (genealogical) example of De Roo. Some of the queries defined in "gedcom-query.n3" take a long time to run.
+
+gedcom-simple.n3 gedcom-relations.n3 gedcom-qsimple.n3: a simplified version of gedcom
+                 
+lists.n3 lists-query.n3
+
+rdf-facts.n3 rdf-rules.n3 rdf-query.n3
+
+rdfc25May-test.n3 rdfc25May.n3
+
+russell.axiom.n3 russell.lemma.n3: this does not give a solution as it is a paradox
+       
+subprop.n3 subprop-query.n3
+
+test-test.n3 test.n3: this is mainly a parser test
+
+varprop.n3 varprop-query.n3
+
+ziv.n3 ziv-query.n3
+
+vogel.l.n3 vogel.q.n3: a simple test with two rules
+
+boole.axiom.n3 boole.lemma.n3: some boolean algebra; use with the parameter "o": single solution; otherwise python blocks.
+
+induction.axiom.n3 induction.query.n3: a trial for defining induction
+
+Owls.n3 owls.query.n3: an example showing how a practical data storage and query application could be build.
+
+ontology.axiom.n3 ontology.query.n3: a typical example that needs the builtin anti-looping system.
+
+ontology1.axiom.n3 ontology1.query.n3: as the previous example
+
+altT.l.n3 altT.q.n3
+
+notTest.n3 notTest.q.n3
+
+logic.a.n3 logic.q.n3: this gives an error on my system; I kept as an example of the error file.
+
+booleW.a.n3 booleW.q.n3: some boolean algebra; works fine but very slow. It is a simulation of an half-adder. The example works with Euler too, and very fast.
+
+equal.a.n3 equal.q.n3: a trial of defining equality without builtin. demonstrates the necessity of using a builtin!!
+
+builtins.n3 builtins.q.n3: this gives some examples on the sue of builtins
+
+ooo.a.n3 ooo.q.n3: with this example I tried to make an object oriented ontology. I found out that it is easy to define an object oriented system with inheritance and overwriting. The same system is defined in oooOwl.a.n3 but using owl to define the system. Hopefully, the enxt version of RDFEngine will be able to execute this.
+
+test.n3 test.q.n3: gives also examples of N3 syntax and the use of builtins.
+
+song.n3 song.a.n3: this plays the song "brother John".
+
+* many examples were taken from Jos De Roo:
+http://www.agfa.com/w3c/euler/
+
+
+Overview of builtins
+
+Note: builtins are recognized by their namespace abbreviation e.g. 'str',
+'math', etc...
+This is only meant to be temporarily.
+Parsing Parameters
+
+Parsing parameters are defined with the format:
+@param name_of_parameter value_of_parameter.
+Actually, two parameters are defined:
+full_generation: a triple like ":a :b {:c :d :e}. will become:
+":a :b :c. :c :d :e."
+This means that after parsing subject and object will not be complex entities
+but simple resources.
+This is not done in a standard way as I do not consider this to be in
+accordance with the official RDF definitions.
+noXML: This will supress the XML output in the parser listing.
+e.g. "@param noXML 1."
+A triple "RDFE:noXML RDFE:param "1" ." will be added to the source file.
+The value of the parameters is 0 or 1.
+
+Inferencing Parameters
+
+Inferencing parameters are parameters that influence the inferencing process
+and are evaluated
+before the inferencing process starts.
+Format: :name_of_parameter RDFE:init "value".
+Two parameters are defined:
+:onesol : indicates that only one solution is wanted in the inferencing
+process.
+:verbose: indicates verbosity of the inferencing output.
+e.g. ":verbose RDFE:init "0". " means no output will be given during
+inferencing.
+
+SWAP log:
+
+
+log:implies: natively understood as an implication.
+log:Falsehood: in rules. e.g. '{:a :b :c} a log:Falsehood.' will return true when ':a :b :c' does not exist.
+
+RDFString.py: implements the string builtins
+
+    
+str:matches:    str1 str:matches str2.
+                        True if str1 matches the regular expression str2.
+ 
+str:greaterThan:  str1 str:greaterThan str2.
+                            True if str1 is greater than str2 (Python comparison)
+
+str:lessThan:  str1 str:lessThan str2.
+                       True if str1 is less than str2 (Python comparison)
+   
+str:concat:   {str1 .. strn} str:concat object.
+                    object will become the concatenation of the strings in subject.
+                    The previous content of the object is thrown away.
+    
+str:contains:  str1 str:contains str2.
+                      True if the subject string contains the object string.
+   
+str:containsIgnoringCase: str1 str:containsIgnoringCase str2.
+                                           Ignores case.
+
+str:endsWith:  str1 str:endsWith str2.
+                          True if str1 ends with str2.
+   
+str:print:  print a string
+                Format: [str:print ?s]. (Note: CWM doesn't do this.)
+
+
+
+
+RDFRdfe.py: implements some of my own extensions to SWAP; builtins
+
+= : expresses equality of URI's.
+e.g. In a fact: ':a = :b.' The resource ':a' will match with ':b'.
+In a rule: '?a = ?b.' If ?a and ?b are substituted with the same resources,
+ the triple will return true. 
+
+/= : expresses inequality of URI's. This is only implemented for rules.
+
+RDFE:print: prints the object of the triple. In rules.
+
+
+
+
+RDFMath.py: implements the math builtins
+
+
+    (:x1 ... :xn) math:product :y. :y is the multiplication of :x1, ..., :xn.
+    (:x1 :x2) math:quotient :y. :y is the quotient: :x1/:x2.
+    (:x1 ... :xn) math:sum :y. :y is the sum: :x1 + .... + :xn.
+    (:x1 :x2) math:difference :y. :y is the difference: :x1 - :x2.
+
+
+
+RDFList.py: implements the list builtins
+
+
+liste:add:
+        append a resource list to a resource list
+        :name liste:add (rsl1 rsln) where
+        rsl1 and rsln are resource lists
+
+liste:subList:
+        :name1 liste:subList (:name2, :n1, :n2).
+         get a sublist of a resource list indexed by n1 and n2
+
+liste:print:
+        print a resource list.
+        Format: [liste:print :name].
+
+
+
+RDFWinsound.py: module that implements the sound builtins
+
+
+sound:random:
+        ?a sound:random ("min" "max").
+        ?a is a random number between min and max (float)
+
+sound:beep:
+    [sound:beep ("frequency" "duration")].
+    the frequency is between 55 and 32,767
+    the duration is in milliseconds.
+    Returns: (0,1, []) or (0, 0, []) if something wrong with the frequency.
+
+sound:note:
+        [sound:note (("name" "octave") "duration")].
+        Name is one of: C, Cis, D, Dis, E, F, Fis, G, Gis, A, Ais, B;
+        octave goes from 1 to 8.
+        duration in milliseconds
+
+Format of parser XML output
+
+I give here an example triple in xml from the testcase authen.axiom.n3.
+Comments are inserted after the sign: '#'
+
+
+ <triple>                        # defines a triple
+   <predicate>               # defines a predicate = property
+     <resource>              # defines a resource
+       <const>                 # indicates whether this resource is a constant ('T') or not ('F')
+         F
+       </const>
+       <simple>              # indicates whether this resource is a simple resource or a list of triples
+         T
+       </simple>
+       <number>            # all resources are numbered
+         1006
+       </number>
+       <label>                 # this is the label of the resource as given in the N3 source
+         :member
+       </label>
+       <abbrev>              # this tag gives the namespace abbreviation
+         :
+       </abbrev>
+       <fullname>            # this tag gives the fullname of the resource = URI
+         authen#member
+       </fullname>
+       <varn>         # indicates whether this resource is a variable and whch kind of variable
+            -1            # see ITripleX.py
+       </varn>
+     </resource>
+   </predicate>
+   <object>            # defines the object of the triple
+     <resource>
+       <const>
+         F
+       </const>
+       <simple>
+         T
+       </simple>
+       <number>
+         1007
+       </number>
+       <label>
+         <http://www.agfa.com>
+       </label>
+       <abbrev>
+       </abbrev>
+       <fullname>
+         http://www.agfa.com
+       </fullname>
+       <varn>
+         -1
+       </varn>
+     </resource>
+   </object>
+   <subject>              # defines the subject of the triple
+     <resource>
+       <const>
+         F
+       </const>
+       <simple>
+         T
+       </simple>
+       <number>
+         1005
+       </number>
+       <label>
+         <mailto:jos.deroo.jd@belgium.agfa.com>
+       </label>
+       <abbrev>
+       </abbrev>
+       <fullname>
+         mailto:jos.deroo.jd@belgium.agfa.com
+       </fullname>
+       <varn>
+         -1
+       </varn>
+     </resource>
+   </subject>
+ </triple>
+
+
+SIF - Short Inferencing Format
+
+SIF is a format where all data items are integers and all data structures are lists and tuples. This format was established by me because an inference engine working with Python objects was too slow. At least a factor 10 in velocity improvement was obtained using SIF.
+
+SIF is implemented by ITripleX.py.
+
+format of a triple = (isR, s, p, o, fr, ruleNr, lev, trNr)
+
+    isR = isRule, 0 or 1. Indicates whether this triple is a rule or not.
+    s = the number of the subject (all resources are numbered)
+    p = the number of the property. For a rule this has value 0 because for
+          a rule the predicate is always: log:implies.
+    o = the number of the object
+    fr = from rule: indicates that this triple was generated by a rule (0 or 1)
+    ruleNr = rule number, integer. All rules are numbered. For a non-rule this has value -1.
+    lev = inferencing level
+    trNr = triple number. All triples are numbered.
+    
+format of a resource:
+    (kind, res) where
+          kind = the kind of resource (simple, triple list or resource list)
+          res = the value of the resource
+
+    Format of res:
+    if kind = 0:  the format is (number, varn) 
+         number: the number of the resource
+         varn indicates the inferencing level;
+                   This is a simple resource 
+    if kind = 1: [triple0, ..., triplen]
+    if kind = 2: [res1, ..., resn]
+    if kind = -1: global universal variable ==> this log:forAll
+    if kind = -2: global existential variable ==> this log:forSome; _:
+    if kind = -3: local universal variable ==> ;log:forAll ...; ?x
+    if kind = -4: local existential variable ==> ;log:forSome
+    
+

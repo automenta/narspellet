@@ -1,0 +1,8 @@
+@prefix java: <http://java.sun.com/class#>.
+@prefix : <http://test#>.
+# <http://eulergui.sf.net/example#>.
+
+
+:x :p "data" .
+:listModel a java:javax-swing-DefaultListModel.
+

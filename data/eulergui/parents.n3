@@ -1,0 +1,3 @@
+@prefix : <http://exampleS.com#> .
+:jean :parentOf :simon .
+{ ?x :parentOf ?y } =>  { ?y :childOf ?x }.

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.6.0_12" class="java.beans.XMLDecoder"> 
+ <object class="eulergui.project.Project"> 
+  <void property="sources"> 
+   <void method="put"> 
+    <string>file:////tmp/translation-2667020993709690436.n3</string> 
+    <object class="eulergui.inputs.N3SourceFromOtherFormat"> 
+     <void property="URI"> 
+      <string>file:////tmp/translation-2667020993709690436.n3</string> 
+     </void> 
+     <void property="otherFile"> 
+      <string>./extlibrary.ecore</string> 
+     </void> 
+    </object> 
+   </void> 
+  </void> 
+ </object> 
+</java> 

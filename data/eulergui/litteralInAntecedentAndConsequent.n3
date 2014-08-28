@@ -1,0 +1,12 @@
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+_:b1 :contains 10 .
+{ ?B :contains ?V . 
+  _:d e:trace ( ?B :contains ?V ) .
+} => {
+  ?B :contains ?N.
+  ?N a :node .
+  ?N :value ?VN .
+#  ?VN math:equalTo ?V
+} .

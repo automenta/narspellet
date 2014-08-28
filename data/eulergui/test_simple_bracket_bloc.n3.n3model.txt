@@ -1,0 +1,16 @@
+begin of model http://sourceforge.net/projects/eulergui/
+	begin of variable
+		existential _0
+	end of variable
+	begin of statement
+		begin of statement subject
+			blank node _0
+		end of statement subject
+		begin of statement predicate
+			uri http://sourceforge.net/projects/eulergui/comment
+		end of statement predicate
+		begin of statement object
+			literal value= bla , data type=http://www.w3.org/2001/XMLSchema#string, language=
+		end of statement object
+	end of statement
+end of model http://sourceforge.net/projects/eulergui/

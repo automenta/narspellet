@@ -1,0 +1,27 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl:  <http://www.w3.org/2002/07/owl#>.
+@prefix foaf:  <http://xmlns.com/foaf/0.1/>.
+@prefix log:  <http://www.w3.org/2000/10/swap/log#>.
+@prefix string:  <http://www.w3.org/2000/10/swap/string#>.
+@prefix list:  <http://www.w3.org/2000/10/swap/list#>.
+@prefix e:  <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix eg:  <http://eulergui.sourceforge.net/engine.owl#>.
+@prefix java:  <http://java.sun.com/class#>.
+@prefix javam:  <http://java.sun.com/method#>.
+@prefix javap:  <http://java.sun.com/predicate#>.
+
+{ ?PE a foaf:Person; ?P ?O .
+  ?PE log:uri ?URI .
+  ?P  log:uri ?URIP .
+  ?O  log:uri ?URIO .
+ } => { eg:N3TableModel javam:addElement ( ?URI ?URIP ?URIO ) } .
+ 
+{ ?PE a foaf:Person; ?P ?O .
+  ?PE log:uri ?URI .
+  ?P  log:uri ?URIP .
+ } => { eg:N3TableModel javam:addElement ( ?URI ?URIP ?O ) } .
+  
+{ ?PE a foaf:Person ; ?P ?O .  } => { _:d eg:trace ( "Person" ?PE ?P ?O ) } .
+
+

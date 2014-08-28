@@ -1,0 +1,42 @@
+@prefix math: <http://www.w3.org/2000/10/swap/math#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl:  <http://www.w3.org/2002/07/owl#>.
+@prefix foaf:  <http://xmlns.com/foaf/0.1/>.
+@prefix dc:  <http://purl.org/dc/elements/1.1/>.
+@prefix dbpedia-owl:  <http://dbpedia.org/ontology/>.
+@prefix dbpedia:  <http://dbpedia.org/resource/>.
+@prefix void:  <http://rdfs.org/ns/void#>.
+@prefix log:  <http://www.w3.org/2000/10/swap/log#>.
+@prefix string:  <http://www.w3.org/2000/10/swap/string#>.
+@prefix list:  <http://www.w3.org/2000/10/swap/list#>.
+@prefix e:  <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix eg:  <http://eulergui.sourceforge.net/engine.owl#>.
+@prefix java:  <http://java.sun.com/class#>.
+@prefix javam:  <http://java.sun.com/method#>.
+@prefix javap:  <http://java.sun.com/predicate#>.
+@prefix : <http://www.agfa.com/w3c/euler/builtins#>.
+
+:s1 rdfs:label "papillon".
+:s1 rdfs:label "pape".
+:s1 rdfs:label "palpitant".
+:s1 rdfs:label "vive papi Mougeot!".
+
+{ ?M rdfs:label ?L.
+  ?L string:contains "pap".
+} => {
+  :test :pass_contains0 true .
+  :test :pass_contains0_res ?L .
+} .
+
+{ _:d e:findall ( ?M {
+    ?M rdfs:label ?L.
+    ?L string:contains "papi".
+  } ?LIST ).
+  ?LIST math:memberCount ?COUNT.
+} => {
+  :test :pass_contains true .
+  :test :pass_contains_count ?COUNT .
+  :test :res ?LIST .
+} .
+

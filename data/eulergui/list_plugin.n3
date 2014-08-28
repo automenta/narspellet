@@ -1,0 +1,19 @@
+@prefix egl: <http://eulergui.sf.net/list-plugin#> .
+@keywords is, of, a.
+
+# example of using a simple Prolog plugin
+# eye --pass --nope list_plugin.n3 --plugin=list.pl
+
+{ ?LIST process ?OUT
+} <= {	# NOTE backward chaining is mandatory here
+  ( 2 ?LIST ) egl:takeout ?OUT .
+}.
+
+# tests :
+:a b ( 1 2 3 ).
+
+{ :a b ?LIST . ?LIST process ?OUT} => { ?OUT a result }.
+{ :a b ?LIST . ( 2 ?LIST ) egl:takeout ?OUT} => { ?OUT a result2 }.
+
+aa b ( 1 2 3 ).
+{ aa b ?LIST . ( 2 ?LIST ) <http://eulergui.sf.net/list-plugin#takeout> ?OUT} => { ?OUT a result3 }.

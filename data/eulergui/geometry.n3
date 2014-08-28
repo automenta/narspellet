@@ -1,0 +1,103 @@
+@prefix : <http://eulergui.sf.net/example#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix eg: <http://eulergui.sourceforge.net/engine.owl#> .
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#> .
+
+# simple ontology to play with euclidian geometric questions
+
+:Point a owl:Class ;
+  rdfs:label "Euclidian point" .
+  
+#:pointIdentity a owl:DatatypeProperty ;
+#rdfs:domain :Point ;
+#rdfs:range :Point  ;
+#rdfs:label "Euclidian point identity" .
+  
+:Triangle a owl:Class ;
+  rdfs:label "Euclidian triangle" .
+  
+:triangleSummit a owl:DatatypeProperty ;
+  rdfs:domain :Triangle ;
+  rdfs:range  :Point ;
+  rdfs:label "Triangle for which the point is a summit" .
+  
+  
+## Rules
+#{
+#	 ?P a :Point .
+#} => {
+#	?P :pointIdentity ?P .
+#}.
+
+
+
+## identity is reflexive
+#{
+#	 ?P1 :pointIdentity ?P2 .
+#}  => {
+#	?P2 :pointIdentity ?P1 .
+#}.
+
+##SameAs
+#{
+#	 ?P1 :pointIdentity ?P2 .
+#}  => {
+#	?P2 owl:sameAs ?P1 .
+#}.
+
+
+## identity is transitive
+#{
+#	 ?P1 :pointIdentity ?P2 .
+#	 ?P2 :pointIdentity ?P3 .	 
+#} => {
+#	?P1 :pointIdentity  ?P3 .
+#}.
+
+
+# A triangle is a set of 3 distincts point in the euclidian plane
+{
+	 ?T a :Triangle .
+} => {
+	?P1 :triangleSummit ?T.
+	?P2 :triangleSummit ?T.
+	?P3 :triangleSummit ?T.
+	?P1 owl:differentFrom ?P2 .
+	?P2 owl:differentFrom ?P3 .
+	?P1 owl:differentFrom ?P3 .	
+}.
+
+{
+	?P1 :triangleSummit ?T.
+	?P2 :triangleSummit ?T.
+	?P3 :triangleSummit ?T.
+	?P4 :triangleSummit ?T.
+} => {
+	 ({?P1 owl:sameAs ?P2} {?P1 owl:sameAs :P3}
+	 {?P1 owl:sameAs :P4} {?P2 owl:sameAs :P3}
+	 {?P2 owl:sameAs :P4} {?P3 owl:sameAs :P4})!e:disjunction.
+	  _:d eg:trace ("Disjonction of triangle Summit")
+}.
+
+ 
+## Facts
+
+:TriangleABC a :Triangle .
+:A a :Point .
+:B a :Point .
+:C a :Point .
+:D a :Point .
+
+
+:A :triangleSummit :TriangleABC.
+:B :triangleSummit :TriangleABC.
+:C :triangleSummit :TriangleABC.
+:D :triangleSummit :TriangleABC.
+	
+
+:A owl:differentFrom :B.
+:C owl:differentFrom :D.
+:A owl:differentFrom :D.

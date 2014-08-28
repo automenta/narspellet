@@ -1,0 +1,38 @@
+@prefix ns2:     <http://example.org#> .
+@prefix ns1:     <http://www.w3.org/1999/xhtml#> .
+@prefix xs_:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix xs:      <http://www.w3.org/2001/XMLSchema> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+<file:/tmp/translation-4743912037557554779.n3>
+      ns1:html
+              [ ns1:body
+                        [ rdf:value """
+
+""" , """
+""" ;
+                          ns1:h1  [ rdf:value "Test for EulerGUI XML import and export"
+                                  ] ;
+                          ns1:p   [ rdf:value """
+is a nice tool for working with Semantic Web and rules .""" ;
+                                    ns1:strong
+                                            [ ns1:a   [ rdf:value "EulerGUI" ;
+                                                        ns2:href "http://eulergui.svn.sourceforge.net/viewvc/eulergui/trunk/eulergui/html/documentation.html"^^xs_:anyURI
+                                                      ]
+                                            ]
+                                  ]
+                        ] ;
+                ns1:head
+                        [ ns1:meta
+                                  [ ns2:content "Amaya, see http://www.w3.org/Amaya/" ;
+                                    ns2:name "generator"
+                                  ] ;
+                          ns1:meta
+                                  [ ns2:content "text/html; charset=iso-8859-1" ;
+                                    ns2:http-equiv "content-type"
+                                  ] ;
+                          ns1:title
+                                  [ rdf:value "simple"
+                                  ]
+                        ]
+              ] .

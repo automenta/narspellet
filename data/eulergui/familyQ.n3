@@ -1,0 +1,14 @@
+@prefix : <http://eulergui.sf.net/examples/> .
+
+# we want to a have the Knowledge Base entail :
+# Every person has a grandparent.
+{
+ # @forAll ?X.
+ # @forSome ?GP.
+ {
+    ?X a :Human .
+  } => { ?X :grandparent ?GP. } .
+
+} => {
+  :every_person_has_a_grandparent :is :proven
+}.

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.6.0_15" class="java.beans.XMLDecoder"> 
+ <object class="eulergui.project.Project"> 
+  <void property="sources"> 
+   <void method="put"> 
+    <string>./dplb.sparql</string> 
+    <object class="eulergui.inputs.N3SourceFromSPARQLSource"> 
+     <void property="URI"> 
+      <string>file:/tmp/translation-4364073738419630651.n3</string> 
+     </void> 
+     <void property="otherFile"> 
+      <string>./dplb.sparql</string> 
+     </void> 
+     <void property="service"> 
+      <string>http://www4.wiwiss.fu-berlin.de/dblp/sparql</string> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="put"> 
+    <string>./find_classes.sparql</string> 
+    <object class="eulergui.inputs.N3SourceFromSPARQLSource"> 
+     <void property="URI"> 
+      <string>file:/tmp/translation-112559846260284948.n3</string> 
+     </void> 
+     <void property="otherFile"> 
+      <string>./find_classes.sparql</string> 
+     </void> 
+     <void property="service"> 
+      <string>http://www4.wiwiss.fu-berlin.de/dblp/sparql</string> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="put"> 
+    <string>./find_properties.sparql</string> 
+    <object class="eulergui.inputs.N3SourceFromSPARQLSource"> 
+     <void property="URI"> 
+      <string>file:/tmp/translation-603080998606333693.n3</string> 
+     </void> 
+     <void property="otherFile"> 
+      <string>./find_properties.sparql</string> 
+     </void> 
+     <void property="service"> 
+      <string>http://www4.wiwiss.fu-berlin.de/dblp/sparql</string> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="put"> 
+    <string>./dplb1.sparql</string> 
+    <object class="eulergui.inputs.N3SourceFromSPARQLSource"> 
+     <void property="URI"> 
+      <string>file:/tmp/translation-4140218102518693806.n3</string> 
+     </void> 
+     <void property="otherFile"> 
+      <string>./dplb1.sparql</string> 
+     </void> 
+     <void property="service"> 
+      <string>http://www4.wiwiss.fu-berlin.de/dblp/sparql</string> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="put"> 
+    <string>./dplb2.sparql</string> 
+    <object class="eulergui.inputs.N3SourceFromSPARQLSource"> 
+     <void property="URI"> 
+      <string>file:/tmp/translation-5821674037215205091.n3</string> 
+     </void> 
+     <void property="otherFile"> 
+      <string>./dplb2.sparql</string> 
+     </void> 
+     <void property="service"> 
+      <string>http://www4.wiwiss.fu-berlin.de/dblp/sparql</string> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="put"> 
+    <string>./dplb4.sparql</string> 
+    <object class="eulergui.inputs.N3SourceFromSPARQLSource"> 
+     <void property="URI"> 
+      <string>file:/tmp/translation-9062236707410434342.n3</string> 
+     </void> 
+     <void property="otherFile"> 
+      <string>./dplb4.sparql</string> 
+     </void> 
+     <void property="service"> 
+      <string>http://www4.wiwiss.fu-berlin.de/dblp/sparql</string> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="put"> 
+    <string>./dplb3.sparql</string> 
+    <object class="eulergui.inputs.N3SourceFromSPARQLSource"> 
+     <void property="URI"> 
+      <string>file:/tmp/translation-2493671933557870478.n3</string> 
+     </void> 
+     <void property="otherFile"> 
+      <string>./dplb3.sparql</string> 
+     </void> 
+     <void property="service"> 
+      <string>http://www4.wiwiss.fu-berlin.de/dblp/sparql</string> 
+     </void> 
+    </object> 
+   </void> 
+  </void> 
+ </object> 
+</java> 

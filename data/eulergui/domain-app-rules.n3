@@ -1,0 +1,26 @@
+			@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+			@prefix e:  <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+			@prefix eg:  <http://eulergui.sourceforge.net/engine.owl#>.
+			@prefix java:  <http://java.sun.com/class#>.
+			@prefix javam:  <http://java.sun.com/method#>.
+			@prefix javap:  <http://java.sun.com/predicate#>.
+
+			{ ?Button a eg:creationFeature
+			; eg:hasProperties ?PROPS
+			; eg:hasClass ?CLASS
+			; foaf:thumbnail ?ICON .
+			_:f e:trace("11111111").
+	  		eg:panelForForms   a java:javax-swing-JPanel .
+			_:e e:trace("22222222222").
+	  		 eg:panelForButtons a java:javax-swing-JPanel .
+	  		?RBA a java:deductions-runtime-RuleBasedApplicationStarter .
+			_:g e:trace("33333").
+
+			} => {
+		 ?F a java:deductions-runtime-swing-TemporaryFrame
+  ; javap:localizedMessage "TEST !!!!!!!!!!!!!!!!!!!!!" .
+			java:deductions-runtime-swing-components-CreationButton javam:create
+			( ?PROPS ?CLASS ?ICON ?RBA
+	  			eg:panelForButtons eg:panelForForms ).
+	  			_:d eg:trace ( ?PROPS ?CLASS ?ICON ) .
+			}.

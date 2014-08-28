@@ -1,0 +1,13 @@
+@prefix math:		<http://www.w3.org/2000/10/swap/math#>.
+@prefix string:	<http://www.w3.org/2000/10/swap/string#>.
+@prefix eg:		<http://eulergui.com#>.
+@prefix list:		<http://www.w3.org/2000/10/swap/list#>.
+{ ?X ?P ?V0.
+  ?V0 string:contains "Blues" .
+} => { eg:result  list:member ?X .}.
+
+<file:/home/jmv/Musique/Canned%20Heat%20-%20The%20Very%20Best%20of%20Canned%20Heat%20-%20(MP3@320Kbps)/Canned%20Heat/06.%20Canned%20Heat%20-%20Bullfrog%20Blues.mp3> <http://www.taxochronos.com/ontologies/2012/01/simplePlayList.owl#Title> "Bullfrog Blues" .
+
+<file:/home/jmv/Musique/Canned%20Heat%20-%20The%20Very%20Best%20of%20Canned%20Heat%20-%20(MP3@320Kbps)/Canned%20Heat/14.%20Canned%20Heat%20-%20Future%20Blues.mp3> <http://www.taxochronos.com/ontologies/2012/01/simplePlayList.owl#Title> "Future Blues" .
+
+

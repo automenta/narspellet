@@ -1,0 +1,42 @@
+@prefix : <http://eulergui.sf.net/ontology/project.owl.n3#>.
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix void: <http://rdfs.org/ns/> .
+
+# alas have to comment this out; Protégé 4.3.0 does not accept it:
+# @keywords is, a, of.
+
+<> a owl:Ontology ;
+	rdfs:comment " example: Proposal for a new N3 format for RDF + OWL + rules projects "
+	# ; rdfs:seeAlso <http://eulergui.svn.sourceforge.net/viewvc/eulergui/trunk/eulergui/html/project_ontology.html>
+.
+
+# plain Import of a RDF document; being an N3 document,
+# it can also contain rules and formulas
+<> owl:imports <plants.n3> .
+               <plants.n3> :isActivated false . # true by default
+
+<> owl:imports <book.n3> .
+
+# the main N3 query
+<> :hasN3Query <plants-q.n3> .
+               <plants-q.n3> :isMainQuery true .
+
+# Import of an RDF or OWL document (Protégé compatible)
+<> owl:imports <herbivores.owl> .
+
+# Import of a XML document
+<> :hasN3Source
+   <http://svn.code.sf.net/p/eulergui/code/trunk/eulergui/pom.xml>.
+   <http://svn.code.sf.net/p/eulergui/code/trunk/eulergui/pom.xml>
+     :hasFormat <http://www.w3.org/XML/1998/namespace> . # facultative
+
+<> :hasN3Source <kings_of_France-genealogy.rq> .
+                <kings_of_France-genealogy.rq> void:sparqlEndpoint <http://dbpedia.org/sparql> ;
+                                               :user "jmv" ; :password "jmv" . 
+
+<> :subproject <subproject.n3p.n3> . # recommanded suffix .n3p.n3
+<> :postProcessing <project-post.n3p.n3> . # only one postProcessing
+
+# <> owl:imports <plants.owl> . # TODO: test: IllegalArgumentException: URI is not absolute
+# <> owl:imports <file:///home/jmv/src/eulergui/examples/plants.n3> . # works well without a popup, but also without the entry in "direct imports"

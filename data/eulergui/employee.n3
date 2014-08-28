@@ -1,0 +1,216 @@
+#Processed by Id: cwm.py,v 1.197 2007/12/13 15:38:39 syosi Exp 
+        #    using base file:///home/jmv/src/eulergui/trunk/eulergui/examples/employee.raw.n3
+        
+#  Notation3 generation by
+#       notation3.py,v 1.200 2007/12/11 21:18:08 syosi Exp
+
+#   Base was: file:///home/jmv/src/eulergui/trunk/eulergui/examples/employee.raw.n3
+     @prefix : <http://www.eclipse.org/uml2/2.1.0/UML#> .
+    @prefix def: <file:/home/jmv/workspace_test/test_with_uml/default.uml#> .
+    
+    def:id1238943016     a :PrimitiveType .
+    
+    def:id1482258114     a :PrimitiveType .
+    
+    def:id1501816798     a :ElementImport;
+         :importedElement def:id1659620795;
+         :importingNamespace def:id782521654;
+         :owner def:id782521654;
+         :relatedElement def:id1659620795,
+                def:id782521654;
+         :source def:id782521654;
+         :target def:id1659620795 .
+    
+    def:id1563093566     a :Property;
+         :aggregation "composite"^^:AggregationKind;
+         :class def:id223205208;
+         :featuringClassifier def:id223205208;
+         :isComposite "true"^^:Boolean;
+         :lower "1"^^:Integer;
+         :name "name";
+         :namespace def:id223205208;
+         :owner def:id223205208;
+         :qualifiedName "corporate::Employee::name";
+         :redefinitionContext def:id223205208;
+         :upper "1"^^:UnlimitedNatural .
+    
+    def:id1576330609     a :PrimitiveType .
+    
+    def:id1644838203     a :LiteralUnlimitedNatural;
+         :owner def:id1975260912;
+         :value "1"^^:UnlimitedNatural .
+    
+    def:id1659620795     a :PrimitiveType .
+    
+    def:id1661944297     a :LiteralUnlimitedNatural;
+         :owner def:id330512910;
+         :value "1"^^:UnlimitedNatural .
+    
+    def:id1687849576     a :ElementImport;
+         :importedElement def:id1576330609;
+         :importingNamespace def:id782521654;
+         :owner def:id782521654;
+         :relatedElement def:id1576330609,
+                def:id782521654;
+         :source def:id782521654;
+         :target def:id1576330609 .
+    
+    def:id1715150648     a :LiteralInteger;
+         :owner def:id1975260912;
+         :value "1"^^:Integer .
+    
+    def:id1975260912     a :Property;
+         :association def:id2136875125;
+         :class def:id713940044;
+         :featuringClassifier def:id713940044;
+         :lower "1"^^:Integer;
+         :lowerValue def:id1715150648;
+         :name "subordonate";
+         :namespace def:id713940044;
+         :ownedElement def:id1644838203,
+                def:id1715150648;
+         :owner def:id713940044;
+         :qualifiedName "corporate::Boss::subordonate";
+         :redefinitionContext def:id713940044;
+         :type def:id223205208;
+         :upper "1"^^:UnlimitedNatural;
+         :upperValue def:id1644838203 .
+    
+    def:id2030276071     a :ElementImport;
+         :importedElement def:id1482258114;
+         :importingNamespace def:id782521654;
+         :owner def:id782521654;
+         :relatedElement def:id1482258114,
+                def:id782521654;
+         :source def:id782521654;
+         :target def:id1482258114 .
+    
+    def:id2092843500     a :Generalization;
+         :general def:id223205208;
+         :owner def:id713940044;
+         :relatedElement def:id223205208,
+                def:id713940044;
+         :source def:id713940044;
+         :specific def:id713940044;
+         :target def:id223205208 .
+    
+    def:id2125486797     a :LiteralInteger;
+         :owner def:id330512910;
+         :value "1"^^:Integer .
+    
+    def:id2136875125     a :Association;
+         :endType def:id223205208,
+                def:id713940044;
+         :feature def:id330512910;
+         :member def:id1975260912,
+                def:id330512910;
+         :memberEnd def:id1975260912,
+                def:id330512910;
+         :name "team";
+         :namespace def:id782521654;
+         :ownedElement def:id330512910;
+         :ownedEnd def:id330512910;
+         :ownedMember def:id330512910;
+         :owner def:id782521654;
+         :package def:id782521654;
+         :qualifiedName "corporate::team";
+         :relatedElement def:id223205208,
+                def:id713940044 .
+    
+    def:id223205208     a :Class;
+         :attribute def:id1563093566;
+         :feature def:id1563093566;
+         :member def:id1563093566;
+         :name "Employee";
+         :namespace def:id782521654;
+         :ownedAttribute def:id1563093566;
+         :ownedElement def:id1563093566;
+         :ownedMember def:id1563093566;
+         :owner def:id782521654;
+         :package def:id782521654;
+         :part def:id1563093566;
+         :qualifiedName "corporate::Employee";
+         :role def:id1563093566 .
+    
+    def:id330512910     a :Property;
+         :association def:id2136875125;
+         :featuringClassifier def:id2136875125;
+         :lower "1"^^:Integer;
+         :lowerValue def:id2125486797;
+         :name "boss";
+         :namespace def:id2136875125;
+         :ownedElement def:id1661944297,
+                def:id2125486797;
+         :owner def:id2136875125;
+         :owningAssociation def:id2136875125;
+         :qualifiedName "corporate::team::boss";
+         :redefinitionContext def:id2136875125;
+         :type def:id713940044;
+         :upper "1"^^:UnlimitedNatural;
+         :upperValue def:id1661944297 .
+    
+    def:id558529042     a :ElementImport;
+         :importedElement def:id1238943016;
+         :importingNamespace def:id782521654;
+         :owner def:id782521654;
+         :relatedElement def:id1238943016,
+                def:id782521654;
+         :source def:id782521654;
+         :target def:id1238943016 .
+    
+    def:id713940044     a :Class;
+         :attribute def:id1975260912;
+         :feature def:id1975260912;
+         :general def:id223205208;
+         :generalization def:id2092843500;
+         :inheritedMember def:id1563093566;
+         :member def:id1563093566,
+                def:id1975260912;
+         :name "Boss";
+         :namespace def:id782521654;
+         :ownedAttribute def:id1975260912;
+         :ownedElement def:id1975260912,
+                def:id2092843500;
+         :ownedMember def:id1975260912;
+         :owner def:id782521654;
+         :package def:id782521654;
+         :qualifiedName "corporate::Boss";
+         :role def:id1975260912;
+         :superClass def:id223205208 .
+    
+    def:id782521654     a :Package;
+         :elementImport def:id1501816798,
+                def:id1687849576,
+                def:id2030276071,
+                def:id558529042;
+         :importedMember def:id1238943016,
+                def:id1482258114,
+                def:id1576330609,
+                def:id1659620795;
+         :member def:id1238943016,
+                def:id1482258114,
+                def:id1576330609,
+                def:id1659620795,
+                def:id2136875125,
+                def:id223205208,
+                def:id713940044;
+         :name "corporate";
+         :ownedElement def:id1501816798,
+                def:id1687849576,
+                def:id2030276071,
+                def:id2136875125,
+                def:id223205208,
+                def:id558529042,
+                def:id713940044;
+         :ownedMember def:id2136875125,
+                def:id223205208,
+                def:id713940044;
+         :ownedType def:id2136875125,
+                def:id223205208,
+                def:id713940044;
+         :packagedElement def:id2136875125,
+                def:id223205208,
+                def:id713940044;
+         :qualifiedName "corporate" .
+    
+#ENDS

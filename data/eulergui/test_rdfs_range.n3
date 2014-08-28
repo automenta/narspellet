@@ -1,0 +1,20 @@
+
+@prefix : <http://example.com#> .
+@prefix app: <http://jmvanel.free.fr/ontology/software_applications.owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+app:hasInstance 
+	# a owl:ObjectProperty ;
+	# rdfs:domain :SoftwareApplication ;
+	rdfs:range app:ApplicationInstance .
+
+# rule to instantiate the application :
+{
+  ?SWAPP a app:SoftwareApplication .
+} => {
+  ?SWAPP app:hasInstance ?AppInstance .
+} .
+
+# the starting point
+:mySWAPP a app:SoftwareApplication .
+

@@ -1,0 +1,3 @@
+@prefix : <http://example.com#> .
+@forAll :x, :y .
+{ :x :parent :y . } => { :y :child :x . } .

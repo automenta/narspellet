@@ -1,0 +1,7 @@
+:problem1 :seriousness :grave .
+
+{
+ :problem1 :seriousness :grave
+} => {
+ :situation :seriousness :grave
+} .

@@ -1,0 +1,54 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix mylist: <> .
+# @prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#> .
+
+# test the same definition of list:in as in rpo-rules.n3
+
+# {?L rdf:first ?I; a rdf:List} => {?I mylist:in ?L}.
+# {?L rdf:rest ?R; a rdf:List. ?I mylist:in ?R} => {?I mylist:in ?L}.
+
+# does not work either
+#
+ {?L rdf:first ?I } => {?I mylist:in ?L}.
+#
+ {?L rdf:rest ?R. ?I mylist:in ?R} => {?I mylist:in ?L}.
+
+# --------- tests ------------
+#
+ ( "1" "2" ) a rdf:List .
+
+{
+  "1" mylist:in ( "1" "2" ).
+  _:d e:trace 1 .
+} => {
+  :test :result ("1" mylist:in "1" "2" )
+} .
+
+{
+  "1" mylist:in ( "1" "2" ).
+  ( "1" "2" ) a rdf:List .
+} => {
+  :test :result (rdf:List "1" mylist:in "1" "2" )
+} .
+{
+  "1" mylist:in ?L .
+  ?L = ( "1" "2" ).
+  ?L a rdf:List .
+} => {
+  :test :result (rdf:List "" "1" mylist:in "1" "2" )
+} .
+
+{
+ ( "1" "2" ) a rdf:List .
+  _:d e:trace 2 .
+} => {
+  :test :result ( "1" "2" a rdf:List )
+} .
+
+{
+  :a1 mylist:in ( :a1 :a2 ).
+  _:d e:trace 3 .
+} => {
+  :test :result ( :a1 mylist:in :a1 :a2 )
+} .

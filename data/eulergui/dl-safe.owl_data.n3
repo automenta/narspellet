@@ -1,0 +1,5 @@
+@prefix : <http://owldl.com/ontologies/dl-safe.owl#> .
+
+:bc a :Grandchild.
+:bc :sibling :s.
+:bc :hates :s .

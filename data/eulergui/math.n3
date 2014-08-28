@@ -1,0 +1,115 @@
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix : <http://www.agfa.com/w3c/euler/builtins#>.
+@prefix fn: <http://www.w3.org/2005/xpath-functions#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+
+
+{ :jmvanel math:greaterThan 170 }.
+
+{ 2 math:greaterThan 1 } => { :test :pass1 true } .
+
+# these 2 pass with Euler, but I don't understand why
+
+# { ?X math:greaterThan 170 } => { :test :pass2 true } .
+# { ?X math:greaterThan 150 } => { :test :pass3 true } .
+# vendredi 8 janvier 2010, 11:10:15 (UTC+0100):
+# crash with "$X cannot be resolved"
+
+{ (1 2) math:sum 3 } => { :test :pass_sum true } .
+{ (1 2) math:sum ?R .
+  ?R math:equalTo 3 . } => { :test :pass_sum2 true } .
+
+{ _:d e:findall ( ?H {
+    ?M :height ?H } ?LIST ).
+  ?LIST math:sum ?SUM .
+  # ?SUM log:equalTo 24047 . # TODO : Drools : output is 24047.0
+ } => {
+  :test :pass_sum3 true .
+  :test :sum ?SUM .
+ } .
+ 
+# cf http://en.wikipedia.org/wiki/Mount_Everest#Comparisons
+:Everest	:height 8848 ; :name "Everest" .
+:Mont_blanc	:height 4800 .
+:McKinley	:height 6194 .
+:Mauna_Kea	:height 4205 .
+
+{ _:d e:findall ( ?H {
+    ?M :height ?H } ?LIST ).
+  ?LIST e:max ?MAX .
+  # ?MAX log:equalTo 8848 . # TODO : Drools : output is 8848.0
+ } => {
+  :test :pass_max true .
+  :test :res ?MAX .
+ } .
+
+{ _:d e:findall ( ?M {
+    ?M :height ?H.
+    ?H math:greaterThan 6000 .
+    	} ?LIST ).
+    ?LIST math:memberCount ?COUNT.
+ } => {
+  :test :pass_greater true .
+  :test :pass_greater_count ?COUNT .
+  :test :res ?LIST .
+ } .
+ 
+
+{ (1 2) math:sum ?R .
+  ?R math:equalTo 3 . } => {
+  :test :pass_sum3 true } .
+
+{ ( 3 2 4 1 ) e:max ?MAX .
+  # ?MAX log:equalTo 4.0 . # TODO  e:max should return 4 , or log:equalTo be true 
+  # TODO anyway I don't knwo how to make use of ?MAX in the antecedent;
+  # same old problem of creating variables in the antecedent that are not 
+  # associated to a Drools object criterium (alias Pattern in Drools doc)
+ } => {
+  :test :pass_max2 true .
+  :test :pass_max2 ?MAX .
+ } .
+
+{ (1 2) math:sum ?R .
+  (?R 4) math:product ?P .
+ } => { 
+  :test :pass_expression true .
+  :test :pass_expression ?P .
+ } .
+
+@keywords is, of, a .
+
+{ ?CT value ?CTVALUE.
+  ?CT number ?NUMBER.
+  ?CT marginalCost ?COST.
+  ( ?CTVALUE ?COST ) math:difference ?MARGIN.
+  ( ?MARGIN ?NUMBER) math:product ?PV.
+ } => { 
+  :test :pass_expression2 true .
+  :test :pass_expression2 ?PV .
+ } .
+ 
+CT1 typename "students" ; value 5 ;
+  number 200 
+  ; marginalCost 4 .
+
+
+# XPath functions tests : move elsewhere
+{
+  :Everest :name ?N .
+  ( ?N "Eve" ) fn:substring-after ?S .
+  ( "bla/bli" "/" ) fn:substring-after ?SS
+} => {
+  :test :pass_substring-after  ?S .
+  :test :pass_substring-after2  ?SS .
+} .
+ 
+{("http://www.co-ode.org/ontologies/galen#Head" "#") fn:substring-after "Head"} => {:test :pass_substring-after3 true}.
+
+{ ?M :name ?N .
+  _:t e:trace ( 1 ?M ).
+  ?M log:uri ?URI .	  
+#  (?URI "#") fn:substring-after "Everest" #	fine also
+  (?URI "#") fn:substring-after ?SA 
+} => {
+  :test :pass_substring-after4 ?SA}.

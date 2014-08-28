@@ -1,0 +1,113 @@
+
+<!-- Processed by Id: cwm.py,v 1.197 2007/12/13 15:38:39 syosi Exp -->
+<!--     using base file:///home/jmv/workspace/eulergui/test/simple_hierarchy.owl.n3-->
+
+
+<rdf:RDF xmlns="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+    <owl:Class rdf:nodeID="b1">
+        <translatedFromRDFS xmlns="http://deductions.sf.net/owl/rdfs#"
+            rdf:resource="http://tap.xmlns.com/data/PreparedFood"/>
+        <label>Prepared Food</label>
+    </owl:Class>
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <translatedFromRDFS xmlns="http://deductions.sf.net/owl/rdfs#"
+            rdf:resource="http://tap.xmlns.com/data/MeatDish"/>
+        <label>meat dish</label>
+        <subClassOf rdf:nodeID="b1"/>
+    </rdf:Description>
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <translatedFromRDFS xmlns="http://deductions.sf.net/owl/rdfs#"
+            rdf:resource="http://tap.xmlns.com/data/Sandwich"/>
+        <label>sandwich</label>
+        <subClassOf rdf:nodeID="b1"/>
+    </rdf:Description>
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <translatedFromRDFS xmlns="http://deductions.sf.net/owl/rdfs#"
+            rdf:resource="http://tap.xmlns.com/data/FruitDish"/>
+        <label>fruit dish</label>
+        <subClassOf rdf:nodeID="b1"/>
+    </rdf:Description>
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <translatedFromRDFS xmlns="http://deductions.sf.net/owl/rdfs#"
+            rdf:resource="http://tap.xmlns.com/data/DessertDish"/>
+        <label>dessert</label>
+        <subClassOf rdf:nodeID="b1"/>
+    </rdf:Description>
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <translatedFromRDFS xmlns="http://deductions.sf.net/owl/rdfs#"
+            rdf:resource="http://tap.xmlns.com/data/VegetableDish"/>
+        <label>vegetable</label>
+        <label>vegetable dish</label>
+        <label>veggie</label>
+        <subClassOf rdf:nodeID="b1"/>
+    </rdf:Description>
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <translatedFromRDFS xmlns="http://deductions.sf.net/owl/rdfs#"
+            rdf:resource="http://tap.xmlns.com/data/Casserole"/>
+        <label>casserole</label>
+        <subClassOf rdf:nodeID="b1"/>
+    </rdf:Description>
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <translatedFromRDFS xmlns="http://deductions.sf.net/owl/rdfs#"
+            rdf:resource="http://tap.xmlns.com/data/Sauce"/>
+        <label>sauce</label>
+        <subClassOf rdf:nodeID="b1"/>
+    </rdf:Description>
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <translatedFromRDFS xmlns="http://deductions.sf.net/owl/rdfs#"
+            rdf:resource="http://tap.xmlns.com/data/DairyProduct"/>
+        <label>Dairy Product</label>
+        <label>dairy</label>
+        <subClassOf rdf:nodeID="b1"/>
+    </rdf:Description>
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <translatedFromRDFS xmlns="http://deductions.sf.net/owl/rdfs#"
+            rdf:resource="http://tap.xmlns.com/data/StewFood"/>
+        <label>stew</label>
+        <subClassOf rdf:nodeID="b1"/>
+    </rdf:Description>
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <translatedFromRDFS xmlns="http://deductions.sf.net/owl/rdfs#"
+            rdf:resource="http://tap.xmlns.com/data/EggDish"/>
+        <label>egg</label>
+        <subClassOf rdf:nodeID="b1"/>
+    </rdf:Description>
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <translatedFromRDFS xmlns="http://deductions.sf.net/owl/rdfs#"
+            rdf:resource="http://tap.xmlns.com/data/FlourProduct"/>
+        <subClassOf rdf:nodeID="b1"/>
+    </rdf:Description>
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <translatedFromRDFS xmlns="http://deductions.sf.net/owl/rdfs#"
+            rdf:resource="http://tap.xmlns.com/data/SaladDish"/>
+        <label>salad</label>
+        <subClassOf rdf:nodeID="b1"/>
+    </rdf:Description>
+</rdf:RDF>

@@ -1,0 +1,15 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+
+_:x a foaf:OnlineGamingAccount .
+
+{
+  _:VAR <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/OnlineGamingAccount>.
+}
+ => {
+  _:VAR <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/OnlineAccount>.
+}.
+
+{ ?X a foaf:OnlineGamingAccount .
+} => {
+ ?X a :LossOfMoney .
+}.

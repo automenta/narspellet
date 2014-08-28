@@ -1,0 +1,25 @@
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+
+_:x :hasChild _:c .
+
+# when someone has a child C, he also wants another that getsAlongWellWith C
+{ ?X :hasChild ?C . 
+  # _:d e:trace ( ?X :hasChild ?C ) .
+} => {
+  ?X :hasChild ?B.  ?B :getsAlongWellWith ?C .
+  # Equivalent formulation: ?X :hasChild _:B.  _:B :getsAlongWellWith ?C .
+  ?B log:notEqualTo ?C .
+} .
+
+# does not prevent infinite loop
+{
+  ?C1 :hasChild ?C1 . 
+  ?C1 :hasChild ?C2 . 
+  ?C1 :hasChild ?C3 . 
+} =>
+   (
+   {?C1 log:equalTo ?C2}
+   {?C1 log:equalTo ?C3}
+   )!e:disjunction .

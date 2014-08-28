@@ -1,0 +1,71 @@
+EYE and OWL 2
+
+EYE - Euler Yet another proof Engine
+
+EYE is an inference engine supporting logic based proofs. It is a
+backward-forward-backward chaining reasoner enhanced with Euler path detection.
+The backward-forward-backward chaining is realized via an underlying Prolog
+backward chaining, a forward meta-level reasoning and a backward proof
+construction.
+
+EYE is looking throuh N3 glasses and doing inferencing in N3Logic. Internally
+EYE is using PCL (Prolog Coherent Logic) intermediate code. Every FOL (First
+Order Logic) theory has a conservative extension that is equivalent to a PCL
+theory, a result that goes back to Thoralf Skolem who developed Coherent Logic
+to obtain metamathematical results in lattice theory and projective geometry
+[1][2].
+
+EYE strongly benefits from the demand driven indexing of YAP-Prolog and when
+EYE is also driven by demand driven theory selection, the performance issues
+can be engineered in a scalable way. For instance a case with 300000 PCL
+subsumption clauses takes EYE 4 sec whereas it takes EyeS (same engine on top
+of SWI-Prolog) 10 hours and EyeJ (same engine on top of JLog) 68 hours.
+
+README, GUIDE, DONE and LICENSE
+
+[1] Research Proposal: Automating Coherent Logic Marc Bezem, Thierry Coquand,
+Arild Waaler June 1, 2006
+[2] Thoralf Skolem, Logisch-kombinatorische Untersuchungen über die
+Erfüllbarkeit und Beweisbarkeit mathematischen Sätze nebst einem Theoreme über
+dichte Mengen. Videnskabsakademiet i Kristiania, Skrifter I, No. 4, 1919, 1-36.
+
+OWL 2 implementation
+
+EYE is answering queries given RDF data and a selected set of theories from
+
+  • owl-AllDisjointClasses
+  • owl-AllDisjointProperties
+  • owl-allValuesFrom
+  • owl-AsymmetricProperty
+  • owl-complementOf
+  • owl-differentFrom
+  • owl-disjointWith
+  • owl-distinctMembers
+  • owl-equivalentClass
+  • owl-equivalentProperty
+  • owl-FunctionalProperty
+  • owl-hasKey
+  • owl-hasValue
+  • owl-intersectionOf
+  • owl-InverseFunctionalProperty
+  • owl-inverseOf
+  • owl-IrreflexiveProperty
+  • owl-maxCardinality
+  • owl-maxQualifiedCardinality
+  • owl-oneOf
+  • owl-propertyChainAxiom
+  • owl-propertyDisjointWith
+  • owl-sameAs
+  • owl-someValuesFrom
+  • owl-SymmetricProperty
+  • owl-TransitiveProperty
+  • owl-unionOf
+  • rdfs-domain
+  • rdfs-range
+  • rdfs-subClassOf
+  • rdfs-subPropertyOf
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Jos De Roo
+

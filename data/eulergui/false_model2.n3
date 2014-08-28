@@ -1,0 +1,5 @@
+@keywords is, a .
+@prefix : <#>.
+:x a idiot .
+:x a intelligent .
+{ ?X a idiot. ?X a intelligent } => false .

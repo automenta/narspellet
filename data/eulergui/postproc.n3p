@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.6.0_07" class="java.beans.XMLDecoder"> 
+ <object class="eulergui.project.ProjectSequence"> 
+  <void property="n3Query"> 
+   <object class="eulergui.project.N3Source"> 
+    <void property="URI"> 
+     <string>./ab_query.n3</string> 
+    </void> 
+   </object> 
+  </void> 
+  <void property="postProcessingURL"> 
+   <string>./postproc2.n3p</string> 
+  </void> 
+  <void property="sources"> 
+   <void method="put"> 
+    <string>file:///C:\Users\Nanou\Documents\jmv\eulergui\trunk\eulergui\test\ab.n3</string> 
+    <object class="eulergui.project.N3Source"> 
+     <void property="URI"> 
+      <string>./ab.n3</string> 
+     </void> 
+    </object> 
+   </void> 
+  </void> 
+ </object> 
+</java> 

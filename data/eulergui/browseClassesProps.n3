@@ -1,0 +1,15 @@
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#> .
+@prefix : <#> .
+
+{
+  _:d e:findall ( ?P {?S ?P ?O} ?PLIST ) .
+  ?PLIST e:distinct ?PLIST2 .
+  
+  _:d e:findall ( ?C {?I a ?C} ?CLIST ) .
+  ?CLIST e:distinct ?CLIST2 .
+  
+} => {
+  :properties :list ?PLIST2 .
+  :classes :list ?CLIST2 .
+} .
+  

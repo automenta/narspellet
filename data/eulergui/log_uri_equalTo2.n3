@@ -1,0 +1,39 @@
+@prefix eu: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix : <http://www.w3.org/test#> .
+
+{ [@is log:uri @of "bla"] log:equalTo <bla> .	# should fail
+} => {
+  :test :passes3 true
+}.
+
+{ [@is log:uri @of <bla>] log:equalTo "bla" .	# should NOT fail
+} => {
+  :test :passes4 true
+}.
+
+{ [ @has log:uri "bla" ] log:equalTo <bla> .	# should NOT fail
+} => {
+  :test :passes5 true
+}.
+
+{ ?URI log:uri "bla" .
+} => {
+  :test :passes6 ?URI .	# returns <bla>
+}.
+
+{ ?URI log:uri "bla" .	# should NOT fail
+  ?URI log:equalTo <bla> .
+} => {
+  :test :passes7 true .
+}.
+
+{ _:bn log:uri ?URI .	# should fail
+} => {
+  :test :passes8 ?URI .
+}.
+
+{ log:bla log:uri ?URI .
+} => {
+  :test :passes9 ?URI .	# returns "http://www.w3.org/2000/10/swap/log#bla"
+}.

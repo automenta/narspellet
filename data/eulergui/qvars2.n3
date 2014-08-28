@@ -1,0 +1,2 @@
+{ ?b <#aunt> ?c } <= { ?a <#parent> ?b; <#sister> ?c }.
+

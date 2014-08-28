@@ -1,0 +1,15 @@
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix schema: <http://schema.org/>.
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#> .
+@prefix :  <http://eulergui.sf.net/ex#>.
+
+# run with:	eg --query schema.org_all.q.n3 schema.org_all.rules.n3 schema.org_all.ttl
+
+{	?CLASS :is :interesting .
+	?CLASS ?PC ?CV.
+} => {	# quoi sortir? toutes les prop de ce beau monde
+	?CLASS ?PC ?CV.
+}.
+
+

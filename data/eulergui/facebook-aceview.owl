@@ -1,0 +1,239 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY swrl "http://www.w3.org/2003/11/swrl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY swrlb "http://www.w3.org/2003/11/swrlb#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY acetext "http://attempto.ifi.uzh.ch/acetext#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY facebook-aceview "http://deductions.sourceforge.net/ontologies/2010/4/facebook-aceview.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://deductions.sourceforge.net/ontologies/2010/4/facebook-aceview.owl#"
+     xml:base="http://deductions.sourceforge.net/ontologies/2010/4/facebook-aceview.owl"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:acetext="http://attempto.ifi.uzh.ch/acetext#"
+     xmlns:facebook-aceview="http://deductions.sourceforge.net/ontologies/2010/4/facebook-aceview.owl#">
+    <owl:Ontology rdf:about=""/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="&dc;date"/>
+    <owl:AnnotationProperty rdf:about="&acetext;acetext"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://deductions.sourceforge.net/ontologies/2010/4/facebook-aceview.owl#is-a-proposed-friend-for -->
+
+    <owl:ObjectProperty rdf:about="#is-a-proposed-friend-for"/>
+    
+
+
+    <!-- http://deductions.sourceforge.net/ontologies/2010/4/facebook-aceview.owl#know -->
+
+    <owl:ObjectProperty rdf:about="#know"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://deductions.sourceforge.net/ontologies/2010/4/facebook-aceview.owl#person -->
+
+    <owl:Class rdf:about="#person"/>
+    
+
+
+    <!-- http://deductions.sourceforge.net/ontologies/2010/4/facebook-aceview.owl#user -->
+
+    <owl:Class rdf:about="#user"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="&owl;Thing"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <swrl:Variable rdf:about="#x1"/>
+    <swrl:Variable rdf:about="#x4"/>
+    <swrl:Variable rdf:about="#x2"/>
+    <swrl:Variable rdf:about="#x7"/>
+    <swrl:Imp>
+        <acetext:acetext
+            >If a user U knows a person X, and knows a person Y, and X is not Y, and X knows Z, and Y knows Z, and Z is not U then Z is-a-proposed-friend-for U.</acetext:acetext>
+        <dc:date
+            >2010-04-04 21:44:54</dc:date>
+        <swrl:head>
+            <swrl:AtomList>
+                <rdf:rest rdf:resource="&rdf;nil"/>
+                <rdf:first>
+                    <swrl:IndividualPropertyAtom>
+                        <swrl:propertyPredicate rdf:resource="#is-a-proposed-friend-for"/>
+                        <swrl:argument2 rdf:resource="#x1"/>
+                        <swrl:argument1 rdf:resource="#x7"/>
+                    </swrl:IndividualPropertyAtom>
+                </rdf:first>
+            </swrl:AtomList>
+        </swrl:head>
+        <swrl:body>
+            <swrl:AtomList>
+                <rdf:rest>
+                    <swrl:AtomList>
+                        <rdf:first>
+                            <swrl:ClassAtom>
+                                <swrl:classPredicate rdf:resource="#person"/>
+                                <swrl:argument1 rdf:resource="#x4"/>
+                            </swrl:ClassAtom>
+                        </rdf:first>
+                        <rdf:rest>
+                            <swrl:AtomList>
+                                <rdf:first>
+                                    <swrl:ClassAtom>
+                                        <swrl:classPredicate rdf:resource="#user"/>
+                                        <swrl:argument1 rdf:resource="#x1"/>
+                                    </swrl:ClassAtom>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <swrl:AtomList>
+                                        <rdf:rest>
+                                            <swrl:AtomList>
+                                                <rdf:rest>
+                                                    <swrl:AtomList>
+                                                        <rdf:rest>
+                                                            <swrl:AtomList>
+                                                                <rdf:first>
+                                                                    <swrl:IndividualPropertyAtom>
+                                                                        <swrl:propertyPredicate rdf:resource="#know"/>
+                                                                        <swrl:argument1 rdf:resource="#x2"/>
+                                                                        <swrl:argument2 rdf:resource="#x7"/>
+                                                                    </swrl:IndividualPropertyAtom>
+                                                                </rdf:first>
+                                                                <rdf:rest>
+                                                                    <swrl:AtomList>
+                                                                        <rdf:rest>
+                                                                            <swrl:AtomList>
+                                                                                <rdf:rest>
+                                                                                    <swrl:AtomList>
+                                                                                        <rdf:rest rdf:resource="&rdf;nil"/>
+                                                                                        <rdf:first>
+                                                                                            <swrl:DifferentIndividualsAtom>
+                                                                                                <swrl:argument2 rdf:resource="#x1"/>
+                                                                                                <swrl:argument1 rdf:resource="#x7"/>
+                                                                                            </swrl:DifferentIndividualsAtom>
+                                                                                        </rdf:first>
+                                                                                    </swrl:AtomList>
+                                                                                </rdf:rest>
+                                                                                <rdf:first>
+                                                                                    <swrl:DifferentIndividualsAtom>
+                                                                                        <swrl:argument1 rdf:resource="#x2"/>
+                                                                                        <swrl:argument2 rdf:resource="#x4"/>
+                                                                                    </swrl:DifferentIndividualsAtom>
+                                                                                </rdf:first>
+                                                                            </swrl:AtomList>
+                                                                        </rdf:rest>
+                                                                        <rdf:first>
+                                                                            <swrl:IndividualPropertyAtom>
+                                                                                <swrl:propertyPredicate rdf:resource="#know"/>
+                                                                                <swrl:argument1 rdf:resource="#x4"/>
+                                                                                <swrl:argument2 rdf:resource="#x7"/>
+                                                                            </swrl:IndividualPropertyAtom>
+                                                                        </rdf:first>
+                                                                    </swrl:AtomList>
+                                                                </rdf:rest>
+                                                            </swrl:AtomList>
+                                                        </rdf:rest>
+                                                        <rdf:first>
+                                                            <swrl:IndividualPropertyAtom>
+                                                                <swrl:propertyPredicate rdf:resource="#know"/>
+                                                                <swrl:argument1 rdf:resource="#x1"/>
+                                                                <swrl:argument2 rdf:resource="#x4"/>
+                                                            </swrl:IndividualPropertyAtom>
+                                                        </rdf:first>
+                                                    </swrl:AtomList>
+                                                </rdf:rest>
+                                                <rdf:first>
+                                                    <swrl:IndividualPropertyAtom>
+                                                        <swrl:propertyPredicate rdf:resource="#know"/>
+                                                        <swrl:argument1 rdf:resource="#x1"/>
+                                                        <swrl:argument2 rdf:resource="#x2"/>
+                                                    </swrl:IndividualPropertyAtom>
+                                                </rdf:first>
+                                            </swrl:AtomList>
+                                        </rdf:rest>
+                                        <rdf:first>
+                                            <swrl:ClassAtom>
+                                                <swrl:argument1 rdf:resource="#x7"/>
+                                                <swrl:classPredicate rdf:resource="&owl;Thing"/>
+                                            </swrl:ClassAtom>
+                                        </rdf:first>
+                                    </swrl:AtomList>
+                                </rdf:rest>
+                            </swrl:AtomList>
+                        </rdf:rest>
+                    </swrl:AtomList>
+                </rdf:rest>
+                <rdf:first>
+                    <swrl:ClassAtom>
+                        <swrl:classPredicate rdf:resource="#person"/>
+                        <swrl:argument1 rdf:resource="#x2"/>
+                    </swrl:ClassAtom>
+                </rdf:first>
+            </swrl:AtomList>
+        </swrl:body>
+    </swrl:Imp>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 2.2.1.1138) http://owlapi.sourceforge.net -->
+

@@ -1,0 +1,25 @@
+@prefix :     <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix log:  <http://www.w3.org/2000/10/swap/log#> .
+@prefix ege: <http://eulergui.sf.net/examples/> .
+
+# If I have two friends who both have Z as a friend, then Facebook will make me a Friend proposal for Z.
+
+{
+  ?C ege:current_user true .
+  ?C ege:knows ?X .
+  ?C ege:knows ?Y .
+
+# ?X owl:differentFrom ?Y .  would work if one could make the Unique Name Asssumption
+  ?X log:notEqualTo ?Y .
+# using log:notEqualTo and using it like here
+# is equivalent to making the Unique Name Asssumption
+
+  ?X ege:knows ?Z .
+  ?Y ege:knows ?Z .
+# ?Z owl:differentFrom ?C . # idem
+  ?C log:notEqualTo ?Z .
+
+} => {
+  ?C ege:friend_proposition ?Z .
+} .

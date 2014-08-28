@@ -1,0 +1,16 @@
+@prefix log:  <http://www.w3.org/2000/10/swap/log#>. 
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>. 
+@prefix :  <http://sf.net:ex#>.
+
+{ ?subj :b :c } => { :d :e :f }. 
+
+{ ?A => ?C .
+  # this triple avoids that the rule fires itself.
+  ?A log:notIncludes { ?S1 log:includes ?O1 } . 
+  ?A log:includes { ?S ?P ?O } .
+  # Without this, the rule wouldn't fire because not all variables that occur in both premise and conclusion would be bound i.e. ?S is unified with ?subj which is not bound. As you know, variables are not first class citizens .. 
+  [] e:optional { ?S e:tuple (?A ?C ?P ?O) } . 
+} => { 
+  :subject :is ?S . 
+  :pred :is ?P . 
+}.

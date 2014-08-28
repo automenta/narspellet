@@ -1,0 +1,11 @@
+@prefix     : <http://xmlns.com/foaf/0.1/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ege: <http://eulergui.sf.net/examples/> .
+
+{
+  ?C ege:friend_proposition ?Z .
+  ?Z foaf:name ?NAME .
+} => {
+  ?C ege:friend_proposition ?Z .
+  ?Z foaf:name ?NAME .
+}.

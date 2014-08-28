@@ -1,0 +1,20 @@
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+# if one has no driver license, he buys a bicycle
+# works with Euler and Drools/N3
+
+{ ?X a :Person .
+  (?S ?SP) e:findall ( ?L
+    { ?X :has_driver_license ?L }
+    () # this empty list constrains the result of findall to be empty,
+    # this is, ?X is such that the set of ?L satisfying ?X :has_driver_license ?L 
+    # is empty.
+  ) .
+} => {
+  ?X :buys :bicycle }.
+
+# we don't pretend this is good rule design; this is for the sake of showing
+# how to use findall to achieve global negation.
+
+:anquetil a :Person .
+ 

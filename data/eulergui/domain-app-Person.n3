@@ -1,0 +1,24 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl:  <http://www.w3.org/2002/07/owl#>.
+@prefix foaf:  <http://xmlns.com/foaf/0.1/>.
+
+@prefix e:  <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix eg:  <http://eulergui.sourceforge.net/engine.owl#>.
+@prefix java:  <http://java.sun.com/class#>.
+@prefix javam:  <http://java.sun.com/method#>.
+@prefix javap:  <http://java.sun.com/predicate#>.
+
+# Here is an example definition of a button to create a new user defined foaf:Person , with an ordered list of properties to appear in the form:
+
+_:PersonButton a eg:creationFeature
+     ; eg:hasProperties foaf:name
+	# ( foaf:name foaf:mbox foaf:phone foaf:homepage foaf:knows )
+     ; eg:hasClass foaf:Person
+     # 
+     # ; foaf:thumbnail <http://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Persons.svg/200px-Persons.svg.png>
+     ; foaf:thumbnail "http://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Persons.svg/200px-Persons.svg.png"
+     # ; foaf:thumbnail "http://upload.wikimedia.org/wikipedia/commons/0/03/Persons.svg"
+.
+# NOTE for the non-SW aware people: these RDF properties are perfectly defined (label, type, etc) by the above URI's
+

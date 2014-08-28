@@ -1,0 +1,78 @@
+@prefix : <http://jmvanel.free.fr/ontology/examples/person#> .
+@prefix gui: <http://jmvanel.free.fr/ontology/gui_generic.owl#> .
+@prefix app: <http://jmvanel.free.fr/ontology/software_applications.owl#> .
+@prefix gengui: <http://deductions.sf.net/generic_gui#> .
+
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+# domain model
+#-------------
+
+:Person a owl:Class ;
+      rdfs:comment "similar to foaf:Person" ;
+      rdfs:label "a Person" .
+
+:name    a       owl:DatatypeProperty ;
+      rdfs:domain :Person ;
+      rdfs:range xsd:string ;
+      rdfs:comment "First name and last name" ;
+      rdfs:label "name" .
+
+:age  a owl:DatatypeProperty ;
+      rdfs:domain :Person ;
+      rdfs:range  xsd:nonNegativeInteger ;
+      rdfs:comment "just to show a nonNegativeInteger" ;
+      rdfs:label "age (years)" .
+
+:birthday a owl:DatatypeProperty ;
+      rdfs:domain :Person ;
+      rdfs:range  xsd:dateTime ;
+      rdfs:comment "date de naissance"@fr ;
+      rdfs:label "birthday" .
+
+## to add during a demo. :
+# :hobby     a     owl:DatatypeProperty ;
+#      rdfs:domain :Person ;
+#      rdfs:range xsd:string ;
+#       rdfs:label "loisir" .
+
+:size :sizeingui 15 .
+
+:size  a owl:DatatypeProperty ;
+          rdfs:domain :Person ;
+          rdfs:range  xsd:double ;
+          rdfs:label "size (m)" .
+          
+:hasAddress    a       owl:ObjectProperty ;
+      rdfs:domain :Person ;
+      rdfs:range :Address ;
+      rdfs:comment "click to enter address"@en ;
+      rdfs:label "address" .
+
+:Address a owl:Class .
+
+:street    a       owl:DatatypeProperty ;
+      rdfs:domain :Address ;
+      rdfs:range xsd:string ;
+       rdfs:label "street" .
+
+:city    a       owl:DatatypeProperty ;
+      rdfs:domain :Address ;
+      rdfs:range xsd:string .
+
+# appli. spec.
+#-------------
+## uncomment to expand recursively Forms
+# app:globalSettings app:expandForms true .
+:PersonGUI a app:SoftwareApplication .
+:PersonGUI app:editedClass :Person .
+:PersonGUI app:platform app:Java .
+:PersonGUI app:name "Person GUI" .
+
+# switch for ObjectInputWidget : Button and ComboBox, or both
+# gengui:option gui:ObjectInputWidget "Button". # is the default
+# gengui:option gui:ObjectInputWidget "ComboBox".
+

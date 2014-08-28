@@ -1,0 +1,15 @@
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#> .
+@prefix : <http://eulergui.sf.net/examples#>.
+
+{
+  _:d e:findall ( ?Y_
+    { :starting :point ?START.
+      ?START :forwardConnection ?Y_} ?CLOSURE_REPEAT ).
+  ?CLOSURE_REPEAT e:distinct ?CLOSURE.
+  # TODO flatten the result 
+} => {
+  :rules :hasClosure ?CLOSURE.
+}.
+
+{ :starting :point ?SP.} =>
+{ :starting :point ?SP. }.

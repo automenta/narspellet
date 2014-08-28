@@ -1,0 +1,11 @@
+@prefix : <http://example.com#> .
+
+{
+  ?MEAL :hasDessert ?DESSERT .
+  ?DESSERT :hasSugarIngredient ?SUGAR .
+} 
+=>
+{
+  ?MEAL :hasDessert ?DESSERT .
+  ?DESSERT :hasSugarIngredient ?SUGAR .
+} .

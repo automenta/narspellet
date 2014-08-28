@@ -1,0 +1,3 @@
+@prefix : <http://example.com#> .
+@prefix fam: <http://example.com/fam#> .
+:toto^fam:parent^fam:parent a :developper .

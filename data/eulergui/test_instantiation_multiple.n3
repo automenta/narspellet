@@ -1,0 +1,9 @@
+@prefix : <http://example.com#> .
+# @keywords is, of, a.
+
+:m1 :mealType "french" .
+:m1 :mealType "french" .
+:m2 :mealType "french" .
+
+{ ?MEAL :mealType "french" } =>
+{ ?MEAL :hasDessert ?DESSERT } .

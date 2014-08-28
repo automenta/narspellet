@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.7.0_40" class="java.beans.XMLDecoder">
+ <object class="eulergui.project.ProjectData">
+  <void property="eulerArguments">
+   <string>--pass</string>
+  </void>
+  <void id="HashMap0" property="sources">
+   <void method="put">
+    <string>acceleration.n3</string>
+    <object class="eulergui.project.N3Source">
+     <void property="URI">
+      <string>acceleration.n3</string>
+     </void>
+    </object>
+   </void>
+  </void>
+  <void property="sources">
+   <object idref="HashMap0"/>
+  </void>
+  <void id="HashSet0" property="subProjects">
+   <void method="add">
+    <string>http://deductions.svn.sourceforge.net/svnroot/deductions/n3_nojs/swing-rules3.n3p</string>
+   </void>
+  </void>
+  <void property="subProjects">
+   <object idref="HashSet0"/>
+  </void>
+ </object>
+</java>

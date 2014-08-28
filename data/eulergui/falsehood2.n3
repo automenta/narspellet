@@ -1,0 +1,27 @@
+@prefix eu: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@keywords a, is, of.
+@prefix : <http://ex.com#> .
+
+# modus tollens example - http://en.wikipedia.org/wiki/Modus_tollens
+
+@forAll P, Q .
+{	P => Q .
+	# P a log:Formula .
+	# _:d eu:trace ( "P => Q" P Q ).
+	# Q a log:Formula .
+	Q a eu:F.
+} => {
+	P a eu:F.
+} .
+
+# test 1 :
+{ x a Idiot. } => { x a Man. }.
+{ x a Man. } a eu:F.
+
+# test 2 :
+@forAll y.
+{ y a Idiot. } => { y a Stupid. }.
+@forAll z.
+{ z a Stupid. } a eu:F .
+

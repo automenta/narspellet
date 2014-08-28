@@ -1,0 +1,5 @@
+@prefix u: <http://www.example.org/utilities#> .
+@prefix : <> .
+
+:assumption = { :fred u:knows :john .
+                :john u:knows :mary .} .

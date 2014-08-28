@@ -1,0 +1,13 @@
+# @forAll :MEAL .
+# { :MEAL :mealType "french" }
+# =>
+# { @forSome :DESSERT , :SUGAR .
+#  :MEAL :hasDessert :DESSERT .
+#  :DESSERT :hasSugarIngredient :SUGAR .
+# } .
+@prefix : <http://example.com#> .
+ { ?MEAL :mealType "french" . }
+=>
+{ ?MEAL :hasDessert ?DESSERT .
+?DESSERT :hasSugarIngredient ?SUGAR .
+} .

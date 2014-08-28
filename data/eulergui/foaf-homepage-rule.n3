@@ -1,0 +1,11 @@
+@prefix foaf:  <http://xmlns.com/foaf/0.1/>.
+@prefix ns2: <http://eulergui.sf.net/contact.owl#>.
+
+{
+	?VAR a foaf:Person.
+	?VAR foaf:currentProject ?t0.
+	?VAR foaf:homepage ?t1 .
+} => {
+	?VAR a ns2:interesting-contact
+}.
+

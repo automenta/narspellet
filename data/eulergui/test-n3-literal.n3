@@ -1,0 +1,11 @@
+@prefix : <#> .
+
+:a0 :b0 """not quoted""" .
+:a1 :b1 """a quoted "literal"""" .
+:a2 :b2 """"anoter" quoted literal""" .
+:a3 :b3 """this "may" work""" .
+:a4 :b4 """""double" quoted" literal""" .
+:a5 :b5 """double ""quoted "literal"""" .
+:a6 :b6 """double "quoted "literal""""" .
+
+

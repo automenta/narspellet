@@ -1,0 +1,10 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix e: <#> .
+
+e:cont a rdf:Seq .
+
+e:cont rdf:_1 "element 1" .
+e:cont rdf:_2 "element 2" .
+e:cont rdf:_3 "element 3" .
+e:cont rdf:_4 "element 4" .
+e:cont rdf:_5 "element 5" .

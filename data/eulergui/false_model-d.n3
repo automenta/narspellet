@@ -1,0 +1,4 @@
+@keywords is, a .
+@prefix : <#>.
+
+:x a idiot ; learn :y .

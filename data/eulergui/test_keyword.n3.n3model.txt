@@ -1,0 +1,92 @@
+begin of model http://sourceforge.net/projects/eulergui/
+	begin of variable
+	end of variable
+	begin of statement
+		begin of statement subject
+			uri http://sourceforge.net/projects/eulergui/toto#me
+		end of statement subject
+		begin of statement predicate
+			uri http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+		end of statement predicate
+		begin of statement object
+			uri http://sourceforge.net/projects/eulergui/toto#Person
+		end of statement object
+	end of statement
+	begin of statement
+		begin of statement subject
+			uri http://sourceforge.net/projects/eulergui/toto#Jo
+		end of statement subject
+		begin of statement predicate
+			uri http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+		end of statement predicate
+		begin of statement object
+			uri http://sourceforge.net/projects/eulergui/toto#Person
+		end of statement object
+	end of statement
+	begin of statement
+		begin of statement subject
+			uri http://sourceforge.net/projects/eulergui/toto#me
+		end of statement subject
+		begin of statement predicate
+			uri http://sourceforge.net/projects/eulergui/toto#sister
+		end of statement predicate
+		begin of statement object
+			uri http://sourceforge.net/projects/eulergui/toto#Jo
+		end of statement object
+	end of statement
+	begin of statement
+		begin of statement subject
+			uri http://sourceforge.net/projects/eulergui/toto#Jo
+		end of statement subject
+		begin of statement predicate
+			uri http://sourceforge.net/projects/eulergui/toto#father
+		end of statement predicate
+		begin of statement object
+			uri http://sourceforge.net/projects/eulergui/toto#Alan
+		end of statement object
+	end of statement
+	begin of statement
+		begin of statement subject
+			uri http://sourceforge.net/projects/eulergui/toto#Jo
+		end of statement subject
+		begin of statement predicate
+			uri http://sourceforge.net/projects/eulergui/toto#mother
+		end of statement predicate
+		begin of statement object
+			uri http://sourceforge.net/projects/eulergui/toto#Flo
+		end of statement object
+	end of statement
+	begin of statement
+		begin of statement subject
+			uri http://sourceforge.net/projects/eulergui/toto#Alan
+		end of statement subject
+		begin of statement predicate
+			uri http://sourceforge.net/projects/eulergui/toto#father
+		end of statement predicate
+		begin of statement object
+			uri http://sourceforge.net/projects/eulergui/toto#Zak
+		end of statement object
+	end of statement
+	begin of statement
+		begin of statement subject
+			uri http://sourceforge.net/projects/eulergui/toto#Alan
+		end of statement subject
+		begin of statement predicate
+			uri http://sourceforge.net/projects/eulergui/toto#brother
+		end of statement predicate
+		begin of statement object
+			uri http://sourceforge.net/projects/eulergui/toto#Ed
+		end of statement object
+	end of statement
+	begin of statement
+		begin of statement subject
+			uri http://sourceforge.net/projects/eulergui/toto#Alan
+		end of statement subject
+		begin of statement predicate
+			uri http://sourceforge.net/projects/eulergui/toto#brother
+		end of statement predicate
+		begin of statement object
+			uri http://sourceforge.net/projects/eulergui/toto#Julian
+		end of statement object
+	end of statement
+end of model http://sourceforge.net/projects/eulergui/

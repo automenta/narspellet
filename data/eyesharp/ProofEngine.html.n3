@@ -1,0 +1,187 @@
+JavaScript is disabled on your browser.
+ 
+
+  • Overview
+  • Package
+  • Class
+  • Tree
+  • Deprecated
+  • Index
+  • Help
+
+  • Prev Class
+  • Next Class
+
+  • Frames
+  • No Frames
+
+  • All Classes
+
+  • Summary: 
+  • Nested | 
+  • Field | 
+  • Constr | 
+  • Method
+
+  • Detail: 
+  • Field | 
+  • Constr | 
+  • Method
+
+euler
+
+Class ProofEngine
+
+  • java.lang.Object
+  • 
+      □ euler.ProofEngine
+
+  • ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   
+
+    public class ProofEngine
+    extends java.lang.Object
+
+    Euler proof engine wrapper
+
+    Author:
+        Jos De Roo
+
+  • 
+      □ Constructor Summary
+
+           Constructors 
+        Constructor and Description
+
+        ProofEngine() 
+
+      □ Method Summary
+
+                                   Methods 
+          Modifier and                   Method and Description
+              Type
+
+                         createProofEngine(java.lang.String[] args,
+        static Process   java.io.PrintStream ops, java.io.PrintStream eps)
+                         createProofEngine method
+
+        static void      executeProofEngine(Process pr)
+                         executeProofEngine method
+
+        static void      main(java.lang.String[] args)
+                         main method
+
+        static           runProofEngine(java.lang.String[] args)
+        java.lang.String runProofEngine method
+
+                         runProofEngine(java.lang.String[] args,
+        static Process   java.io.PrintStream ops, java.io.PrintStream eps)
+                         runProofEngine method
+
+          ☆ Methods inherited from class java.lang.Object
+
+            clone, equals, finalize, getClass, hashCode, notify, notifyAll,
+            toString, wait, wait, wait
+
+  • 
+      □ Constructor Detail
+
+          ☆ ProofEngine
+
+            public ProofEngine()
+
+      □ Method Detail
+
+          ☆ runProofEngine
+
+            public static Process runProofEngine(java.lang.String[] args,
+                                 java.io.PrintStream ops,
+                                 java.io.PrintStream eps)
+
+            runProofEngine method
+
+            Parameters:
+                args - [--no-install] [--swipl] [--yap] <options>* <data>*
+                <query>*
+                ops - output print stream
+                eps - error print stream
+            Returns:
+                the process
+
+          ☆ runProofEngine
+
+            public static java.lang.String runProofEngine(java.lang.String[] args)
+
+            runProofEngine method
+
+            Parameters:
+                args - [--no-install] [--swipl] [--yap] <options>* <data>*
+                <query>*
+            Returns:
+                the proof
+
+          ☆ createProofEngine
+
+            public static Process createProofEngine(java.lang.String[] args,
+                                    java.io.PrintStream ops,
+                                    java.io.PrintStream eps)
+
+            createProofEngine method
+
+            Parameters:
+                args - [--no-install] [--swipl] [--yap] <options>* <data>*
+                <query>*
+                ops - output print stream
+                eps - error print stream
+            Returns:
+                the process
+
+          ☆ executeProofEngine
+
+            public static void executeProofEngine(Process pr)
+
+            executeProofEngine method
+
+            Parameters:
+                pr - process
+
+          ☆ main
+
+            public static void main(java.lang.String[] args)
+
+            main method
+
+            Parameters:
+                args - <options>* <data>* <query>*
+
+ 
+
+  • Overview
+  • Package
+  • Class
+  • Tree
+  • Deprecated
+  • Index
+  • Help
+
+  • Prev Class
+  • Next Class
+
+  • Frames
+  • No Frames
+
+  • All Classes
+
+  • Summary: 
+  • Nested | 
+  • Field | 
+  • Constr | 
+  • Method
+
+  • Detail: 
+  • Field | 
+  • Constr | 
+  • Method
+
+Copyright (c) 2004. All Rights Reserved.
+

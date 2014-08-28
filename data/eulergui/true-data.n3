@@ -1,0 +1,7 @@
+@prefix : <http://example.com#> .
+
+:this :fact true .
+:this :integer1 345 .
+:this :integer2 -567 .
+:this :float1 12.34 .
+:this :float2 -34.56 .

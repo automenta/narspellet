@@ -1,0 +1,84 @@
+begin of model http://sourceforge.net/projects/eulergui/
+	begin of variable
+		existential list0
+		existential list1
+		existential list2
+	end of variable
+	begin of statement
+		begin of statement subject
+			uri http://example.com#me
+		end of statement subject
+		begin of statement predicate
+			uri http://example.com#says
+		end of statement predicate
+		begin of statement object
+			blank node list2
+		end of statement object
+	end of statement
+	begin of statement
+		begin of statement subject
+			blank node list0
+		end of statement subject
+		begin of statement predicate
+			uri http://www.w3.org/1999/02/22-rdf-syntax-ns#first
+		end of statement predicate
+		begin of statement object
+			uri http://example.com#Man
+		end of statement object
+	end of statement
+	begin of statement
+		begin of statement subject
+			blank node list0
+		end of statement subject
+		begin of statement predicate
+			uri http://www.w3.org/1999/02/22-rdf-syntax-ns#rest
+		end of statement predicate
+		begin of statement object
+			uri http://www.w3.org/1999/02/22-rdf-syntax-ns#nil
+		end of statement object
+	end of statement
+	begin of statement
+		begin of statement subject
+			blank node list1
+		end of statement subject
+		begin of statement predicate
+			uri http://www.w3.org/1999/02/22-rdf-syntax-ns#first
+		end of statement predicate
+		begin of statement object
+			uri http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+		end of statement object
+	end of statement
+	begin of statement
+		begin of statement subject
+			blank node list1
+		end of statement subject
+		begin of statement predicate
+			uri http://www.w3.org/1999/02/22-rdf-syntax-ns#rest
+		end of statement predicate
+		begin of statement object
+			blank node list0
+		end of statement object
+	end of statement
+	begin of statement
+		begin of statement subject
+			blank node list2
+		end of statement subject
+		begin of statement predicate
+			uri http://www.w3.org/1999/02/22-rdf-syntax-ns#first
+		end of statement predicate
+		begin of statement object
+			uri http://example.com#Tim
+		end of statement object
+	end of statement
+	begin of statement
+		begin of statement subject
+			blank node list2
+		end of statement subject
+		begin of statement predicate
+			uri http://www.w3.org/1999/02/22-rdf-syntax-ns#rest
+		end of statement predicate
+		begin of statement object
+			blank node list1
+		end of statement object
+	end of statement
+end of model http://sourceforge.net/projects/eulergui/

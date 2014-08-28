@@ -1,0 +1,6 @@
+@prefix : <http://exampleS.com#> .
+# Note: this catch-all query does not work with CWM.
+{ ?S ?P ?O }
+=>
+{ ?S ?P ?O }
+.

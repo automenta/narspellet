@@ -1,0 +1,99 @@
+@prefix : <http://owldl.com/ontologies/dl-safe.owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix var: <http://localhost/var#>.
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+
+######## variable substitution #########
+
+#** variable substitution of ?V by ?VT in a triple ?T == {?S ?P ?O}
+{ {?V ?P ?O} :substituteVariable (?V ?VT).
+} => { # the subject is substituted
+  ( {?V ?P ?O} (?V ?VT) ) :variableSubstitution {?VT ?P ?O} 
+}.
+{ {?S ?P ?V} :substituteVariable (?V ?VT).
+} => { # the object is substituted
+  ( {?S ?P ?V} (?V ?VT) ) :variableSubstitution {?S ?P ?VT} 
+}.
+{ {?S ?P ?O} :substituteVariable (?V ?VT).
+  ?V log:notEqualTo ?S.
+  ?V log:notEqualTo ?O.
+} => { # nothing is substituted
+  ( {?S ?P ?O} (?V ?VT) ) :variableSubstitution {?S ?P ?O} 
+}.
+
+#** substitution of a list of variable substitutions ?L in a statement
+# Antecedent: :substituteVariableList
+# @subject an RDF statement
+# @object list of variable substitutions, e.g. ( (:x ?X)(:y ?Y) )
+#** Consequent: :substituteVariableList - substitution of a list of variable substitutions ?L in a triple
+{ 
+ (?STAT ?INVARIANT) :substituteVariableList ?L .
+ ?STAT log:includes {?S ?P ?O} .
+ ?L rdf:first (?V ?VT) .
+} => {
+ {?S ?P ?O} :substituteVariable (?V ?VT).
+}.
+
+{
+ (?STAT ?INVARIANT) :substituteVariableList ?L .
+ ?STAT log:includes {?S ?P ?O} .
+ ?L rdf:rest  ?REST . 
+ # recover result from preceding rule:
+ ?L rdf:first (?V ?VT) .
+ ( {?S ?P ?O} (?V ?VT) ) :variableSubstitution {?SS ?P ?OS} .
+} => {
+ ({?SS ?P ?OS} ?INVARIANT) :substituteVariableList ?REST .
+}.
+
+# launch substitution of triples in a formula ?F
+{ ?F :substituteVariablesInFormula ?L .
+  # ?F log:includes ?STAT .
+  ?F log:includes {?S ?P ?O} .
+} => {
+  (
+    {?S ?P ?O}
+    ( ?F {?S ?P ?O} ?L ) # INVARIANT
+  ) :substituteVariableList ?L .
+}.
+
+#** recover the fully substituted triple from the initial formula, the non substituted triple ?STAT and substitution list ?L
+{
+  ( ?STAT (?F ?STAT ?L) # INVARIANT
+  ) :substituteVariableList ?L .
+  (?TSUBST (?F ?STAT ?L) ) :substituteVariableList ().
+} => {
+  (?F ?L) :substitutedTriplesInFormula ?TSUBST.
+}.
+
+#** recover the fully substituted formula from the initial formula and substitution list ?L
+{ ?F :substituteVariablesInFormula ?L .
+  _:d e:findall ( ?TSUBST_
+    { (?F ?L) :substitutedTriplesInFormula ?TSUBST_ . }
+    ?TSUBST ).
+  # we don't want true as a criterium:
+  ?TSUBST log:notEqualTo ().
+  ?TSUBST log:conjunction ?FSUBST .
+} => {
+  (?F ?L) :substitutedFormula ?FSUBST.
+}.
+
+# substitution of triples in a pair of formulas (?A ?C) . TODO
+
+## test data
+# {:x :sibling :y. :x :hates :y.} :substituteVariablesInFormula
+# ( (:x _:x)(:y _:y ) ) .
+#OK: {:x :sibling :y. } :substituteVariablesInFormula ( (:x _:x) ) .
+# OK {:xxx :sibling :yyy. } :substituteVariablesInFormula ( (:zzz _:x) ) .
+
+## test print
+# { ?LC :substituteVariable ?L . } => { _:dd :print (?LC :substituteVariable ?L) . }.
+# { ?LC :variableSubstitution ?L . } => { _:dd :print (?LC :variableSubstitution ?L) . }.
+# { ?LC :substituteVariableList ?L . } => { _:dd :print (?LC :substituteVariableList ?L) . }.
+# { ?LC :substitutedTriple ?L . } => { _:dd :print (?LC :substitutedTriple ?L) . }.
+# { ?LC :substitutedTriplesInFormula ?L . } => { _:dd :print (?LC :substitutedTriplesInFormula ?L) . }.
+# { ?LC :substitutedFormula ?L . } => { _:dd :print (?LC :substitutedFormula ?L) . }.
+#{ ?LC :substituteVariablesInFormula ?L . } => { _:dd :print (?LC :substituteVariablesInFormula ?L) . }.
+# { ?RULE :distinctVariables ?LAD . } => { _:dd :print ( ?RULE :distinctVariables ?LAD ).  }.
+# { ?RULE :ruleConsequent ?LAD . } => { _:dd :print ( ?RULE :ruleConsequent  ?LAD ).  }.

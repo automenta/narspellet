@@ -1,0 +1,55 @@
+# http://jmvanel.free.fr/ontology/java_library.owl
+# Copyright J.M. Vanel 2008
+@prefix     : <http://java.sun.com/class#> .
+@prefix java: <http://java.sun.com/class#> .
+@prefix javam: <http://java.sun.com/method#> .
+@prefix os: <http://jmvanel.free.fr/ontology/java_library.owl#> .
+
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix javapr: <http://jmvanel.free.fr/ontology/java_projection.owl#> .
+
+# For now (2008-10) just add classes as needed;
+# later we should introspect Java library.
+
+# swing
+# instantiable classes actually used in generated GUI
+java:javax-swing-JPanel
+	rdfs:subClassOf java:javax-swing-JComponent ;
+	a javapr:ConcreteClass .
+java:javax-swing-JLabel
+	rdfs:subClassOf java:javax-swing-JComponent ;
+	a javapr:ConcreteClass .
+java:javax-swing-JComboBox
+	rdfs:subClassOf java:javax-swing-JComponent ;
+	a javapr:ConcreteClass .
+java:javax-swing-JTextField
+	rdfs:subClassOf	java:javax-swing-JComponent ;
+	a javapr:ConcreteClass .
+java:javax-swing-JButton
+	rdfs:subClassOf java:javax-swing-JComponent ;
+	a javapr:ConcreteClass  .
+java:javax-swing-JFrame
+	rdfs:subClassOf java:java-awt-Container ;
+	a javapr:ConcreteClass .
+# java:javax-swing-border-LineBorder rdfs:subClassOf java:java-lang-Object ; a javapr:ConcreteClass  .
+
+java:java-awt-FlowLayout a javapr:ConcreteClass .
+
+# abstract classes
+java:javax-swing-JComponent rdfs:subClassOf java:java-awt-Container
+	; java:isAbstract true .
+java:java-awt-Container rdfs:subClassOf java:java-awt-Component .
+java:java-awt-Container rdfs:subClassOf java:java-lang-Object .
+
+# Java basic
+java:java-lang-Object a owl:Class ;
+	rdfs:subClassOf [
+		a owl:Restriction ;
+		owl:cardinality 1 ;
+		owl:onProperty java:isAbstract
+	] .
+java:isAbstract a owl:DatatypeProperty ;
+	rdfs:range xsd:boolean .

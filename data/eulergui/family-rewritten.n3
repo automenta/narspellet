@@ -1,0 +1,24 @@
+# From prefix.cc
+@prefix eu: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#> .
+@prefix : <http://eulergui.sf.net/examples#> .
+
+# family.n3 rewritten on Jos' advice
+
+{ ?X :parent ?P. ?P :parent ?GP
+} => {
+  ?X :grandparent ?GP
+}. 
+
+{ ?X a :Human
+} => (
+  {?X :parent ?P. ?P a :Human, :Male}
+  {?X :parent ?P. ?P a :Human, :Female})
+  !eu:disjunction.
+
+# to avoid infinite closure before we can check the integrity constraint, the best is to give EYE a real choice.
+
+
+@forSome :x. @forAll :y. :x a :Human. {:x :grandparent :y} => false. ## asserting the negation of the theorem 
+
+# eye --nope --quick-false --pass  
+# derives the desired inconsistency 

@@ -1,0 +1,6 @@
+@prefix : <http://example.com#> .
+
+{ ?MEAL :hasDessert ?D }
+=>
+{ ?MEAL :hasDessert ?D }
+.

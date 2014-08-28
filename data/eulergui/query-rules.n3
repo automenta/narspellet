@@ -1,0 +1,53 @@
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+# This example shows how to apply rules about other rules.
+
+{ # r1 raw access to triples inside antecedent and consequent
+ ?A => ?C .
+ ?A log:includes { ?SA ?PA ?OA } .
+ ?C log:includes { ?SC ?PC ?OC } .
+ :rule :not :activated .
+ # attempts to get the variable name:
+ # ?S log:uri ?SURI .
+ # ?S log:rawUri ?SURI .
+ # ?S e:label ?SURI .
+} => {
+  :result :is ( ?SA ?PA ?OA # ?SURI
+     "consequent:"
+     ?SC ?PC ?OC
+  ).
+} .
+
+{ # r2 comparing antecedent and consequent
+ ?A => ?C .
+ ?A log:includes { ?SA ?PA ?OA } .
+ ?C log:includes { ?SC ?PC ?OC } .
+ ?SA log:equalTo ?SC .
+ :rule :not :activated .
+} => {
+  :result :is ( "there is a rule asserting about the same subject"
+  ?SA
+  " that is also in the antecedent,"
+  "and the predicates are:"
+  ?PA ?PC
+  ).
+} .
+
+{ # r3 comparing inside antecedent
+ ?A => ?C .
+ ?A log:includes { ?SA1 ?PA1 ?OA1 } .
+ ?A log:includes { ?SA2 ?PA2 ?OA2 } .
+ ?SA1 log:equalTo ?OA2 .
+ # activating one of these suppresses the result . Why ???
+ # ?PA1 log:notEqualTo ?PA2 .
+ # { ?SA1 ?PA1 ?OA1 } log:notEqualTo { ?SA2 ?PA2 ?OA2 } .
+} => {
+  :result :is ( "there is a rule with a variable in subject and object position"
+  ?SA1
+  "and the predicates are:"
+  ?PA1 ?PA2
+  ).
+# ??? surprised by the result:
+# <#result> <#is> ("""there is a rule with a variable in subject and object position""" _:sk29 """and the predicates are:""" :purchaseOrder :purchaseOrder).
+} .

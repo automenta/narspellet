@@ -1,0 +1,27 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix uml2: <http://schema.omg.org/spec/XMI/2.1/>.
+# here is the translation proposed for :
+# public class Item {
+#  public String name; // or getName + setName
+#  public int unitPrice;
+#  public int computePrice( int quantity ) {return unitPrice*quantity;}
+#}
+:Item a owl:Class.
+:name a owl:datatypeProperty;
+  rdfs:label "name";
+  rdfs:domain :Item;
+  rdfs:range xsd:string.
+:unitPrice a owl:datatypeProperty;
+  rdfs:label "unitPrice";
+  rdfs:domain :Item;
+  rdfs:range xsd:positiveInteger.
+:Item uml2:ownedOperation :computePrice.
+:computePrice rdfs:label "computePrice";
+  uml2:ownedParameter :quantity.
+:quantity uml2:type xsd:positiveInteger;
+  rdfs:label "quantity".
+:computePrice uml2:ownedParameter :returnComputePrice.
+:returnComputePrice uml2:type xsd:positiveInteger;
+  uml2:direction "return".

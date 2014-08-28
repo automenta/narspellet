@@ -1,0 +1,3 @@
+@prefix : <http://example.com> .
+@prefix dc: <http://example.com/dc> .
+[ :firstname "Ora" ] dc:wrote [ dc:title "Moby Dick" ] .

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.7.0_11" class="java.beans.XMLDecoder">
+ <object class="eulergui.project.ProjectData">
+  <void property="eulerArguments">
+   <string> --pass</string>
+  </void>
+  <void id="HashMap0" property="sources">
+   <void method="put">
+    <string>http://danbri.org/foaf.rdf#danbri</string>
+    <object class="eulergui.project.N3SourceFromRDF">
+     <void property="URI">
+      <string>http://danbri.org/foaf.rdf#danbri</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>../../../jmvanel.free.fr/jmv.rdf</string>
+    <object class="eulergui.project.N3SourceFromRDF">
+     <void property="URI">
+      <string>../../../jmvanel.free.fr/jmv.rdf</string>
+     </void>
+     <void property="activated">
+      <boolean>false</boolean>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>http://bblfish.net/people/henry/card.rdf</string>
+    <object class="eulergui.project.N3SourceFromRDF">
+     <void property="URI">
+      <string>http://bblfish.net/people/henry/card.rdf</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>http://jmvanel.free.fr/jmv.rdf</string>
+    <object class="eulergui.project.N3SourceFromRDF">
+     <void property="URI">
+      <string>http://jmvanel.free.fr/jmv.rdf</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>owl-rules.n3</string>
+    <object class="eulergui.project.N3Source">
+     <void property="URI">
+      <string>owl-rules.n3</string>
+     </void>
+     <void property="activated">
+      <boolean>false</boolean>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>foaf-homepage-rule.n3</string>
+    <object class="eulergui.project.N3Source">
+     <void property="URI">
+      <string>foaf-homepage-rule.n3</string>
+     </void>
+    </object>
+   </void>
+  </void>
+  <void property="sources">
+   <object idref="HashMap0"/>
+  </void>
+ </object>
+</java>

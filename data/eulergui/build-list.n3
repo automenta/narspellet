@@ -1,0 +1,86 @@
+# Copyright J.M. Vanel 2009 - under LGPL licence http://www.gnu.org/copyleft/lesser.html
+@prefix       : <http://example.com/> .
+@prefix     ex: <http://example.com/> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#>.
+
+@prefix log:  <http://www.w3.org/2000/10/swap/log#> .
+@prefix list: <http://www.w3.org/2000/10/swap/list#>.
+
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix eg: <http://eulergui.sourceforge.net/engine.owl#> .
+
+:p1 a :Person ;
+    :name "Coltrane" ;
+    :instrument "tenor" .
+:p2 a :Person ;
+    :name "Sun Ra" ;
+    :instrument "piano" . 
+
+###### building a list with RDF first, rest and nil ##############
+:ll rdf:first "1" .
+:ll rdf:rest :lr .
+:lr rdf:first "2" .
+:lr rdf:rest rdf:nil .
+{ :ll log:eQualTo ( "1" "2" ) } => {
+:testlist :isok1 :ll }. # fails !!
+{ :ll list:member "2" } => {
+:testlist :isok2 :ll }. # fails !!
+
+########### the same with blank nodes ##############
+_:ll rdf:first "1" .
+_:ll rdf:rest _:lr .
+_:lr rdf:first "2" .
+_:lr rdf:rest rdf:nil .
+{ _:ll log:eQualTo ( "1" "2" ) } => {
+:testlist :isok11 _:ll }. # fails !!
+{ _:ll list:member "2" } => {
+:testlist :isok22 _:ll }. # OK !!
+
+#########################
+{ ( "-1" "2" ) list:member "2" } => {
+:testlist :isok3 :member }. # OK !! but prints _:sk0 ????
+#########################
+{ ( "-1" "2" ) rdf:first ?F } => {
+:testlist :first_4 ?F }. # fails !!
+#########################
+{ ( "-1" "2" ) rdf:first "-1" } => {
+:testlist :first_41 -1 }. # fails !!
+#########################
+{ ( _:a1 _:a2 ) rdf:first _:a1 } => {
+:testlist42 :first_42 _:a1 }. # fails !!
+#########################
+{ ( :a1 :a2 ) rdf:first :a1 } => {
+:testlist :first_43 :a1 }. # fails !!
+#########################
+{ ( "-1" "2" ) rdf:rest ?F } => {
+:testlist :rest_5 ?F }. # fails !!
+#########################
+# member Iff the subject is a list and the obbject is in that list, then this is true.
+
+# This rule fires with Euler but not result :(
+# {
+#   ?PERSON a :Person .
+#   ?PERSON :name ?NAME .
+#   # _:d e:trace ( ?PERSON :name ?NAME ).
+# } => {
+#   ?LIST list:member ?NAME .
+# } .
+
+# 
+:l a :MusiciansList ; a rdf:List .
+{
+  ?PERSON a :Person .
+  ?PERSON :name ?NAME .
+  # _:d e:trace ( ?PERSON :name ?NAME ).
+} => {
+  # :l list:membergggggggg ?NAME .
+  :l list:member ?NAME .
+} .
+
+# OK : { :l list:member "Coltrane" . } => { :test :is :ok . } .
+# OK : { ?L a rdf:List . } => { :test :print ?L . } .
+
+

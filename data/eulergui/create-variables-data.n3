@@ -1,0 +1,7 @@
+@prefix : <http://test.com#>.
+
+:crit :classes (:C1 :C2 :C3).
+# blank nodes data: 
+_:t a :C1. _:t a :C2. _:t a :C3.
+# resources data:
+:t a :C1. :t a :C2. :t a :C3.

@@ -1,0 +1,36 @@
+# From prefix.cc
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix r: <http://www.w3.org/2000/10/swap/reason#>.
+@prefix string: <http://www.w3.org/2000/10/swap/string#>.
+
+# a trick to ensure the first and last position in strings output
+# note all resource keys come after all blank node keys
+_:aaaa log:outputString "<html xmlns='http://www.w3.org/1999/xhtml'>" .
+_:zzzz log:outputString "</html>" .
+	 
+{	?PROOF a r:Proof, r:Conjunction
+		; r:gives ?GIVES .
+	( """The proof of <![CDATA[ ~k ]]> <br/>
+		is a conjunction of following components:<br/>"""
+		?GIVES ) e:format ?FORMATTED1 .
+
+	_:d e:findall ( ?FORMATTED_COMP {
+		#?PROOF r:component ?COMP.
+		?COMP :outputString ?FORMATTED_COMP } ?FORMATTED_COMPS ) .
+	?FORMATTED_COMPS string:concatenation ?FORMATTED2 .
+	(?FORMATTED1 ?FORMATTED2) string:concatenation ?FORMATTED.
+ } => {
+ 	 ?PROOF log:outputString ?FORMATTED .
+ }.
+
+{	?PROOF r:component ?COMP .
+	?COMP a r:Inference; r:gives ?RESULT .
+	_:d e:trace ( "?RESULT" ?RESULT).
+	( """<p>An inference; giving this result: <![CDATA[ ~k ]]> </p>"""
+		?RESULT )
+		e:format ?FORMATTED .
+ } => {
+ 	 ?COMP :outputString ?FORMATTED .
+ }.
+   

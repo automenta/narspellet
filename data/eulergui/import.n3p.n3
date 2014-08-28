@@ -1,0 +1,10 @@
+# Saved by EulerGUI on Wed Aug 15 16:30:10 CEST 2012 from file:/media/bd003f3b-ff18-4655-91dc-e014ba1af42e/home/jmv/src/eulergui/test/import.n3p
+@prefix owl:  <http://www.w3.org/2002/07/owl#>.
+@prefix eg:  <http://eulergui.sourceforge.net/engine.owl#>.
+@prefix proj:  <http://eulergui.sf.net/ontology/project.owl.n3#>.
+
+
+<> <http://eulergui.sf.net/ontology/project.owl.n3#subproject> <imported.n3p> .
+<> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<> <http://www.w3.org/2002/07/owl#imports> <ab.n3> .
+<> <http://www.w3.org/2002/07/owl#imports> <bc.n3> .

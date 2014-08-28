@@ -1,0 +1,70 @@
+@prefix : <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+    
+     @forSome <#_g0> .
+      [      a owl:Class;
+             <http://deductions.sf.net/owl/rdfs#translatedFromRDFS> <http://tap.xmlns.com/data/MeatDish>;
+             :label "meat dish";
+             :subClassOf <#_g0> ].
+    
+      [      a owl:Class;
+             <http://deductions.sf.net/owl/rdfs#translatedFromRDFS> <http://tap.xmlns.com/data/Sandwich>;
+             :label "sandwich";
+             :subClassOf <#_g0> ].
+    
+      [      a owl:Class;
+             <http://deductions.sf.net/owl/rdfs#translatedFromRDFS> <http://tap.xmlns.com/data/FruitDish>;
+             :label "fruit dish";
+             :subClassOf <#_g0> ].
+    
+      [      a owl:Class;
+             <http://deductions.sf.net/owl/rdfs#translatedFromRDFS> <http://tap.xmlns.com/data/DessertDish>;
+             :label "dessert";
+             :subClassOf <#_g0> ].
+    
+    <#_g0>     a owl:Class;
+         <http://deductions.sf.net/owl/rdfs#translatedFromRDFS> <http://tap.xmlns.com/data/PreparedFood>;
+         :label "Prepared Food" .
+      [      a owl:Class;
+             <http://deductions.sf.net/owl/rdfs#translatedFromRDFS> <http://tap.xmlns.com/data/VegetableDish>;
+             :label "vegetable",
+                    "vegetable dish",
+                    "veggie";
+             :subClassOf <#_g0> ].
+    
+      [      a owl:Class;
+             <http://deductions.sf.net/owl/rdfs#translatedFromRDFS> <http://tap.xmlns.com/data/Casserole>;
+             :label "casserole";
+             :subClassOf <#_g0> ].
+    
+      [      a owl:Class;
+             <http://deductions.sf.net/owl/rdfs#translatedFromRDFS> <http://tap.xmlns.com/data/Sauce>;
+             :label "sauce";
+             :subClassOf <#_g0> ].
+    
+      [      a owl:Class;
+             <http://deductions.sf.net/owl/rdfs#translatedFromRDFS> <http://tap.xmlns.com/data/DairyProduct>;
+             :label "Dairy Product",
+                    "dairy";
+             :subClassOf <#_g0> ].
+    
+      [      a owl:Class;
+             <http://deductions.sf.net/owl/rdfs#translatedFromRDFS> <http://tap.xmlns.com/data/StewFood>;
+             :label "stew";
+             :subClassOf <#_g0> ].
+    
+      [      a owl:Class;
+             <http://deductions.sf.net/owl/rdfs#translatedFromRDFS> <http://tap.xmlns.com/data/EggDish>;
+             :label "egg";
+             :subClassOf <#_g0> ].
+    
+      [      a owl:Class;
+             <http://deductions.sf.net/owl/rdfs#translatedFromRDFS> <http://tap.xmlns.com/data/FlourProduct>;
+             :subClassOf <#_g0> ].
+    
+      [      a owl:Class;
+             <http://deductions.sf.net/owl/rdfs#translatedFromRDFS> <http://tap.xmlns.com/data/SaladDish>;
+             :label "salad";
+             :subClassOf <#_g0> ].
+    
+#ENDS

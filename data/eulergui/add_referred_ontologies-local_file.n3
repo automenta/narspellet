@@ -1,0 +1,277 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix pi: <existing.n3> .
+@prefix p2: <existing2.n3#> .
+@prefix p2: <non-existing.n3> .
+@prefix di: <index-deductions-projects.n3#> .
+
+di: rdfs:comment """this file contain meta information about projects
+from deductions project.
+
+relative_project_location is the relative path of the n3p project to
+eulergui location.
+""" .
+
+di:p0 pi:relative_project_location <./deductions/deductions/transforms/maven-pom_to_doap.n3p> .
+
+di:p1 pi:relative_project_location <./deductions/deductions/n3/test/nridb2.n3p> .
+
+di:p2 pi:relative_project_location <./deductions/deductions/n3/ecore.post.n3p> .
+
+di:p3 pi:relative_project_location <./deductions/deductions/n3/gui.post.n3p> .
+
+di:p4 pi:relative_project_location <./deductions/deductions/n3/person_test2.n3p> .
+
+di:p5 pi:relative_project_location <./deductions/deductions/n3/euler_project.xml.n3p> .
+
+di:p6 pi:relative_project_location <./deductions/deductions/n3/foaf_import.n3p> .
+
+di:p7 pi:relative_project_location <./deductions/deductions/n3/uml.post.n3p> .
+
+di:p8 pi:relative_project_location <./deductions/deductions/n3/foaf.n3p> .
+
+di:p9 pi:relative_project_location <./deductions/deductions/n3/swing-rules.n3p> .
+
+di:p10 pi:relative_project_location <./deductions/deductions/n3/print_properties_for_class.n3p> .
+
+di:p11 pi:relative_project_location <./deductions/deductions/n3/convert-UML2_metamodel_to_OWL.n3p> .
+
+di:p12 pi:relative_project_location <./deductions/deductions/n3/person_test.n3p> .
+
+di:p13 pi:relative_project_location <./deductions/deductions/n3/test_person_import.n3p> .
+
+di:p14 pi:relative_project_location <./deductions/deductions/n3/cv.post.n3p> .
+
+di:p15 pi:relative_project_location <./deductions/deductions/n3/rdfs_owl-rules.n3p> .
+
+di:p16 pi:relative_project_location <./deductions/deductions/n3/nridb2sp.n3p> .
+
+di:p17 pi:relative_project_location <./deductions/deductions/n3/test_person_import_old.n3p> .
+
+di:p18 pi:relative_project_location <./deductions/deductions/n3/rdfs_food_gui.n3p> .
+
+di:p19 pi:relative_project_location <./deductions/deductions/n3/app-gui-test.n3p> .
+
+di:p20 pi:relative_project_location <./deductions/deductions/n3/rdfs_food_gui.post.n3p> .
+
+di:p21 pi:relative_project_location <./deductions/deductions/n3/swing-rules2.n3p> .
+
+di:p22 pi:relative_project_location <./deductions/deductions/n3/ecore.n3p> .
+
+di:p23 pi:relative_project_location <./deductions/deductions/n3/test_order.n3p> .
+
+di:p24 pi:relative_project_location <./deductions/deductions/n3/test_person.n3p> .
+
+di:p25 pi:relative_project_location <./deductions/deductions/n3/nridb2.n3p> .
+
+di:p26 pi:relative_project_location <./deductions/deductions/n3/uml.n3p> .
+
+di:p27 pi:relative_project_location <./deductions/deductions/n3/java_projection-test.n3p> .
+
+di:p28 pi:relative_project_location <./deductions/deductions/n3/test_order2.n3p> .
+
+di:p29 pi:relative_project_location <./deductions/deductions/n3/cv.n3p> .
+
+di:p30 pi:relative_project_location <./deductions/deductions/n3/person_import2.n3p> .
+
+di:p31 pi:relative_project_location <./deductions/deductions/n3/person.n3p> .
+
+di:p32 pi:relative_project_location <./deductions/deductions/n3/swing-rules3.n3p> .
+
+di:p33 pi:relative_project_location <./deductions/deductions/n3/foaf_import_old.n3p> .
+
+di:p34 pi:relative_project_location <./deductions/deductions/rule-process/enrich-rules.n3p> .
+
+di:p35 pi:relative_project_location <./deductions/deductions/project_management/plan.n3p> .
+
+di:p36 pi:relative_project_location <./deductions/deductions/samples/newby/exapp1.n3p> .
+
+di:p37 pi:relative_project_location <./deductions/deductions/samples/newby/exapp30.n3p> .
+
+di:p38 pi:relative_project_location <./deductions/deductions/samples/friend-prop/friend-prop.n3p> .
+
+di:p39 pi:relative_project_location <./deductions/deductions/samples/rszeno/n3p-generator.n3p> .
+
+di:p40 pi:relative_project_location <./deductions/deductions/samples/crm/crm.n3p> .
+
+di:p41 pi:relative_project_location <./deductions/deductions/samples/pricing/pricing-gui.n3p> .
+
+di:p42 pi:relative_project_location <./deductions/deductions/samples/pricing/pricing.n3p> .
+
+di:p43 pi:relative_project_location <./deductions/deductions/n3_logical/rules-documentor.n3.n3p> .
+
+di:p44 pi:relative_project_location <./deductions/deductions/n3_logical/ecore2.n3p> .
+
+di:p45 pi:relative_project_location <./deductions/deductions/n3_logical/foaf_import2.n3p> .
+
+di:p46 pi:relative_project_location <./deductions/deductions/n3_logical/ecore.post2.n3p> .
+
+di:p47 pi:relative_project_location <./deductions/deductions/n3_logical/person-app.n3p> .
+
+di:p48 pi:relative_project_location <./deductions/deductions/n3_logical/uml.post2.n3p> .
+
+di:p49 pi:relative_project_location <./deductions/deductions/n3_logical/uml2.n3p> .
+
+di:p50 pi:relative_project_location <./deductions/deductions/n3_logical/person_import3.n3p> .
+
+di:p51 pi:relative_project_location <./deductions/deductions/n3_logical/cv.post2.n3p> .
+
+di:p52 pi:relative_project_location <./deductions/deductions/n3_logical/cv2.n3p> .
+
+di:p53 pi:relative_project_location <./deductions/deductions/n3_logical/person_multi.n3p> .
+
+di:p54 pi:relative_project_location <./deductions/deductions/n3_logical/acceleration_form.n3p> .
+
+di:p55 pi:relative_project_location <./deductions/deductions/n3_logical/person.n3p> .
+
+di:p56 pi:relative_project_location <./deductions/deductions/n3_logical/swing-rules3.n3p> .
+
+di:p57 pi:relative_project_location <./deductions/deductions/n3_new/test/aceview_swrl_tests.n3p> .
+
+di:p58 pi:relative_project_location <./deductions/deductions/n3_new/test/tooltip/tooltip.n3p> .
+
+di:p59 pi:relative_project_location <./deductions/deductions/n3_new/test/retractFact/retractFact.n3p> .
+
+di:p60 pi:relative_project_location <./deductions/deductions/n3_new/test/nridb2.n3p> .
+
+di:p61pi:relative_project_location <./deductions/deductions/n3_new/ecore.post.n3p> .
+
+di:p62 pi:relative_project_location <./deductions/deductions/n3_new/gui.post.n3p> .
+
+di:p63 pi:relative_project_location <./deductions/deductions/n3_new/ecore2.n3p> .
+
+di:p64 pi:relative_project_location <./deductions/deductions/n3_new/person_test2.n3p> .
+
+di:p65 pi:relative_project_location <./deductions/deductions/n3_new/euler_project.xml.n3p> .
+
+di:p66 pi:relative_project_location <./deductions/deductions/n3_new/foaf_import.n3p> .
+
+di:p67 pi:relative_project_location <./deductions/deductions/n3_new/uml.post.n3p> .
+
+di:p68 pi:relative_project_location <./deductions/deductions/n3_new/foaf_import2.n3p> .
+
+di:p69 pi:relative_project_location <./deductions/deductions/n3_new/ecore.post2.n3p> .
+
+di:p69 pi:relative_project_location <./deductions/deductions/n3_new/foaf2.n3p> .
+
+di:p70 pi:relative_project_location <./deductions/deductions/n3_new/foaf.n3p> .
+
+di:p71 pi:relative_project_location <./deductions/deductions/n3_new/swing-rules.n3p> .
+
+di:p72 pi:relative_project_location <./deductions/deductions/n3_new/person_test2_query2.n3p> .
+
+di:p73 pi:relative_project_location <./deductions/deductions/n3_new/xforms-rules.n3p> .
+
+di:p74 pi:relative_project_location <./deductions/deductions/n3_new/owl-subclass-assertions-to-rules_wine.n3p> .
+
+di:p75 pi:relative_project_location <./deductions/deductions/n3_new/print_properties_for_class.n3p> .
+
+di:p76 pi:relative_project_location <./deductions/deductions/n3_new/foaf3.n3p> .
+
+di:p77 pi:relative_project_location <./deductions/deductions/n3_new/owl/busLines.n3p> .
+
+di:p78 pi:relative_project_location <./deductions/deductions/n3_new/owl/jos-rules.n3p> .
+
+di:p79 pi:relative_project_location <./deductions/deductions/n3_new/owl-subclass-assertions-to-rules-test4_ace.n3p> .
+
+di:p80 pi:relative_project_location <./deductions/deductions/n3_new/convert-UML2_metamodel_to_OWL.n3p> .
+
+di:p81 pi:relative_project_location <./deductions/deductions/n3_new/person_test.n3p> .
+
+di:p82 pi:relative_project_location <./deductions/deductions/n3_new/wine-app.n3p> .
+
+di:p83 pi:relative_project_location <./deductions/deductions/n3_new/test_person_import.n3p> .
+
+di:p84 pi:relative_project_location <./deductions/deductions/n3_new/cv.post.n3p> .
+
+di:p85 pi:relative_project_location <./deductions/deductions/n3_new/rdfs_owl-rules.n3p> .
+
+di:p86 pi:relative_project_location <./deductions/deductions/n3_new/uml.post2.n3p> .
+
+di:p87 pi:relative_project_location <./deductions/deductions/n3_new/owl-subclass-assertions-to-rules_post.n3p> .
+
+di:p88 pi:relative_project_location <./deductions/deductions/n3_new/rdfs_food_gui.n3p> .
+
+di:p89 pi:relative_project_location <./deductions/deductions/n3_new/owl-subclass-assertions-to-rules-test2.n3p> .
+
+di:p90 pi:relative_project_location <./deductions/deductions/n3_new/app-gui-test.n3p> .
+
+di:p91 pi:relative_project_location <./deductions/deductions/n3_new/rdfs_food_gui.post.n3p> .
+
+di:p92 pi:relative_project_location <./deductions/deductions/n3_new/wine-app2.n3p> .
+
+di:p93 pi:relative_project_location <./deductions/deductions/n3_new/model-rules-coherence.n3p> .
+
+di:p94 pi:relative_project_location <./deductions/deductions/n3_new/swing-rules2.n3p> .
+
+di:p95 pi:relative_project_location <./deductions/deductions/n3_new/ecore.n3p> .
+
+di:p96 pi:relative_project_location <./deductions/deductions/n3_new/uml2.n3p> .
+
+di:p97 pi:relative_project_location <./deductions/deductions/n3_new/test_order.n3p> .
+
+di:p98 pi:relative_project_location <./deductions/deductions/n3_new/test_person.n3p> .
+
+di:p99 pi:relative_project_location <./deductions/deductions/n3_new/person_import3.n3p> .
+
+di:p100 pi:relative_project_location <./deductions/deductions/n3_new/nridb2.n3p> .
+
+di:p101 pi:relative_project_location <./deductions/deductions/n3_new/uml.n3p> .
+
+di:p102 pi:relative_project_location <./deductions/deductions/n3_new/cv.post2.n3p> .
+
+di:p103 pi:relative_project_location <./deductions/deductions/n3_new/java_projection-test.n3p> .
+
+di:p104 pi:relative_project_location <./deductions/deductions/n3_new/test_order2.n3p> .
+
+di:p105 pi:relative_project_location <./deductions/deductions/n3_new/cv2.n3p> .
+
+di:p106 pi:relative_project_location <./deductions/deductions/n3_new/swrl-n3-rules.n3p> .
+
+di:p107 pi:relative_project_location <./deductions/deductions/n3_new/cv.n3p> .
+
+di:p108 pi:relative_project_location <./deductions/deductions/n3_new/acceleration_form.n3p> .
+
+di:p109 pi:relative_project_location <./deductions/deductions/n3_new/person_import2.n3p> .
+
+di:p110 pi:relative_project_location <./deductions/deductions/n3_new/person.n3p> .
+
+di:p111 pi:relative_project_location <./deductions/deductions/n3_new/swing-rules3.n3p> .
+
+di:p112 pi:relative_project_location <./deductions/deductions/n3_new/owl-subclass-assertions-to-rules-test3.n3p> .
+
+di:p113 pi:relative_project_location <./deductions/deductions/n3_new/person_xforms.n3p> .
+
+di:p114 pi:relative_project_location <./deductions/deductions/n3_new/foaf_import_old.n3p> .
+
+di:p115 pi:relative_project_location <./deductions/deductions/n3_new/owl-subclass-assertions-to-rules.n3p> .
+
+di:p116 pi:relative_project_location <./deductions/deductions/n3_nojs/rules-documentor.n3.n3p> .
+
+di:p117 pi:relative_project_location <./deductions/deductions/n3_nojs/ecore2.n3p> .
+
+di:p118 pi:relative_project_location <./deductions/deductions/n3_nojs/foaf_import2.n3p> .
+
+di:p119 pi:relative_project_location <./deductions/deductions/n3_nojs/ecore.post2.n3p> .
+
+di:p120 pi:relative_project_location <./deductions/deductions/n3_nojs/person-app.n3p> .
+
+di:p121 pi:relative_project_location <./deductions/deductions/n3_nojs/uml.post2.n3p> .
+
+di:p122 pi:relative_project_location <./deductions/deductions/n3_nojs/uml2.n3p> .
+
+di:p123 pi:relative_project_location <./deductions/deductions/n3_nojs/person_small.n3p> .
+
+di:p124 pi:relative_project_location <./deductions/deductions/n3_nojs/person_import3.n3p> .
+
+di:p125 pi:relative_project_location <./deductions/deductions/n3_nojs/cv.post2.n3p> .
+
+di:p126 pi:relative_project_location <./deductions/deductions/n3_nojs/cv2.n3p> .
+
+di:p127 pi:relative_project_location <./deductions/deductions/n3_nojs/person_multi.n3p> .
+
+di:p128 pi:relative_project_location <./deductions/deductions/n3_nojs/acceleration_form.n3p> .
+
+di:p129 pi:relative_project_location <./deductions/deductions/n3_nojs/person.n3p> .
+
+di:p130 pi:relative_project_location <./deductions/deductions/n3_nojs/swing-rules3.n3p> .
+

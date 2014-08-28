@@ -1,0 +1,3 @@
+@prefix : <http://example.com#> .
+# :luc :guru :jmv .
+:jmv @is :guru @of :luc .

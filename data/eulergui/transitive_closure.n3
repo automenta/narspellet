@@ -1,0 +1,21 @@
+@prefix : <http://eulergui.sf.net/examples#>.
+
+{ :starting :point ?SP.
+  ?SP ?P ?Z
+} => {
+  ?SP :forwardConnection ?Z.
+}.
+# main rule
+{ ?X :forwardConnection ?Y.
+  ?Y ?P ?Z
+} => {
+  ?X :forwardConnection ?Z.
+}.
+
+# gather nodes related to SWRL rules
+@prefix swrl: <http://www.w3.org/2003/11/swrl#> .
+{
+   ?RULE a swrl:Imp.
+} => {
+  :starting :point ?RULE.
+}.

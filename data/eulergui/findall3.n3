@@ -1,0 +1,32 @@
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix math: <http://www.w3.org/2000/10/swap/math#> .
+@prefix : <http://example.com#> .
+
+:luc :marriedTo :nathalie .
+:jmv :marriedTo :dorota .
+:jmv :hasChild :sarah .
+:jmv :hasChild :daphne .
+:jmv :hasChild :simon .
+:jmv :hasChild :marie .
+
+{ # output the number of children for each father
+	?X :marriedTo ?Y .
+	(?SCOPE ?SPAN) e:findall (
+ 		?CHILD { ?X :hasChild ?CHILD }
+		?CHILDREN
+	) .
+	?CHILDREN math:memberCount ?C .
+} => {
+	?X :with_children ?C .
+} .
+
+{
+	(?SCOPE ?SPAN) e:findall (
+ 		?CHILD { :jmv :hasChild ?CHILD }
+		?CHILDREN
+	) .
+  :marie list:in ?CHILDREN .
+} => {
+	:jmv :with_child :marie .
+} .

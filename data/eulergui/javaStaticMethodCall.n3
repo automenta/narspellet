@@ -1,0 +1,14 @@
+@prefix eg: <http://eulergui.sourceforge.net/engine.owl#> .
+@prefix javam: <http://java.sun.com/method#> .
+@prefix java: <http://java.sun.com/class#>.
+@prefix javap: <http://java.sun.com/predicate#> .
+
+:f a java:javax-swing-JFrame .
+
+{ ?P a java:javax-swing-JFrame .
+} => {
+  _:d eg:trace ( "ZZZZZZZZZZZZZZ" ?P ) .
+#  java:System_out javam:setProperty ( "JimiHendrix" "guitar virtuoso" ) .
+  java:java-lang-System javam:setProperty ( "JimiHendrix" "guitar virtuoso" ) .
+}.
+

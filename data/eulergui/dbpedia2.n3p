@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.7.0_01" class="java.beans.XMLDecoder">
+ <object class="eulergui.project.ProjectData">
+  <void id="HashMap0" property="sources">
+   <void method="put">
+    <string>dbpedia-construct.sparql</string>
+    <object class="eulergui.inputs.N3SourceFromSPARQLSource">
+     <void property="URI">
+      <string>dbpedia-construct.sparql</string>
+     </void>
+     <void property="service">
+      <string>http://live.dbpedia.org/sparql</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>dbpedia-construct3.sparql</string>
+    <object class="eulergui.inputs.N3SourceFromSPARQLSource">
+     <void property="URI">
+      <string>dbpedia-construct3.sparql</string>
+     </void>
+     <void property="service">
+      <string>http://dbpedia.org/sparql</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>dbpedia.sparql</string>
+    <object class="eulergui.inputs.N3SourceFromSPARQLSource">
+     <void property="URI">
+      <string>dbpedia.sparql</string>
+     </void>
+     <void property="service">
+      <string>http://dbpedia.org/sparql</string>
+     </void>
+    </object>
+   </void>
+  </void>
+  <void property="sources">
+   <object idref="HashMap0"/>
+  </void>
+ </object>
+</java>

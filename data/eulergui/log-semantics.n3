@@ -1,0 +1,24 @@
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix : <http://eulergui.sf.net/test#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# show usage of log:semantics and log:includes
+# runs with Euler engine with --pass
+
+{ <test/simple_hierarchy.n3> log:semantics ?SEM .
+  ?SEM log:includes {
+    ?C a owl:Class .
+    ?C rdfs:label ?LABEL .
+  } .
+} => {
+  :semantics :has ?LABEL .
+} .
+
+# show how one can add a whole URI's content to the KB;
+# that is, this iURI is trusted;
+# does not work if this URI contains rules or other builtins.
+
+{ <test/simple_hierarchy.n3> log:semantics ?SEM .
+	?SEM log:includes {?S ?P ?O }
+} => { ?S ?P ?O } .	

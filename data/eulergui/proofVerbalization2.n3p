@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.6.0_25" class="java.beans.XMLDecoder"> 
+ <object class="eulergui.project.ProjectData"> 
+  <void property="cwmArguments"> 
+   <string>--strings</string> 
+  </void> 
+  <void property="eulerArguments"> 
+   <string>--strings</string> 
+  </void> 
+  <void property="n3Query"> 
+   <object class="eulergui.project.N3Source"> 
+    <void property="URI"> 
+     <string>proofVerbalization-query.n3</string> 
+    </void> 
+    <void property="activated"> 
+     <boolean>false</boolean> 
+    </void> 
+   </object> 
+  </void> 
+  <void id="HashMap0" property="sources"> 
+   <void method="put"> 
+    <string>proofVerbalization.n3</string> 
+    <object class="eulergui.project.N3Source"> 
+     <void property="URI"> 
+      <string>proofVerbalization.n3</string> 
+     </void> 
+    </object> 
+   </void> 
+  </void> 
+  <void property="sources"> 
+   <object idref="HashMap0"/> 
+  </void> 
+ </object> 
+</java> 

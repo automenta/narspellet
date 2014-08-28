@@ -1,0 +1,11 @@
+# Saved by EulerGUI on Mon Aug 06 09:31:43 CEST 2012
+@prefix owl:  <http://www.w3.org/2002/07/owl#>.
+@prefix eg:  <http://eulergui.sourceforge.net/engine.owl#>.
+@prefix proj:  <http://eulergui.sf.net/ontology/project.owl.n3#>.
+
+
+<> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<> <http://eulergui.sf.net/ontology/project.owl.n3#subproject> <http://svn.code.sf.net/p/deductions/code/n3_nojs/swing-rules3.n3p.n3> .
+<> <http://www.w3.org/2002/07/owl#imports> <person-events.n3> .
+<> <http://www.w3.org/2002/07/owl#imports> <person-data.n3> .
+<> <http://www.w3.org/2002/07/owl#imports> <person-app-spec.n3> .

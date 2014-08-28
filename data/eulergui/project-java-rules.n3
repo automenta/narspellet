@@ -1,0 +1,120 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix java: <http://java.sun.com/class#> .
+@prefix javam: <http://java.sun.com/method#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+# 
+@prefix :	<http://eulergui.sf.net/ontology/project.owl.n3#>.
+@prefix proj:	<http://eulergui.sf.net/ontology/project.owl.n3#>.
+@prefix eg: <http://eulergui.sourceforge.net/engine.owl#> .
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#> .
+@keywords is, a, of.
+
+# N3 rules creating the Java objects for the EulerGUI Project from the RDF graph; they are used when an EulerGUI Project is opened from the new N3 format.
+# $Id: project-java-rules.n3 2306 2011-03-30 10:32:59Z jmvanel $
+
+{ ?ONTO a owl:Ontology . # r0
+  ?ONTO log:uri ?ONTO_URI .
+} => {
+  ?ONTO a java:eulergui-project-Project ;
+    java:uri ?ONTO_URI .
+  _:d eg:trace ( "project-java-rules.n3: ?ONTO a owl:Ontology : create project" ?ONTO ).
+}.
+
+{ ?ONTO a owl:Ontology . # r1 # TODO really used ?
+  ?ONTO rdfs:seeAlso ?SA .
+  ?SA log:uri ?SA_URI .
+} => {
+  ?ONTO java:uri ?SA_URI.
+  _:d eg:trace ( "project-java-rules.n3: ?ONTO rdfs:seeAlso ?SA ." ?ONTO "rdfs:seeAlso" ?SA ?SA_URI ) .
+}.
+
+{ # r2
+  ?ONTO owl:imports ?IMPORT.
+  ?IMPORT log:uri ?IMPORT_URI .
+  # TODO: "exotic" N3 sources : OWL/XML, etc ; use SourceFactory ?
+} => {
+  # ?N3S a java:eulergui-project-N3Source .
+  # ?N3S java:URI ?IMPORT_URI .
+  # ?ONTO javam:addN3Source ( ?N3S ) .
+  ?ONTO javam:addN3URI ( ?IMPORT_URI ) .
+  # _:d eg:trace ( "project-java-rules.n3: addN3Source" ?ONTO ?N3S "?IMPORT_URI" ?IMPORT_URI ) .
+  _:d eg:trace ( "project-java-rules.n3: addN3URI" ?ONTO "?IMPORT_URI" ?IMPORT_URI ) .
+}.
+{ # r3
+  ?N3S a java:eulergui-project-N3Source .
+  ?N3S java:URIAsN3 ?IMPORT .
+  ?IMPORT :isActivated ?ACTIV .
+} => {
+  ?N3S java:activated ?ACTIV .
+}.
+
+{ # r4	TODO: like r5 but for subproject, not for postProcessing
+  ?PROJ :subproject ?SUBPROJ .
+  ?SUBPROJ log:uri ?SUBPROJ_URI .
+  ?PROJ log:uri ?PROJ_URI .
+  # ?PROJ java:uri ?URI.
+  # ?PROJ log:notEqualTo <> .
+  # ?PROJ log:notEqualTo "" .
+} => {
+  _:d eg:trace ( "?PROJ :subproject ?SUBPROJ" ?PROJ ?SUBPROJ ?SUBPROJ_URI ).
+  ?SUBPROJ a owl:Ontology ;
+    # javam:setUri ( ?SUBPROJ_URI ).
+      javam:setUri ( ?SUBPROJ_URI ?PROJ ) . # TODO really used ?
+    # javam:setBaseLocation( ?PROJ_URI ) .
+  ?PROJ javam:addSubProject ( ?SUBPROJ ) .
+  ?SUBPROJ javam:ensureSelfIsLoaded (?PROJ) .
+}.
+
+{ # r5
+  ?PROJ :postProcessing ?POSTPROJ .
+  ?POSTPROJ log:uri ?POSTPROJ_URI .
+} => { # NOTE: order of Java calls through DeferredMethodCall is unpredictable
+  ?POSTPROJ a owl:Ontology ;
+    javam:setUri ( ?POSTPROJ_URI ?PROJ ) . # TODO really used ?
+  ?PROJ javam:setPostProcessing ( ?POSTPROJ ) .
+  ?POSTPROJ javam:ensureSelfIsLoaded (?PROJ) .
+  _:d eg:trace ( "project-java-rules.n3: ?PROJ :postProcessing ?POSTPROJ" ?PROJ ?POSTPROJ ?POSTPROJ_URI ).
+}.
+
+{ # r7
+  ?ONTO :hasRDFImport ?IMPORT.
+  ?IMPORT :hasFormat <http://www.w3.org/XML/1998/namespace> .
+  ?IMPORT log:uri ?IMPORT_URI .
+} => {
+  ?N3S a java:eulergui-inputs-N3SourceFromXML_Gloze .
+  ?N3S java:URI ?IMPORT_URI .
+  ?ONTO javam:addN3Source ( ?N3S ) .
+}.
+
+{ # query # r8
+  ?ONTO :hasN3Query ?Q .
+  ?Q log:uri ?Q_URI ;
+    :isMainQuery true .
+  # ?ONTO log:notEqualTo <> .
+} => {
+  ?N3S a java:eulergui-project-N3Source .
+  ?N3S java:URI ?Q_URI .
+  ?ONTO javam:setN3Query ( ?N3S ) .
+  _:d eg:trace ( "project-java-rules.n3: " ?ONTO "javam:setN3Query" ?Q ?N3S ) .
+}.
+
+{ # searches ( isMainQuery is not true ) # r9
+  ?ONTO :hasN3Query ?Q .
+  ?Q log:uri ?Q_URI .
+  _:d e:findall ( ?MAIN { ?Q :isMainQuery ?MAIN } () ).
+} => {
+  ?N3S a java:eulergui-project-N3Source .
+  ?N3S java:URI ?Q_URI .
+  ?ONTO javam:addN3Search ( ?N3S ) .
+  _:d eg:trace ( "project-java-rules.n3: " ?ONTO "javam:addN3Search" ?Q ?N3S ) .
+}.
+
+{ # # r10
+   ?ONTO proj:hasN3Source ?S .
+   ?S log:uri ?S_URI ;
+} => {
+   _:d eg:trace ( "project-java-rules.n3: " ?ONTO "javam:addN3URI" ?S_URI ) .
+  ?ONTO javam:addN3URI ( ?S_URI ) .
+ }.
+

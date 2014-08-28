@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.6.0_18-ea" class="java.beans.XMLDecoder"> 
+ <object class="eulergui.project.ProjectWithSubProjects"> 
+  <void property="sources"> 
+   <void method="put"> 
+    <string>./swrl-builtin1.n3</string> 
+    <object class="eulergui.project.N3Source"> 
+     <void property="URI"> 
+      <string>./swrl-builtin1.n3</string> 
+     </void> 
+    </object> 
+   </void> 
+  </void> 
+  <void id="HashSet0" property="subProjects"> 
+
+   <void method="add"> 
+    <string>http://deductions.svn.sourceforge.net/svnroot/deductions/n3_new/swrl-n3-rules.n3p</string> 
+   </void> 
+
+  </void> 
+  <void property="subProjects"> 
+   <object idref="HashSet0"/> 
+  </void> 
+ </object> 
+</java> 

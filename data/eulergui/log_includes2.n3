@@ -1,0 +1,23 @@
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix : <http://jos.org#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#> .
+
+# cf http://www.w3.org/DesignIssues/N3Logic
+# This means: "We believe statements about the weather at a place only from people who live there."
+# Works only with Euler.
+
+:Bob :lives :Boston.
+:Bob :wrote {:Boston :weather :sunny}.
+
+:Alice :lives :Adelaide.
+:Alice :wrote {:Boston :weather :cold}.
+
+
+{ ?x :wrote ?y.
+  ?y log:includes {?z :weather ?w}.
+  ?x :lives ?z
+} log:implies {
+  ?z :weather ?w
+} .
+
+# expected ==>   :Boston :weather :sunny .

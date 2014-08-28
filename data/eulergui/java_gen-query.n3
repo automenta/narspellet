@@ -1,0 +1,13 @@
+@prefix     : <http://example.com#> .
+@prefix java:  <http://java.sun.com/class#> .
+
+# query all ConcreteClass objects
+# plus all their properties. 
+{ ?OBJECT a ?CLASS . 
+  ?CLASS a java:ConcreteClass .
+  ?OBJECT ?PROP ?VALUE .
+} => { 
+  ?OBJECT a ?CLASS .
+  ?OBJECT ?PROP ?VALUE .
+} .
+

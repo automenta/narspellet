@@ -1,0 +1,19 @@
+@prefix : <http://jmvanel.free.fr/ontology/examples/person#> .
+
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix eu: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#> .
+
+# this example outputs the possible RDF Statements, given an OWL model,
+# and a class assignment;
+# this kind of rule is used in deductions/n3_logical/swing-rules3.n3p 
+{
+  ?X a ?CLASS .
+  # _:d eu:trace ( ?X  rdf:type ?CLASS ).
+  ?P rdfs:domain ?CLASS .
+  # _:d eu:trace (?P rdfs:domain ?CLASS).
+} => {
+  ?X :possibleStatement { ?X ?P ?V }.
+}.

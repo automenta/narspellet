@@ -1,0 +1,4279 @@
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix daml:    <http://www.daml.org/2001/03/daml+oil#> .
+@prefix tap:     <http://tap.xmlns.com/data/> .
+
+tap:Legume
+      a       rdfs:Class ;
+      rdfs:label "legume"@en , "bean"@en ;
+      rdfs:subClassOf tap:Vegetable ;
+      tap:plural "legumes" , "beans" .
+
+tap:SugarSubstitute
+      a       tap:ProductType ;
+      rdfs:subClassOf tap:DietFood , tap:GlucoseControlProduct , tap:Sweetener .
+
+tap:WeddingCake
+      a       rdfs:Class ;
+      rdfs:label "wedding cake"@en ;
+      rdfs:subClassOf tap:CakeFood ;
+      tap:plural "wedding cakes" .
+
+tap:PancakeSyrup
+      a       tap:ProductType ;
+      rdfs:label "pancake syrup"@en , "Syrup"@en ;
+      rdfs:subClassOf tap:FoodCondiment ;
+      tap:plural "syrups" , "pancake syrups" ;
+      tap:relevantBrand tap:MrsButterworthBrand , tap:KaroBrand , tap:AuntJemimaBrand , tap:LogCabinBrand .
+
+tap:PorkChopDish
+      a       rdfs:Class ;
+      rdfs:label "pork chop"@en ;
+      rdfs:subClassOf tap:PorkDish ;
+      tap:hasIngredient tap:PorkChop ;
+      tap:plural "pork chops" .
+
+tap:JuiceBeverage
+      a       rdfs:Class ;
+      rdfs:label "Juice"@en ;
+      rdfs:subClassOf tap:BreakfastBeverage , tap:FruitBeverage ;
+      tap:plural "Juices" .
+
+tap:CobbSalad
+      a       rdfs:Class ;
+      rdfs:label "Cobb salad"@en ;
+      rdfs:subClassOf tap:LettuceSalad ;
+      tap:hasIngredient tap:Lettuce ;
+      tap:plural "Cobb salads" .
+
+tap:ChiliPowderSpice
+      a       rdfs:Class ;
+      rdfs:label "chili powder"@en ;
+      rdfs:subClassOf tap:SpiceIngredient ;
+      tap:plural "chili powders" .
+
+tap:ToastedCheeseSandwich
+      a       rdfs:Class ;
+      rdfs:label "toasted cheese sandwich"@en , "grilled cheese sandwich"@en , "grilled cheese"@en ;
+      rdfs:subClassOf tap:CheeseSandwich ;
+      tap:plural "toasted cheese sandwiches" , "grilled cheese sandwiches" , "grilled cheeses" .
+
+tap:HashBrowns
+      a       rdfs:Class ;
+      rdfs:label "hashbrown"@en ;
+      rdfs:subClassOf tap:BreakfastFood , tap:PotatoDish ;
+      tap:creationIncludesEvent
+              tap:FryingSauteingFood , tap:CuttingUpFood , tap:BoilingFood ;
+      tap:hasFoodAccessory
+              tap:SaltSpice , tap:Ketchup ;
+      tap:plural "hashbrowns" .
+
+tap:Sauce
+      a       rdfs:Class ;
+      rdfs:label "sauce"@en ;
+      rdfs:subClassOf tap:PreparedFood ;
+      tap:creationIncludesEvent
+              tap:MixingFood ;
+      tap:plural "sauces" .
+
+tap:DeepFryingFood
+      a       rdfs:Class ;
+      rdfs:label "deep frying"@en ;
+      rdfs:subClassOf tap:CookingFood .
+
+tap:SpinachSalad
+      a       tap:ProductType ;
+      rdfs:label "spinach salad"@en ;
+      rdfs:subClassOf tap:LettuceSalad ;
+      tap:plural "spinach salads" .
+
+tap:Eggplant
+      a       rdfs:Class ;
+      rdfs:label "eggplant"@en ;
+      rdfs:subClassOf tap:Vegetable ;
+      tap:plural "eggplants" .
+
+tap:SpaghettiDish
+      a       rdfs:Class ;
+      rdfs:label "spaghetti"@en ;
+      rdfs:subClassOf tap:PastaDish ;
+      tap:hasIngredient tap:SpaghettiPasta ;
+      tap:plural "spaghetties" .
+
+tap:Gingerbread
+      a       rdfs:Class ;
+      rdfs:label "gingerbread"@en ;
+      rdfs:subClassOf tap:Bread ;
+      tap:plural "gingerbreads" .
+
+tap:Beet
+      a       rdfs:Class ;
+      rdfs:label "beet"@en ;
+      rdfs:subClassOf tap:Vegetable ;
+      tap:plural "beets" .
+
+tap:BakedFishDish
+      a       rdfs:Class ;
+      rdfs:label "baked fish"@en ;
+      rdfs:subClassOf tap:FishDish ;
+      tap:creationIncludesEvent
+              tap:BakingFood ;
+      tap:plural "baked fish" .
+
+tap:SpaghettiAndMeatballs
+      a       rdfs:Class ;
+      rdfs:label "spaghetti and meatballs"@en ;
+      rdfs:subClassOf tap:MeatDish , tap:SpaghettiDish ;
+      tap:hasFoodAccessory
+              tap:ParmasanCheese ;
+      tap:hasIngredient tap:Meatball , tap:TomatoSauce .
+
+tap:FriedFishDish
+      a       rdfs:Class ;
+      rdfs:label "fried fish"@en ;
+      rdfs:subClassOf tap:FishDish ;
+      tap:creationIncludesEvent
+              tap:FryingSauteingFood ;
+      tap:plural "fried fish" .
+
+tap:RavioliDish
+      a       rdfs:Class ;
+      rdfs:label "ravioli"@en ;
+      rdfs:subClassOf tap:PastaDish ;
+      tap:hasFoodAccessory
+              tap:ParmasanCheese ;
+      tap:hasIngredient tap:RavioliPasta ;
+      tap:plural "raviolis" .
+
+tap:LasagneNoodle
+      a       rdfs:Class ;
+      rdfs:label "lasagne pasta"@en , "lasagne noodle"@en ;
+      rdfs:subClassOf tap:UncookedPasta ;
+      tap:plural "lasagne noodles" , "lasagne pastas" .
+
+tap:AlphabetSoup
+      a       tap:ProductType ;
+      rdfs:label "alphabet soup"@en ;
+      rdfs:subClassOf tap:Soup ;
+      tap:plural "alphabet soups" .
+
+tap:PieFood
+      a       rdfs:Class ;
+      rdfs:label "Pie"@en ;
+      rdfs:subClassOf tap:Pastry ;
+      tap:creationIncludesEvent
+              tap:MixingFood ;
+      tap:plural "Pies" .
+
+tap:StirFryDish
+      a       rdfs:Class ;
+      rdfs:label "stir fry"@en ;
+      rdfs:subClassOf tap:VegetableDish ;
+      tap:plural "stir frys" .
+
+tap:HotCider
+      a       tap:ProductType ;
+      rdfs:label "hot cider"@en , "hot apple cider"@en ;
+      rdfs:subClassOf tap:HotBeverage , tap:AppleCider ;
+      tap:plural "hot ciders" , "hot apple ciders" .
+
+tap:ConsumingFood
+      a       rdfs:Class ;
+      rdfs:subClassOf tap:FoodActivity .
+
+tap:Doughnut
+      a       rdfs:Class ;
+      rdfs:label "Doughnut"@en , "donut"@en ;
+      rdfs:subClassOf tap:Pastry ;
+      tap:creationIncludesEvent
+              tap:DeepFryingFood ;
+      tap:plural "Doughnuts" , "donuts" .
+
+tap:FastFoodBrand
+      a       rdfs:Class ;
+      rdfs:subClassOf tap:RestaurantChainBrand .
+
+tap:PastramiSandwich
+      a       rdfs:Class ;
+      rdfs:label "pastrami sandwich"@en ;
+      rdfs:subClassOf tap:MeatSandwich ;
+      tap:hasFoodAccessory
+              tap:MustardCondiment ;
+      tap:hasIngredient tap:Pastrami ;
+      tap:plural "pastrami sandwiches" .
+
+tap:CannedFruit
+      a       tap:ProductType ;
+      rdfs:label "Canned Fruit"@en ;
+      rdfs:subClassOf tap:Fruit , tap:CannedFood ;
+      tap:hasIngredient tap:Fruit ;
+      tap:plural "Canned Fruits" ;
+      tap:relevantBrand tap:DoleBrand .
+
+tap:RoastGoose
+      a       rdfs:Class ;
+      rdfs:label "roast goose"@en ;
+      rdfs:subClassOf tap:GooseDish ;
+      tap:creationIncludesEvent
+              tap:RoastingFood ;
+      tap:plural "roast geese" .
+
+tap:RedleafLettuce
+      a       rdfs:Class ;
+      rdfs:label "redleaf lettuce"@en ;
+      rdfs:subClassOf tap:Lettuce ;
+      tap:plural "redleaf lettuces" .
+
+tap:SaladDish
+      a       rdfs:Class ;
+      rdfs:label "salad"@en ;
+      rdfs:subClassOf tap:PreparedFood ;
+      tap:creationIncludesEvent
+              tap:CuttingUpFood , tap:MixingFood ;
+      tap:plural "salads" .
+
+tap:VealChop
+      a       rdfs:Class ;
+      rdfs:label "veal chop"@en ;
+      rdfs:subClassOf tap:Veal ;
+      tap:plural "veal chops" .
+
+tap:ChocolateChip
+      a       rdfs:Class ;
+      rdfs:label "chocolate chip"@en ;
+      rdfs:subClassOf tap:ChocolateFood ;
+      tap:plural "chocolate chips" .
+
+tap:PassionfruitFruit
+      a       rdfs:Class ;
+      rdfs:label "passion fruit"@en , "passionfruit"@en ;
+      rdfs:subClassOf tap:Fruit ;
+      tap:plural "passionfruits" , "passion fruits" .
+
+tap:Lemonade
+      a       rdfs:Class ;
+      rdfs:label "lemonade"@en ;
+      rdfs:subClassOf tap:FruitBeverage ;
+      tap:plural "lemonades" .
+
+tap:MixingFood
+      a       rdfs:Class ;
+      rdfs:label "mixing food"@en ;
+      rdfs:subClassOf tap:CookingFood .
+
+tap:WineBeverage
+      a       rdfs:Class ;
+      rdfs:label "Wine"@en ;
+      rdfs:subClassOf tap:AlcoholicBeverage ;
+      tap:plural "Wines" ;
+      tap:relevantBrand tap:GalloOfSonomaBrand , tap:TurningLeafBrand , tap:LaroseTrintaudonBrand , tap:FirestoneBrand , tap:SantaAmeliaBrand , tap:LosVascosBrand , tap:StJulianBrand , tap:ColumbiaCrestBrand , tap:JosephPhelpsBrand , tap:ParducciBrand , tap:PhelanSegurBrand , tap:HessCollectionBrand , tap:FessParkerBrand , tap:HardysBrand , tap:EyrieVineyardsBrand , tap:DomaineChandonBrand , tap:StSuperyBrand , tap:KenwoodWineBrand , tap:EtudeWinesBrand , tap:ChateauSouverainBrand , tap:SebastianiBrand , tap:WindsorVineyardsBrand , tap:FlowersWineBrand , tap:WeingutHansLangBrand , tap:LavaCapBrand , tap:CasaLapostolleBrand , tap:ClosDuBoisBrand , tap:StagsLeapBrand , tap:WynnsBrand , tap:MariettaBrand , tap:RaymondBrand , tap:TurkeyFlatBrand , tap:RobertMondaviBrand , tap:WalnutCrestBrand , tap:FarallonWineBrand , tap:RosenblumBrand , tap:HerzogBrand , tap:LafiteRothschildBrand , tap:GrgichHillsBrand , tap:MountEdenBrand , tap:TaftStreetBrand , tap:AnapamuBrand , tap:BroadleyVineyardsBrand , tap:BuenaVistaWine , tap:ArborMistBrand , tap:EstanciaBrand , tap:LimerickLaneBrand , tap:CooksBrand , tap:NiebaumCoppolaBrand , tap:HillebrandBrand , tap:NeyersBrand , tap:CanoeRidgeBrand , tap:GruetVineyardsBrand , tap:SimiBrand , tap:JekelVineyardBrand , tap:LindemansBrand , tap:CoturriWineryBrand , tap:ChaloneBrand , tap:MoutonRothschildBrand , tap:PillitteriBrand , tap:LynchBagesBrand , tap:MartinelliVineyardsBrand , tap:WilliamsSelyemBrand , tap:WildHorseBrand , tap:MeridianWineBrand , tap:UndurragaBrand , tap:KendallJacksonBrand , tap:VossBrand , tap:BrotherhoodWineryBrand , tap:CristalinoBrand , tap:WyndhamWineBrand , tap:MiguelTorresBrand , tap:SilverOakBrand , tap:ConchaYToroBrand , tap:BurnleyVineyardsBrand , tap:CaleraBrand , tap:ShaferBrand , tap:RetzlaffBrand , tap:GeorgesDuboeufBrand , tap:RHPhilipsBrand , tap:StorybookMountainBrand .
+
+tap:NonCaffeinTea
+      a       tap:ProductType ;
+      rdfs:subClassOf tap:DecafBeverage , tap:TeaBeverage .
+
+tap:SoySauce
+      a       rdfs:Class ;
+      rdfs:label "soy sauce"@en ;
+      rdfs:subClassOf tap:FoodCondiment ;
+      tap:plural "soy sauces" .
+
+tap:ElbowMacaroni
+      a       rdfs:Class ;
+      rdfs:label "elbow macaroni"@en ;
+      rdfs:subClassOf tap:UncookedPasta ;
+      tap:plural "elbow macaronis" .
+
+tap:FrozenDrinkMix
+      a       tap:ProductType ;
+      rdfs:subClassOf tap:DrinkMix .
+
+tap:TableGrape
+      a       tap:ProductType ;
+      rdfs:label "grape"@en , "table grape"@en ;
+      rdfs:subClassOf tap:GrapeFood ;
+      tap:plural "table grapes" , "grapes" .
+
+tap:BlueCheeseSaladDressing
+      a       rdfs:Class ;
+      rdfs:label "blue cheese salad dressing"@en , "blue cheese dressing"@en ;
+      rdfs:subClassOf tap:SaladDressing ;
+      tap:hasIngredient tap:Cheese ;
+      tap:plural "blue cheese dressings" , "blue cheese salad dressings" .
+
+tap:Salami
+      a       rdfs:Class ;
+      rdfs:label "salami"@en ;
+      rdfs:subClassOf tap:Sausage ;
+      tap:plural "salamis" .
+
+tap:BeefStew
+      a       rdfs:Class ;
+      rdfs:label "beef stew"@en ;
+      rdfs:subClassOf tap:StewFood , tap:BeefDish ;
+      tap:plural "beef stews" .
+
+tap:Veal
+      a       rdfs:Class ;
+      rdfs:label "veal"@en ;
+      rdfs:subClassOf tap:RedMeat ;
+      tap:plural "veals" .
+
+tap:RootBeer
+      a       tap:ProductType ;
+      rdfs:label "rootbeer"@en , "root beer"@en ;
+      rdfs:subClassOf tap:SoftDrink ;
+      tap:plural "rootbeers" , "root beers" .
+
+tap:Tomato
+      a       rdfs:Class ;
+      rdfs:label "tomato"@en ;
+      rdfs:subClassOf tap:Fruit ;
+      tap:plural "tomatoes" .
+
+tap:FuzzyNavelDrink
+      a       tap:ProductType ;
+      rdfs:label "fuzzy navel"@en ;
+      rdfs:subClassOf tap:MixedDrink ;
+      tap:plural "fuzzy navels" .
+
+tap:ChocolateBar
+      a       rdfs:Class ;
+      rdfs:label "chocolate bar"@en ;
+      rdfs:subClassOf tap:CandyBar , tap:ChocolateFood ;
+      tap:plural "chocolate bars" .
+
+tap:RanchSaladDressing
+      a       rdfs:Class ;
+      rdfs:label "ranch salad dressing"@en , "ranch"@en , "ranch dressing"@en ;
+      rdfs:subClassOf tap:SaladDressing ;
+      tap:plural "ranch salad dressings" , "ranches" , "ranch dressings" .
+
+tap:LemonFruit
+      a       rdfs:Class ;
+      rdfs:label "lemon"@en ;
+      rdfs:subClassOf tap:CitrusFruit ;
+      tap:plural "lemons" .
+
+tap:Raspberry
+      a       rdfs:Class ;
+      rdfs:label "raspberry"@en ;
+      rdfs:subClassOf tap:BerryFruit ;
+      tap:plural "raspberries" .
+
+tap:FoodSpread
+      a       rdfs:Class ;
+      rdfs:label "food spread"@en ;
+      rdfs:subClassOf tap:FoodCondiment ;
+      tap:plural "food spreads" .
+
+tap:GrapefruitJuice
+      a       tap:ProductType ;
+      rdfs:label "Grapefruit Juice"@en ;
+      rdfs:subClassOf tap:JuiceBeverage ;
+      tap:plural "Grapefruit Juices" .
+
+tap:Sweetener
+      a       tap:ProductType ;
+      rdfs:subClassOf tap:SpiceIngredient .
+
+tap:BananaFruit
+      a       rdfs:Class ;
+      rdfs:label "banana"@en ;
+      rdfs:subClassOf tap:TropicalFruit ;
+      tap:plural "bananas" .
+
+tap:EqualSugarSubstitute
+      a       tap:ProductType ;
+      rdfs:subClassOf tap:SugarSubstitute .
+
+tap:LambMeat
+      a       rdfs:Class ;
+      rdfs:label "lamb"@en ;
+      rdfs:subClassOf tap:RedMeat ;
+      tap:plural "lambs" .
+
+tap:Guacamole
+      a       rdfs:Class ;
+      rdfs:label "guacamole"@en , "guac"@en ;
+      rdfs:subClassOf tap:DipFood ;
+      tap:plural "guacs" , "guacamoles" .
+
+tap:GrillingFood
+      a       rdfs:Class ;
+      rdfs:label "grilling"@en ;
+      rdfs:subClassOf tap:CookingFood .
+
+tap:GooseMeat
+      a       rdfs:Class ;
+      rdfs:label "goose meat"@en , "goose"@en ;
+      rdfs:subClassOf tap:Poultry ;
+      tap:plural "goose meats" , "geese" .
+
+tap:EnglishMuffin
+      a       rdfs:Class , tap:ProductType ;
+      rdfs:label "English Muffin"@en ;
+      rdfs:subClassOf tap:BreakfastFood , tap:Bread ;
+      tap:creationIncludesEvent
+              tap:ToastingFood ;
+      tap:plural "English Muffins" ;
+      tap:relevantBrand tap:OldLondonBrand , tap:ThomasBrand .
+
+tap:OliveOil
+      a       rdfs:Class ;
+      rdfs:label "olive oil"@en ;
+      rdfs:subClassOf tap:CookingOil ;
+      tap:plural "olive oils" .
+
+tap:ApricotFruit
+      a       rdfs:Class ;
+      rdfs:label "apricot"@en ;
+      rdfs:subClassOf tap:PittedFruit ;
+      tap:plural "apricots" .
+
+tap:VegetarianDish
+      a       rdfs:Class ;
+      rdfs:label "vegetarian food"@en , "vegetarian dish"@en ;
+      rdfs:subClassOf tap:VegetableDish ;
+      tap:plural "vegetarian dishes" , "vegetarian foods" .
+
+tap:ChickenMeat
+      a       tap:ProductType ;
+      rdfs:label "Chicken"@en , "chicken meat"@en ;
+      rdfs:subClassOf tap:Poultry ;
+      tap:plural "chicken meats" , "Chickens" .
+
+tap:RaisinBagel
+      a       tap:ProductType ;
+      rdfs:label "raisin bagel"@en ;
+      rdfs:subClassOf tap:Bagel ;
+      tap:plural "raisin bagels" .
+
+tap:YellowMustard
+      a       rdfs:Class ;
+      rdfs:label "yellow mustard"@en ;
+      rdfs:subClassOf tap:MustardCondiment ;
+      tap:plural "yellow mustards" .
+
+tap:CaesarSalad
+      a       rdfs:Class ;
+      rdfs:label "caesar salad"@en , "caesar"@en ;
+      rdfs:subClassOf tap:LettuceSalad ;
+      tap:hasIngredient tap:CaesarSaladDressing , tap:RomaineLettuce ;
+      tap:plural "caesars" , "caesar salads" .
+
+tap:Oatmeal
+      a       tap:ProductType ;
+      rdfs:label "Oatmeal"@en ;
+      rdfs:subClassOf tap:BreakfastFood , tap:GrainFood ;
+      tap:hasFoodAccessory
+              tap:ButterlikeSpread , tap:Cream , tap:HoneyFood , tap:SugarSpice , tap:Margerine ;
+      tap:plural "Oatmeals" ;
+      tap:relevantBrand tap:NabiscoCreamOfWheatBrand , tap:QuakerBrand .
+
+tap:ButterCracker
+      a       rdfs:Class ;
+      rdfs:label "ritz cracker"@en , "ritz"@en , "butter cracker"@en ;
+      rdfs:subClassOf tap:Cracker ;
+      tap:hasFoodAccessory
+              tap:Cheese ;
+      tap:plural "butter crackers" , "ritzes" , "ritz crackers" .
+
+tap:CannedMeat
+      a       tap:ProductType ;
+      rdfs:label "Canned Meat"@en ;
+      rdfs:subClassOf tap:MeatOrPoultry , tap:CannedFood ;
+      tap:hasIngredient tap:MeatOrPoultry ;
+      tap:plural "Canned Meats" ;
+      tap:relevantBrand tap:ArmourBrand , tap:SpamBrand , tap:StarKistBrand , tap:LibbyBrand , tap:BumbleBeeBrand .
+
+tap:Cracker
+      a       tap:ProductType ;
+      rdfs:label "Cracker"@en ;
+      rdfs:subClassOf tap:SnackFood ;
+      tap:plural "Crackers" ;
+      tap:relevantBrand tap:OldLondonBrand , tap:DevonsheerBrand , tap:CarrBrand , tap:NabiscoBrand .
+
+tap:StarfruitFruit
+      a       rdfs:Class ;
+      rdfs:label "starfruit"@en , "star fruit"@en ;
+      rdfs:subClassOf tap:TropicalFruit ;
+      tap:plural "starfruits" , "star fruits" .
+
+tap:CannedVegetable
+      a       tap:ProductType ;
+      rdfs:label "Canned Vegetable"@en ;
+      rdfs:subClassOf tap:CannedFood ;
+      tap:hasIngredient tap:Vegetable ;
+      tap:plural "Canned Vegetables" ;
+      tap:relevantBrand tap:ParmalatBrand , tap:ProgressoBrand , tap:HuntsBrand , tap:DelMonteBrand .
+
+tap:RosemarySpice
+      a       rdfs:Class ;
+      rdfs:label "rosemary"@en ;
+      rdfs:subClassOf tap:SpiceIngredient ;
+      tap:plural "rosemaries" .
+
+tap:CowMilk
+      a       rdfs:Class , tap:ProductType ;
+      rdfs:label "cow milk"@en , "Milk"@en ;
+      rdfs:subClassOf tap:DairyProduct , tap:ColdBeverage , tap:BreakfastBeverage ;
+      tap:plural "milks" , "cow milks" ;
+      tap:relevantBrand tap:EdenBrand , tap:ParmalatBrand , tap:EdenSoyBrand , tap:BordenBrand , tap:MeyenbergBrand , tap:CarnationBrand .
+
+tap:RoastPork
+      a       rdfs:Class ;
+      rdfs:label "roast pork"@en ;
+      rdfs:subClassOf tap:PorkDish ;
+      tap:plural "roast porks" .
+
+tap:CaesarSaladDressing
+      a       rdfs:Class ;
+      rdfs:label "caesar dressing"@en , "caesar salad dressing"@en ;
+      rdfs:subClassOf tap:SaladDressing ;
+      tap:hasIngredient tap:Cheese ;
+      tap:plural "caesar dressings" , "caesar salad dressings" .
+
+tap:MeatDish
+      a       rdfs:Class ;
+      rdfs:label "meat dish"@en ;
+      rdfs:subClassOf tap:PreparedFood ;
+      tap:hasFoodAccessory
+              tap:BlackPepperSpice , tap:SaltSpice ;
+      tap:hasIngredient tap:MeatOrPoultry ;
+      tap:plural "meat dishes" .
+
+tap:Cola
+      a       rdfs:Class ;
+      rdfs:label "cola"@en , "coke"@en ;
+      rdfs:subClassOf tap:SoftDrink ;
+      tap:plural "cokes" , "colas" .
+
+tap:TaterTot
+      a       rdfs:Class ;
+      rdfs:label "tater tot"@en , "tot"@en ;
+      rdfs:subClassOf tap:PotatoDish ;
+      tap:hasFoodAccessory
+              tap:Ketchup ;
+      tap:plural "tater tots" , "tots" .
+
+tap:BirthdayCake
+      a       rdfs:Class ;
+      rdfs:label "Birthday Cake"@en ;
+      rdfs:subClassOf tap:CakeFood ;
+      tap:plural "Birthday Cakes" .
+
+tap:RyeFlour
+      a       rdfs:Class ;
+      rdfs:label "rye flour"@en ;
+      rdfs:subClassOf tap:Flour ;
+      tap:plural "rye flours" .
+
+tap:Venison
+      a       rdfs:Class ;
+      rdfs:label "venison"@en ;
+      rdfs:subClassOf tap:RedMeat ;
+      tap:plural "venisons" .
+
+tap:MacadamiaNut
+      a       rdfs:Class ;
+      rdfs:label "Macademia nut"@en ;
+      rdfs:subClassOf tap:NutFood ;
+      tap:plural "Macademia nuts" .
+
+tap:CilantroSpice
+      a       rdfs:Class ;
+      rdfs:label "cilantro"@en ;
+      rdfs:subClassOf tap:SpiceIngredient ;
+      tap:plural "cilantros" .
+
+tap:SourCream
+      a       rdfs:Class ;
+      rdfs:label "sour cream"@en ;
+      rdfs:subClassOf tap:DairyProduct , tap:FoodCondiment ;
+      tap:plural "sour creams" .
+
+tap:MintJelly
+      a       rdfs:Class ;
+      rdfs:label "Mint Jelly"@en ;
+      rdfs:subClassOf tap:FoodCondiment ;
+      tap:hasIngredient tap:MintSpice ;
+      tap:plural "Mint Jellies" .
+
+tap:ChefSalad
+      a       rdfs:Class ;
+      rdfs:label "chef salad"@en ;
+      rdfs:subClassOf tap:LettuceSalad ;
+      tap:hasIngredient tap:Lettuce ;
+      tap:plural "chef salads" .
+
+tap:KumquatFruit
+      a       rdfs:Class ;
+      rdfs:label "kumquat"@en ;
+      rdfs:subClassOf tap:CitrusFruit ;
+      tap:plural "kumquats" .
+
+tap:NutritionShake
+      a       tap:ProductType ;
+      rdfs:subClassOf tap:NutritionDrink .
+
+tap:SwissCheese
+      a       rdfs:Class ;
+      rdfs:label "Swiss Cheese"@en , "Swiss"@en ;
+      rdfs:subClassOf tap:Cheese ;
+      tap:plural "Swisses" , "Swiss Cheeses" .
+
+tap:MaltVinegar
+      a       rdfs:Class ;
+      rdfs:label "malt vinegar"@en ;
+      rdfs:subClassOf tap:Vinegar ;
+      tap:plural "malt vinegars" .
+
+tap:CreamCheese
+      a       tap:ProductType ;
+      rdfs:label "Cream Cheese"@en ;
+      rdfs:subClassOf tap:DairyProduct , "Condiment" ;
+      tap:plural "cream cheeses" ;
+      tap:relevantBrand tap:PhiladelphiaBrand .
+
+tap:CapeCodDrink
+      a       tap:ProductType ;
+      rdfs:label "cape cod"@en ;
+      rdfs:subClassOf tap:MixedDrink ;
+      tap:plural "cape cods" .
+
+tap:OrangeFruit
+      a       rdfs:Class ;
+      rdfs:label "orange"@en ;
+      rdfs:subClassOf tap:CitrusFruit ;
+      tap:plural "oranges" .
+
+tap:ChickenNoodleSoup
+      a       rdfs:Class ;
+      rdfs:label "chicken noodle"@en , "chicken noodle soup"@en ;
+      rdfs:subClassOf tap:Soup , tap:ChickenDish ;
+      tap:hasIngredient tap:UncookedPasta ;
+      tap:plural "chicken noodle soups" , "chicken noodles" .
+
+tap:CornDish
+      a       rdfs:Class ;
+      rdfs:label "corn dish"@en , "corn"@en ;
+      rdfs:subClassOf tap:VegetableDish ;
+      tap:hasFoodAccessory
+              tap:ButterlikeSpread , tap:SaltSpice , tap:Margerine ;
+      tap:plural "corns" , "corn dishes" .
+
+tap:GreenVegetable
+      a       rdfs:Class ;
+      rdfs:label "green vegetable"@en ;
+      rdfs:subClassOf tap:Vegetable ;
+      tap:plural "green vegetables" .
+
+tap:HorseradishSauce
+      a       rdfs:Class ;
+      rdfs:label "horseradish sauce"@en ;
+      rdfs:subClassOf tap:Sauce , tap:FoodCondiment ;
+      tap:hasIngredient tap:Radish ;
+      tap:plural "horseradish sauces" .
+
+tap:GroundBeef
+      a       rdfs:Class ;
+      rdfs:label "ground beef"@en , "hamburger"@en ;
+      rdfs:subClassOf tap:Beef ;
+      tap:plural "hamburgers" , "ground beefs" .
+
+tap:NectarineFruit
+      a       rdfs:Class ;
+      rdfs:label "nectarine"@en ;
+      rdfs:subClassOf tap:PittedFruit ;
+      tap:plural "nectarines" .
+
+tap:TarragonSpice
+      a       rdfs:Class ;
+      rdfs:label "tarragon"@en ;
+      rdfs:subClassOf tap:SpiceIngredient ;
+      tap:plural "tarragons" .
+
+tap:MozarellaCheese
+      a       rdfs:Class ;
+      rdfs:label "Mozarella Cheese"@en , "Mozarella"@en ;
+      rdfs:subClassOf tap:Cheese ;
+      tap:plural "Mozarellas" , "Mozarella Cheeses" .
+
+tap:ChocolateKiss
+      a       rdfs:Class ;
+      rdfs:label "kiss"@en , "chocolate kiss"@en ;
+      rdfs:subClassOf tap:ChocolateFood ;
+      tap:plural "chocolate kisses" , "kisses" .
+
+tap:ChickenMeatBreast
+      a       rdfs:Class ;
+      rdfs:label "chicken breast"@en ;
+      rdfs:subClassOf tap:LightMeatPoultry , tap:ChickenMeat ;
+      tap:plural "chicken breasts" .
+
+tap:GreenOliveFood
+      a       rdfs:Class ;
+      rdfs:label "green olive"@en ;
+      rdfs:subClassOf tap:OliveFood ;
+      tap:plural "green olives" .
+
+tap:PorkRib
+      a       rdfs:Class ;
+      rdfs:label "pork rib"@en ;
+      rdfs:subClassOf tap:PorkDish ;
+      tap:creationIncludesEvent
+              tap:BBQingFood ;
+      tap:hasFoodAccessory
+              tap:BBQSauce ;
+      tap:plural "pork ribs" .
+
+tap:VegetableStirFry
+      a       rdfs:Class ;
+      rdfs:label "Stir Fried Vegetable"@en , "Vegetable Stir Fry"@en ;
+      rdfs:subClassOf tap:StirFryDish , tap:VegetarianDish ;
+      tap:plural "Stir Fried Vegetables" , "Vegetable Stir Fries" .
+
+tap:FrenchSaladDressing
+      a       rdfs:Class ;
+      rdfs:label "french salad dressing"@en , "french dressing"@en ;
+      rdfs:subClassOf tap:SaladDressing ;
+      tap:hasIngredient tap:Ketchup ;
+      tap:plural "french dressings" , "french salad dressings" .
+
+tap:CreamSoda
+      a       tap:ProductType ;
+      rdfs:label "cream soda"@en ;
+      rdfs:subClassOf tap:SoftDrink ;
+      tap:plural "cream sodas" .
+
+tap:CornedBeef
+      a       rdfs:Class ;
+      rdfs:label "corned beef"@en ;
+      rdfs:subClassOf tap:BeefDish ;
+      tap:creationIncludesEvent
+              tap:BoilingFood , tap:CuringFood ;
+      tap:hasFoodAccessory
+              tap:MustardCondiment ;
+      tap:plural "corned beefs" .
+
+tap:CookingFood
+      a       rdfs:Class ;
+      rdfs:label "cooking"@en , "cooking food"@en ;
+      rdfs:subClassOf tap:FoodActivity .
+
+tap:LiverFood
+      a       rdfs:Class ;
+      rdfs:label "liver"@en ;
+      rdfs:subClassOf tap:RedMeat ;
+      tap:plural "livers" .
+
+tap:PlumFruit
+      a       rdfs:Class ;
+      rdfs:label "plum"@en ;
+      rdfs:subClassOf tap:PittedFruit ;
+      tap:plural "plums" .
+
+tap:SaladDressing
+      a       rdfs:Class ;
+      rdfs:label "salad dressing"@en ;
+      rdfs:subClassOf tap:Sauce ;
+      tap:plural "salad dressings" .
+
+tap:PinaColadaDrink
+      a       tap:ProductType ;
+      rdfs:label "pina colada"@en ;
+      rdfs:subClassOf tap:MixedDrink ;
+      tap:plural "pina coladas" .
+
+tap:OatmealCookie
+      a       rdfs:Class ;
+      rdfs:label "oatmeal cookie"@en ;
+      rdfs:subClassOf tap:Cookie ;
+      tap:hasIngredient tap:Oatmeal ;
+      tap:plural "oatmeal cookies" .
+
+tap:GrapeFood
+      a       rdfs:Class ;
+      rdfs:label "grape"@en ;
+      rdfs:subClassOf tap:Fruit ;
+      tap:plural "grapes" .
+
+tap:DaiquiriDrink
+      a       tap:ProductType ;
+      rdfs:label "daiquiri"@en ;
+      rdfs:subClassOf tap:MixedDrink ;
+      tap:plural "daiquiris" .
+
+tap:RumBeverage
+      a       tap:ProductType ;
+      rdfs:label "Rum"@en ;
+      rdfs:subClassOf tap:HardLiquorBeverage ;
+      tap:plural "Rums" .
+
+tap:MangoFruit
+      a       rdfs:Class ;
+      rdfs:label "mango"@en ;
+      rdfs:subClassOf tap:TropicalFruit , tap:PittedFruit ;
+      tap:plural "mangos" .
+
+tap:FruitDish
+      a       rdfs:Class ;
+      rdfs:label "fruit dish"@en ;
+      rdfs:subClassOf tap:PreparedFood ;
+      tap:hasIngredient tap:Fruit ;
+      tap:plural "fruit dishes" .
+
+tap:Popcorn
+      a       rdfs:Class , tap:ProductType ;
+      rdfs:label "Popcorn"@en ;
+      rdfs:subClassOf tap:CornDish , tap:SnackFood ;
+      tap:plural "Popcorns" ;
+      tap:relevantBrand tap:OrvilleRedenbacherBrand , tap:BettyCrockerPopSecretBrand , tap:HealthyChoiceBrand .
+
+tap:PastaAlfredo
+      a       rdfs:Class ;
+      rdfs:label "pasta alfredo"@en ;
+      rdfs:subClassOf tap:PastaDish ;
+      tap:hasIngredient tap:AlfredoSauce ;
+      tap:plural "pasta alfredos" .
+
+tap:BrownMustard
+      a       rdfs:Class ;
+      rdfs:label "brown mustard"@en , "spicy mustard"@en ;
+      rdfs:subClassOf tap:MustardCondiment ;
+      tap:plural "brown mustards" , "spicy mustards" .
+
+tap:TomatoSauce
+      a       rdfs:Class ;
+      rdfs:label "Marinara Sauce"@en , "Tomato Sauce"@en ;
+      rdfs:subClassOf tap:PastaSauce ;
+      tap:hasIngredient tap:Tomato ;
+      tap:plural "Marinara Sauces" , "Tomato Sauces" .
+
+tap:FruitSpread
+      a       tap:ProductType ;
+      rdfs:label "fruit spread"@en ;
+      rdfs:subClassOf tap:FoodSpread ;
+      tap:plural "fruit spreads" ;
+      tap:relevantBrand tap:PolanerBrand , tap:DickinsonsBrand , tap:MusselmansBrand , tap:SorrellRidgeBrand , tap:SmuckersBrand .
+
+tap:PickleRelish
+      a       rdfs:Class ;
+      rdfs:label "relish"@en , "pickle relish"@en ;
+      rdfs:subClassOf tap:FoodCondiment ;
+      tap:hasIngredient tap:Pickle ;
+      tap:plural "relishes" , "pickle relishes" .
+
+tap:Rice
+      a       rdfs:Class ;
+      rdfs:label "rice"@en ;
+      rdfs:subClassOf tap:GrainFood ;
+      tap:plural "rices" .
+
+tap:FruitRollSnack
+      a       tap:ProductType ;
+      rdfs:label "fruit roll"@en ;
+      rdfs:subClassOf tap:DriedFruit ;
+      tap:plural "fruit rolls" ;
+      tap:relevantBrand tap:BettyCrockerBrand , tap:HiCBrand , tap:FruitByTheFootBrand .
+
+tap:TurkeyMeatLeg
+      a       rdfs:Class ;
+      rdfs:label "turkey leg"@en ;
+      rdfs:subClassOf tap:DarkMeatPoultry , tap:TurkeyMeat ;
+      tap:plural "turkey legs" .
+
+tap:PintoBean
+      a       rdfs:Class ;
+      rdfs:label "pinto bean"@en ;
+      rdfs:subClassOf tap:Legume ;
+      tap:plural "pinto beans" .
+
+tap:LettuceSalad
+      a       tap:ProductType ;
+      rdfs:label "salad"@en ;
+      rdfs:subClassOf tap:SaladDish ;
+      tap:plural "salads" .
+
+tap:SpinachPasta
+      a       rdfs:Class ;
+      rdfs:label "spinach pasta"@en ;
+      rdfs:subClassOf tap:UncookedPasta ;
+      tap:hasIngredient tap:Spinach ;
+      tap:plural "spinach pastas" .
+
+tap:Pastrami
+      a       rdfs:Class ;
+      rdfs:label "pastrami"@en ;
+      rdfs:subClassOf tap:Beef ;
+      tap:plural "pastramis" .
+
+tap:Ollalaberry
+      a       rdfs:Class ;
+      rdfs:label "Ollola-berry"@en ;
+      rdfs:subClassOf tap:BerryFruit ;
+      tap:plural "Ollola-berries" .
+
+tap:DecafCoffee
+      a       rdfs:Class ;
+      rdfs:label "Decaffeinated coffee"@en , "Decaf coffee"@en , "decaf"@en ;
+      rdfs:subClassOf tap:DecafBeverage , tap:CoffeeBeverage ;
+      tap:plural "Decaf coffees" , "Decaffeinated coffees" , "decafs" .
+
+tap:MashedPotatoes
+      a       rdfs:Class ;
+      rdfs:label "mashed potatoes"@en , "mashers"@en ;
+      rdfs:subClassOf tap:PotatoDish ;
+      tap:creationIncludesEvent
+              tap:BoilingFood ;
+      tap:hasFoodAccessory
+              tap:ButterlikeSpread , tap:BlackPepperSpice , tap:Margerine ;
+      tap:plural "mashed potatoes" , "mashers" .
+
+tap:NutmegSpice
+      a       rdfs:Class ;
+      rdfs:label "nutmeg"@en ;
+      rdfs:subClassOf tap:SpiceIngredient ;
+      tap:plural "nutmegs" .
+
+tap:TortillaSoup
+      a       rdfs:Class ;
+      rdfs:label "tortilla soup"@en ;
+      rdfs:subClassOf tap:Soup ;
+      tap:plural "tortilla soups" .
+
+tap:BrownRice
+      a       rdfs:Class ;
+      rdfs:label "brown rice"@en ;
+      rdfs:subClassOf tap:Rice ;
+      tap:plural "brown rices" .
+
+tap:BroilingFood
+      a       rdfs:Class ;
+      rdfs:label "broiling"@en ;
+      rdfs:subClassOf tap:CookingFood .
+
+tap:SpringWater
+      a       rdfs:Class ;
+      rdfs:label "spring water"@en ;
+      rdfs:subClassOf tap:DrinkingWater ;
+      tap:plural "spring waters" .
+
+tap:BlushWine
+      a       tap:ProductType ;
+      rdfs:label "blush wine"@en ;
+      rdfs:subClassOf tap:WineBeverage ;
+      tap:plural "blush wines" .
+
+tap:ButterlikeSpread
+      a       rdfs:Class ;
+      rdfs:label "Butter"@en , "butter spread"@en ;
+      rdfs:subClassOf tap:FoodSpread ;
+      tap:plural "butter spreads" , "Butters" .
+
+tap:CutCorn
+      a       rdfs:Class ;
+      rdfs:label "corn nibblets"@en , "nibblets"@en , "cut corn"@en ;
+      rdfs:subClassOf tap:CornDish ;
+      tap:creationIncludesEvent
+              tap:CuttingUpFood ;
+      tap:plural "corn nibblets" , "cut corns" , "nibblets" .
+
+tap:SpearmintSpice
+      a       rdfs:Class ;
+      rdfs:label "spearmint"@en ;
+      rdfs:subClassOf tap:SpiceIngredient ;
+      tap:plural "spearmints" .
+
+tap:AngelFoodCook
+      a       tap:ProductType ;
+      rdfs:label "angel food cake"@en ;
+      rdfs:subClassOf tap:CakeFood ;
+      tap:plural "angel food cakes" .
+
+tap:HalfAndHalfDairyProduct
+      a       tap:ProductType ;
+      rdfs:label "half and half"@en ;
+      rdfs:subClassOf tap:DairyProduct ;
+      tap:plural "half and halfs" .
+
+tap:RestaurantChainBrand
+      a       rdfs:Class ;
+      rdfs:subClassOf tap:FoodBrand .
+
+tap:BreakfastCereal
+      a       tap:ProductType ;
+      rdfs:label "breakfast cereal"@en , "Cereal"@en ;
+      rdfs:subClassOf tap:BreakfastFood , tap:GrainFood ;
+      tap:hasFoodAccessory
+              tap:SugarSpice , tap:CowMilk ;
+      tap:plural "breakfast cereals" , "Cereals" ;
+      tap:relevantBrand tap:PostBrand , tap:QuakerBrand , tap:GeneralMillsBrand , tap:KelloggsBrand .
+
+tap:CheeseburgerSandwich
+      a       rdfs:Class ;
+      rdfs:label "cheeseburger"@en ;
+      rdfs:subClassOf tap:HamburgerSandwich ;
+      tap:hasIngredient tap:Cheese ;
+      tap:plural "cheeseburgers" .
+
+tap:BananaBread
+      a       rdfs:Class ;
+      rdfs:label "banana bread"@en ;
+      rdfs:subClassOf tap:Bread ;
+      tap:hasFoodAccessory
+              tap:ButterlikeSpread , tap:Margerine ;
+      tap:hasIngredient tap:BananaFruit , tap:ChickenEgg ;
+      tap:plural "banana breads" .
+
+tap:SoftDrink
+      a       rdfs:Class , tap:ProductType ;
+      rdfs:label "soda"@en , "tonic"@en , "coke"@en , "Soft Drink"@en ;
+      rdfs:subClassOf tap:ColdBeverage ;
+      tap:plural "cokes" , "sodas" , "tonics" , "Soft Drinks" ;
+      tap:relevantBrand tap:7UpBrand , tap:CocaColaBrand , tap:MountainDewBrand , tap:PepsiBrand , tap:SpriteBrand , tap:SliceBrand , tap:FantaBrand .
+
+tap:CiderVinegar
+      a       rdfs:Class ;
+      rdfs:label "cider vinegar"@en ;
+      rdfs:subClassOf tap:Vinegar ;
+      tap:plural "cider vinegars" .
+
+tap:ColdBeverage
+      a       rdfs:Class ;
+      rdfs:label "cold drink"@en , "cold beverage"@en ;
+      rdfs:subClassOf tap:Beverage ;
+      tap:plural "cold beverages" , "cold drinks" .
+
+tap:WhiteFlour
+      a       rdfs:Class ;
+      rdfs:label "bleached flour"@en , "white flour"@en ;
+      rdfs:subClassOf tap:Flour ;
+      tap:plural "white flours" , "bleached flours" .
+
+tap:GarlicBagel
+      a       tap:ProductType ;
+      rdfs:label "Garlic Bagel"@en ;
+      rdfs:subClassOf tap:Bagel ;
+      tap:plural "Garlic Bagels" .
+
+tap:Raisin
+      a       rdfs:Class ;
+      rdfs:label "raisin"@en ;
+      rdfs:subClassOf tap:DriedFruit , "Grape" ;
+      tap:plural "raisins" .
+
+tap:OreganoSpice
+      a       rdfs:Class ;
+      rdfs:label "oregano"@en ;
+      rdfs:subClassOf tap:SpiceIngredient ;
+      tap:plural "oreganos" .
+
+tap:SteakBeef
+      a       rdfs:Class ;
+      rdfs:label "steak"@en , "beef steak"@en ;
+      rdfs:subClassOf tap:Beef ;
+      tap:plural "beef steaks" , "steaks" .
+
+tap:PortWine
+      a       tap:ProductType ;
+      rdfs:label "port"@en ;
+      rdfs:subClassOf tap:WineBeverage ;
+      tap:plural "ports" .
+
+tap:MuttonDish
+      a       rdfs:Class ;
+      rdfs:label "mutton"@en , "mutton dish"@en ;
+      rdfs:subClassOf tap:MeatDish ;
+      tap:hasIngredient tap:Mutton ;
+      tap:plural "mutton dishes" , "muttons" .
+
+tap:ButcheringFood
+      a       rdfs:Class ;
+      rdfs:label "butchering"@en ;
+      rdfs:subClassOf tap:CookingFood .
+
+tap:PearFruit
+      a       rdfs:Class ;
+      rdfs:label "pear"@en ;
+      rdfs:subClassOf tap:Fruit ;
+      tap:plural "pears" .
+
+tap:ChewingGum
+      a       rdfs:Class ;
+      rdfs:label "chewing gum"@en , "gum"@en ;
+      rdfs:subClassOf tap:Candy ;
+      tap:plural "chewing gums" , "gums" .
+
+tap:AnimalFood
+      a       rdfs:Class ;
+      rdfs:label "animal food"@en ;
+      rdfs:subClassOf tap:Food ;
+      tap:plural "animal foods" .
+
+tap:GinBeverage
+      a       tap:ProductType ;
+      rdfs:label "Gin"@en ;
+      rdfs:subClassOf tap:HardLiquorBeverage ;
+      tap:plural "Gins" .
+
+tap:BeefDish
+      a       rdfs:Class ;
+      rdfs:label "beef dish"@en ;
+      rdfs:subClassOf tap:MeatDish ;
+      tap:hasIngredient tap:Beef ;
+      tap:plural "beef dishes" .
+
+tap:FlourProduct
+      a       rdfs:Class ;
+      rdfs:subClassOf tap:PreparedFood , tap:GrainFood ;
+      tap:hasIngredient tap:Flour .
+
+tap:AniseSpice
+      a       rdfs:Class ;
+      rdfs:label "anise"@en ;
+      rdfs:subClassOf tap:SpiceIngredient ;
+      tap:plural "anises" .
+
+tap:CornFlour
+      a       rdfs:Class ;
+      rdfs:label "corn flour"@en ;
+      rdfs:subClassOf tap:Flour ;
+      tap:plural "corn flours" .
+
+tap:Blueberry
+      a       rdfs:Class ;
+      rdfs:label "blue-berry"@en ;
+      rdfs:subClassOf tap:BerryFruit ;
+      tap:plural "blue-berries" .
+
+tap:YellowOnion
+      a       rdfs:Class ;
+      rdfs:label "yellow onion"@en ;
+      rdfs:subClassOf tap:Onion ;
+      tap:plural "yellow onions" .
+
+tap:TomatoSoup
+      a       rdfs:Class ;
+      rdfs:label "tomato bisque"@en , "tomato soup"@en ;
+      rdfs:subClassOf tap:Soup ;
+      tap:hasIngredient tap:Tomato ;
+      tap:plural "tomato bisques" , "tomato soups" .
+
+tap:DrinkingWater
+      a       rdfs:Class ;
+      rdfs:label "Drinking Water"@en , "water"@en ;
+      rdfs:subClassOf tap:Beverage , tap:CompoundMaterial ;
+      tap:plural "drinking waters" , "waters" ;
+      tap:relevantBrand tap:PolandSpringsBrand , tap:AquafinaBrand , tap:FijiBrand .
+
+tap:SugarSpice
+      a       rdfs:Class ;
+      rdfs:label "sugar"@en ;
+      rdfs:subClassOf tap:Sweetener ;
+      tap:plural "sugars" .
+
+tap:AngelHairPasta
+      a       rdfs:Class ;
+      rdfs:label "angel hair pasta"@en ;
+      rdfs:subClassOf tap:UncookedPasta ;
+      tap:plural "angel hair pastas" .
+
+tap:ChowchowSauce
+      a       rdfs:Class ;
+      rdfs:label "chow chow"@en , "chow chow sauce"@en ;
+      rdfs:subClassOf tap:FoodCondiment ;
+      tap:plural "chow chow sauces" , "chow chows" .
+
+tap:EggSalad
+      a       rdfs:Class ;
+      rdfs:label "Egg salad"@en ;
+      rdfs:subClassOf tap:EggDish ;
+      tap:hasIngredient tap:CuttingUpFood , tap:Mayonnaise , tap:HardboiledEgg ;
+      tap:plural "Egg salads" .
+
+tap:PastaSauce
+      a       tap:ProductType ;
+      rdfs:label "Pasta Sauce"@en ;
+      rdfs:subClassOf tap:Sauce ;
+      tap:plural "Pasta Sauces" ;
+      tap:relevantBrand tap:RaguBrand , tap:PregoBrand , tap:KnorrBrand .
+
+tap:GreenleafLettuce
+      a       rdfs:Class ;
+      rdfs:label "greenleaf lettuce"@en ;
+      rdfs:subClassOf tap:Lettuce ;
+      tap:plural "greenleaf lettuces" .
+
+tap:BowtiePasta
+      a       rdfs:Class ;
+      rdfs:label "bowtie pasta"@en ;
+      rdfs:subClassOf tap:UncookedPasta ;
+      tap:plural "bowtie pastas" .
+
+tap:Gravy
+      a       rdfs:Class ;
+      rdfs:label "gravy"@en ;
+      rdfs:subClassOf tap:Sauce ;
+      tap:plural "gravies" .
+
+tap:MuscleFishMeat
+      a       rdfs:Class ;
+      rdfs:label "muscle"@en ;
+      rdfs:subClassOf tap:FishMeat ;
+      tap:plural "muscles" .
+
+tap:GrapefruitFruit
+      a       rdfs:Class ;
+      rdfs:label "grapefruit"@en ;
+      rdfs:subClassOf tap:CitrusFruit , tap:BreakfastFood ;
+      tap:plural "grapefruits" .
+
+tap:PorkLoinDish
+      a       rdfs:Class ;
+      rdfs:label "pork loin"@en ;
+      rdfs:subClassOf tap:PorkDish ;
+      tap:plural "pork loins" .
+
+tap:RoastingFood
+      a       rdfs:Class ;
+      rdfs:label "roasting"@en ;
+      rdfs:subClassOf tap:CookingFood .
+
+tap:SourdoughBread
+      a       rdfs:Class ;
+      rdfs:label "sourdough"@en , "sourdough bread"@en ;
+      rdfs:subClassOf tap:Bread ;
+      tap:plural "sourdoughs" , "sourdough breads" .
+
+tap:ChocolateFudge
+      a       rdfs:Class ;
+      rdfs:label "chocolate fudge"@en , "fudge"@en ;
+      rdfs:subClassOf tap:ChocolateFood ;
+      tap:plural "fudges" , "chocolate fudges" .
+
+tap:CookingOil
+      a       rdfs:Class ;
+      rdfs:label "cooking oil"@en ;
+      rdfs:subClassOf tap:FoodCondiment ;
+      tap:plural "cooking oils" .
+
+tap:Yogurt
+      a       rdfs:Class , tap:ProductType ;
+      rdfs:label "Yogurt"@en ;
+      rdfs:subClassOf tap:DairyProduct , tap:BreakfastFood ;
+      tap:hasFoodAccessory
+              tap:FruitJamJelly ;
+      tap:plural "yogurts" ;
+      tap:relevantBrand "BrownCowBrand" , tap:DanoneBrand , tap:DanonBrand , tap:YoplaitBrand .
+
+tap:RoastBeefSandwich
+      a       rdfs:Class ;
+      rdfs:label "roast beef sandwich"@en ;
+      rdfs:subClassOf tap:MeatSandwich , tap:BeefDish ;
+      tap:hasIngredient tap:RoastBeef ;
+      tap:plural "roast beef sandwiches" .
+
+tap:RedWine
+      a       rdfs:Class ;
+      rdfs:label "red wine"@en ;
+      rdfs:subClassOf tap:WineBeverage ;
+      tap:plural "red wines" .
+
+tap:PorkChop
+      a       rdfs:Class ;
+      rdfs:label "pork chop"@en ;
+      rdfs:subClassOf tap:Pork ;
+      tap:plural "pork chops" .
+
+tap:LemonLimeSoda
+      a       rdfs:Class ;
+      rdfs:label "lemon lime soda"@en , "lemon lime soft drink"@en ;
+      rdfs:subClassOf tap:SoftDrink ;
+      tap:plural "lemon lime sodas" , "lemon lime soft drinks" .
+
+tap:LimeFruit
+      a       rdfs:Class ;
+      rdfs:label "lime"@en ;
+      rdfs:subClassOf tap:CitrusFruit ;
+      tap:plural "limes" .
+
+tap:OliveFood
+      a       rdfs:Class ;
+      rdfs:label "olive"@en ;
+      rdfs:subClassOf tap:Vegetable ;
+      tap:plural "olives" .
+
+tap:ToastingFood
+      a       rdfs:Class ;
+      rdfs:label "toasting"@en ;
+      rdfs:subClassOf tap:CookingFood .
+
+tap:WineCooler
+      a       tap:ProductType ;
+      rdfs:subClassOf tap:WineBeverage .
+
+tap:Cheese
+      a       tap:ProductType ;
+      rdfs:label "Cheese"@en ;
+      rdfs:subClassOf tap:DairyProduct ;
+      tap:plural "Cheeses" ;
+      tap:relevantBrand tap:KraftBrand , tap:SangiorgioBrand , tap:VelveetaBrand , tap:RonzoniBrand .
+
+tap:WholeMilk
+      a       rdfs:Class ;
+      rdfs:label "whole milk"@en ;
+      rdfs:subClassOf tap:CowMilk ;
+      tap:plural "whole milks" .
+
+tap:DriedFood
+      a       rdfs:Class ;
+      rdfs:label "dried food"@en ;
+      rdfs:subClassOf tap:Food ;
+      tap:plural "dried foods" .
+
+tap:DevilledEgg
+      a       rdfs:Class ;
+      rdfs:label "Devilled Egg"@en ;
+      rdfs:subClassOf tap:EggDish ;
+      tap:creationIncludesEvent
+              tap:MixingFood , tap:BoilingFood ;
+      tap:hasIngredient tap:CuttingUpFood , tap:HardboiledEgg ;
+      tap:plural "Devilled Eggs" .
+
+tap:PeanutButterCookie
+      a       rdfs:Class ;
+      rdfs:label "peanut butter cookie"@en ;
+      rdfs:subClassOf tap:Cookie ;
+      tap:hasIngredient tap:PeanutButter ;
+      tap:plural "peanut butter cookies" .
+
+tap:SesameBagel
+      a       tap:ProductType ;
+      rdfs:label "Sesame Bagel"@en ;
+      rdfs:subClassOf tap:Bagel ;
+      tap:plural "Sesame Bagels" .
+
+tap:SteamedRice
+      a       rdfs:Class ;
+      rdfs:label "rice"@en , "steamed rice"@en ;
+      rdfs:subClassOf tap:RiceDish ;
+      tap:creationIncludesEvent
+              tap:SteamingFood ;
+      tap:plural "steamed rices" , "rices" .
+
+tap:PowderedNutritionDrinkMix
+      a       tap:ProductType ;
+      rdfs:subClassOf tap:PowderedDrinkMix , tap:NutritionDrink .
+
+tap:GreenPea
+      a       rdfs:Class ;
+      rdfs:label "green pea"@en ;
+      rdfs:subClassOf tap:Legume , tap:GreenVegetable ;
+      tap:plural "green peas" .
+
+tap:SalsaFood
+      a       rdfs:Class ;
+      rdfs:label "salsa"@en , "salsa fresca"@en ;
+      rdfs:subClassOf tap:DipFood , tap:FoodCondiment ;
+      tap:hasIngredient tap:CilantroSpice , tap:Onion , tap:Tomato ;
+      tap:plural "salsas" , "salsa frescas" .
+
+tap:VealScallopini
+      a       rdfs:Class ;
+      rdfs:label "Veal Scallopini"@en ;
+      rdfs:subClassOf tap:VealDish ;
+      tap:creationIncludesEvent
+              tap:FryingSauteingFood ;
+      tap:hasIngredient tap:WhiteWine , tap:LemonFruit , tap:VealCutlet ;
+      tap:plural "Veal Scallopinis" .
+
+tap:SpiceIngredient
+      a       tap:ProductType ;
+      rdfs:label "spice"@en , "seasoning"@en ;
+      rdfs:subClassOf tap:Food ;
+      tap:plural "spices" , "seasonings" ;
+      tap:relevantBrand tap:McCormickBrand , tap:MortonBrand .
+
+tap:LongIslandIceTeaDrink
+      a       tap:ProductType ;
+      rdfs:label "Long Islnd ice tea"@en ;
+      rdfs:subClassOf tap:MixedDrink ;
+      tap:plural "Long Islnd ice teas" .
+
+tap:PecanNut
+      a       rdfs:Class ;
+      rdfs:label "pecan"@en ;
+      rdfs:subClassOf tap:NutFood ;
+      tap:plural "pecans" .
+
+tap:PorkLoin
+      a       rdfs:Class ;
+      rdfs:label "pork loin"@en ;
+      rdfs:subClassOf tap:Pork ;
+      tap:plural "pork loins" .
+
+tap:BolognaSandwich
+      a       rdfs:Class ;
+      rdfs:label "bologna sandwich"@en ;
+      rdfs:subClassOf tap:MeatSandwich ;
+      tap:hasFoodAccessory
+              tap:Cheese , tap:Mayonnaise , tap:MustardCondiment ;
+      tap:hasIngredient tap:Bologna ;
+      tap:plural "bologna sandwiches" .
+
+tap:Zucchini
+      a       rdfs:Class ;
+      rdfs:label "zucchini"@en ;
+      rdfs:subClassOf tap:Vegetable ;
+      tap:plural "zucchinies" .
+
+tap:SaladMacaroni
+      a       rdfs:Class ;
+      rdfs:label "salad macaroni"@en ;
+      rdfs:subClassOf tap:UncookedPasta ;
+      tap:plural "salad macaronies" .
+
+tap:DuckEgg
+      a       rdfs:Class ;
+      rdfs:label "duck egg"@en ;
+      rdfs:subClassOf tap:Egg ;
+      tap:plural "duck eggs" .
+
+tap:Croissant
+      a       rdfs:Class ;
+      rdfs:label "croissant"@en ;
+      rdfs:subClassOf tap:Bread , tap:Pastry ;
+      tap:hasFoodAccessory
+              tap:ButterlikeSpread , tap:FruitJamJelly , tap:Margerine ;
+      tap:plural "croissants" .
+
+tap:FruitTart
+      a       rdfs:Class ;
+      rdfs:label "fruit tart"@en ;
+      rdfs:subClassOf tap:FruitDish , tap:Pastry , tap:DessertDish ;
+      tap:creationIncludesEvent
+              tap:BakingFood , tap:CuttingUpFood ;
+      tap:hasIngredient tap:Fruit ;
+      tap:plural "fruit tarts" .
+
+tap:CoffeeBeverage
+      a       rdfs:Class ;
+      rdfs:subClassOf tap:Beverage ;
+      tap:hasFoodAccessory
+              tap:Cream , tap:SugarSpice .
+
+tap:TangerineFruit
+      a       rdfs:Class ;
+      rdfs:label "tangerine"@en ;
+      rdfs:subClassOf tap:CitrusFruit ;
+      tap:plural "tangerines" .
+
+tap:FriedChicken
+      a       rdfs:Class ;
+      rdfs:label "fried chicken"@en ;
+      rdfs:subClassOf tap:ChickenDish ;
+      tap:creationIncludesEvent
+              tap:FryingSauteingFood ;
+      tap:plural "fried chickens" .
+
+tap:AlfredoSauce
+      a       rdfs:Class ;
+      rdfs:label "Alfredo Sauce"@en ;
+      rdfs:subClassOf tap:PastaSauce ;
+      tap:hasIngredient tap:Cream , tap:Cheese ;
+      tap:plural "Alfredo Sauces" .
+
+tap:DessertDish
+      a       rdfs:Class ;
+      rdfs:label "dessert"@en ;
+      rdfs:subClassOf tap:PreparedFood ;
+      tap:hasIngredient tap:SugarSpice ;
+      tap:plural "desserts" .
+
+tap:OrangeSoda
+      a       rdfs:Class ;
+      rdfs:label "orange soda"@en ;
+      rdfs:subClassOf tap:SoftDrink ;
+      tap:plural "orange sodas" .
+
+tap:PersimmonFruit
+      a       tap:ProductType ;
+      rdfs:label "persimmon"@en ;
+      rdfs:subClassOf tap:Fruit ;
+      tap:plural "persimmons" .
+
+tap:TortillaChip
+      a       rdfs:Class ;
+      rdfs:label "tortilla chip"@en ;
+      rdfs:subClassOf tap:SnackFood ;
+      tap:hasFoodAccessory
+              tap:SalsaFood , tap:Guacamole ;
+      tap:plural "tortilla chips" .
+
+tap:Garlic
+      a       rdfs:Class ;
+      rdfs:label "garlic"@en ;
+      rdfs:subClassOf tap:SpiceIngredient ;
+      tap:plural "garlics" .
+
+tap:Omlette
+      a       rdfs:Class ;
+      rdfs:label "omlette"@en ;
+      rdfs:subClassOf tap:BreakfastEggDish ;
+      tap:creationIncludesEvent
+              tap:FryingSauteingFood , tap:MixingFood ;
+      tap:hasFoodAccessory
+              tap:Ketchup ;
+      tap:plural "omlettes" .
+
+tap:Sandwich
+      a       rdfs:Class ;
+      rdfs:label "sandwich"@en ;
+      rdfs:subClassOf tap:PreparedFood ;
+      tap:creationIncludesEvent
+              tap:CuttingUpFood ;
+      tap:hasIngredient tap:Bread ;
+      tap:plural "sandwiches" .
+
+tap:RedOnion
+      a       rdfs:Class ;
+      rdfs:label "Red Onion"@en ;
+      rdfs:subClassOf tap:Onion ;
+      tap:plural "red onions" .
+
+tap:ChickenEgg
+      a       rdfs:Class ;
+      rdfs:label "chicken egg"@en , "egg"@en ;
+      rdfs:subClassOf tap:Egg ;
+      tap:plural "eggs" , "chicken eggs" .
+
+tap:ServingFood
+      a       rdfs:Class ;
+      rdfs:label "serving"@en , "serving food"@en ;
+      rdfs:subClassOf tap:FoodActivity .
+
+tap:Egg
+      a       rdfs:Class ;
+      rdfs:label "egg"@en ;
+      rdfs:subClassOf tap:Food ;
+      tap:plural "eggs" .
+
+tap:AppleButter
+      a       rdfs:Class ;
+      rdfs:label "apple butter"@en ;
+      rdfs:subClassOf tap:FruitSpread ;
+      tap:plural "apple butters" .
+
+tap:WhiteRussianDrink
+      a       tap:ProductType ;
+      rdfs:label "white russian"@en ;
+      rdfs:subClassOf tap:MixedDrink ;
+      tap:plural "white russians" .
+
+tap:CardamomSpice
+      a       rdfs:Class ;
+      rdfs:label "cardamom"@en ;
+      rdfs:subClassOf tap:SpiceIngredient ;
+      tap:plural "cardamoms" .
+
+tap:Cauliflower
+      a       rdfs:Class ;
+      rdfs:label "cauliflower"@en ;
+      rdfs:subClassOf tap:Vegetable ;
+      tap:plural "cauliflowers" .
+
+tap:HardCandy
+      a       rdfs:Class ;
+      rdfs:label "hard candy"@en ;
+      rdfs:subClassOf tap:Candy ;
+      tap:plural "hard candies" .
+
+tap:ChickenMeatWing
+      a       rdfs:Class ;
+      rdfs:label "chicken wing"@en ;
+      rdfs:subClassOf tap:ChickenMeat ;
+      tap:plural "chicken wings" .
+
+tap:EggBagel
+      a       tap:ProductType ;
+      rdfs:label "egg bagel"@en ;
+      rdfs:subClassOf tap:Bagel ;
+      tap:plural "egg bagels" .
+
+tap:FruitPreserves
+      a       rdfs:Class ;
+      rdfs:label "preserves"@en ;
+      rdfs:subClassOf tap:FruitSpread ;
+      tap:plural "preserves" .
+
+tap:PitaBread
+      a       rdfs:Class , tap:ProductType ;
+      rdfs:label "Pita Bread"@en , "pita"@en ;
+      rdfs:subClassOf tap:BreakfastFood , tap:Bread ;
+      tap:plural "Pita Breads" , "pitas" ;
+      tap:relevantBrand tap:ThomasBrand , tap:SunMaidBrand , tap:SaharaBrand .
+
+tap:NutritionDrink
+      a       tap:ProductType ;
+      rdfs:label "Breakfast Nutrition Drink"@en , "nutrition drink"@en ;
+      rdfs:subClassOf tap:Beverage , tap:NutritionSnack , tap:BreakfastBeverage ;
+      tap:plural "breakfast nutrition drinks" , "nutrition drinks" ;
+      tap:relevantBrand tap:CarnationBrand .
+
+tap:PittedFruit
+      a       tap:ProductType ;
+      rdfs:label "pitted fruit"@en ;
+      rdfs:subClassOf tap:Fruit ;
+      tap:plural "pitted fruits" .
+
+tap:Pumpkin
+      a       rdfs:Class ;
+      rdfs:label "pumpkin"@en ;
+      rdfs:subClassOf tap:Vegetable ;
+      tap:plural "pumpkins" .
+
+tap:PapayaFruit
+      a       rdfs:Class ;
+      rdfs:label "papaya"@en ;
+      rdfs:subClassOf tap:TropicalFruit ;
+      tap:plural "papayas" .
+
+tap:FriedRice
+      a       rdfs:Class ;
+      rdfs:label "fried rice"@en ;
+      rdfs:subClassOf tap:RiceDish ;
+      tap:creationIncludesEvent
+              tap:FryingSauteingFood ;
+      tap:plural "fried rices" .
+
+tap:LambChopDish
+      a       rdfs:Class ;
+      rdfs:label "lamb chop"@en ;
+      rdfs:subClassOf tap:LambDish ;
+      tap:hasIngredient tap:LambChop ;
+      tap:plural "lamb chops" .
+
+tap:TunaMeat
+      a       rdfs:Class ;
+      rdfs:label "tuna fish"@en , "tunafish"@en , "tuna"@en ;
+      rdfs:subClassOf tap:FishMeat ;
+      tap:plural "tunas" , "tunafishes" , "tuna fishes" .
+
+tap:MeatSnack
+      a       tap:ProductType ;
+      rdfs:label "Meat Snack"@en ;
+      rdfs:subClassOf tap:SnackFood ;
+      tap:hasIngredient tap:MeatOrPoultry ;
+      tap:plural "meat snacks" .
+
+tap:DuckMeat
+      a       rdfs:Class ;
+      rdfs:label "duck meat"@en , "duck"@en ;
+      rdfs:subClassOf tap:Poultry ;
+      tap:plural "duck meats" , "ducks" .
+
+tap:BrandyBeverage
+      a       tap:ProductType ;
+      rdfs:label "Brandy"@en ;
+      rdfs:subClassOf tap:HardLiquorBeverage ;
+      tap:plural "Brandies" .
+
+tap:TurkeyMeatBreast
+      a       rdfs:Class ;
+      rdfs:label "turkey breast"@en ;
+      rdfs:subClassOf tap:LightMeatPoultry , tap:TurkeyMeat ;
+      tap:plural "turkey breasts" .
+
+tap:VodkaBeverage
+      a       tap:ProductType ;
+      rdfs:label "Vodka"@en ;
+      rdfs:subClassOf tap:HardLiquorBeverage ;
+      tap:plural "Vodkas" .
+
+tap:VealDish
+      a       rdfs:Class ;
+      rdfs:label "veal"@en , "veal dish"@en ;
+      rdfs:subClassOf tap:MeatDish ;
+      tap:hasIngredient tap:Veal ;
+      tap:plural "veal dishes" , "veals" .
+
+tap:Pickle
+      a       rdfs:Class ;
+      rdfs:label "pickle"@en ;
+      rdfs:subClassOf tap:VegetableDish ;
+      tap:creationIncludesEvent
+              tap:CuringFood ;
+      tap:hasIngredient tap:Cucumber ;
+      tap:plural "pickles" .
+
+tap:Fruit
+      a       rdfs:Class ;
+      rdfs:label "Fruit"@en ;
+      rdfs:subClassOf tap:Food ;
+      tap:plural "Fruits" .
+
+tap:ScallopMeat
+      a       rdfs:Class ;
+      rdfs:label "scallop"@en ;
+      rdfs:subClassOf tap:FishMeat ;
+      tap:plural "scallops" .
+
+tap:PowderedFruitDrink
+      a       tap:ProductType ;
+      rdfs:subClassOf tap:PowderedDrinkMix .
+
+tap:AlcoholicBeverage
+      a       rdfs:Class ;
+      rdfs:label "Alcoholic Beverage"@en , "drink"@en , "booze"@en ;
+      rdfs:subClassOf tap:Beverage ;
+      tap:plural "Alcoholic Beverages" , "drinks" .
+
+tap:HamburgerSandwich
+      a       rdfs:Class ;
+      rdfs:label "burger"@en , "hamburger"@en , "hamburger sandwich"@en ;
+      rdfs:subClassOf tap:MeatSandwich , tap:BeefDish ;
+      tap:hasFoodAccessory
+              tap:Lettuce , tap:Mayonnaise , tap:Ketchup , tap:PickleRelish , tap:Pickle , tap:MustardCondiment ;
+      tap:hasIngredient tap:HamburgerBun , tap:GroundBeef ;
+      tap:plural "hamburgers" , "hamburger sandwiches" , "burgers" .
+
+tap:PizzaCrust
+      a       rdfs:Class ;
+      rdfs:label "pizza crust"@en ;
+      rdfs:subClassOf tap:Bread ;
+      tap:plural "pizza crusts" .
+
+tap:HamFood
+      a       rdfs:Class ;
+      rdfs:label "ham"@en ;
+      rdfs:subClassOf tap:Pork ;
+      tap:creationIncludesEvent
+              tap:CuringFood ;
+      tap:plural "hams" .
+
+tap:HardCider
+      a       tap:ProductType ;
+      rdfs:label "hard cider"@en ;
+      rdfs:subClassOf tap:AlcoholicBeverage , tap:AppleCider ;
+      tap:plural "hard ciders" .
+
+tap:Ketchup
+      a       rdfs:Class ;
+      rdfs:label "catsup"@en , "ketchup"@en ;
+      rdfs:subClassOf tap:FoodCondiment ;
+      tap:hasIngredient tap:Tomato ;
+      tap:plural "ketchups" , "catsups" .
+
+tap:PomegranateFruit
+      a       rdfs:Class ;
+      rdfs:label "pomegranate"@en ;
+      rdfs:subClassOf tap:Fruit ;
+      tap:plural "pomegranates" .
+
+tap:KiwiFruit
+      a       rdfs:Class ;
+      rdfs:label "kiwi"@en , "kiwi fruit"@en ;
+      rdfs:subClassOf tap:TropicalFruit ;
+      tap:plural "kiwis" , "kiwi fruits" .
+
+tap:TequilaBeverage
+      a       tap:ProductType ;
+      rdfs:label "Tequila"@en ;
+      rdfs:subClassOf tap:HardLiquorBeverage ;
+      tap:hasFoodAccessory
+              tap:SaltSpice , tap:LimeFruit ;
+      tap:plural "Tequilas" .
+
+tap:Cookie
+      a       rdfs:Class , tap:ProductType ;
+      rdfs:label "Cookie"@en ;
+      rdfs:subClassOf tap:Pastry , tap:SnackFood , tap:DessertDish ;
+      tap:plural "Cookies" ;
+      tap:relevantBrand tap:FamousAmosBrand , tap:SnackwellsBrand , tap:StellaDOroBrand , tap:KeeblerBrand , tap:ChipsAhoyBrand , tap:NabiscoBrand .
+
+tap:RoastLamb
+      a       rdfs:Class ;
+      rdfs:label "roast lamb"@en ;
+      rdfs:subClassOf tap:LambDish ;
+      tap:creationIncludesEvent
+              tap:RoastingFood ;
+      tap:hasFoodAccessory
+              tap:MintJelly ;
+      tap:plural "roast lambs" .
+
+tap:BlueCheese
+      a       rdfs:Class ;
+      rdfs:label "blue cheese"@en ;
+      rdfs:subClassOf tap:Cheese ;
+      tap:plural "blue cheeses" .
+
+tap:FruitPie
+      a       rdfs:Class ;
+      rdfs:label "fruit pie"@en ;
+      rdfs:subClassOf tap:PieFood , tap:FruitDish , tap:DessertDish ;
+      tap:creationIncludesEvent
+              tap:BakingFood , tap:CuttingUpFood ;
+      tap:hasFoodAccessory
+              tap:IceCream ;
+      tap:hasIngredient tap:Fruit ;
+      tap:plural "fruit pies" .
+
+tap:IceCoffeeBeverage
+      a       rdfs:Class ;
+      rdfs:label "ice coffee"@en ;
+      rdfs:subClassOf tap:CoffeeBeverage ;
+      tap:plural "ice coffees" .
+
+tap:Carrot
+      a       rdfs:Class ;
+      rdfs:label "carrot"@en ;
+      rdfs:subClassOf tap:Vegetable ;
+      tap:plural "carrots" .
+
+tap:FrenchBread
+      a       rdfs:Class ;
+      rdfs:label "french bread"@en ;
+      rdfs:subClassOf tap:Bread ;
+      tap:plural "french breads" .
+
+tap:RoastDuck
+      a       rdfs:Class ;
+      rdfs:label "roast duck"@en ;
+      rdfs:subClassOf tap:DuckDish ;
+      tap:creationIncludesEvent
+              tap:RoastingFood ;
+      tap:plural "roast ducks" .
+
+tap:MiracleWhip
+      a       rdfs:Class ;
+      rdfs:label "miracle whip"@en ;
+      rdfs:subClassOf tap:FoodSpread ;
+      tap:plural "miracle whips" .
+
+tap:PoachedEgg
+      a       rdfs:Class ;
+      rdfs:label "Poached Egg"@en ;
+      rdfs:subClassOf tap:BreakfastEggDish ;
+      tap:creationIncludesEvent
+              tap:BoilingFood ;
+      tap:plural "Poached Eggs" .
+
+tap:SalmonDish
+      a       rdfs:Class ;
+      rdfs:label "salmon dish"@en ;
+      rdfs:subClassOf tap:FishDish ;
+      tap:hasIngredient tap:SalmonFish ;
+      tap:plural "salmon dishes" .
+
+tap:WheatFlour
+      a       rdfs:Class ;
+      rdfs:label "wheat flour"@en ;
+      rdfs:subClassOf tap:Flour ;
+      tap:plural "wheat flours" .
+
+tap:CornOil
+      a       rdfs:Class ;
+      rdfs:label "corn oil"@en ;
+      rdfs:subClassOf tap:VegetableOil ;
+      tap:hasIngredient tap:Corn ;
+      tap:plural "corn oils" .
+
+tap:IceCoffee
+      a       rdfs:Class ;
+      rdfs:label "ice coffee"@en , "iced coffee"@en ;
+      rdfs:subClassOf tap:ColdBeverage ;
+      tap:plural "ice coffees" , "iced coffees" .
+
+tap:LightMeatPoultry
+      a       rdfs:Class ;
+      rdfs:label "light meat"@en , "white meat"@en ;
+      rdfs:subClassOf tap:Poultry ;
+      tap:plural "white meats" , "light meats" .
+
+tap:FryingSauteingFood
+      a       rdfs:Class ;
+      rdfs:label "frying"@en ;
+      rdfs:subClassOf tap:CookingFood .
+
+tap:BeerBeverage
+      a       rdfs:Class ;
+      rdfs:label "Beer"@en ;
+      rdfs:subClassOf tap:AlcoholicBeverage , tap:ColdBeverage ;
+      tap:plural "Beers" ;
+      tap:relevantBrand tap:AsahiBrand , tap:RedDogBrand , tap:KronenbourgBrand , tap:AmstelBrand , tap:TraquairHouseBrand , tap:DosEquisBrand , tap:SamuelAdamsBrand , tap:GrolschBrand , tap:SapporoBrand , tap:GuinnessBrand , tap:MichelobBrand , tap:OdoulsBrand , tap:SpoetzlBreweryBrand , tap:VulcanBreweries , tap:RedhookBreweryBrand , tap:BassBeerBrand , tap:CoronaBrand , tap:TecateBrand , tap:FullersBrand , tap:HarpLagerBrand , tap:MolsonBrand , tap:TequizaBrand , tap:TsingtaoBrand , tap:BudweiserBrand , tap:BuschBrand , tap:HeinekenBrand , tap:GrayBrewingCompanyBrand , tap:BlueRidgeBeersBrand , tap:HalesAlesBrand .
+
+tap:IceTeaBeverage
+      a       rdfs:Class ;
+      rdfs:label "iced tea"@en , "ice tea"@en ;
+      rdfs:subClassOf tap:ColdBeverage , tap:TeaBeverage ;
+      tap:hasFoodAccessory
+              tap:LemonFruit , tap:SugarSpice ;
+      tap:plural "iced teas" , "ice teas" .
+
+tap:HotBeverage
+      a       rdfs:Class ;
+      rdfs:label "hot drink"@en , "hot beverage"@en ;
+      rdfs:subClassOf tap:Beverage ;
+      tap:plural "hot beverages" , "hot drinks" .
+
+tap:BreadToast
+      a       rdfs:Class ;
+      rdfs:label "toast"@en , "piece of toast"@en ;
+      rdfs:subClassOf tap:BreakfastFood , tap:Bread ;
+      tap:creationIncludesEvent
+              tap:ToastingFood ;
+      tap:hasFoodAccessory
+              tap:FruitJamJelly ;
+      tap:plural "toasts" , "pieces of toast" .
+
+tap:BreakfastEggDish
+      a       rdfs:Class ;
+      rdfs:label "breakfast egg dish"@en ;
+      rdfs:subClassOf tap:EggDish , tap:BreakfastFood ;
+      tap:plural "breakfast egg dishes" .
+
+tap:BBQingFood
+      a       rdfs:Class ;
+      rdfs:label "barbequeing"@en , "BBQing"@en ;
+      rdfs:subClassOf tap:CookingFood .
+
+tap:DairyProduct
+      a       rdfs:Class ;
+      rdfs:label "dairy"@en , "Dairy Product"@en ;
+      rdfs:subClassOf tap:Food , tap:PreparedFood ;
+      tap:hasIngredient tap:CowMilk ;
+      tap:plural "Dairy Products" .
+
+tap:Quiche
+      a       rdfs:Class ;
+      rdfs:label "quiche"@en ;
+      rdfs:subClassOf tap:EggDish , tap:PieFood ;
+      tap:plural "quiches" .
+
+tap:CinnamonSpice
+      a       rdfs:Class ;
+      rdfs:label "cinnemon"@en ;
+      rdfs:subClassOf tap:SpiceIngredient ;
+      tap:plural "cinnemons" .
+
+tap:Drinking
+      a       rdfs:Class ;
+      rdfs:label "drinking"@en ;
+      rdfs:subClassOf tap:ConsumingFood .
+
+tap:HoneyFood
+      a       rdfs:Class ;
+      rdfs:label "honey"@en ;
+      rdfs:subClassOf tap:FoodCondiment ;
+      tap:plural "honeys" .
+
+tap:CurlyFry
+      a       rdfs:Class ;
+      rdfs:label "curly fry"@en ;
+      rdfs:subClassOf tap:PotatoDish ;
+      tap:creationIncludesEvent
+              tap:DeepFryingFood , tap:CuttingUpFood ;
+      tap:hasFoodAccessory
+              tap:Ketchup ;
+      tap:plural "curly fries" .
+
+tap:LasagneDish
+      a       rdfs:Class ;
+      rdfs:label "lasagne"@en ;
+      rdfs:subClassOf tap:PastaDish ;
+      tap:creationIncludesEvent
+              tap:BakingFood ;
+      tap:hasFoodAccessory
+              tap:ParmasanCheese ;
+      tap:hasIngredient tap:LasagneNoodle , tap:Cheese , tap:TomatoSauce ;
+      tap:plural "lasagnes" .
+
+tap:OilAndVinegarSaladDressing
+      a       rdfs:Class ;
+      rdfs:label "oil and vinegar"@en , "oil and vinegar dressing"@en , "oil and vinegar salad dressing"@en ;
+      rdfs:subClassOf tap:SaladDressing ;
+      tap:hasIngredient tap:Vinegar , tap:VegetableOil ;
+      tap:plural "oil and vinegar dressings" , "oil and vinegar salad dressings" , "oil and vinegars" .
+
+tap:VinaigretteSaladDressing
+      a       rdfs:Class ;
+      rdfs:label "vinaigrette"@en , "vinaigrette dressing"@en , "vinaigrette salad dressing"@en ;
+      rdfs:subClassOf tap:SaladDressing ;
+      tap:hasIngredient tap:Vinegar ;
+      tap:plural "vinaigrettes" , "vinaigrette salad dressings" , "vinaigrette dressings" .
+
+tap:RiceDish
+      a       tap:ProductType ;
+      rdfs:label "Rice Dish"@en ;
+      rdfs:subClassOf tap:PreparedFood ;
+      tap:hasIngredient tap:Rice ;
+      tap:plural "Rice Dishs" ;
+      tap:relevantBrand tap:UncleBensBrand .
+
+tap:HotCoffeeBeverage
+      a       rdfs:Class , tap:ProductType ;
+      rdfs:label "hot coffee"@en , "Coffee"@en ;
+      rdfs:subClassOf tap:BreakfastBeverage , tap:HotBeverage , tap:CoffeeBeverage ;
+      tap:plural "hot coffees" , "Coffees" ;
+      tap:relevantBrand tap:SankaBrand , tap:ChockFullONutsBrand , tap:MelittaBrand , tap:FolgersBrand , tap:NescafeBrand , tap:GeneralFoodsBrand , tap:MaxwellHouseBrand .
+
+tap:BirdFood
+      a       rdfs:Class , tap:ProductType ;
+      rdfs:label "Bird Food"@en ;
+      rdfs:subClassOf tap:PetFood , tap:BirdPetHealthProduct ;
+      tap:plural "bird foods" .
+
+tap:NutritionSnack
+      a       tap:ProductType ;
+      rdfs:subClassOf tap:HealthFood , tap:DietFood , tap:VitaminMineralHealthcareProduct , tap:SnackFood .
+
+tap:WhiteWine
+      a       rdfs:Class ;
+      rdfs:label "white wine"@en ;
+      rdfs:subClassOf tap:WineBeverage ;
+      tap:plural "white wines" .
+
+tap:Marshmallow
+      a       rdfs:Class ;
+      rdfs:label "Marshmallow"@en ;
+      rdfs:subClassOf tap:DessertDish ;
+      tap:plural "Marshmallows" .
+
+tap:EggNoodle
+      a       rdfs:Class ;
+      rdfs:label "egg noodle"@en ;
+      rdfs:subClassOf tap:UncookedPasta ;
+      tap:hasIngredient tap:ChickenEgg ;
+      tap:plural "egg noodles" .
+
+tap:Blackberry
+      a       rdfs:Class ;
+      rdfs:label "black-berry"@en ;
+      rdfs:subClassOf tap:BerryFruit ;
+      tap:plural "black-berries" .
+
+tap:Lettuce
+      a       rdfs:Class ;
+      rdfs:label "lettuce"@en ;
+      rdfs:subClassOf tap:GreenVegetable ;
+      tap:plural "lettuces" .
+
+tap:SpiralPasta
+      a       rdfs:Class ;
+      rdfs:label "spiral pasta"@en ;
+      rdfs:subClassOf tap:UncookedPasta ;
+      tap:plural "spiral pastas" .
+
+tap:Buttermilk
+      a       rdfs:Class ;
+      rdfs:label "Buttermilk"@en ;
+      rdfs:subClassOf tap:CowMilk ;
+      tap:plural "buttermilks" .
+
+tap:BBQSauce
+      a       rdfs:Class ;
+      rdfs:label "BBQ sauce"@en , "Barbeque Sauce"@en ;
+      rdfs:subClassOf tap:Sauce ;
+      tap:plural "Barbeque Sauces" , "BBQ sauces" .
+
+tap:CottageCheese
+      a       tap:ProductType ;
+      rdfs:label "Cottage Cheese"@en ;
+      rdfs:subClassOf tap:DairyProduct ;
+      tap:plural "Cottage Cheeses" ;
+      tap:relevantBrand tap:BreakstoneBrand , tap:ShamrockFarmsBrand .
+
+tap:VegetableDish
+      a       rdfs:Class ;
+      rdfs:label "vegetable"@en , "veggie"@en , "vegetable dish"@en ;
+      rdfs:subClassOf tap:PreparedFood ;
+      tap:hasIngredient tap:Vegetable ;
+      tap:plural "veggies" , "vegetable dishes" , "vegetables" .
+
+tap:MartiniDrink
+      a       tap:ProductType ;
+      rdfs:label "martini"@en ;
+      rdfs:subClassOf tap:MixedDrink ;
+      tap:plural "martinis" .
+
+tap:VealCutlet
+      a       rdfs:Class ;
+      rdfs:label "veal cutlet"@en ;
+      rdfs:subClassOf tap:Veal ;
+      tap:plural "veal cutlets" .
+
+tap:ChocolateCake
+      a       rdfs:Class ;
+      rdfs:label "devils food cake"@en , "chocolate cake"@en ;
+      rdfs:subClassOf tap:ChocolateFood , tap:CakeFood ;
+      tap:plural "chocolate cakes" , "devils food cakes" .
+
+tap:SimmeringFood
+      a       rdfs:Class ;
+      rdfs:label "simmering"@en ;
+      rdfs:subClassOf tap:CookingFood .
+
+tap:RedGrape
+      a       tap:ProductType ;
+      rdfs:label "red grape"@en ;
+      rdfs:subClassOf tap:GrapeFood ;
+      tap:plural "red grapes" .
+
+tap:TunaFishDish
+      a       rdfs:Class ;
+      rdfs:label "tuna fish dish"@en , "tuna dish"@en ;
+      rdfs:subClassOf tap:FishDish ;
+      tap:hasIngredient tap:TunaFish ;
+      tap:plural "tuna dishes" , "tuna fish dishes" .
+
+tap:RavioliPasta
+      a       rdfs:Class ;
+      rdfs:label "ravioli"@en ;
+      rdfs:subClassOf tap:UncookedPasta ;
+      tap:plural "raviolis" .
+
+tap:SweetPotatoFood
+      a       rdfs:Class ;
+      rdfs:label "yam"@en , "sweet potato"@en ;
+      rdfs:subClassOf tap:Vegetable ;
+      tap:plural "sweet potatoes" , "yams" .
+
+tap:HotdogBun
+      a       rdfs:Class ;
+      rdfs:label "hot dog bun"@en , "hotdog bun"@en ;
+      rdfs:subClassOf tap:Bread ;
+      tap:plural "hot dog buns" , "hotdog buns" .
+
+tap:SubmarineSandwich
+      a       rdfs:Class ;
+      rdfs:label "Hogie"@en , "sub"@en , "Submarine Sandwich"@en , "Poboy"@en ;
+      rdfs:subClassOf tap:MeatSandwich ;
+      tap:hasFoodAccessory
+              tap:Cheese , tap:Lettuce , tap:Mayonnaise , tap:Tomato , tap:MustardCondiment ;
+      tap:hasIngredient tap:ColdCut ;
+      tap:plural "subs" , "Submarine Sandwiches" , "Hogies" , "Poboys" .
+
+tap:PurpleGrape
+      a       tap:ProductType ;
+      rdfs:label "purple grape"@en ;
+      rdfs:subClassOf tap:GrapeFood ;
+      tap:plural "purple grapes" .
+
+tap:SafflowerOil
+      a       rdfs:Class ;
+      rdfs:label "safflower oil"@en ;
+      rdfs:subClassOf tap:VegetableOil ;
+      tap:plural "safflower oils" .
+
+tap:FishFood
+      a       tap:ProductType ;
+      rdfs:subClassOf tap:PetFood , tap:FishPetHealthProduct .
+
+tap:Kale
+      a       rdfs:Class ;
+      rdfs:subClassOf tap:GreenVegetable .
+
+tap:FishDish
+      a       rdfs:Class ;
+      rdfs:label "fish dish"@en ;
+      rdfs:subClassOf tap:MeatDish ;
+      tap:hasIngredient tap:FishMeat ;
+      tap:plural "fish dishes" .
+
+tap:RibBeef
+      a       rdfs:Class ;
+      rdfs:label "rib"@en , "beef rib"@en ;
+      rdfs:subClassOf tap:Beef ;
+      tap:hasFoodAccessory
+              tap:BBQSauce ;
+      tap:plural "beef ribs" , "ribs" .
+
+tap:Butter
+      a       tap:ProductType ;
+      rdfs:label "butter"@en ;
+      rdfs:subClassOf tap:ButterlikeSpread , tap:DairyProduct ;
+      tap:plural "butters" .
+
+tap:LowCarbDietFood
+      a       tap:ProductType ;
+      rdfs:subClassOf tap:DietFood .
+
+tap:DarkMeatPoultry
+      a       rdfs:Class ;
+      rdfs:label "dark meat"@en ;
+      rdfs:subClassOf tap:Poultry ;
+      tap:plural "dark meats" .
+
+tap:BeefSteakDish
+      a       rdfs:Class ;
+      rdfs:label "steak"@en ;
+      rdfs:subClassOf tap:BeefDish ;
+      tap:hasFoodAccessory
+              tap:SteakSauce ;
+      tap:hasIngredient tap:SteakBeef ;
+      tap:plural "steaks" .
+
+tap:Flour
+      a       rdfs:Class ;
+      rdfs:label "flour"@en ;
+      rdfs:subClassOf tap:GrainFood ;
+      tap:plural "flours" .
+
+tap:CuringFood
+      a       rdfs:Class ;
+      rdfs:label "curing food"@en , "curing"@en ;
+      rdfs:subClassOf tap:CookingFood .
+
+tap:Caviar
+      a       rdfs:Class ;
+      rdfs:label "caviar"@en ;
+      rdfs:subClassOf tap:FishEgg ;
+      tap:plural "caviars" .
+
+tap:FigFruit
+      a       rdfs:Class ;
+      rdfs:label "fig"@en ;
+      rdfs:subClassOf tap:Fruit ;
+      tap:plural "figs" .
+
+tap:JackCheese
+      a       rdfs:Class ;
+      rdfs:label "monterey jack"@en , "Monterey Jack Cheese"@en , "Jack Cheese"@en ;
+      rdfs:subClassOf tap:Cheese ;
+      tap:plural "Monterey Jack Cheeses" , "Jack Cheeses" , "monterey jacks" .
+
+tap:EspressoCoffee
+      a       rdfs:Class ;
+      rdfs:label "espresso"@en ;
+      rdfs:subClassOf tap:CoffeeBeverage ;
+      tap:plural "espressos" .
+
+tap:CerealBar
+      a       tap:ProductType ;
+      rdfs:label "granola bar"@en , "Cereal Bar"@en ;
+      rdfs:subClassOf tap:BreakfastFood , tap:GrainFood ;
+      tap:plural "granola bars" , "Cereal Bars" ;
+      tap:relevantBrand tap:KelloggsNutriGrainBrand , tap:NatureValleyBrand , tap:QuakerBrand , tap:NabiscoBrand .
+
+tap:SteakSauce
+      a       rdfs:Class ;
+      rdfs:label "steak sauce"@en ;
+      rdfs:subClassOf tap:Sauce , tap:FoodCondiment ;
+      tap:plural "steak sauces" .
+
+tap:CarrotCake
+      a       rdfs:Class ;
+      rdfs:label "carrot cake"@en ;
+      rdfs:subClassOf tap:CakeFood ;
+      tap:plural "carrot cakes" .
+
+tap:TunaFishSalad
+      a       rdfs:Class ;
+      rdfs:label "tuna fish"@en , "tuna fish salad"@en , "tuna salad"@en , "tuna"@en ;
+      rdfs:subClassOf tap:TunaFishDish , tap:SaladDish ;
+      tap:hasIngredient tap:Mayonnaise ;
+      tap:plural "tunas" , "tuna fishes" , "tuna fish salads" , "tuna salads" .
+
+tap:FastFoodChains
+      a       rdfs:Class ;
+      rdfs:label "Fast Food Chains"@en ;
+      tap:plural "Fast Food Chains" .
+
+tap:Poultry
+      a       rdfs:Class ;
+      rdfs:label "poultry"@en ;
+      rdfs:subClassOf tap:MeatOrPoultry ;
+      tap:plural "poultries" .
+
+tap:ThymeSpice
+      a       rdfs:Class ;
+      rdfs:label "thyme"@en ;
+      rdfs:subClassOf tap:SpiceIngredient ;
+      tap:plural "thymes" .
+
+tap:ColdCut
+      a       rdfs:Class ;
+      rdfs:label "cold cut"@en ;
+      rdfs:subClassOf tap:MeatDish ;
+      tap:creationIncludesEvent
+              tap:CuttingUpFood ;
+      tap:plural "cold cuts" .
+
+tap:Artichoke
+      a       rdfs:Class ;
+      rdfs:subClassOf tap:GreenVegetable .
+
+tap:AppleFruit
+      a       rdfs:Class ;
+      rdfs:label "apple"@en ;
+      rdfs:subClassOf tap:Fruit ;
+      tap:plural "apples" .
+
+tap:BayLeafSpice
+      a       rdfs:Class ;
+      rdfs:label "Bay leaf"@en , "bay"@en ;
+      rdfs:subClassOf tap:SpiceIngredient ;
+      tap:plural "Bay leaves" , "bays" .
+
+tap:CocoaBeverage
+      a       rdfs:Class , tap:ProductType ;
+      rdfs:label "hot cocoa"@en , "Cocoa"@en , "hot chocolate"@en ;
+      rdfs:subClassOf tap:BreakfastBeverage , tap:HotBeverage , tap:ChocolateFood ;
+      tap:hasFoodAccessory
+              tap:Marshmallow , tap:WhippedCream ;
+      tap:plural "hot cocoas" , "cocoas" , "hot chocolates" ;
+      tap:relevantBrand tap:CarnationBrand , tap:SwissMissBrand , tap:NestleBrand .
+
+tap:RedPepperSpice
+      a       rdfs:Class ;
+      rdfs:label "red pepper"@en ;
+      rdfs:subClassOf tap:PepperSpice ;
+      tap:plural "red peppers" .
+
+tap:BLTSandwich
+      a       rdfs:Class ;
+      rdfs:label "bacon lettuce and tomato sandwich"@en , "BLT"@en , "bacon lettuce and tomato"@en ;
+      rdfs:subClassOf tap:BaconDish , tap:Sandwich ;
+      tap:hasFoodAccessory
+              tap:Mayonnaise ;
+      tap:hasIngredient tap:BaconDish , tap:Lettuce , tap:Mayonnaise , tap:BreadToast , tap:Tomato ;
+      tap:plural "bacon lettuce and tomatoes" , "bacon lettuce and tomato sandwiches" , "BLTs" .
+
+tap:BoilingFood
+      a       rdfs:Class ;
+      rdfs:label "boiling"@en , "boiling food"@en ;
+      rdfs:subClassOf tap:CookingFood .
+
+tap:GrapefruitSoda
+      a       rdfs:Class ;
+      rdfs:label "Grapefruit Soda"@en ;
+      rdfs:subClassOf tap:SoftDrink ;
+      tap:plural "Grapefruit Sodas" .
+
+tap:SpaghettiPasta
+      a       rdfs:Class ;
+      rdfs:label "spaghetti"@en ;
+      rdfs:subClassOf tap:UncookedPasta ;
+      tap:plural "spaghetties" .
+
+tap:ScallopedPotatoes
+      a       rdfs:Class ;
+      rdfs:label "scalloped potatoes"@en ;
+      rdfs:subClassOf tap:PotatoDish ;
+      tap:creationIncludesEvent
+              tap:BakingFood ;
+      tap:hasIngredient tap:Cheese ;
+      tap:plural "scalloped potatoes" .
+
+tap:NutritionBar
+      a       tap:ProductType ;
+      rdfs:label "nutrition bar"@en ;
+      rdfs:subClassOf tap:NutritionSnack , tap:BreakfastFood ;
+      tap:ebayMap "1278" ;
+      tap:plural "nutrition bars" ;
+      tap:relevantBrand tap:ChampionNutritionBrand , tap:RedBullBrand , tap:NextProteinsBrand , tap:GatoradeBrand , tap:SportPharmaUSABrand , tap:SlimFastBrand , tap:MeadJohnsonBrand , tap:LunaBarBrand , tap:BalanceBrand , tap:MetRXBrand , tap:TwinlabBrand , tap:ClifBrand , tap:BodySmartsBrand , tap:PowerBarBrand , tap:MLOBrand , tap:QuicDiscBrand , tap:TigersMilkBrand .
+
+tap:SaltSpice
+      a       rdfs:Class ;
+      rdfs:label "salt"@en ;
+      rdfs:subClassOf tap:SpiceIngredient ;
+      tap:plural "salts" .
+
+tap:Vinegar
+      a       rdfs:Class ;
+      rdfs:label "vinegar"@en ;
+      rdfs:subClassOf tap:FoodCondiment ;
+      tap:plural "vinegars" .
+
+tap:RoastedPotato
+      a       rdfs:Class ;
+      rdfs:label "roasted potato"@en ;
+      rdfs:subClassOf tap:PotatoDish ;
+      tap:creationIncludesEvent
+              tap:RoastingFood ;
+      tap:hasFoodAccessory
+              tap:ButterlikeSpread , tap:BlackPepperSpice , tap:Margerine ;
+      tap:plural "roasted potatoes" .
+
+tap:PumpernickleBread
+      a       rdfs:Class ;
+      rdfs:label "pumpernickle bread"@en , "pumpernickle"@en ;
+      rdfs:subClassOf tap:Bread ;
+      tap:plural "pumpernickle breads" , "pumpernickles" .
+
+tap:ShrimpMeat
+      a       rdfs:Class ;
+      rdfs:label "shrimp"@en ;
+      rdfs:subClassOf tap:FishMeat ;
+      tap:plural "shrimps" .
+
+tap:Prune
+      a       rdfs:Class ;
+      rdfs:label "prune"@en ;
+      rdfs:subClassOf tap:DriedFruit , tap:PlumFruit ;
+      tap:plural "prunes" .
+
+tap:Margerine
+      a       rdfs:Class ;
+      rdfs:label "margerine"@en , "marg"@en ;
+      rdfs:subClassOf tap:ButterlikeSpread ;
+      tap:plural "marges" , "margerines" .
+
+tap:PoultryDish
+      a       rdfs:Class ;
+      rdfs:label "poultry dish"@en ;
+      rdfs:subClassOf tap:MeatDish ;
+      tap:hasIngredient tap:Poultry ;
+      tap:plural "poultry dishes" .
+
+tap:TortelliniDish
+      a       rdfs:Class ;
+      rdfs:label "tortellini"@en ;
+      rdfs:subClassOf tap:PastaDish ;
+      tap:hasIngredient tap:TortelliniPasta ;
+      tap:plural "tortellinis" .
+
+tap:MixedDrink
+      a       rdfs:Class ;
+      rdfs:label "Mixed Drink"@en ;
+      rdfs:subClassOf tap:AlcoholicBeverage ;
+      tap:plural "Mixed Drinks" .
+
+tap:PoppyseedBagel
+      a       tap:ProductType ;
+      rdfs:label "Poppyseed Bagel"@en ;
+      rdfs:subClassOf tap:Bagel ;
+      tap:plural "Poppyseed Bagels" .
+
+tap:MeatPie
+      a       rdfs:Class ;
+      rdfs:label "meat pie"@en , "savory pie"@en ;
+      rdfs:subClassOf tap:PieFood , tap:MeatDish ;
+      tap:creationIncludesEvent
+              tap:BakingFood , tap:CuttingUpFood ;
+      tap:plural "meat pies" , "savory pies" .
+
+tap:SteamedVegetable
+      a       rdfs:Class ;
+      rdfs:label "steamed vegetable"@en ;
+      rdfs:subClassOf tap:VegetarianDish ;
+      tap:creationIncludesEvent
+              tap:SteamingFood ;
+      tap:hasFoodAccessory
+              tap:ButterlikeSpread , tap:BlackPepperSpice , tap:LemonFruit , tap:SaltSpice , tap:Mayonnaise , tap:Margerine ;
+      tap:plural "steamed vegetables" .
+
+tap:TomatoJuice
+      a       tap:ProductType ;
+      rdfs:label "Tomato Juice"@en ;
+      rdfs:subClassOf tap:JuiceBeverage ;
+      tap:plural "Tomato Juices" .
+
+tap:ChickenSandwich
+      a       rdfs:Class ;
+      rdfs:label "chicken sandwich"@en ;
+      rdfs:subClassOf tap:MeatSandwich , tap:ChickenDish ;
+      tap:hasFoodAccessory
+              tap:Onion , tap:Cheese , tap:Lettuce , tap:Mayonnaise , tap:Tomato , tap:MustardCondiment ;
+      tap:hasIngredient tap:ChickenMeat ;
+      tap:plural "chicken sandwiches" .
+
+tap:ScrambledEgg
+      a       rdfs:Class ;
+      rdfs:label "Scrambled Egg"@en ;
+      rdfs:subClassOf tap:BreakfastEggDish ;
+      tap:creationIncludesEvent
+              tap:FryingSauteingFood , tap:MixingFood ;
+      tap:hasFoodAccessory
+              tap:Ketchup ;
+      tap:plural "Scrambled Eggs" .
+
+tap:SodaCracker
+      a       rdfs:Class ;
+      rdfs:label "soda cracker"@en , "saltine cracker"@en , "saltine"@en ;
+      rdfs:subClassOf tap:Cracker ;
+      tap:hasFoodAccessory
+              tap:Cheese ;
+      tap:plural "soda crackers" , "saltine crackers" , "saltines" .
+
+tap:WhippedCream
+      a       rdfs:Class ;
+      rdfs:label "whipped cream"@en ;
+      rdfs:subClassOf tap:DairyProduct , tap:FoodCondiment ;
+      tap:plural "whipped creams" .
+
+tap:ChickenSaladSandwich
+      a       rdfs:Class ;
+      rdfs:label "chicken salad sandwich"@en ;
+      rdfs:subClassOf tap:MeatSandwich , tap:ChickenDish ;
+      tap:hasFoodAccessory
+              tap:Onion , tap:Lettuce , tap:Tomato ;
+      tap:hasIngredient tap:ChickenSalad ;
+      tap:plural "chicken salad sandwiches" .
+
+tap:NutFood
+      a       tap:ProductType ;
+      rdfs:label "nut"@en ;
+      rdfs:subClassOf tap:SnackFood ;
+      tap:plural "nuts" ;
+      tap:relevantBrand tap:BlueDiamondBrand , tap:BachmanBrand , tap:MaunaLoaBrand , tap:PlantersBrand .
+
+tap:EggSaladSandwich
+      a       rdfs:Class ;
+      rdfs:label "egg salad sandwich"@en ;
+      rdfs:subClassOf tap:EggDish , tap:Sandwich ;
+      tap:hasFoodAccessory
+              tap:Onion , tap:Lettuce , tap:Tomato ;
+      tap:hasIngredient tap:EggSalad ;
+      tap:plural "egg salad sandwiches" .
+
+tap:RoastChicken
+      a       rdfs:Class ;
+      rdfs:label "roast chicken"@en ;
+      rdfs:subClassOf tap:ChickenDish ;
+      tap:creationIncludesEvent
+              tap:RoastingFood ;
+      tap:plural "roast chickens" .
+
+tap:TapWater
+      a       rdfs:Class ;
+      rdfs:label "tap water"@en ;
+      rdfs:subClassOf tap:FlatDrinkingWater ;
+      tap:plural "tap waters" .
+
+tap:CandyBar
+      a       rdfs:Class ;
+      rdfs:label "candy bar"@en ;
+      rdfs:subClassOf tap:Candy ;
+      tap:plural "candy bars" .
+
+tap:TurkeyMeat
+      a       tap:ProductType ;
+      rdfs:label "Turkey Meat"@en , "turkey"@en ;
+      rdfs:subClassOf tap:Poultry ;
+      tap:plural "turkey meats" , "Turkeys" .
+
+tap:PastaSalad
+      a       rdfs:Class ;
+      rdfs:label "pasta salad"@en ;
+      rdfs:subClassOf tap:PastaDish , tap:SaladDish ;
+      tap:creationIncludesEvent
+              tap:MixingFood ;
+      tap:plural "pasta salads" .
+
+tap:ChickenDish
+      a       rdfs:Class ;
+      rdfs:label "chicken dish"@en ;
+      rdfs:subClassOf tap:PoultryDish ;
+      tap:hasIngredient tap:ChickenMeat ;
+      tap:plural "chicken dishes" .
+
+tap:HamDish
+      a       rdfs:Class ;
+      rdfs:label "ham"@en ;
+      rdfs:subClassOf tap:PorkDish ;
+      tap:hasIngredient tap:HamFood ;
+      tap:plural "hams" .
+
+tap:SodaWater
+      a       rdfs:Class ;
+      rdfs:label "soda water"@en ;
+      rdfs:subClassOf tap:DrinkingWater ;
+      tap:plural "soda waters" .
+
+tap:PeachFruit
+      a       rdfs:Class ;
+      rdfs:label "peach"@en ;
+      rdfs:subClassOf tap:PittedFruit ;
+      tap:plural "peaches" .
+
+tap:FoodBrand
+      a       rdfs:Class ;
+      rdfs:subClassOf tap:Brand .
+
+tap:PineappleFruit
+      a       rdfs:Class ;
+      rdfs:label "pineapple"@en ;
+      rdfs:subClassOf tap:TropicalFruit ;
+      tap:plural "pineapples" .
+
+tap:ChocolateChipCookie
+      a       rdfs:Class ;
+      rdfs:label "chocolate chip cookie"@en ;
+      rdfs:subClassOf tap:Cookie ;
+      tap:hasIngredient tap:ChocolateChip ;
+      tap:plural "chocolate chip cookies" .
+
+tap:WholeWheatBread
+      a       rdfs:Class ;
+      rdfs:label "whole wheat"@en , "whole wheat bread"@en ;
+      rdfs:subClassOf tap:Bread ;
+      tap:hasFoodAccessory
+              tap:FruitJamJelly , tap:PeanutButter ;
+      tap:plural "whole wheats" , "whole wheat breads" .
+
+tap:DipFood
+      a       tap:ProductType ;
+      rdfs:label "dip"@en ;
+      rdfs:subClassOf tap:SnackFood ;
+      tap:plural "dips" ;
+      tap:relevantBrand tap:KraftBrand , "CheezWhizBrand" , tap:FritoLaysBrand , tap:HiddenValleyBrand , tap:KnorrBrand .
+
+tap:MacaroniAndCheese
+      a       rdfs:Class ;
+      rdfs:label "mac and cheese"@en , "mac and jack"@en , "macaroni and cheese"@en ;
+      rdfs:subClassOf tap:PastaDish ;
+      tap:creationIncludesEvent
+              tap:MixingFood ;
+      tap:hasIngredient tap:Cheese , tap:ElbowMacaroni ;
+      tap:plural "mac and jacks" , "macaroni and cheeses" , "mac and cheeses" .
+
+tap:BakedPotato
+      a       rdfs:Class ;
+      rdfs:label "baked potato"@en ;
+      rdfs:subClassOf tap:PotatoDish ;
+      tap:creationIncludesEvent
+              tap:BakingFood ;
+      tap:hasFoodAccessory
+              tap:ButterlikeSpread , tap:BlackPepperSpice , tap:SourCream , tap:CheddarCheese , tap:Scallion , tap:Margerine ;
+      tap:plural "baked potatoes" .
+
+tap:Beverage
+      a       rdfs:Class ;
+      rdfs:label "Drink"@en , "Beverage"@en ;
+      rdfs:subClassOf tap:Food ;
+      tap:plural "Beverages" , "drinks" .
+
+tap:PlainBagel
+      a       tap:ProductType ;
+      rdfs:label "Plain Bagel"@en ;
+      rdfs:subClassOf tap:Bagel ;
+      tap:plural "Plain Bagels" .
+
+tap:BaconDish
+      a       rdfs:Class ;
+      rdfs:label "bacon"@en ;
+      rdfs:subClassOf tap:PorkDish ;
+      tap:creationIncludesEvent
+              tap:FryingSauteingFood ;
+      tap:hasIngredient tap:Bacon ;
+      tap:plural "bacon" , "bacons" .
+
+tap:DogFood
+      a       tap:ProductType ;
+      rdfs:label "Dog Food"@en ;
+      rdfs:subClassOf tap:PetFood , tap:DogPetHealthProduct ;
+      tap:plural "Dog Foods" ;
+      tap:relevantBrand tap:GravyTrainBrand , tap:BackToBasicsBrand , tap:BilJacBrand , tap:AlpoBrand , tap:HillsScienceDietBrand , tap:IamsBrand , tap:ProPacBrand , tap:EukanubaBrand , tap:SnausagesBrand , tap:SkippyBrand , tap:PurinaBrand , tap:SensibleChoiceBrand , tap:NaturesRecipeBrand , tap:FriskiesBrand , tap:RoyalCaninBrand , tap:DiamondPetFoodsBrand , tap:KibblesAndBitsBrand , tap:MatrixBrand , tap:ThompsonsBrand .
+
+tap:Casserole
+      a       rdfs:Class ;
+      rdfs:label "casserole"@en ;
+      rdfs:subClassOf tap:PreparedFood ;
+      tap:creationIncludesEvent
+              tap:BakingFood , tap:MixingFood ;
+      tap:plural "casseroles" .
+
+tap:LowfatMilk
+      a       rdfs:Class ;
+      rdfs:label "lowfat milk"@en ;
+      rdfs:subClassOf tap:CowMilk ;
+      tap:plural "lowfat milks" .
+
+tap:KidneyFood
+      a       rdfs:Class ;
+      rdfs:label "kidney"@en ;
+      rdfs:subClassOf tap:RedMeat ;
+      tap:plural "kidneys" .
+
+tap:CanolaOil
+      a       rdfs:Class ;
+      rdfs:label "canola oil"@en ;
+      rdfs:subClassOf tap:VegetableOil ;
+      tap:plural "canola oils" .
+
+tap:BreakfastMuffin
+      a       rdfs:Class ;
+      rdfs:label "breakfast muffin"@en , "muffin"@en ;
+      rdfs:subClassOf tap:BreakfastFood , tap:Bread ;
+      tap:hasFoodAccessory
+              tap:FruitJamJelly ;
+      tap:plural "muffins" , "breakfast muffins" .
+
+tap:OnionBagel
+      a       tap:ProductType ;
+      rdfs:label "Onion Bagel"@en ;
+      rdfs:subClassOf tap:Bagel ;
+      tap:plural "Onion Bagels" .
+
+tap:Beef
+      a       tap:ProductType ;
+      rdfs:label "Beef"@en ;
+      rdfs:subClassOf tap:RedMeat ;
+      tap:plural "beefs" .
+
+tap:FishMeat
+      a       tap:ProductType ;
+      rdfs:label "fish"@en , "Fish Meat"@en ;
+      rdfs:subClassOf tap:MeatOrPoultry ;
+      tap:plural "fish" , "fishes" , "fish meats" .
+
+tap:DinnerRoll
+      a       rdfs:Class ;
+      rdfs:label "dinner roll"@en , "roll"@en ;
+      rdfs:subClassOf tap:Bread ;
+      tap:hasFoodAccessory
+              tap:ButterlikeSpread , tap:Margerine ;
+      tap:plural "dinner rolls" , "rolls" .
+
+tap:ChickenMeatLeg
+      a       rdfs:Class ;
+      rdfs:label "drumstick"@en , "chicken leg"@en ;
+      rdfs:subClassOf tap:ChickenMeat , tap:DarkMeatPoultry ;
+      tap:plural "drumsticks" , "chicken legs" .
+
+tap:HotTeaBeverage
+      a       rdfs:Class ;
+      rdfs:label "hot tea"@en , "tea"@en ;
+      rdfs:subClassOf tap:BreakfastBeverage , tap:HotBeverage , tap:TeaBeverage ;
+      tap:hasFoodAccessory
+              tap:Cream , tap:LemonFruit , tap:HoneyFood , tap:SugarSpice ;
+      tap:plural "hot teas" , "teas" .
+
+tap:TurkeyDish
+      a       rdfs:Class ;
+      rdfs:label "turkey dish"@en , "turkey"@en ;
+      rdfs:subClassOf tap:PoultryDish ;
+      tap:hasIngredient tap:TurkeyMeat ;
+      tap:plural "turkeys" , "turkey dishes" .
+
+tap:Corn
+      a       rdfs:Class ;
+      rdfs:label "corn"@en ;
+      rdfs:subClassOf tap:Vegetable ;
+      tap:plural "corns" .
+
+tap:GooseDish
+      a       rdfs:Class ;
+      rdfs:label "goose"@en , "goose dish"@en ;
+      rdfs:subClassOf tap:PoultryDish ;
+      tap:hasIngredient tap:GooseMeat ;
+      tap:plural "goose dishes" , "geese" .
+
+tap:BrieCheese
+      a       rdfs:Class ;
+      rdfs:label "brie"@en ;
+      rdfs:subClassOf tap:Cheese ;
+      tap:plural "bries" .
+
+tap:MeatOrPoultry
+      a       tap:ProductType ;
+      rdfs:label "meat"@en ;
+      rdfs:subClassOf tap:Food ;
+      tap:creationIncludesEvent
+              tap:ButcheringFood ;
+      tap:plural "meats" ;
+      tap:relevantBrand tap:PerdueBrand , tap:OscarMeyerBrand , tap:BallParkBrand , tap:HealthyChoiceBrand .
+
+tap:BreakfastBeverage
+      a       tap:ProductType ;
+      rdfs:subClassOf tap:Beverage .
+
+tap:Scallion
+      a       rdfs:Class ;
+      rdfs:label "green onion"@en , "scallion"@en , "chive"@en ;
+      rdfs:subClassOf tap:Onion , tap:GreenVegetable ;
+      tap:plural "chives" , "green onions" , "scallions" .
+
+tap:RyeBread
+      a       rdfs:Class ;
+      rdfs:label "rye bread"@en , "rye"@en ;
+      rdfs:subClassOf tap:Bread ;
+      tap:hasIngredient tap:RyeFlour ;
+      tap:plural "rye breads" , "ryes" .
+
+tap:MargaritaDrink
+      a       tap:ProductType ;
+      rdfs:label "margarita"@en ;
+      rdfs:subClassOf tap:MixedDrink ;
+      tap:plural "margaritas" .
+
+tap:SnackFood
+      a       rdfs:Class ;
+      rdfs:label "snack"@en , "Snack Food"@en ;
+      rdfs:subClassOf tap:Food ;
+      tap:plural "Snack Foods" , "snacks" .
+
+tap:TeaBeverage
+      a       rdfs:Class , tap:ProductType ;
+      rdfs:label "Tea"@en ;
+      rdfs:subClassOf tap:Beverage ;
+      tap:plural "Teas" ;
+      tap:relevantBrand tap:BigelowBrand , tap:LiptonBrand .
+
+tap:SweetNLowSugarSubstitute
+      a       tap:ProductType ;
+      rdfs:subClassOf tap:SugarSubstitute .
+
+tap:KilbasaSausage
+      a       rdfs:Class ;
+      rdfs:label "kilbasa"@en ;
+      rdfs:subClassOf tap:Sausage ;
+      tap:plural "kilbasas" .
+
+tap:Cream
+      a       rdfs:Class ;
+      rdfs:label "Cream"@en ;
+      rdfs:subClassOf tap:DairyProduct ;
+      tap:plural "Creams" ;
+      tap:sortPriority "10" .
+
+tap:FruitSalad
+      a       rdfs:Class ;
+      rdfs:label "fruit salad"@en ;
+      rdfs:subClassOf tap:FruitDish , tap:SaladDish ;
+      tap:plural "fruit salads" .
+
+tap:EatingFood
+      a       rdfs:Class ;
+      rdfs:label "eating"@en , "eating food"@en ;
+      rdfs:subClassOf tap:ConsumingFood .
+
+tap:BellPepper
+      a       rdfs:Class ;
+      rdfs:label "bell pepper"@en ;
+      rdfs:subClassOf tap:Vegetable ;
+      tap:plural "bell peppers" .
+
+tap:Radish
+      a       rdfs:Class ;
+      rdfs:label "radish"@en ;
+      rdfs:subClassOf tap:Vegetable ;
+      tap:plural "radishes" .
+
+tap:Mayonnaise
+      a       rdfs:Class ;
+      rdfs:label "mayo"@en , "mayonnaise"@en ;
+      rdfs:subClassOf tap:FoodSpread ;
+      tap:plural "mayos" , "mayonnaises" .
+
+tap:SoyBasedSnack
+      a       tap:ProductType ;
+      rdfs:subClassOf tap:NutritionSnack .
+
+tap:SportBeverage
+      a       tap:ProductType ;
+      rdfs:label "Sport Beverage"@en , "Sports Beverage"@en ;
+      rdfs:subClassOf tap:Beverage ;
+      tap:plural "Sports Beverages" , "Sport Beverages" ;
+      tap:relevantBrand tap:PoweradeBrand , tap:GatoradeBrand .
+
+tap:PotatoDish
+      a       rdfs:Class ;
+      rdfs:label "potato dish"@en , "potato"@en ;
+      rdfs:subClassOf tap:VegetableDish ;
+      tap:hasFoodAccessory
+              tap:SaltSpice ;
+      tap:hasIngredient tap:Potato ;
+      tap:plural "potato dishes" , "potatoes" .
+
+tap:HazelnutNut
+      a       rdfs:Class ;
+      rdfs:label "hazelnut"@en ;
+      rdfs:subClassOf tap:NutFood ;
+      tap:plural "hazelnuts" .
+
+tap:DrinkMix
+      a       tap:ProductType ;
+      rdfs:label "drink mix beverage"@en ;
+      rdfs:subClassOf tap:DrinkMixBeverage ;
+      tap:plural "drink mixe beverages" .
+
+tap:Bologna
+      a       rdfs:Class ;
+      rdfs:label "bologna"@en ;
+      rdfs:subClassOf tap:Sausage ;
+      tap:plural "bolognas" .
+
+tap:PowderedDrinkMix
+      a       tap:ProductType ;
+      rdfs:subClassOf tap:DrinkMix .
+
+tap:CatFood
+      a       tap:ProductType ;
+      rdfs:label "Cat Food"@en ;
+      rdfs:subClassOf tap:PetFood , tap:CatPetHealthProduct ;
+      tap:plural "Cat Foods" ;
+      tap:relevantBrand tap:BilJacBrand , tap:AlpoBrand , tap:HillsScienceDietBrand , tap:IamsBrand , tap:ProPacBrand , tap:EukanubaBrand , tap:WhiskasBrand , tap:PurinaBrand , tap:MeowMixBrand , tap:SensibleChoiceBrand , tap:NaturesRecipeBrand , tap:FancyFeastBrand , tap:FriskiesBrand , tap:RoyalCaninBrand , tap:ShebaBrand , tap:MatrixBrand , tap:9LivesBrand , tap:PounceBrand .
+
+tap:WhiskeyBeverage
+      a       rdfs:Class ;
+      rdfs:label "Whiskey"@en ;
+      rdfs:subClassOf tap:HardLiquorBeverage ;
+      tap:plural "whiskeys" .
+
+tap:ClubSandwich
+      a       rdfs:Class ;
+      rdfs:label "club sandwich"@en ;
+      rdfs:subClassOf tap:Sandwich ;
+      tap:hasFoodAccessory
+              tap:Onion , tap:Cheese , tap:Lettuce , tap:Mayonnaise , tap:Tomato ;
+      tap:hasIngredient tap:BaconDish , tap:HamFood , tap:BreadToast , tap:TurkeyMeat ;
+      tap:plural "club sandwiches" .
+
+tap:SnowPea
+      a       rdfs:Class ;
+      rdfs:label "snow pea"@en ;
+      rdfs:subClassOf tap:Legume , tap:GreenVegetable ;
+      tap:plural "snow peas" .
+
+tap:HardEggnog
+      a       tap:ProductType ;
+      rdfs:label "hard eggnog"@en , "spiked eggnog"@en , "alcoholic eggnog"@en ;
+      rdfs:subClassOf tap:AlcoholicBeverage , tap:Eggnog ;
+      tap:plural "hard eggnogs" , "alcoholic eggnogs" , "spiked eggnogs" .
+
+tap:HotFudgeSauce
+      a       rdfs:Class ;
+      rdfs:label "hot fudge sauce"@en , "hot fudge"@en ;
+      rdfs:subClassOf tap:ChocolateSauce ;
+      tap:plural "hot fudges" , "hot fudge sauces" .
+
+tap:CheddarCheese
+      a       rdfs:Class ;
+      rdfs:label "Cheddar"@en , "Cheddar Cheese"@en ;
+      rdfs:subClassOf tap:Cheese ;
+      tap:plural "Cheddar Cheeses" , "Cheddars" .
+
+tap:FennelSpice
+      a       rdfs:Class ;
+      rdfs:label "fennel"@en ;
+      rdfs:subClassOf tap:SpiceIngredient ;
+      tap:plural "fennels" .
+
+tap:SaltBagel
+      a       tap:ProductType ;
+      rdfs:label "salt bagel"@en ;
+      rdfs:subClassOf tap:Bagel ;
+      tap:plural "salt bagels" .
+
+tap:CakeFood
+      a       rdfs:Class ;
+      rdfs:label "cake"@en ;
+      rdfs:subClassOf tap:Pastry , tap:DessertDish ;
+      tap:creationIncludesEvent
+              tap:BakingFood ;
+      tap:hasIngredient tap:SugarSpice ;
+      tap:plural "cakes" .
+
+tap:LambDish
+      a       rdfs:Class ;
+      rdfs:label "lamb dish"@en ;
+      rdfs:subClassOf tap:MeatDish ;
+      tap:hasIngredient tap:LambMeat ;
+      tap:plural "lamb dishes" .
+
+tap:Meatball
+      a       rdfs:Class ;
+      rdfs:label "meatball"@en ;
+      rdfs:subClassOf tap:MeatDish ;
+      tap:creationIncludesEvent
+              tap:MixingFood ;
+      tap:plural "meatballs" .
+
+tap:PastaDish
+      a       rdfs:Class ;
+      rdfs:label "pasta"@en , "noodle"@en ;
+      rdfs:subClassOf tap:FlourProduct ;
+      tap:creationIncludesEvent
+              tap:BoilingFood ;
+      tap:hasIngredient tap:UncookedPasta ;
+      tap:plural "pastas" , "noodles" .
+
+tap:MeatSandwich
+      a       rdfs:Class ;
+      rdfs:subClassOf "Meatdish" , tap:Sandwich .
+
+tap:ParsleySpice
+      a       rdfs:Class ;
+      rdfs:label "parsley"@en ;
+      rdfs:subClassOf tap:SpiceIngredient ;
+      tap:plural "parsleys" .
+
+tap:Eggnog
+      a       tap:ProductType ;
+      rdfs:label "Eggnog"@en ;
+      rdfs:subClassOf tap:ColdBeverage ;
+      tap:plural "Eggnogs" .
+
+tap:HardFruitPunch
+      a       tap:ProductType ;
+      rdfs:label "hard fruit punch"@en , "alcoholic fruit punch"@en , "spiked punch"@en , "hard punch"@en , "alcoholic punch"@en , "spiked fruit punch"@en ;
+      rdfs:subClassOf tap:AlcoholicBeverage , tap:FruitPunch ;
+      tap:plural "alcoholic punches" , "hard fruit punches" , "alcoholic fruit punches" , "spiked fruit punches" , "hard punches" , "spiked punches" .
+
+tap:Bagel
+      a       rdfs:Class ;
+      rdfs:label "bagel"@en ;
+      rdfs:subClassOf tap:BreakfastFood , tap:Bread ;
+      tap:creationIncludesEvent
+              tap:BoilingFood ;
+      tap:hasFoodAccessory
+              tap:ButterlikeSpread , tap:CreamCheese , tap:FruitJamJelly ;
+      tap:plural "bagels" .
+
+tap:TangeloFruit
+      a       rdfs:Class ;
+      rdfs:label "tangelo"@en ;
+      rdfs:subClassOf tap:CitrusFruit ;
+      tap:plural "tangeloes" .
+
+tap:LimaBean
+      a       rdfs:Class ;
+      rdfs:label "lima bean"@en ;
+      rdfs:subClassOf tap:Legume , tap:GreenVegetable ;
+      tap:plural "lima beans" .
+
+tap:BerryFruit
+      a       rdfs:Class ;
+      rdfs:label "berry"@en ;
+      rdfs:subClassOf tap:Fruit ;
+      tap:plural "berries" .
+
+tap:RomaineLettuce
+      a       rdfs:Class ;
+      rdfs:label "romaine lettuce"@en ;
+      rdfs:subClassOf tap:Lettuce ;
+      tap:plural "romaine lettuces" .
+
+tap:Bread
+      a       rdfs:Class ;
+      rdfs:label "bread"@en ;
+      rdfs:subClassOf tap:FlourProduct ;
+      tap:creationIncludesEvent
+              tap:BakingFood , tap:MixingFood ;
+      tap:hasFoodAccessory
+              tap:ButterlikeSpread , tap:Margerine ;
+      tap:plural "breads" ;
+      tap:sortPriority "10" .
+
+tap:CuttingUpFood
+      a       rdfs:Class ;
+      rdfs:label "chopping"@en , "chopping food"@en ;
+      rdfs:subClassOf tap:CookingFood .
+
+tap:VegetableOil
+      a       rdfs:Class ;
+      rdfs:label "vegetable oil"@en ;
+      rdfs:subClassOf tap:CookingOil ;
+      tap:plural "vegetable oils" .
+
+tap:Loganberry
+      a       rdfs:Class ;
+      rdfs:label "loganberry"@en ;
+      rdfs:subClassOf tap:BerryFruit ;
+      tap:plural "loganberries" .
+
+tap:GreenSalad
+      a       rdfs:Class ;
+      rdfs:label "green salad"@en , "tossed salad"@en ;
+      rdfs:subClassOf tap:LettuceSalad , tap:VegetarianDish ;
+      tap:hasFoodAccessory
+              tap:SaladDressing ;
+      tap:hasIngredient tap:Lettuce ;
+      tap:plural "green salads" , "tossed salads" .
+
+tap:CreamPie
+      a       rdfs:Class ;
+      rdfs:label "cream pie"@en ;
+      rdfs:subClassOf tap:PieFood ;
+      tap:hasIngredient tap:Cream , tap:SugarSpice ;
+      tap:plural "cream pies" .
+
+tap:CornedBeefSandwich
+      a       rdfs:Class ;
+      rdfs:label "corned beef sandwich"@en ;
+      rdfs:subClassOf tap:MeatSandwich , tap:BeefDish ;
+      tap:hasFoodAccessory
+              tap:MustardCondiment ;
+      tap:hasIngredient tap:CornedBeef ;
+      tap:plural "corned beef sandwiches" .
+
+tap:Onion
+      a       rdfs:Class ;
+      rdfs:label "onion"@en ;
+      rdfs:subClassOf tap:Vegetable ;
+      tap:plural "onions" .
+
+tap:HealthFood
+      a       rdfs:Class ;
+      rdfs:label "healthy food"@en , "health food"@en ;
+      rdfs:subClassOf tap:Food ;
+      tap:plural "health foods" , "healthy foods" .
+
+tap:BlackPepperSpice
+      a       rdfs:Class ;
+      rdfs:label "black pepper"@en ;
+      rdfs:subClassOf tap:PepperSpice ;
+      tap:plural "black peppers" .
+
+tap:Candy
+      a       tap:ProductType ;
+      rdfs:label "Candy"@en , "sweet"@en ;
+      rdfs:subClassOf "DessertFood" , tap:SnackFood ;
+      tap:hasIngredient tap:SugarSpice ;
+      tap:plural "Candies" , "sweets" ;
+      tap:relevantBrand tap:PearsonNipsBrand , tap:LifeSaversBrand , tap:PEZBrand , tap:HersheysBrand , tap:TwizzlersBrand , tap:TootsieRollBrand , tap:SkittlesBrand , tap:JollyRancherBrand , tap:StarburstBrand , tap:CertsBrand .
+
+tap:VermicelliPasta
+      a       rdfs:Class ;
+      rdfs:label "vermicelli"@en ;
+      rdfs:subClassOf tap:UncookedPasta ;
+      tap:plural "vermicellis" .
+
+tap:ItalianSaladDressing
+      a       rdfs:Class ;
+      rdfs:label "italian salad dressing"@en , "italian dressing"@en ;
+      rdfs:subClassOf tap:SaladDressing ;
+      tap:hasIngredient tap:Vinegar , tap:VegetableOil ;
+      tap:plural "italian dressings" , "italian salad dressings" .
+
+tap:Squash
+      a       rdfs:Class ;
+      rdfs:label "squash"@en ;
+      rdfs:subClassOf tap:Vegetable ;
+      tap:plural "squashes" .
+
+tap:AppleCider
+      a       tap:ProductType ;
+      rdfs:label "apple cider"@en , "cider"@en ;
+      rdfs:subClassOf tap:FruitBeverage ;
+      tap:plural "ciders" , "apple ciders" .
+
+tap:OnionDipFood
+      a       rdfs:Class ;
+      rdfs:label "onion dip"@en ;
+      rdfs:subClassOf tap:DipFood ;
+      tap:plural "onion dips" .
+
+tap:PeanutButter
+      a       tap:ProductType ;
+      rdfs:label "Peanut Butter"@en ;
+      rdfs:subClassOf tap:FoodSpread ;
+      tap:plural "Peanut Butters" ;
+      tap:relevantBrand tap:ReesesBrand , tap:SkippyBrand , tap:PeterPanBrand , tap:JifBrand .
+
+tap:Soup
+      a       tap:ProductType ;
+      rdfs:label "Soup"@en ;
+      rdfs:subClassOf tap:PreparedFood ;
+      tap:creationIncludesEvent
+              tap:CuttingUpFood , tap:MixingFood , tap:SimmeringFood ;
+      tap:plural "Soups" ;
+      tap:relevantBrand tap:CampbellsBrand , tap:ProgressoBrand , tap:HealthyChoiceBrand .
+
+tap:VegetableJuice
+      a       tap:ProductType ;
+      rdfs:label "Vegetable Juice"@en ;
+      rdfs:subClassOf tap:JuiceBeverage ;
+      tap:plural "Vegetable Juices" .
+
+tap:SummerSausage
+      a       rdfs:Class ;
+      rdfs:label "summer sausage"@en ;
+      rdfs:subClassOf tap:Sausage ;
+      tap:plural "summer sausages" .
+
+tap:CheeseSandwich
+      a       rdfs:Class ;
+      rdfs:label "cheese sandwich"@en ;
+      rdfs:subClassOf tap:Sandwich ;
+      tap:hasIngredient tap:Cheese ;
+      tap:plural "cheese sandwiches" .
+
+tap:DietAidTea
+      a       tap:ProductType ;
+      rdfs:subClassOf tap:DietFood , tap:DietAidDrug , tap:HotTeaBeverage .
+
+tap:AvocadoFruit
+      a       tap:ProductType ;
+      rdfs:label "avocado"@en ;
+      rdfs:subClassOf tap:PittedFruit ;
+      tap:plural "avocados" .
+
+tap:ClamMeat
+      a       rdfs:Class ;
+      rdfs:label "clam"@en ;
+      rdfs:subClassOf tap:FishMeat ;
+      tap:plural "clams" .
+
+tap:Boysenberry
+      a       tap:ProductType ;
+      rdfs:label "boysenberry"@en ;
+      rdfs:subClassOf tap:BerryFruit ;
+      tap:plural "boysenberries" .
+
+tap:HotDogSausage
+      a       rdfs:Class ;
+      rdfs:label "weiner"@en , "frank"@en , "hot dog"@en , "weiner dog"@en ;
+      rdfs:subClassOf tap:Sausage ;
+      tap:plural "weiners" , "franks" , "weiner dogs" , "hot dogs" .
+
+tap:HavartiCheese
+      a       rdfs:Class ;
+      rdfs:label "Havarti Cheese"@en , "Havarti"@en ;
+      rdfs:subClassOf tap:Cheese ;
+      tap:plural "Havarti Cheeses" , "Havarties" .
+
+tap:Strawberry
+      a       rdfs:Class ;
+      rdfs:label "strawberry"@en ;
+      rdfs:subClassOf tap:BerryFruit ;
+      tap:plural "strawberries" .
+
+tap:PolishSausage
+      a       rdfs:Class ;
+      rdfs:label "polish sausage"@en ;
+      rdfs:subClassOf tap:Sausage ;
+      tap:plural "polish sausages" .
+
+tap:KamakaziDrink
+      a       tap:ProductType ;
+      rdfs:label "kamakazi"@en ;
+      rdfs:subClassOf tap:MixedDrink ;
+      tap:plural "kamakazis" .
+
+tap:MustardCondiment
+      a       rdfs:Class ;
+      rdfs:label "mustard"@en ;
+      rdfs:subClassOf tap:FoodCondiment ;
+      tap:plural "mustards" .
+
+tap:CinnamonRoll
+      a       rdfs:Class ;
+      rdfs:label "cinnamon roll"@en , "cinnamon bun"@en ;
+      rdfs:subClassOf tap:Pastry ;
+      tap:creationIncludesEvent
+              tap:BakingFood ;
+      tap:hasFoodAccessory
+              tap:ButterlikeSpread ;
+      tap:hasIngredient tap:CinnamonSpice , tap:SugarSpice ;
+      tap:plural "cinnamon buns" , "cinnamon rolls" .
+
+tap:CranberryJuiceCocktail
+      a       rdfs:Class ;
+      rdfs:label "cranberry juice cocktail"@en ;
+      rdfs:subClassOf tap:FruitBeverage ;
+      tap:plural "cranberry juice cocktails" .
+
+tap:Tortilla
+      a       rdfs:Class ;
+      rdfs:label "tortilla"@en ;
+      rdfs:subClassOf tap:Bread ;
+      tap:plural "tortillas" .
+
+tap:DillSpice
+      a       rdfs:Class ;
+      rdfs:label "dill"@en ;
+      rdfs:subClassOf tap:SpiceIngredient ;
+      tap:plural "dills" .
+
+tap:WhiteRice
+      a       rdfs:Class ;
+      rdfs:label "white rice"@en ;
+      rdfs:subClassOf tap:Rice ;
+      tap:plural "white rices" .
+
+tap:SteamingFood
+      a       rdfs:Class ;
+      rdfs:label "steaming"@en , "steaming food"@en ;
+      rdfs:subClassOf tap:CookingFood .
+
+tap:FlatDrinkingWater
+      a       rdfs:Class ;
+      rdfs:label "flat water"@en ;
+      rdfs:subClassOf tap:DrinkingWater ;
+      tap:plural "flat waters" .
+
+tap:GreenBean
+      a       rdfs:Class ;
+      rdfs:label "green bean"@en ;
+      rdfs:subClassOf tap:Legume , tap:GreenVegetable ;
+      tap:plural "green beans" .
+
+tap:BlueberryBagel
+      a       tap:ProductType ;
+      rdfs:label "blueberry bagel"@en ;
+      rdfs:subClassOf tap:Bagel ;
+      tap:plural "blueberry bagels" .
+
+tap:Sausage
+      a       rdfs:Class ;
+      rdfs:label "sausage"@en ;
+      rdfs:subClassOf tap:MeatOrPoultry ;
+      tap:plural "sausages" .
+
+tap:FruitPunch
+      a       rdfs:Class ;
+      rdfs:label "punch"@en , "fruit punch"@en ;
+      rdfs:subClassOf tap:FruitBeverage ;
+      tap:plural "punches" , "fruit punches" .
+
+tap:ChocolateFood
+      a       tap:ProductType ;
+      rdfs:label "Chocolate"@en , "chocolate food"@en ;
+      rdfs:subClassOf tap:SnackFood , tap:DessertDish ;
+      tap:plural "Chocolates" , "chocolate foods" ;
+      tap:relevantBrand tap:TobleroneBrand , tap:HersheysBrand , tap:GodivaBrand , tap:LindtBrand , tap:CadburyBrand .
+
+tap:ClamChowder
+      a       rdfs:Class ;
+      rdfs:label "Clam Chowder"@en ;
+      rdfs:subClassOf tap:Soup , tap:FishDish ;
+      tap:creationIncludesEvent
+              tap:CuttingUpFood ;
+      tap:hasFoodAccessory
+              tap:SodaCracker ;
+      tap:hasIngredient tap:ClamMeat ;
+      tap:plural "Clam Chowders" .
+
+tap:IcebergLettuce
+      a       rdfs:Class ;
+      rdfs:label "iceberg lettuce"@en ;
+      rdfs:subClassOf tap:Lettuce ;
+      tap:plural "iceberg lettuces" .
+
+tap:Spinach
+      a       rdfs:Class ;
+      rdfs:label "spinach"@en ;
+      rdfs:subClassOf tap:GreenVegetable ;
+      tap:plural "spinaches" .
+
+tap:UncookedPasta
+      a       rdfs:Class , tap:ProductType ;
+      rdfs:label "noodle"@en , "Pasta"@en ;
+      rdfs:subClassOf tap:FlourProduct ;
+      tap:creationIncludesEvent
+              tap:MixingFood ;
+      tap:plural "Pastas" , "noodles" ;
+      tap:relevantBrand tap:MuellersBrand , tap:RonzoniBrand , "SanGiorgioBrand" , tap:KnorrBrand .
+
+tap:BasilSpice
+      a       rdfs:Class ;
+      rdfs:label "basil"@en ;
+      rdfs:subClassOf tap:SpiceIngredient ;
+      tap:plural "basils" .
+
+tap:PizzaPie
+      a       rdfs:Class ;
+      rdfs:label "Pizza"@en , "pizza pie"@en ;
+      rdfs:subClassOf tap:PieFood ;
+      tap:creationIncludesEvent
+              tap:BakingFood ;
+      tap:hasIngredient tap:PizzaCrust ;
+      tap:plural "Pizzas" , "pizza pies" .
+
+tap:Cheesecake
+      a       rdfs:Class ;
+      rdfs:label "cheesecake"@en , "cheese-cake"@en ;
+      rdfs:subClassOf tap:Pastry ;
+      tap:plural "cheese-cakes" , "cheesecakes" .
+
+tap:SourKraut
+      a       rdfs:Class ;
+      rdfs:label "kraut"@en , "sour kraut"@en ;
+      rdfs:subClassOf tap:VegetableDish ;
+      tap:creationIncludesEvent
+              tap:CuttingUpFood , tap:CuringFood ;
+      tap:hasIngredient tap:Cabbage ;
+      tap:plural "sour krauts" , "krauts" .
+
+tap:BeefRibDish
+      a       rdfs:Class ;
+      rdfs:label "Beef Rib"@en , "rib"@en ;
+      rdfs:subClassOf tap:BeefDish ;
+      tap:creationIncludesEvent
+              tap:BBQingFood ;
+      tap:plural "Beef Ribs" , "ribs" .
+
+tap:CitrusFruit
+      a       rdfs:Class ;
+      rdfs:label "citrus fruit"@en ;
+      rdfs:subClassOf tap:Fruit ;
+      tap:plural "citrus fruits" .
+
+tap:Potato
+      a       rdfs:Class ;
+      rdfs:label "potato"@en ;
+      rdfs:subClassOf tap:Vegetable ;
+      tap:plural "potatoes" .
+
+tap:HardLiquorBeverage
+      a       rdfs:Class ;
+      rdfs:label "Hard Liquor"@en , "hard alcohol"@en , "liquor"@en ;
+      rdfs:subClassOf tap:AlcoholicBeverage ;
+      tap:plural "Hard Liquors" , "hard alcohols" , "liquors" ;
+      tap:relevantBrand tap:JohnnieWalkerBrand , tap:BlackDeathBrand , tap:EagleRareBrand , tap:CuttySarkBrand , tap:HennessyBrand , tap:BorealisIcebergBrand , tap:JagermeisterBrand , tap:BeefeaterBrand , tap:BasilHaydensBrand , tap:GodetBrand , tap:KahluaBrand , tap:DeKuyperBrand , tap:DelamainBrand , tap:BaileysBrand , tap:GodivaBrand , tap:BacardiBrand , tap:AberlourBrand , tap:SeagramsBrand , tap:BladnochBrand , tap:AlpsLiquorBrand , tap:VanHooBrand , tap:KentuckyTavernBrand , tap:TiaMariaBrand , tap:BenedictineBrand , tap:FernandoRomeroBlasBrand , tap:OldFitzgeraldBrand , tap:SouthernComfortBrand , tap:MontezumaBrand , tap:TheGlenlivetBrand , tap:EverclearBrand , tap:BartonBrand , tap:MonteAlbanBrand , tap:GlenlivetBrand , tap:InfernoBrand , tap:DrMcGillicuddysBrand , tap:ZodiacLiquorBrand , tap:WLWellerBrand , tap:TheEdradourBrand , tap:ImperialLiquorBrand , tap:IrishMistBrand , tap:SeagramsVOBrand , tap:JoseCuervoBrand , tap:GlenfarclasBrand , tap:SabraBrand , tap:EvanWilliamsBrand , tap:AHHirschBrand , tap:ChartreuseBrand , tap:SkyyBrand , tap:JackDanielsBrand , tap:GentlemanJackBrand , tap:RomanaBlackBrand , tap:StolichnayaBrand , tap:FrancisDarrozeBrand , tap:JepsonBrand , tap:StBrendansBrand , tap:TequilaRoseBrand , tap:GoldenbarrBrand , tap:AbsolutBrand , tap:DonEduardoBrand , tap:TullamoreDewBrand , tap:AuchroiskBrand , tap:GlenfiddichBrand , tap:ChinacoBrand , tap:ChivasRegalBrand , tap:OldCrowBrand , tap:SmirnoffBrand , tap:BookersBrand , tap:RMSDistilleryBrand , tap:KnockandoBrand , tap:AlizeBrand , tap:MidoriBrand , tap:McCormicksBrand , tap:ClynelishBrand .
+
+tap:SoftboiledEgg
+      a       rdfs:Class ;
+      rdfs:label "Softboiled Egg"@en ;
+      rdfs:subClassOf tap:BreakfastEggDish ;
+      tap:creationIncludesEvent
+              tap:BoilingFood ;
+      tap:plural "Softboiled Eggs" .
+
+tap:PorkDish
+      a       rdfs:Class ;
+      rdfs:label "pork dish"@en ;
+      rdfs:subClassOf tap:MeatDish ;
+      tap:hasIngredient tap:Pork ;
+      tap:plural "pork dishes" .
+
+tap:Nutella
+      a       rdfs:Class ;
+      rdfs:label "Nutella"@en ;
+      rdfs:subClassOf tap:FoodSpread ;
+      tap:plural "Nutellas" .
+
+tap:ChickenSalad
+      a       rdfs:Class ;
+      rdfs:label "Chicken salad"@en ;
+      rdfs:subClassOf tap:SaladDish , tap:ChickenDish ;
+      tap:hasIngredient tap:Mayonnaise ;
+      tap:plural "Chicken salads" .
+
+tap:AmericanCheese
+      a       rdfs:Class ;
+      rdfs:label "American Cheese"@en ;
+      rdfs:subClassOf tap:Cheese ;
+      tap:plural "American Cheeses" .
+
+tap:PorkRoast
+      a       rdfs:Class ;
+      rdfs:label "pork roast"@en ;
+      rdfs:subClassOf tap:Pork ;
+      tap:plural "pork roasts" .
+
+tap:Brocolli
+      a       rdfs:Class ;
+      rdfs:subClassOf tap:GreenVegetable .
+
+tap:PetFood
+      a       tap:ProductType ;
+      rdfs:label "Pet Food"@en ;
+      rdfs:subClassOf tap:PetHealthcareProduct , tap:AnimalFood ;
+      tap:plural "Pet Foods" ;
+      tap:relevantBrand tap:FriskiesBrand , tap:HartzBrand , tap:AlpoBrand , tap:LafeberBrand , tap:WhiskasBrand , tap:PurinaBrand , tap:FancyFeastBrand .
+
+tap:LobsterMeat
+      a       rdfs:Class ;
+      rdfs:label "lobster"@en ;
+      rdfs:subClassOf tap:FishMeat ;
+      tap:plural "lobsters" .
+
+tap:ParmasanCheese
+      a       rdfs:Class ;
+      rdfs:label "Parmasan"@en , "Parmasan Cheese"@en ;
+      rdfs:subClassOf tap:Cheese ;
+      tap:plural "Parmasan Cheeses" , "Parmasans" .
+
+tap:Pepperoni
+      a       rdfs:Class ;
+      rdfs:label "pepperoni"@en ;
+      rdfs:subClassOf tap:Sausage ;
+      tap:plural "pepperonis" .
+
+tap:VegetableSoup
+      a       rdfs:Class ;
+      rdfs:label "vegetable soup"@en ;
+      rdfs:subClassOf tap:Soup ;
+      tap:creationIncludesEvent
+              tap:CuttingUpFood ;
+      tap:hasIngredient tap:Vegetable ;
+      tap:plural "vegetable soups" .
+
+tap:FruitBeverage
+      a       rdfs:Class ;
+      rdfs:subClassOf tap:Beverage .
+
+tap:WhiteOnion
+      a       rdfs:Class ;
+      rdfs:label "white onion"@en ;
+      rdfs:subClassOf tap:Onion ;
+      tap:plural "white onions" .
+
+tap:BakingFood
+      a       rdfs:Class ;
+      rdfs:label "baking"@en ;
+      rdfs:subClassOf tap:CookingFood .
+
+tap:CorianderSpice
+      a       rdfs:Class ;
+      rdfs:label "coriander"@en ;
+      rdfs:subClassOf tap:SpiceIngredient ;
+      tap:plural "corianders" .
+
+tap:ChiliDish
+      a       rdfs:Class ;
+      rdfs:label "chili"@en ;
+      rdfs:subClassOf tap:Soup ;
+      tap:creationIncludesEvent
+              tap:SimmeringFood ;
+      tap:hasFoodAccessory
+              tap:Onion , tap:CheddarCheese ;
+      tap:hasIngredient tap:TomatoSauce ;
+      tap:plural "chilies" .
+
+tap:DecafBeverage
+      a       rdfs:Class ;
+      rdfs:label "decaf drink"@en , "decaffeinated beverage"@en , "decaffeinated drink"@en , "Decaf beverage"@en ;
+      rdfs:subClassOf tap:Beverage ;
+      tap:plural "decaffeinated beverages" , "decaffeinated drinks" , "decaf beverages" , "decaf drinks" .
+
+tap:WhiteBread
+      a       rdfs:Class ;
+      rdfs:label "white bread"@en ;
+      rdfs:subClassOf tap:Bread ;
+      tap:hasFoodAccessory
+              tap:FruitJamJelly , tap:PeanutButter ;
+      tap:plural "white breads" .
+
+tap:AlmondNut
+      a       rdfs:Class ;
+      rdfs:label "almond"@en ;
+      rdfs:subClassOf tap:NutFood ;
+      tap:plural "almonds" .
+
+tap:SugarCookie
+      a       rdfs:Class ;
+      rdfs:label "sugar cookie"@en ;
+      rdfs:subClassOf tap:Cookie ;
+      tap:plural "sugar cookies" .
+
+tap:Vegetable
+      a       rdfs:Class ;
+      rdfs:label "Vegetable"@en , "veggie"@en ;
+      rdfs:subClassOf tap:Food ;
+      tap:plural "Vegetables" , "veggies" .
+
+tap:DriedFruit
+      a       rdfs:Class , tap:ProductType ;
+      rdfs:label "Dried Fruit"@en ;
+      rdfs:subClassOf tap:DriedFood , tap:Fruit , tap:SnackFood ;
+      tap:hasIngredient tap:Fruit ;
+      tap:plural "Dried Fruits" ;
+      tap:relevantBrand tap:SunsweetBrand , tap:DoleBrand .
+
+tap:CashewNut
+      a       rdfs:Class ;
+      rdfs:label "cashew"@en ;
+      rdfs:subClassOf tap:NutFood ;
+      tap:plural "cashews" .
+
+tap:ChickenMeatTheigh
+      a       rdfs:Class ;
+      rdfs:label "chicken theigh"@en ;
+      rdfs:subClassOf tap:ChickenMeat , tap:DarkMeatPoultry ;
+      tap:plural "chicken theighs" .
+
+tap:IceCream
+      a       rdfs:Class , tap:ProductType ;
+      rdfs:label "Ice Cream"@en ;
+      rdfs:subClassOf tap:DairyProduct , tap:DessertDish ;
+      tap:hasFoodAccessory
+              tap:ChocolateSauce ;
+      tap:plural "ice creams" ;
+      tap:relevantBrand tap:BenJerrysBrand , tap:KlondikeBrand , tap:DreyersBrand , tap:GodivaBrand , tap:GoodHumorBrand , tap:BreyersBrand , tap:popsicleBrand .
+
+tap:FrenchFry
+      a       rdfs:Class ;
+      rdfs:label "fry"@en , "french fry"@en ;
+      rdfs:subClassOf tap:PotatoDish ;
+      tap:creationIncludesEvent
+              tap:DeepFryingFood , tap:CuttingUpFood ;
+      tap:hasFoodAccessory
+              tap:Ketchup ;
+      tap:plural "fries" , "french fries" .
+
+tap:CranberryJuice
+      a       tap:ProductType ;
+      rdfs:label "Cranberry Juice"@en ;
+      rdfs:subClassOf tap:JuiceBeverage ;
+      tap:plural "cranberry juices" .
+
+tap:ShellPasta
+      a       rdfs:Class ;
+      rdfs:label "shell pasta"@en ;
+      rdfs:subClassOf tap:UncookedPasta ;
+      tap:plural "shell pastas" .
+
+tap:BrusselSprout
+      a       rdfs:Class ;
+      rdfs:subClassOf tap:GreenVegetable .
+
+tap:CroutonFood
+      a       rdfs:Class ;
+      rdfs:label "crouton"@en ;
+      rdfs:subClassOf tap:Bread ;
+      tap:creationIncludesEvent
+              tap:CuttingUpFood ;
+      tap:hasIngredient tap:Bread ;
+      tap:plural "croutons" .
+
+tap:TurkeySandwich
+      a       rdfs:Class ;
+      rdfs:label "turkey sandwich"@en ;
+      rdfs:subClassOf tap:TurkeyDish , tap:MeatSandwich ;
+      tap:hasFoodAccessory
+              tap:Cheese , tap:Lettuce , tap:Mayonnaise , tap:Tomato , tap:MustardCondiment ;
+      tap:hasIngredient tap:TurkeyMeat ;
+      tap:plural "turkey sandwiches" .
+
+tap:CrispyDuck
+      a       rdfs:Class ;
+      rdfs:label "Crispy Duck"@en ;
+      rdfs:subClassOf tap:DuckDish ;
+      tap:creationIncludesEvent
+              tap:DeepFryingFood ;
+      tap:plural "Crispy Ducks" .
+
+tap:BreadStick
+      a       rdfs:Class ;
+      rdfs:label "breadstick"@en , "bread stick"@en ;
+      rdfs:subClassOf tap:Bread ;
+      tap:plural "bread sticks" , "breadsticks" .
+
+tap:GrahamCracker
+      a       rdfs:Class ;
+      rdfs:label "graham cracker"@en ;
+      rdfs:subClassOf tap:Cracker ;
+      tap:plural "graham crackers" .
+
+tap:Liverworst
+      a       rdfs:Class ;
+      rdfs:label "liverworst"@en ;
+      rdfs:subClassOf tap:MeatDish , tap:FoodSpread ;
+      tap:hasIngredient tap:LiverFood ;
+      tap:plural "liverworsts" .
+
+tap:AppleJuice
+      a       tap:ProductType ;
+      rdfs:label "Apple Juice"@en ;
+      rdfs:subClassOf tap:JuiceBeverage ;
+      tap:plural "Apple Juices" .
+
+tap:TequilaSunriseDrink
+      a       rdfs:Class ;
+      rdfs:label "tequila sunrise"@en ;
+      rdfs:subClassOf tap:MixedDrink ;
+      tap:plural "tequila sunrises" .
+
+tap:PeanutButterAndJellySandwich
+      a       rdfs:Class ;
+      rdfs:label "peanut butter and jelly sandwich"@en , "p b and j"@en ;
+      rdfs:subClassOf tap:Sandwich ;
+      tap:hasIngredient tap:FruitJamJelly , tap:PeanutButter ;
+      tap:plural "p b and js" , "peanut butter and jelly sandwiches" .
+
+tap:Cornbread
+      a       rdfs:Class ;
+      rdfs:label "cornbread"@en ;
+      rdfs:subClassOf tap:Bread , tap:CornDish ;
+      tap:hasIngredient tap:CornFlour ;
+      tap:plural "cornbreads" .
+
+tap:CornOnTheCob
+      a       rdfs:Class ;
+      rdfs:label "corn on the cob"@en ;
+      rdfs:subClassOf tap:CornDish ;
+      tap:plural "corn on the cobs" .
+
+tap:Pork
+      a       tap:ProductType ;
+      rdfs:label "Pork"@en ;
+      rdfs:subClassOf tap:RedMeat ;
+      tap:plural "Porks" .
+
+tap:FruitJamJelly
+      a       rdfs:Class ;
+      rdfs:label "jelly"@en , "jam"@en ;
+      rdfs:subClassOf tap:FruitSpread ;
+      tap:plural "jellies" , "jams" .
+
+tap:Bacon
+      a       rdfs:Class ;
+      rdfs:label "bacon"@en ;
+      rdfs:subClassOf tap:BreakfastFood , tap:Pork ;
+      tap:creationIncludesEvent
+              tap:CuringFood ;
+      tap:plural "bacons" .
+
+tap:CranberryFruit
+      a       rdfs:Class ;
+      rdfs:label "cranberry"@en ;
+      rdfs:subClassOf tap:BerryFruit ;
+      tap:plural "cranberries" .
+
+tap:BreakfastFood
+      a       rdfs:Class ;
+      rdfs:label "breakfast food"@en ;
+      rdfs:subClassOf tap:Food ;
+      tap:plural "breakfast foods" .
+
+tap:StewFood
+      a       rdfs:Class ;
+      rdfs:label "stew"@en ;
+      rdfs:subClassOf tap:PreparedFood ;
+      tap:creationIncludesEvent
+              tap:CuttingUpFood , tap:SimmeringFood ;
+      tap:hasFoodAccessory
+              tap:BlackPepperSpice , tap:SaltSpice ;
+      tap:plural "stews" .
+
+tap:GrainFood
+      a       rdfs:Class ;
+      rdfs:label "grain"@en , "grain food"@en ;
+      rdfs:subClassOf tap:Food ;
+      tap:plural "grains" , "grain foods" .
+
+tap:BreakfastSausage
+      a       rdfs:Class ;
+      rdfs:label "breakfast sausage"@en , "sausage"@en ;
+      rdfs:subClassOf tap:BreakfastFood , tap:Sausage ;
+      tap:plural "breakfast sausages" , "sausages" .
+
+tap:HoneyMustard
+      a       rdfs:Class ;
+      rdfs:label "honey mustard"@en ;
+      rdfs:subClassOf tap:MustardCondiment ;
+      tap:plural "honey mustards" .
+
+tap:MinestroniSoup
+      a       rdfs:Class ;
+      rdfs:label "minestroni"@en , "minestroni soup"@en ;
+      rdfs:subClassOf tap:Soup ;
+      tap:creationIncludesEvent
+              tap:CuttingUpFood ;
+      tap:hasIngredient tap:Onion , tap:UncookedPasta , tap:Tomato ;
+      tap:plural "minestroni soups" , "minestronies" .
+
+tap:CaffeinatedCoffee
+      a       rdfs:Class ;
+      rdfs:label "caffeinated coffee"@en , "regular coffee"@en ;
+      rdfs:subClassOf tap:CaffeinatedBeverage , tap:CoffeeBeverage ;
+      tap:plural "regular coffees" , "caffeinated coffees" .
+
+tap:SnackBar
+      a       tap:ProductType ;
+      rdfs:label "Snack Bar"@en ;
+      rdfs:subClassOf tap:SnackFood ;
+      tap:plural "Snack Bars" ;
+      tap:relevantBrand tap:BettyCrockerBrand , tap:KelloggsBrand .
+
+tap:HotDogDish
+      a       rdfs:Class ;
+      rdfs:label "weiner"@en , "hot dog"@en ;
+      rdfs:subClassOf tap:MeatSandwich ;
+      tap:hasFoodAccessory
+              tap:SourKraut , tap:Onion , tap:Mayonnaise , tap:Ketchup , tap:MustardCondiment ;
+      tap:hasIngredient tap:HotDogSausage , "HotDogBun" ;
+      tap:plural "weiners" , "hot dogs" .
+
+tap:FoodActivity
+      a       rdfs:Class ;
+      rdfs:subClassOf "activity" .
+
+tap:DrinkMixBeverage
+      a       tap:ProductType ;
+      rdfs:label "drink mix beverage"@en , "drink mix"@en ;
+      rdfs:subClassOf tap:Beverage ;
+      tap:plural "drink mixes" , "drink mix beverages" ;
+      tap:relevantBrand tap:CrystalLightBrand , tap:KoolAidBrand , tap:CountryTimeBrand .
+
+tap:CherryFruit
+      a       rdfs:Class ;
+      rdfs:label "cherry"@en ;
+      rdfs:subClassOf tap:PittedFruit ;
+      tap:plural "cherries" .
+
+tap:TropicalFruit
+      a       rdfs:Class ;
+      rdfs:label "tropical fruit"@en ;
+      rdfs:subClassOf tap:Fruit ;
+      tap:plural "tropical fruits" .
+
+tap:MarjoramSpice
+      a       rdfs:Class ;
+      rdfs:label "marjoram"@en ;
+      rdfs:subClassOf tap:SpiceIngredient ;
+      tap:plural "marjorams" .
+
+tap:StrawberryMilk
+      a       rdfs:Class ;
+      rdfs:label "Strawberry Milk"@en ;
+      rdfs:subClassOf tap:CowMilk ;
+      tap:plural "Strawberry Milks" .
+
+tap:FishAndChips
+      a       rdfs:Class ;
+      rdfs:label "fish and chips"@en ;
+      rdfs:subClassOf tap:FishDish ;
+      tap:creationIncludesEvent
+              tap:DeepFryingFood ;
+      tap:hasFoodAccessory
+              tap:MaltVinegar ;
+      tap:plural "fish and chips" .
+
+tap:Mutton
+      a       tap:ProductType ;
+      rdfs:label "Mutton"@en ;
+      rdfs:subClassOf tap:RedMeat ;
+      tap:plural "muttons" .
+
+tap:FrozenFood
+      a       rdfs:Class ;
+      rdfs:label "frozen food"@en ;
+      rdfs:subClassOf tap:Food ;
+      tap:plural "frozen foods" .
+
+tap:CaffeinatedBeverage
+      a       rdfs:Class ;
+      rdfs:label "Caffeinated Beverage"@en , "Caffeinated drink"@en ;
+      rdfs:subClassOf tap:Beverage ;
+      tap:plural "Caffeinated drinks" , "Caffeinated Beverages" .
+
+tap:FoodCondiment
+      a       rdfs:Class ;
+      rdfs:label "condiment"@en , "food condiment"@en ;
+      rdfs:subClassOf tap:Food ;
+      tap:plural "condiments" , "food condiments" .
+
+tap:SageSpice
+      a       rdfs:Class ;
+      rdfs:label "sage"@en ;
+      rdfs:subClassOf tap:SpiceIngredient ;
+      tap:plural "sages" .
+
+tap:WineGrape
+      a       tap:ProductType ;
+      rdfs:label "wine grape"@en ;
+      rdfs:subClassOf tap:GrapeFood ;
+      tap:plural "wine grapes" .
+
+tap:CannedSoup
+      a       rdfs:Class ;
+      rdfs:label "canned soup"@en ;
+      rdfs:subClassOf tap:CannedFood ;
+      tap:hasIngredient tap:Soup ;
+      tap:plural "canned soups" .
+
+tap:Meatloaf
+      a       rdfs:Class ;
+      rdfs:label "Meatloaf"@en ;
+      rdfs:subClassOf tap:MeatDish ;
+      tap:creationIncludesEvent
+              tap:MixingFood ;
+      tap:hasFoodAccessory
+              tap:Ketchup ;
+      tap:plural "Meatloafs" .
+
+tap:CannedPetFood
+      a       tap:ProductType ;
+      rdfs:label "Canned Pet Food"@en ;
+      rdfs:subClassOf tap:PetFood , tap:CannedFood ;
+      tap:plural "Canned Pet Foods" .
+
+tap:OrangeJuice
+      a       tap:ProductType ;
+      rdfs:label "Orange Juice"@en , "OJ"@en ;
+      rdfs:subClassOf tap:JuiceBeverage ;
+      tap:plural "OJs" , "orange juices" .
+
+tap:Pastry
+      a       rdfs:Class ;
+      rdfs:label "pastry"@en , "pastries"@en ;
+      rdfs:subClassOf tap:FlourProduct ;
+      tap:creationIncludesEvent
+              tap:MixingFood .
+
+tap:WalnutNut
+      a       rdfs:Class ;
+      rdfs:label "walnut"@en ;
+      rdfs:subClassOf tap:NutFood ;
+      tap:plural "walnuts" .
+
+tap:Asparagus
+      a       rdfs:Class ;
+      rdfs:subClassOf tap:GreenVegetable .
+
+tap:HardboiledEgg
+      a       rdfs:Class ;
+      rdfs:label "Hardboiled Egg"@en ;
+      rdfs:subClassOf tap:BreakfastEggDish ;
+      tap:creationIncludesEvent
+              tap:BoilingFood ;
+      tap:plural "Hardboiled Eggs" .
+
+tap:Celery
+      a       rdfs:Class ;
+      rdfs:subClassOf tap:GreenVegetable .
+
+tap:HamburgerBun
+      a       rdfs:Class ;
+      rdfs:label "hamburger bun"@en ;
+      rdfs:subClassOf tap:Bread ;
+      tap:plural "hamburger buns" .
+
+tap:ChocolateMilk
+      a       rdfs:Class ;
+      rdfs:label "chocolate milk"@en ;
+      rdfs:subClassOf tap:ChocolateFood , tap:CowMilk ;
+      tap:plural "chocolate milks" .
+
+tap:ChocolateSauce
+      a       rdfs:Class ;
+      rdfs:label "chocolate sauce"@en ;
+      rdfs:subClassOf tap:Sauce , tap:FoodCondiment , tap:ChocolateFood ;
+      tap:plural "chocolate sauces" .
+
+tap:Cuisine
+      a       rdfs:Class ;
+      rdfs:label "Cuisine"@en ;
+      rdfs:subClassOf tap:Intangible ;
+      tap:plural "Cuisines" .
+
+tap:CupcakeFood
+      a       rdfs:Class ;
+      rdfs:label "cupcake"@en ;
+      rdfs:subClassOf tap:Pastry , tap:DessertDish ;
+      tap:creationIncludesEvent
+              tap:BakingFood ;
+      tap:hasIngredient tap:SugarSpice ;
+      tap:plural "cupcakes" .
+
+tap:LiverworstSandwich
+      a       rdfs:Class ;
+      rdfs:label "liverworst sandwich"@en ;
+      rdfs:subClassOf tap:MeatSandwich ;
+      tap:plural "liverworst sandwiches" .
+
+tap:CurrySpice
+      a       rdfs:Class ;
+      rdfs:label "curry"@en ;
+      rdfs:subClassOf tap:SpiceIngredient ;
+      tap:plural "curries" .
+
+tap:RoastTurkey
+      a       rdfs:Class ;
+      rdfs:label "roast turkey"@en ;
+      rdfs:subClassOf tap:TurkeyDish ;
+      tap:creationIncludesEvent
+              tap:RoastingFood ;
+      tap:hasFoodAccessory
+              tap:Gravy , tap:CranberrySauce ;
+      tap:plural "roast turkeys" .
+
+tap:RoastBeef
+      a       rdfs:Class ;
+      rdfs:label "roast beef"@en ;
+      rdfs:subClassOf tap:BeefDish ;
+      tap:creationIncludesEvent
+              tap:RoastingFood ;
+      tap:plural "roast beefs" .
+
+tap:TunaSaladSandwich
+      a       rdfs:Class ;
+      rdfs:label "tuna salad sandwich"@en , "tuna sandwich"@en , "tunafish sandwich"@en ;
+      rdfs:subClassOf tap:TunaFishDish , tap:MeatSandwich ;
+      tap:hasFoodAccessory
+              tap:Onion , tap:Lettuce , tap:Tomato ;
+      tap:hasIngredient tap:TunaFishSalad ;
+      tap:plural "tunafish sandwiches" , "tuna salad sandwiches" , "tuna sandwiches" .
+
+tap:BlackOliveFood
+      a       rdfs:Class ;
+      rdfs:label "black olive"@en ;
+      rdfs:subClassOf tap:OliveFood ;
+      tap:plural "black olives" .
+
+tap:DuckDish
+      a       rdfs:Class ;
+      rdfs:label "duck dish"@en , "duck"@en ;
+      rdfs:subClassOf tap:PoultryDish ;
+      tap:hasIngredient tap:DuckMeat ;
+      tap:plural "duck dishes" , "ducks" .
+
+tap:GreenGrape
+      a       tap:ProductType ;
+      rdfs:label "green grape"@en ;
+      rdfs:subClassOf tap:GrapeFood ;
+      tap:plural "green grapes" .
+
+tap:DryPetFood
+      a       tap:ProductType ;
+      rdfs:label "dry pet food"@en ;
+      rdfs:subClassOf tap:PetFood ;
+      tap:plural "dry pet foods" .
+
+tap:PotatoSalad
+      a       rdfs:Class ;
+      rdfs:label "potato salad"@en ;
+      rdfs:subClassOf tap:PotatoDish , tap:SaladDish ;
+      tap:creationIncludesEvent
+              tap:BoilingFood ;
+      tap:hasIngredient tap:Mayonnaise ;
+      tap:plural "potato salads" .
+
+tap:EggDish
+      a       rdfs:Class ;
+      rdfs:label "egg"@en ;
+      rdfs:subClassOf tap:PreparedFood ;
+      tap:hasFoodAccessory
+              tap:BlackPepperSpice , tap:SaltSpice ;
+      tap:hasIngredient tap:Egg ;
+      tap:plural "eggs" .
+
+tap:ClamSauce
+      a       rdfs:Class ;
+      rdfs:label "clam sauce"@en ;
+      rdfs:subClassOf tap:PastaSauce ;
+      tap:hasIngredient tap:ClamMeat ;
+      tap:plural "clam sauces" .
+
+tap:TortelliniPasta
+      a       rdfs:Class ;
+      rdfs:label "tortellini"@en ;
+      rdfs:subClassOf tap:UncookedPasta ;
+      tap:plural "tortellinis" .
+
+tap:MintSpice
+      a       rdfs:Class ;
+      rdfs:label "mint"@en ;
+      rdfs:subClassOf tap:SpiceIngredient ;
+      tap:plural "mints" .
+
+tap:BeefJerky
+      a       rdfs:Class , tap:ProductType ;
+      rdfs:label "beef jerky"@en ;
+      rdfs:subClassOf tap:MeatSnack , tap:BeefDish , tap:DriedFood ;
+      tap:creationIncludesEvent
+              tap:CuringFood ;
+      tap:plural "beef jerkies" .
+
+tap:FriedEgg
+      a       rdfs:Class ;
+      rdfs:label "Fried Egg"@en ;
+      rdfs:subClassOf tap:BreakfastEggDish ;
+      tap:plural "Fried Eggs" .
+
+tap:LambChop
+      a       rdfs:Class ;
+      rdfs:label "lamb chop"@en ;
+      rdfs:subClassOf tap:LambMeat ;
+      tap:plural "lamb chops" .
+
+tap:PepperSpice
+      a       rdfs:Class ;
+      rdfs:label "pepper"@en ;
+      rdfs:subClassOf tap:SpiceIngredient ;
+      tap:plural "peppers" .
+
+tap:PrimeRibDish
+      a       rdfs:Class ;
+      rdfs:label "Prime Rib"@en ;
+      rdfs:subClassOf tap:BeefDish ;
+      tap:creationIncludesEvent
+              tap:RoastingFood ;
+      tap:hasFoodAccessory
+              tap:HorseradishSauce ;
+      tap:plural "Prime Ribs" .
+
+tap:BrocolliCheeseSoup
+      a       rdfs:Class ;
+      rdfs:label "brocolli cheese soup"@en ;
+      rdfs:subClassOf tap:Soup ;
+      tap:creationIncludesEvent
+              tap:CuttingUpFood ;
+      tap:hasIngredient tap:Brocolli , tap:Cream , tap:Cheese ;
+      tap:plural "brocolli cheese soups" .
+
+tap:Ratatouille
+      a       rdfs:Class ;
+      rdfs:label "ratatouille"@en ;
+      rdfs:subClassOf tap:VegetableDish ;
+      tap:hasFoodAccessory
+              tap:BlackPepperSpice , tap:SaltSpice ;
+      tap:hasIngredient tap:Eggplant ;
+      tap:plural "ratatouilles" .
+
+tap:FruitMarmelade
+      a       rdfs:Class ;
+      rdfs:label "marmelade"@en ;
+      rdfs:subClassOf tap:FruitSpread ;
+      tap:plural "marmelades" .
+
+tap:AcidophilusMilk
+      a       rdfs:Class ;
+      rdfs:label "Acidophilus Milk"@en ;
+      rdfs:subClassOf tap:CowMilk ;
+      tap:plural "Acidophilus Milks" .
+
+tap:Limeade
+      a       rdfs:Class ;
+      rdfs:label "limeade"@en ;
+      rdfs:subClassOf tap:FruitBeverage ;
+      tap:plural "limeades" .
+
+tap:FishEgg
+      a       rdfs:Class ;
+      rdfs:label "roe"@en , "fish egg"@en ;
+      rdfs:subClassOf tap:Egg ;
+      tap:plural "fish eggs" , "roes" .
+
+tap:PotatoChip
+      a       tap:ProductType ;
+      rdfs:label "chip"@en , "Potato Chip"@en ;
+      rdfs:subClassOf tap:PotatoDish , tap:SnackFood ;
+      tap:hasFoodAccessory
+              tap:OnionDipFood ;
+      tap:plural "Potato Chips" , "chips" ;
+      tap:relevantBrand tap:LaysBrand , tap:PringlesBrand , tap:FritoLaysBrand , tap:RufflesBrand .
+
+tap:RedMeat
+      a       rdfs:Class ;
+      rdfs:label "red meat"@en ;
+      rdfs:subClassOf tap:MeatOrPoultry ;
+      tap:plural "red meats" .
+
+tap:PeppermintSpice
+      a       rdfs:Class ;
+      rdfs:label "peppermint"@en ;
+      rdfs:subClassOf tap:SpiceIngredient ;
+      tap:plural "peppermints" .
+
+tap:RawVegetable
+      a       rdfs:Class ;
+      rdfs:label "raw vegetable"@en , "uncooked vegetable"@en ;
+      rdfs:subClassOf tap:VegetableDish ;
+      tap:plural "raw vegetables" , "uncooked vegetables" .
+
+tap:CannedFood
+      a       rdfs:Class ;
+      rdfs:label "Canned Food"@en ;
+      rdfs:subClassOf tap:Food ;
+      tap:plural "Canned Foods" .
+
+tap:CaffeinTea
+      a       tap:ProductType ;
+      rdfs:subClassOf tap:CaffeinatedBeverage , tap:TeaBeverage .
+
+tap:Cabbage
+      a       rdfs:Class ;
+      rdfs:label "Cabbage"@en ;
+      rdfs:subClassOf tap:Vegetable ;
+      tap:plural "Cabbages" .
+
+tap:RiceCasserole
+      a       rdfs:Class ;
+      rdfs:label "rice casserole"@en ;
+      rdfs:subClassOf tap:Casserole , tap:RiceDish ;
+      tap:plural "rice casseroles" .
+
+tap:LambStew
+      a       rdfs:Class ;
+      rdfs:label "lamb stew"@en ;
+      rdfs:subClassOf tap:LambDish , tap:StewFood ;
+      tap:plural "lamb stews" .
+
+tap:NonfatMilk
+      a       rdfs:Class ;
+      rdfs:label "Nonfat Milk"@en , "fat-free milk"@en , "skim milk"@en ;
+      rdfs:subClassOf tap:DietFood , tap:CowMilk ;
+      tap:plural "Nonfat Milks" , "skim milks" , "fat-free milks" .
+
+tap:Cucumber
+      a       rdfs:Class ;
+      rdfs:label "cucumber"@en ;
+      rdfs:subClassOf tap:Vegetable ;
+      tap:plural "cucumbers" .
+
+tap:DietFood
+      a       rdfs:Class , tap:ProductType ;
+      rdfs:label "diet food"@en ;
+      rdfs:subClassOf tap:Food , tap:WeightlossProduct ;
+      tap:plural "diet foods" .
+
+tap:Food
+      a       rdfs:Class ;
+      rdfs:label "Food"@en ;
+      rdfs:subClassOf tap:Product ;
+      tap:ebayMap "14308" ;
+      tap:plural "Foods" .
+
+tap:VegetableStew
+      a       rdfs:Class ;
+      rdfs:label "vegetable stew"@en ;
+      rdfs:subClassOf tap:StewFood , tap:VegetableDish ;
+      tap:plural "vegetable stews" .
+
+tap:MineralDrinkingWater
+      a       rdfs:Class ;
+      rdfs:label "mineral water"@en ;
+      rdfs:subClassOf tap:DrinkingWater ;
+      tap:plural "mineral waters" .
+
+tap:Broccoli
+      a       rdfs:Class .
+
+tap:WineVinegar
+      a       rdfs:Class ;
+      rdfs:label "wine vinegar"@en ;
+      rdfs:subClassOf tap:Vinegar ;
+      tap:plural "wine vinegars" .
+
+tap:MacaroniSalad
+      a       rdfs:Class ;
+      rdfs:label "macaroni salad"@en ;
+      rdfs:subClassOf tap:PastaDish , tap:SaladDish ;
+      tap:creationIncludesEvent
+              tap:MixingFood ;
+      tap:hasIngredient tap:Mayonnaise , tap:SaladMacaroni ;
+      tap:plural "macaroni salads" .
+
+tap:CloveSpice
+      a       rdfs:Class ;
+      rdfs:label "clove"@en ;
+      rdfs:subClassOf tap:SpiceIngredient ;
+      tap:plural "cloves" .
+
+tap:PreparedFood
+      a       rdfs:Class ;
+      rdfs:label "Prepared Food"@en ;
+      rdfs:subClassOf tap:Food ;
+      tap:plural "Prepared Foods" .
+
+tap:CranberrySauce
+      a       rdfs:Class ;
+      rdfs:label "Cranberry sauce"@en ;
+      rdfs:subClassOf tap:Sauce ;
+      tap:hasIngredient tap:CranberryFruit ;
+      tap:plural "Cranberry sauces" .
+
+tap:BakedChicken
+      a       tap:ProductType ;
+      rdfs:label "baked chicken"@en ;
+      rdfs:subClassOf tap:ChickenDish ;
+      tap:plural "baked chickens" .
+
+tap:SalamiSandwich
+      a       rdfs:Class ;
+      rdfs:label "salami sandwich"@en ;
+      rdfs:subClassOf tap:MeatSandwich ;
+      tap:hasFoodAccessory
+              tap:Cheese , tap:Lettuce , tap:Mayonnaise , tap:Tomato , tap:MustardCondiment ;
+      tap:hasIngredient tap:Salami ;
+      tap:plural "salami sandwiches" .
